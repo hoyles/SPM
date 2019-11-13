@@ -166,7 +166,7 @@ for i in Keywords6 :
 
 # Compare against translations file
 r = re.compile('\".*?\"')
-TRANSLATION = open('../../src/Translations/English_UK.h', 'r')
+TRANSLATION = open('../../Source/Translations/English_UK.h', 'r')
 DEFINED = []
 for line in TRANSLATION:
   if line[0:13] == "#define PARAM" :
