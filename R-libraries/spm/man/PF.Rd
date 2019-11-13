@@ -23,4 +23,3 @@ Evaluate a preference function
 \author{
 Alistair Dunn
 }
-

@@ -24,4 +24,3 @@ Calcuate the normal likelihood from a set of observed, expected, and error value
 \author{
 Alistair Dunn
 }
-

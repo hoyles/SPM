@@ -12,4 +12,3 @@ Utility extract function
 \author{
 Alistair Dunn
 }
-

@@ -23,4 +23,3 @@ Evaluate the logistic preference function
 \author{
 Alistair Dunn
 }
-

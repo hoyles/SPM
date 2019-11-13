@@ -21,4 +21,3 @@ Generate a multivariate uniform distribution based on the bounds for the extimat
 \author{
 Sophie Mormede
 }
-

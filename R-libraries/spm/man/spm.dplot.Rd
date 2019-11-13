@@ -4,9 +4,9 @@
 \alias{spm.dplot}
 \title{utility function}
 \usage{
-spm.dplot(..., name = T, quantiles = c(0.5), plot.mean = F, main = "",
-  xlab = "", ylab = "", ylim, srtx = 0, bw = "nrd0", adjust = 1/3,
-  adj = 0, fill = F, gap = 0.2)
+spm.dplot(..., name = T, quantiles = c(0.5), plot.mean = F,
+  main = "", xlab = "", ylab = "", ylim, srtx = 0, bw = "nrd0",
+  adjust = 1/3, adj = 0, fill = F, gap = 0.2)
 }
 \description{
 utility function
@@ -14,4 +14,3 @@ utility function
 \author{
 Alistair Dunn
 }
-

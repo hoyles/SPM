@@ -24,4 +24,3 @@ Calcuate the binomial likelihood from a set of observed, expected, and error val
 \author{
 Alistair Dunn
 }
-

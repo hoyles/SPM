@@ -23,4 +23,3 @@ Evaluate the normal preference function
 \author{
 Alistair Dunn
 }
-

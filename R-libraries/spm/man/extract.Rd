@@ -19,4 +19,3 @@ Extract SPM output into R
 \author{
 Alistair Dunn
 }
-

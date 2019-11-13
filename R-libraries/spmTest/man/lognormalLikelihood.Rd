@@ -24,4 +24,3 @@ Calcuate the lognormal likelihood from a set of observed, expected, and error va
 \author{
 Alistair Dunn
 }
-

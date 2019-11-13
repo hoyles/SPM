@@ -4,7 +4,8 @@ Version: 1.1
 Date: 2018-05-31
 Author: A. Dunn
 Description: A set of R functions for extracting from SPM output files.
-Maintainer: A Dunn <a.dunn@niwa.co.nz>
+A Dunn <alistair.dunn@OceanEnvironmental.co.nz>
 License: CPL v1.0. See the SPM User Manual for license details.
 URL: http://www.niwa.co.nz
 Copyright: National Institute of Water & Atmospheric Research (NIWA), New Zealand Ministry for Primary Industries.
+RoxygenNote: 6.1.1

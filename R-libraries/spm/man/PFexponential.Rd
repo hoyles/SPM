@@ -21,4 +21,3 @@ Evaluate the exponential preference function
 \author{
 Alistair Dunn
 }
-

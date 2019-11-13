@@ -1,6 +1,6 @@
 Format for commenting SVN commits:
 
-1. Do not commit without a comment. This is a massive hassle for anyone trying to find the history of a file or folder. Spending ages doing manual code comparisons isn't fun.
+1. Do not commit without a comment. 
 
 2. The first part of each line of your commit message should indicate what time of modification you have done.
 

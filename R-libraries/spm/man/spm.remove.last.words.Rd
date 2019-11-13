@@ -12,4 +12,3 @@ utility function
 \author{
 Alistair Dunn
 }
-

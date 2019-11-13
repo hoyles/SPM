@@ -19,4 +19,3 @@ Evaluate the constant preference function
 \author{
 Alistair Dunn
 }
-

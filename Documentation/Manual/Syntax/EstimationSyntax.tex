@@ -1,0 +1,314 @@
+\section{Estimation command and subcommand syntax\label{sec:estimation-syntax}}
+
+\subsection{\I{Estimation methods}}
+
+\defCom{estimation}
+
+\defSub{minimiser} {The label of the minimiser to use, if doing a point estimate}
+\defType{String}
+\defDefault{No default}
+\defValue{A valid label from \command{minimiser}}
+
+\defSub{mcmc} {The label of the MCMC to use, if doing an MCMC}
+\defType{String}
+\defDefault{No default}
+\defValue{A valid label from \command{mcmc}}
+
+\defSub{profile} {The labels of the profiles to use, if doing a profile}
+\defType{String}
+\defDefault{No default}
+\defValue{A valid label from \command{mpd}}
+
+\subsection{\I{Point estimation}}
+
+Two methods of minimising when doing a point estimate are,
+
+\begin{itemize}
+	\item Numerical differences minimiser
+  \item Differential evolution minimiser
+\end{itemize}
+
+Note that point estimates are required for
+
+\begin{itemize}
+  \item MPDs
+  \item To generate the starting values and covariance matrix for an MCMC
+  \item To calculate the point estimates for profiles
+\end{itemize}
+
+Each type of minimiser requires a set of subcommands and arguments specific to that minimiser. Different minimisers can be called for different model runs or for different run modes (i.e., MCMC, MPDs, or profiles).
+
+\defComLab{minimiser}{Define the an minimiser estimator with label}
+
+\defSub{type} {Define the type of minimiser}
+\defType{String}
+\defDefault{numerical\_differences}
+\defValue{A valid type of minimiser, either numerical\_differences or de\_solver}
+
+\subsubsection[Numerical differences minimiser]{\commandlabsubarg{minimiser}{type}{numerical\_differences}}
+
+\defSub{iterations} {Define the maximum number of iterations for the minimiser}
+\defType{Integer}
+\defDefault{1000}
+\defValue{A positive integer}
+
+\defSub{evaluations} {Define the maximum number of evaluations for the minimiser}
+\defType{Integer}
+\defDefault{4000}
+\defValue{A positive integer}
+
+\defSub{stepsize} {Define the stepsize for the minimiser}
+\defType{Constant}
+\defDefault{1e-6}
+\defValue{A positive real number}
+
+\defSub{tolerance} {Define the convergence criteria (tolerance) for the minimiser}
+\defType{Constant}
+\defDefault{0.002}
+\defValue{A positive real number}
+
+\defSub{covariance} {Specify if \SPM\ should attempt to calculate the covariance matrix, if estimating}
+\defType{Logical}
+\defDefault{True}
+\defValue{Either true of false}
+
+\subsubsection[Differential evolution minimiser]{\commandlabsubarg{minimiser}{type}{de\_solver}}
+
+\defSub{population\_size} {Define the minimisers number of populations to generate}
+\defType{Integer}
+\defDefault{25}
+\defValue{A positive integer}
+
+\defSub{crossover\_probability} {Define the minimisers crossover probability }
+\defType{Integer}
+\defDefault{0.9}
+\defValue{A positive integer}
+
+\defSub{difference\_scale} {Define the scale of the difference of the parent candidates for the minimiser}
+\defType{Constant}
+\defDefault{0.02}
+\defValue{A positive real number}
+
+\defSub{max\_generations} {Define the maximum generations for the minimiser convergence}
+\defType{Constant}
+\defDefault{0.002}
+\defValue{A positive real number}
+
+\defSub{tolerance} {Define the convergence criteria (tolerance) for the minimiser}
+\defType{Constant}
+\defDefault{0.01}
+\defValue{A positive real number}
+
+\defSub{covariance} {Specify if \SPM\ should attempt to calculate the covariance matrix, if estimating}
+\defType{Logical}
+\defDefault{True}
+\defValue{Either true of false}
+
+\subsection{\I{Markov Chain Monte Carlo (MCMC)}\label{sec:estimation-syntax-MCMC}}
+
+Only one method of carrying out MCMCs is available, Markov Chain Monte Carlo using Metropolis-Hastings
+
+\defComLab{mcmc}{Define the MCMC estimation arguments}
+
+\defSub{type} {Define the method of MCMC}
+\defType{String}
+\defDefault{metropolis\_hastings}
+\defValue{A valid type of MCMC. Currently only Metropolis-Hastings is available}
+
+\subsubsection[Metropolis-Hastings]{\commandsubarg{mcmc}{type}{metropolis\_hastings}}
+
+\defSub{start} {Covariance multiplier for the starting point of the Markov chain}
+\defType{Constant}
+\defDefault{0}
+\defValue{If 0, defines the starting point of the chain as the point estimate.	If $>0$, defines the starting point as randomly generated, with covariance matrix equal to the approximate covariance (inverse Hessian) times the value of this start parameter}
+
+\defSub{length} {Length of the Markov chain}
+\defType{Integer}
+\defDefault{No default}
+\defValue{Defines the length of the Markov chain (as a number of iterations)}
+
+\defSub{keep} {Spacing between recorded values in the chain}
+\defType{Integer}
+\defDefault{1}
+\defValue{Defines the spacing between recorded values in the chain. Samples from the posterior are written to file only if their sample number is evenly divisible by \argument{keep}}
+
+\defSub{max\_correlation} {Maximum absolute correlation in the covariance matrix of the proposal distribution}
+\defType{Constant}
+\defDefault{0.8}
+\defValue{Defines the maximum correlation in the covariance matrix of the proposal distribution. Correlations greater than max\_correlation are decreased to max\_correlation, and those less than -max\_correlation are increased to -max\_correlation }
+
+\defSub{covariance\_adjustment\_method} {Method for adjusting small variances in the covariance proposal matrix}
+\defType{String}
+\defDefault{covariance}
+\defValue{Defines the method (either correlation or covariance) for the adjusting small variances in the covariance matrix of the proposal distribution}
+
+\defSub{correlation\_adjustment\_diff} {Minimum non-zero variance times the range of the bounds in the covariance matrix of the proposal distribution}
+\defType{Constant}
+\defDefault{0.0001}
+\defValue{Defines the minimum non-zero variance times the difference in the bounds of each parameter in the covariance matrix of the proposal distribution}
+
+\defSub{stepsize} {Initial stepsize (as a multiplier of the approximate covariance matrix)}
+\defType{Constant}
+\defDefault{$2.4d^{-0.5}$ where $d$ is the number of estimated parameters}
+\defValue{The covariance of the proposal distribution is the approximate covariance (inverse Hessian) times this stepsize parameter}
+
+\defSub{proposal\_distribution} {The shape of the proposal distribution (either \textit{t} or normal)}
+\defType{String}
+\defDefault{t}
+\defValue{Either \argument{t} or \argument{normal}. Defines whether the proposal distribution should be multivariate t rather than multivariate normal}
+
+\defSub{df} {Degrees of freedom of the multivariate t proposal distribution}
+\defType{Integer}
+\defDefault{4}
+\defValue{Defines the degrees of freedom of the multivariate t proposal distribution}
+
+\defSub{adapt\_stepsize\_at} {Iterations in the chain to check and resize the MCMC stepsize}
+\defType{Vector of integers}
+\defDefault{no default}
+\defValue{Defines the points during the MCMC iterations to re-evaluate the MCMC stepsize argument}
+
+\subsection{\I{Profiles}}
+
+\defComLab{profile}{Define the profile parameters and arguments}
+
+\defSub{parameter} {Name of the parameter to be profiled}
+\defType{String}
+\defDefault{No default}
+\defValue{Defines the name of the parameter to be profiled}
+
+\defSub{steps} {Number of steps (values) at which to profile the parameter}
+\defType{Integer}
+\defDefault{10}
+\defValue{Defines the steps (number of values) at which to profile the parameter}
+
+\defSub{lower\_bound} {lower bound on parameter}
+\defType{Integer}
+\defDefault{No default}
+\defValue{Defines the lower bound on the range of the parameter to profile}
+
+\defSub{upper\_bound} {Upper bound on parameter}
+\defType{Integer}
+\defDefault{No default}
+\defValue{Defines the upper bound on the range of the parameter to profile}
+
+\subsection{Defining the parameters to be estimated and their priors}
+
+\defComArg{estimate}{parameter\_name}{Estimate an estimable parameter}
+\defArg{parameter\_name}{The \SPM\ name of the parameter to estimate}
+\defType{string}
+\defDefault{No default}
+\defValue{A valid \SPM\ parameter name}
+
+\defSub{same}{Names of the other parameters which are constrained to have the same value}
+\defType{String Vector}
+\defDefault{No default}
+\defValue{Defines the names of all the other parameters which are constrained to have the same value as this parameter}
+
+\defSub{lower\_bound}{Lower bounds on this parameter}
+\defType{Constant vector, of length equal to the parameter length}
+\defDefault{No default}
+\defValue{Defines the lower bound(s) on this parameter}
+
+\defSub{upper\_bound}{Upper bound on this parameter}
+\defType{Constant vector, of length equal to the parameter length}
+\defDefault{No default}
+\defValue{Defines the upper bound(s) on this parameter}
+
+\defSub{mcmc\_fixed}{Should this parameter be fixed during MCMC?}
+\defType{Switch}
+\defDefault{False}
+\defValue{Define this parameter as fixed during MCMC (i.e., considered a constant for the MCMC)}
+
+\defSub{type}{Defines the type of prior for this parameter}
+\defType{String}
+\defDefault{No default}
+\defValue{Defines the type of prior for this parameter}
+
+\subsubsection[Uniform prior]{\commandlabsubarg{estimate}{type}{uniform}}
+
+The uniform prior has no other subcommands.
+
+\subsubsection[Uniform-log prior]{\commandlabsubarg{estimate}{type}{uniform\_log}}
+
+The uniform-log prior has no other subcommands.
+
+\subsubsection[Normal prior]{\commandlabsubarg{estimate}{type}{normal}}
+
+\defSub{mu}{Defines the mean $\mu$ of the normal prior}
+\defType{Estimable}
+\defDefault{No default}
+\defValue{Defines the mean of the normal prior}
+
+\defSub{cv}{Defines the c.v. $c$ of the normal prior}
+\defType{Estimable}
+\defDefault{No default}
+\defValue{Defines the c.v. of the normal prior}
+
+\subsubsection[Normal-by-stdev prior]{\commandlabsubarg{estimate}{type}{normal\_by\_stdev}}
+
+\defSub{mu}{Defines the mean $\mu$ of the normal by standard deviation prior}
+\defType{Estimable}
+\defDefault{No default}
+\defValue{Defines the mean of the normal by standard deviation prior}
+
+\defSub{sigma}{Defines the standard deviation $\sigma$ of the normal by standard deviation prior}
+\defType{Estimable}
+\defDefault{No default}
+\defValue{Defines the standard deviation of the normal by standard deviation prior}
+
+\subsubsection[Lognormal prior]{\commandlabsubarg{estimate}{type}{lognormal}}
+
+\defSub{mu}{Defines the mean $\mu$ of the lognormal prior}
+\defType{Estimable}
+\defDefault{No default}
+\defValue{Defines the mean of the lognormal prior}
+
+\defSub{cv}{Defines the c.v. $c$ of the lognormal prior}
+\defType{Estimable}
+\defDefault{No default}
+\defValue{Defines the c.v. of the lognormal prior}
+
+\subsubsection[Beta prior]{\commandlabsubarg{estimate}{type}{beta}}
+
+\defSub{a}{The lower value of the range parameter $A$ of the Beta prior}
+\defType{Constant}
+\defDefault{No default}
+\defValue{Defines the lower value of the range parameter $A$ of the Beta prior}
+
+\defSub{b}{The upper value of the range parameter $B$ of the Beta prior}
+\defType{Constant}
+\defDefault{No default}
+\defValue{Defines the upper value of the range parameter $B$ of the Beta prior}
+
+\defSub{mu}{Defines the mean $\mu$ of the Beta prior}
+\defType{Estimable}
+\defDefault{No default}
+\defValue{Defines the mean of the Beta prior}
+
+\defSub{sigma}{Defines the standard deviation $\sigma$ of the Beta prior}
+\defType{Estimable}
+\defDefault{No default}
+\defValue{Defines the standard deviation of the Beta prior}
+
+\subsection{\I{Defining catchability constants}}
+
+\defComLab{catchability}{Define a catchability constant with \argument{label}}
+
+\defSub{q} {Value of the q parameter}
+\defType{Estimable}
+\defDefault{No default}
+\defValue{Defines the value of the catchability $q$ parameter, a real positive number}
+
+\subsection{\I{Defining penalties}}
+
+\defComLab{penalty}{Define a penalty with \argument{label}}
+
+\defSub{log\_scale} {Defines if the penalty in calculated in log space}
+\defType{Switch}
+\defDefault{False}
+\defValue{Defines if the value of the penalty is calculated as the squared difference or the squared difference in log space}
+
+\defSub{multiplier} {Penalty multiplier}
+\defType{Constant}
+\defDefault{1.0}
+\defValue{Defines the penalty multiplier}

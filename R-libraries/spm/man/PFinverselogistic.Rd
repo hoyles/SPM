@@ -23,4 +23,3 @@ Evaluate the inverse-logistic preference function
 \author{
 Alistair Dunn
 }
-

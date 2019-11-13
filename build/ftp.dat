@@ -1,9 +1,0 @@
-open ftp.niwa.co.nz
-anonymous
-adunn@niwa.co.nz
-cd software
-cd casal
-type binary
-put spm.zip
-put Setup_SPM.exe
-bye

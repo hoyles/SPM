@@ -25,4 +25,3 @@ Evaluate the double normal preference function
 \author{
 Alistair Dunn
 }
-

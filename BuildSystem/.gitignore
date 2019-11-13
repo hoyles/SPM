@@ -1,0 +1,5 @@
+/bin
+/SPM.zip
+/SPM
+/*.pyc
+__pycache__

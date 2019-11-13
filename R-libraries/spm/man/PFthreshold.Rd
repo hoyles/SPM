@@ -21,4 +21,3 @@ Evaluate the threshold preference function
 \author{
 Alistair Dunn
 }
-

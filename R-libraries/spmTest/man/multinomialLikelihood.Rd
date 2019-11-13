@@ -24,4 +24,3 @@ Calcuate the multinomial likelihood from a set of observed, expected, and error 
 \author{
 Alistair Dunn
 }
-
