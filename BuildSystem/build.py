@@ -32,14 +32,13 @@ def print_usage():
   print( 'doBuild <build_target> <build_parameter>')
   print( '')
   print( 'Valid Build Types:')
+  print( '  check    - Do a check that prerequesite ppackages are installed')
+  print( '  clean    - Remove any previous debug/release build information')
+  print( '  boost    - Build boost')
   print( '  binary   - Build release executable')
   print( '  manual   - Build the user manual')
-  print( '  clean    - Remove any previous debug/release build information')
-  print( '  archive  - Build a zipped archive of the application')
-  print( '  boost    - Build boost')
-  print( '  check    - Do a check that prerequesite ppackages are installed')
   print( '  rlibrary - Build the R library')
-  print( '  testmodel - Run the test suite of models')
+  print( '  archive  - Build a zipped archive of the application')
   print( '  windows  - Build the Windows installer package')
   print( '  deb      - Create linux .deb installer')
   print( '')
@@ -153,7 +152,7 @@ def start():
     print( "*************************************************************************")
     print( "--> Starting " + Globals.build_target_ + " Build")
     archive_builder = Archive()
-    if not archive_builder.start(build_parameters):
+    if not archive_builder.start():
       return False
   elif Globals.build_target_ == "boost":
     print( "*************************************************************************")
@@ -177,13 +176,6 @@ def start():
       return Globals.PrintError("R is not in the current path please add R to your path.")  
     rlibrary = Rlibrary()
     if not rlibrary.start():
-      return False
-  elif build_target == "testmodel":
-    print( "*************************************************************************")
-    print( "*************************************************************************")
-    print( "--> Starting " + Globals.build_target_ + " Build")
-    model_runner = ModelRunner()
-    if not model_runner.start():
       return False
   elif build_target == "windows":
     print( "*************************************************************************")

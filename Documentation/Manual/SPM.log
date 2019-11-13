@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7200 64-bit) (preloaded format=pdflatex 2019.11.10)  10 NOV 2019 16:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7200 64-bit) (preloaded format=pdflatex 2019.11.10)  13 NOV 2019 21:17
 entering extended mode
 **./SPM.tex
 (SPM.tex
@@ -880,10 +880,10 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 359.
 ### simple group (level 1) entered at line 82 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 11856 strings out of 492895
- 180234 string characters out of 3123734
- 403211 words of memory out of 3000000
- 14215 multiletter control sequences out of 15000+200000
+ 11855 strings out of 492895
+ 180210 string characters out of 3123734
+ 403139 words of memory out of 3000000
+ 14214 multiletter control sequences out of 15000+200000
  80883 words of font info for 168 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,15n,43p,1464b,2066s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -905,7 +905,7 @@ nts/type1/urw/times/utmbi8a.pfb><C:/Users/alist/AppData/Local/Programs/MiKTeX 2
 .9/fonts/type1/urw/times/utmr8a.pfb><C:/Users/alist/AppData/Local/Programs/MiKT
 eX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Users/alist/AppData/Local/Programs/
 MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on SPM.pdf (210 pages, 1131408 bytes).
+Output written on SPM.pdf (210 pages, 1131336 bytes).
 PDF statistics:
  3754 PDF objects out of 4296 (max. 8388607)
  1081 named destinations out of 1200 (max. 500000)

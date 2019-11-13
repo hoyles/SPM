@@ -15,7 +15,7 @@ EX_OK = getattr(os, "EX_OK", 0)
 """
 This class is responsible for building the main code base of the project
 """
-class Archiver:
+class Archive:
   cmake_compiler_ = ""
   output_directory_ = "";
   do_build_ = "doBuild"
@@ -29,33 +29,28 @@ class Archiver:
     if Globals.operating_system_ == "windows":
       binary_name += '.exe'
     if skip_building != 'true':
-      print('--> Building release version of spm library')
-      print('-- Re-Entering the build system to build a release library')
-      print('-- All output is being diverted to release_build.log')
+      print('--> Building spm')
+      print('-- Re-Entering the build system to build spm binary')
+      print('-- All output is being diverted to binary_build.log')
+      if os.system(self.do_build_ + ' binary > binary_build.log 2>&1') != EX_OK:
+        return Globals.PrintError('Failed to build the binary. Please check binary_build.log for error')
 
-      print('--> Building documentation')
-      print('-- Re-Entering the build system to build the documentation')
-      print('-- All output is being diverted to documentation_build.log')
-      if os.system(self.do_build_ + ' documentation > documentation_build.log 2>&1') != EX_OK:
-        return Globals.PrintError('Failed to build the documentation. Please check documenation_build.log for error')
-      os.system('rm -rf documentation_build.log')
+      print('--> Building manual')
+      print('-- Re-Entering the build system to build the manual')
+      print('-- All output is being diverted to manual_build.log')
+      if os.system(self.do_build_ + ' manual > manual_build.log 2>&1') != EX_OK:
+        return Globals.PrintError('Failed to build the manual. Please check manual_build.log for error')
+      os.system('rm -rf manual_build.log')
 
-      print('--> Building test version of spm')
-      print('-- Re-Entering the build system to build a unit test library')
-      print('-- All output is being diverted to unit_test_build.log')
-      if os.system(self.do_build_ + ' library test > unit_test_build.log 2>&1') != EX_OK:
-        return Globals.PrintError('Failed to build release library. Please check unit_test_build.log for the error')
-      os.system('rm -rf unit_test_build.log')
-
-    print('--> Building Binary')
-    print('-- Re-Entering the build system to build the binary')
-    print('-- All output is being diverted to binary_build.log')
-    if os.system(self.do_build_ + ' binary_build > binary_build.log 2>&1') != EX_OK:
-      return Globals.PrintError('Failed to build the binary. Please check binary_build.log for error')
-    os.system('rm -rf binary_build.log')
+    print('--> Building R Libraries')
+    print('-- Re-Entering the build system to build the R Libraries')
+    print('-- All output is being diverted to Rlibraries_build.log')
+    if os.system(self.do_build_ + ' Rlibrary > Rlibrary_build.log 2>&1') != EX_OK:
+      return Globals.PrintError('Failed to build the R Libraries. Please check Rlibrary_build.log for error')
+    os.system('rm -rf Rlibraries_build.log')
 
     ## Now we actually do the zipping of the binary
-    output_directory = "bin/" + Globals.operating_system_ + "/archive/"
+    output_directory = "SPM/" + Globals.operating_system_ + "/archive/"
     if not os.path.exists(output_directory):
       os.makedirs(output_directory);
     print("-- Target output directory: " + output_directory)

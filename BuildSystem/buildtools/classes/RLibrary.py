@@ -21,8 +21,8 @@ class Rlibrary:
       binary_name += '.exe'
    
     ## Check SPM is in your path. The R script needs it to get versions and that sort of information. 
-    if not os.path.exists('bin/' + Globals.operating_system_ ):
-      print('Looking for bin/' + Globals.operating_system_ + binary_name)
+    if not os.path.exists('SPM/' + Globals.operating_system_ + "/binary/" ):
+      print('Looking for SPM/' + Globals.operating_system_ + "/binary/" + binary_name)
       print('\n\n*****************\nERROR\n*****************\nSPM binary was not found. Cannot continue\n\n')
       return False
     ## CHG Dir to R library

@@ -66,7 +66,7 @@ void CStandardHeaderReport::start() {
 
   // Build Version
   std::stringstream sRevisionNumber;
-  sRevisionNumber << SOURCE_CONTROL_REVISION;
+  sRevisionNumber << SOURCE_CONTROL_VERSION;
   sVersion = "v" + string(VERSION) + "-" + string(SOURCE_CONTROL_DATE) + " (rev. " + sRevisionNumber.str() + ").";
 
   sHeader += sVersion + " Copyright (c) 2008-" + SOURCE_CONTROL_YEAR + ", NIWA\n";

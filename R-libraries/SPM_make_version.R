@@ -1,8 +1,6 @@
 # Get SPM Version
-VERSION<-system("..\\spm.exe -v",intern=TRUE)
-VERSION<-substring(VERSION,1,regexpr(" ",VERSION)-1)
-version.number<-substring(VERSION,1,regexpr("-",VERSION)-1)
-version.date<-substring(VERSION,regexpr("-",VERSION)+1)
+source("version.R")
+VERSION<-paste(version.number," (",version.date,")",sep="")
 
 # Build DESCRIPTION file
 filename<-"spm/DESCRIPTION"
@@ -13,7 +11,7 @@ cat(version.date,file=filename,append=TRUE)
 cat("\n",file=filename,append=TRUE)
 cat("Author: A. Dunn\n",file=filename,append=TRUE)
 cat("Description: A set of R functions for extracting from SPM output files.\n",file=filename,append=TRUE)
-cat("Maintainer: A Dunn <a.dunn@niwa.co.nz>\n",file=filename,append=TRUE)
+cat("Maintainer: A Dunn <Alistair.Dunn@OceanEnvironmental.co.nz>\n",file=filename,append=TRUE)
 cat("License: CPL v1.0. See the SPM User Manual for license details.\n",file=filename,append=TRUE)
 cat("URL: http://www.niwa.co.nz\n",file=filename,append=TRUE)
 cat("Copyright: National Institute of Water & Atmospheric Research (NIWA), New Zealand Ministry for Primary Industries.\n",file=filename,append=TRUE)

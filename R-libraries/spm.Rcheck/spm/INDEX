@@ -1,0 +1,68 @@
+PF                      Evaluate a preference function
+PFconstant              Evaluate the constant preference function
+PFdoublenormal          Evaluate the double normal preference function
+PFexponential           Evaluate the exponential preference function
+PFinverselogistic       Evaluate the inverse-logistic preference
+                        function
+PFlogistic              Evaluate the logistic preference function
+PFnormal                Evaluate the normal preference function
+PFthreshold             Evaluate the threshold preference function
+calc.abundance          Generate a multivariate uniform distribution
+                        based on the bounds for the extimated parameters
+extract                 Extract SPM output into R
+extract.MCMC            Utility extract function
+extract.ageingerror     Utility extract function
+extract.agesize         Utility extract function
+extract.ageweight       Utility extract function
+extract.covariance      Utility extract function
+extract.derivedquantity
+                        Utility extract function
+extract.derivedquantitybycell
+                        Utility extract function
+extract.estimatesummary
+                        Utility extract function
+extract.estimatevalue   Utility extract function
+extract.initialisationphase
+                        Utility extract function
+extract.layer           Utility extract function
+extract.layerderivedview
+                        Utility extract function
+extract.objectivefunction
+                        Utility extract function
+extract.observation     Utility extract function
+extract.partition       Utility extract function
+extract.partitionbiomass
+                        Utility extract function
+extract.randomnumberseed
+                        Utility extract function
+extract.selectivity     Utility extract function
+extract.simulations     Utility extract function
+extract.sizeweight      Utility extract function
+extract.spatialmap      Utility extract function
+generate.MVU            Generate a multivariate uniform distribution
+                        based on the bounds for the extimated parameters
+spm-package             SPM extract package
+spm.area                utility function
+spm.convert.to.lines    utility function
+spm.dplot               utility function
+spm.extract.simulated.observation
+                        utility function
+spm.get.lines           utility function
+spm.is.whole.number     utility function
+spm.isin                utility function
+spm.make.filename       utility function
+spm.make.list           utility function
+spm.make.table          utility function
+spm.pos                 utility function
+spm.pos.match           utility function
+spm.recodevector        utility function
+spm.remove.first.words
+                        utility function
+spm.remove.last.words   utility function
+spm.report.types        utility function
+spm.string.to.vector.of.numbers
+                        utility function
+spm.string.to.vector.of.words
+                        utility function
+spm.unpaste             utility function
+spm.zeroFun             utility function
