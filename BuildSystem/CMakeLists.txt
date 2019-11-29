@@ -8,21 +8,24 @@ project(SPM)
 #   cmake -G "Unix Makefiles"
 #   make all
 
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED True)
+
 SET(MAIN_NAME spm_unoptimised)
 SET(TEST_NAME spm_unittests)
 SET(OPTI_NAME spm)
 
 IF (WIN32)
-  INCLUDE_DIRECTORIES("C:/Users/Alist/OneDrive/Projects/Software/SPM/Boost/boost_1_58_0/")
-  LINK_DIRECTORIES("C:/Users/Alist/OneDrive/Projects/Software/SPM/Boost/boost_1_58_0/stage/lib")
+  INCLUDE_DIRECTORIES("${CMAKE_BINARY_DIR}/Boost/include/")
+  LINK_DIRECTORIES("${CMAKE_BINARY_DIR}/Boost/stage/lib")
   
   # Generic Build Settings
-  SET(LINK_OPTIONS "-static ../../../icon.o")
+  SET(LINK_OPTIONS "-static icon.o")
   SET(COMPILE_OPTIONS_MAIN "-DBOOST_THREAD_USE_LIB=1 -DBOOST_THREAD_PROVIDES_GENERIC_SHARED_MUTEX_ON_WIN -O0 -g3 -Wall -Wno-deprecated-declarations -fmessage-length=0 -fopenmp -static -std=c++11")
   SET(COMPILE_OPTIONS_OPTI "-DBOOST_THREAD_USE_LIB=1 -DBOOST_THREAD_PROVIDES_GENERIC_SHARED_MUTEX_ON_WIN -DOPTIMIZE -O2 -g0 -Wall  -Wno-deprecated-declarations -fmessage-length=0 -fopenmp -static -std=c++11")
   SET(COMPILE_OPTIONS_TEST "-DBOOST_THREAD_USE_LIB=1 -DBOOST_THREAD_PROVIDES_GENERIC_SHARED_MUTEX_ON_WIN -DTEST -O0 -g3 -Wall -Wno-deprecated-declarations -fmessage-length=0 -fopenmp -static -std=c++11")
   ADD_CUSTOM_TARGET(icon ALL
-    COMMAND windres --output ${PROJECT_SOURCE_DIR}/icon.o --input ${PROJECT_SOURCE_DIR}/spm.rc
+    COMMAND windres --output icon.o --input "../../Source/spm.rc"
   )
   SET(MAIN_LIBRARIES
     gomp
@@ -36,11 +39,9 @@ IF (WIN32)
   SET(TEST_LIBRARIES boost_unit_test_framework-mgw81-mt-sd-1_58)
   
 ELSE (WIN32)
-  # wellopensuse131 link directories
-  SET(BOOST_LIBS "/opt/boost/boost_1_57_0/stage/lib/")
-  SET(BOOST_HEADERS "/opt/boost/boost_1_57_0/")
+  SET(BOOST_LIBS "${CMAKE_BINARY_DIR}/Boost/include/")
+  SET(BOOST_HEADERS "${CMAKE_BINARY_DIR}/Boost/stage/lib")
   SET(LINK_OPTIONS "-static -L ${BOOST_LIBS}")
-  #SET(LINK_OPTIONS "-L ${BOOST_LIBS}")
   SET(COMPILE_OPTIONS_LIBR "-DBOOST_THREAD_USE_LIB=1 -O0 -g3 -ggdb -Wall -Werror -fmessage-length=0 -fopenmp -Wno-unused-local-typedefs -I ${BOOST_HEADERS} -std=c++11")
   SET(COMPILE_OPTIONS_MAIN "-DBOOST_THREAD_USE_LIB=1 -O0 -g3 -Wall -fmessage-length=0 -fopenmp -Wno-unused-local-typedefs -I ${BOOST_HEADERS} -std=c++11")
   SET(COMPILE_OPTIONS_OPTI "-DBOOST_THREAD_USE_LIB=1 -DOPTIMIZE -O3 -g0 -Wall -fmessage-length=0 -fopenmp -Wno-unused-local-typedefs -I ${BOOST_HEADERS} -std=c++11")
@@ -56,8 +57,8 @@ ELSE (WIN32)
   SET(TEST_LIBRARIES boost_unit_test_framework)
 ENDIF (WIN32)
 
-FILE(GLOB_RECURSE SOURCE_FILES ../Source/*.cpp)
-FILE(GLOB_RECURSE TEST_FILES ../Source/*.Test.cpp)
+FILE(GLOB_RECURSE SOURCE_FILES "../Source/*.cpp")
+FILE(GLOB_RECURSE TEST_FILES "../Source/*.Test.cpp")
 list(REMOVE_ITEM SOURCE_FILES ${TEST_FILES})
 
 # Build SPM unoptimised

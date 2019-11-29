@@ -1,3 +1,0 @@
-#include <windows.h>
-dllicon   ICON   SPM.ico
-fileicon   ICON   SPM-file.ico

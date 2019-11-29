@@ -1,5 +1,1 @@
-/bin
-/SPM.zip
-/SPM
-/*.pyc
-__pycache__
+/CMakeFiles

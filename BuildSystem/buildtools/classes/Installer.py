@@ -5,6 +5,7 @@ import os.path
 import fileinput
 import re
 from datetime import datetime, date
+from dateutil import tz
 
 import Globals
 
@@ -21,11 +22,11 @@ class Installer:
     print('--> Building SPM Archive')
     print('-- Re-Entering build system to build the archive')
     if os.system(self.do_build_ + ' archive') != EX_OK:
-      return Globals.print(Error('Failed to build the archive'))
+      return Globals.PrintError('Failed to build the archive')
 
     file = open('config.iss', 'w')
     if not file:
-      return Globals.print(Error('Failed to open the config.iss to create installer configuration'))
+      return Globals.PrintError('Failed to open the config.iss to create installer configuration')
     file.write('[Setup]\n')
     file.write('AppName=SPM\n')
 
@@ -35,7 +36,7 @@ class Installer:
     out, err = p.communicate()
     lines = out.split('\n')
     if len(lines) != 3:
-      return Globals.print(Error('Format print(ed by GIT did not meet expectations. Expected 3 lines but got ' + str(len(lines))))
+      return Globals.PrintError('Format printed by GIT did not meet expectations. Expected 3 lines but got ' + str(len(lines)))
 
     time_pieces = lines[2].split(' ')
     del time_pieces[-1];
@@ -62,8 +63,8 @@ class Installer:
     file.write('Compression=lzma\n')
     file.write('SolidCompression=yes\n')
     file.write('[CustomMessages]\n')
-    file.write('WizardImageFile=SPM.bmp\n')
-    file.write('WizardSmallImageFile=SPM.bmp\n')
+    file.write('WizardImageFile=spm.bmp\n')
+    file.write('WizardSmallImageFile=spm.bmp\n')
     file.write('[Tasks]\n')
     file.write('Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}";\n')
     file.write('Name: "quicklaunchicon"; Description: "{cm:CreateQuickLaunchIcon}"; GroupDescription: "{cm:AdditionalIcons}";\n')
@@ -71,11 +72,12 @@ class Installer:
     file.write('Source: "SPM.ico"; DestDir: "{app}"; Flags: ignoreversion\n')
     file.write('Source: "run SPM.lnk"; DestDir: "{app}"; Flags: ignoreversion\n')  
     file.write('Source: "SPM\\spm.exe"; DestDir: "{app}"; Flags: ignoreversion\n')
-    file.write('Source: "SPM\\Manual.pdf"; DestDir: "{app}"; Flags: ignoreversion\n')
+    file.write('Source: "SPM\\SPM.pdf"; DestDir: "{app}"; Flags: ignoreversion\n')
     file.write('Source: "SPM\\R-Libraries\\*"; DestDir: "{app}\R-Libraries"; Flags: replacesameversion recursesubdirs\n')
     file.write('Source: "SPM\\Examples\\*"; DestDir: "{app}\Examples"; Flags: replacesameversion recursesubdirs\n')
     file.write('Source: "SPM\\README.txt"; DestDir: "{app}"; Flags: ignoreversion\n')
-    file.write('Source: "SPM\\SPM2.syn"; DestDir: "{app}"; Flags: ignoreversion\n') 
+    file.write('Source: "SPM\\SPM.syn"; DestDir: "{app}"; Flags: ignoreversion\n') 
+    file.write('Source: "SPM\\TextPad_syntax_highlighter.readme"; DestDir: "{app}"; Flags: ignoreversion\n')            
     file.write('[Registry]\n')
     file.write('Root: HKLM; Subkey: "SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Environment"; ValueType: expandsz; ValueName: "Path"; ValueData: "{olddata};{app}"; \\\n')
     file.write('     Check: NeedsAddPath(\'{app}\')\n')
@@ -86,7 +88,8 @@ class Installer:
     file.write('[Icons]\n')
     file.write('Name: "{group}\\run SPM"; Filename: "{app}\\run SPM.lnk"; WorkingDir: {app}; Tasks:quicklaunchicon\n')
     file.write('Name: "{group}\\Readme"; Filename: "{app}\README.txt"; WorkingDir: {app}\n')
-    file.write('Name: "{group}\\SPM user manual"; Filename: "{app}\Manual.pdf"; WorkingDir: {app}\n')
+    file.write('Name: "{group}\\SPM user manual"; Filename: "{app}\SPM.pdf"; WorkingDir: {app}\n')
+    file.write('Name: "{group}\\Getting started guide"; Filename: "{app}\GettingStartedGuide.pdf"; WorkingDir: {app}\n')
     file.write('Name: "{group}\\Uninstall SPM"; Filename: "{uninstallexe}"\n')
     file.write('Name: "{commondesktop}\\run SPM"; Filename: "{app}\\run SPM.lnk"; WorkingDir: "{app}"; Tasks: desktopicon\n')
     file.write('[Code]\n')    
@@ -97,7 +100,7 @@ class Installer:
     file.write('  sUnInstallString: String;\n') 
     file.write('begin \n') 
     file.write('  Result := \'\';\n') 
-    file.write('  sUnInstPath := ExpandConstant(\'Software\Microsoft\\Windows\\CurrentVersion\\Uninstall\\{#emit SetupSetting(\"AppId\")}_is1\'); \n') 
+    file.write("  sUnInstPath := ExpandConstant(\"Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\{#emit SetupSetting(\"AppId\")}_is1\"); \n") 
     file.write('  sUnInstallString := \'\';\n') 
     file.write('  if not RegQueryStringValue(HKLM, sUnInstPath, \'UninstallString\', sUnInstallString) then \n') 
     file.write('    RegQueryStringValue(HKCU, sUnInstPath, \'UninstallString\', sUnInstallString);\n') 
@@ -116,9 +119,9 @@ class Installer:
     file.write('  sUnInstallString: string;\n') 
     file.write('begin\n') 
     file.write('  Result := True; // in case when no previous version is found\n') 
-    #file.write('  if RegValueExists(HKEY_LOCAL_MACHINE,\'Software\Microsoft\Windows\CurrentVersion\Uninstall\{#emit SetupSetting(\"AppId\")}_is1\', \'UninstallString\') then \n') 
+    file.write('  if RegValueExists(HKEY_LOCAL_MACHINE,\'Software\Microsoft\Windows\CurrentVersion\Uninstall\{#emit SetupSetting("AppId")}_is1\', \'UninstallString\') then  \n') 
     file.write('  begin \n') 
-    file.write('    V := MsgBox(ExpandConstant(\'An old version of SPM was detected. Do you want to uninstall it?\'), mbInformation, MB_YESNO); //Custom Message if App installed\n') 
+    file.write('    V := MsgBox(ExpandConstant(\'Hey! An old version of SPM was detected. Do you want to uninstall it?\'), mbInformation, MB_YESNO); //Custom Message if App installed\n') 
     file.write('    if V = IDYES then\n') 
     file.write('    begin\n') 
     file.write('      sUnInstallString := GetUninstallString();\n') 
@@ -159,3 +162,4 @@ class Installer:
     if not os.path.exists("bin\\windows\\installer"):
       os.makedirs("bin\\windows\\installer")
     os.system('"C:\\Program Files (x86)\\Inno Setup 5\\ISCC.exe" /Obin\\windows\\installer\\ config.iss')
+
