@@ -136,8 +136,8 @@ class Boost:
       del sys.modules["windows"]
       
     else:
-      if not os.path.exists(Globals.boost_source_directory_ + '/linux.py'):
-        return Globals.PrintError('Boost library ' + Globals.boost_source_directory_ + ' does not have a linux.py file.\nThis file is required to build this library on Linux')
+      if not os.path.exists(Globals.boost_directory_ + '/linux.py'):
+        return Globals.PrintError('Boost library ' + Globals.boost_directory_ + ' does not have a linux.py file.\nThis file is required to build this library on Linux')
       import linux as boost_builder
       builder = boost_builder.Builder()        
       print( "")
