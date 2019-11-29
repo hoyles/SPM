@@ -15,7 +15,7 @@ from Builder import *
 from Documentation import *
 from Archiver import *
 from UnitTests import *
-from Installer import *
+#from Installer import *
 from DebBuilder import *
 from CommandLineInterface import *
 from Version import *
