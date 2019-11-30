@@ -42,7 +42,8 @@ def start():
 	print('--> Directory: ' + Globals.root_directory_)
 
 	if not os.path.exists(Globals.build_directory_):
-		os.mkdir(Globals.root_directory_ + "/Build")
+		if not os.path.exists(Globals.root_directory_ + "/Build"):
+			os.mkdir(Globals.root_directory_ + "/Build")
 		os.mkdir(Globals.build_directory_)
 	
 	print( "--> Starting " + Globals.build_target_ + " Build")

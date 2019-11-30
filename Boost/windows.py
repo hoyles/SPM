@@ -30,10 +30,11 @@ class Builder():
     print('-- Building Boost - check spm_build.log for progress')
     folder = Globals.boost_directory_ + '/' + Globals.boost_version + '/'
     print('-- Folder: ' + folder)
+    if not os.path.exists(folder):
+        os.mkdir(folder)
     os.chdir(folder)
     os.system('bootstrap.bat gcc 1> spm_bootstrap.log 2>&1')
     os.system('b2.exe --toolset=gcc link=static runtime-link=static threading=multi -j ' + Globals.threads_ + ' 1> spm_build.log 2>&1')
-
     print('-- Completed Boost')
-    
+
     return True

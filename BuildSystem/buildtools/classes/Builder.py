@@ -79,8 +79,8 @@ class Boost:
     # Clean out any existing files if they already exist
     print('-- Cleaning Boost files in: ' + Globals.boost_directory_)
     #if os.path.exists(Globals.boost_directory_):
-      #shutil.rmtree(Globals.boost_directory_)
-      #os.mkdir(Globals.boost_directory_)
+    #  shutil.rmtree(Globals.boost_directory_)
+    #  os.mkdir(Globals.boost_directory_)
    
     print( "-- Checking if Boost folder exists: " + Globals.boost_source_directory_)
     if not os.path.exists(Globals.boost_source_directory_):
@@ -131,6 +131,13 @@ class Boost:
       if success:
         os.system('echo ' + 'boost' + Globals.boost_version + ' > ' + Globals.boost_directory_ + '.success')
         print( "")
+        print('-- Moving headers and libraries')
+        if os.path.exists(Globals.target_include_path_ + 'boost/'):
+          shutil.rmtree(Globals.target_include_path_ + 'boost/')
+        shutil.copytree('boost', Globals.target_include_path_ + 'boost/')
+        shutil.
+        shutil.copy(Globals.boost_directory_ + '/' + Globals.boost_version + '/stage/lib/', Globals.target_debug_lib_path_)
+        shutil.copy(Globals.boost_directory_ + '/' + Globals.boost_version + '/stage/lib/', Globals.target_release_lib_path_)
       else:
         return Globals.PrintError('Boost library ' + Globals.boost_directory_ + ' had an error during the build. Check log files for more information')
       del sys.modules["windows"]
@@ -146,6 +153,11 @@ class Boost:
       if success:
         os.system('echo ' + 'boost' + Globals.boost_version + ' > ' + Globals.boost_directory_ + '.success')
         print( "")
+        if os.path.exists(Globals.target_include_path_ + 'boost/'):
+          shutil.rmtree(Globals.target_include_path_ + 'boost/')
+        shutil.copytree('boost', Globals.target_include_path_ + 'boost/')
+        shutil.copy(Globals.boost_directory_ + '/' + Globals.boost_version + '/stage/lib/', Globals.target_debug_lib_path_)
+        shutil.copy(Globals.boost_directory_ + '/' + Globals.boost_version + '/stage/lib/', Globals.target_release_lib_path_)
       else:
         return Globals.PrintError('Boost library ' + Globals.boost_directory_ + ' had an error during the build. Check log files for more information')
       del sys.modules["linux"]
@@ -161,7 +173,7 @@ class Boost:
 """
 This class is responsible for cleaning the build folders
 """   
-class Clean:    
+class Cleaner:    
   def clean(self):
     print( '--> Starting clean of SPM build files')
     if (os.path.exists(Globals.build_directory_)):
