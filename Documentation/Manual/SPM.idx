@@ -410,29 +410,29 @@
 \indexentry{Examples|hyperpage}{157}
 \indexentry{Examples ! Example 1|hyperpage}{157}
 \indexentry{Examples ! A simple non-spatial model|hyperpage}{157}
-\indexentry{Examples ! Example 2|hyperpage}{161}
-\indexentry{Examples ! A $10 \times 6$ spatial model|hyperpage}{161}
-\indexentry{Command ! model|hyperpage}{171}
-\indexentry{Command ! initialisation\_phase|hyperpage}{171}
-\indexentry{Command ! time\_step|hyperpage}{171}
-\indexentry{Command ! process|hyperpage}{171}
-\indexentry{Command ! preference\_function|hyperpage}{175}
-\indexentry{Command ! pdf|hyperpage}{177}
-\indexentry{Command ! layer|hyperpage}{178}
-\indexentry{Command ! derived\_quantity\_by\_cell|hyperpage}{179}
-\indexentry{Command ! derived\_quantity|hyperpage}{180}
-\indexentry{Command ! age\_size|hyperpage}{180}
-\indexentry{Command ! size\_weight|hyperpage}{180}
-\indexentry{Command ! selectivity|hyperpage}{181}
-\indexentry{Command ! estimation|hyperpage}{182}
-\indexentry{Command ! minimiser|hyperpage}{182}
-\indexentry{Command ! mcmc|hyperpage}{183}
-\indexentry{Command ! profile|hyperpage}{183}
-\indexentry{Command ! estimate|hyperpage}{183}
-\indexentry{Command ! catchability|hyperpage}{184}
-\indexentry{Command ! penalty|hyperpage}{184}
-\indexentry{Command ! observation|hyperpage}{184}
-\indexentry{Command ! ageing\_error|hyperpage}{186}
-\indexentry{Command ! report|hyperpage}{187}
-\indexentry{Command ! include|hyperpage}{190}
-\indexentry{Include an external file|hyperpage}{190}
+\indexentry{Examples ! Example 2|hyperpage}{160}
+\indexentry{Examples ! A $10 \times 6$ spatial model|hyperpage}{160}
+\indexentry{Command ! model|hyperpage}{173}
+\indexentry{Command ! initialisation\_phase|hyperpage}{173}
+\indexentry{Command ! time\_step|hyperpage}{173}
+\indexentry{Command ! process|hyperpage}{173}
+\indexentry{Command ! preference\_function|hyperpage}{177}
+\indexentry{Command ! pdf|hyperpage}{179}
+\indexentry{Command ! layer|hyperpage}{180}
+\indexentry{Command ! derived\_quantity\_by\_cell|hyperpage}{181}
+\indexentry{Command ! derived\_quantity|hyperpage}{182}
+\indexentry{Command ! age\_size|hyperpage}{182}
+\indexentry{Command ! size\_weight|hyperpage}{182}
+\indexentry{Command ! selectivity|hyperpage}{183}
+\indexentry{Command ! estimation|hyperpage}{184}
+\indexentry{Command ! minimiser|hyperpage}{184}
+\indexentry{Command ! mcmc|hyperpage}{185}
+\indexentry{Command ! profile|hyperpage}{185}
+\indexentry{Command ! estimate|hyperpage}{185}
+\indexentry{Command ! catchability|hyperpage}{186}
+\indexentry{Command ! penalty|hyperpage}{186}
+\indexentry{Command ! observation|hyperpage}{186}
+\indexentry{Command ! ageing\_error|hyperpage}{188}
+\indexentry{Command ! report|hyperpage}{189}
+\indexentry{Command ! include|hyperpage}{192}
+\indexentry{Include an external file|hyperpage}{192}

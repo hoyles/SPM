@@ -1,9 +1,9 @@
 SPM (Spatial Population Model)
 Call: spm -e -q -g 0 -o MPD.dat 
-Date: Sun Aug 19 09:25:02 2018
-v1.1-2018-05-31 (rev. 1291). Copyright (c) 2008-2018, NIWA
-User name: Admin
-Machine name: DELL9070 (Windows_NT, PID=8548)
+Date: Sat Nov 30 13:23:27 2019
+v1.1-2019-11-30 (rev. 2019-11-30 00:04:56 UTC). Copyright (c) 2008-2019, NIWA
+User name: alist
+Machine name: HP1040 (Windows_NT, PID=10040)
 
 [initialisation-phase1]
 report.type: initialisation

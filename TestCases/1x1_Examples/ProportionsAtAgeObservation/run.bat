@@ -1,1 +1,1 @@
-..\..\..\SPM.exe -r -d > Expected.txt
+..\..\..\Build\windows\spm -r -d > Expected.txt

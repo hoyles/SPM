@@ -1,1 +1,5 @@
 /Build
+__pycache__
+*.bak
+*.pyc
+Setup_SPM.exe

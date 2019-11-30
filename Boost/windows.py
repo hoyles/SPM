@@ -22,7 +22,7 @@ class Builder():
     if os.path.exists(boostFileName + '_windows.zip'):
         os.chdir(Globals.target_success_path_)
         print('-- Decompressing Boost: ' + boostFileName + '_windows.zip 1> spm_unzip.log 2>&1')
-        #os.system('unzip ' + boostFileName + '_windows.zip 1> spm_unzip.log 2>&1') 
+        os.system('unzip ' + boostFileName + '_windows.zip 1> spm_unzip.log 2>&1') 
     else:
         return Globals.PrintError('Unable to Decompress ' + boostFileName + '_windows.zip')
     

@@ -17,7 +17,7 @@ SET(OPTI_NAME spm)
 
 IF (WIN32)
   INCLUDE_DIRECTORIES("${CMAKE_BINARY_DIR}/Boost/include/")
-  LINK_DIRECTORIES("${CMAKE_BINARY_DIR}/Boost/stage/lib")
+  LINK_DIRECTORIES("${CMAKE_BINARY_DIR}/Boost/lib")
   
   # Generic Build Settings
   SET(LINK_OPTIONS "-static icon.o")

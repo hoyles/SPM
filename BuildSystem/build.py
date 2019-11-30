@@ -78,6 +78,9 @@ def start():
 	elif build_target == "deb":
 		deb_builder = DebBuilder()
 		return deb_builder.start(build_parameters)
+	elif build_target == "version":
+		version = Version()
+		return version.create_version_header()
 	return False # Default return from this, we didn't find a run mode
   
 """

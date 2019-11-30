@@ -78,9 +78,9 @@ class Boost:
   
     # Clean out any existing files if they already exist
     print('-- Cleaning Boost files in: ' + Globals.boost_directory_)
-    #if os.path.exists(Globals.boost_directory_):
-    #  shutil.rmtree(Globals.boost_directory_)
-    #  os.mkdir(Globals.boost_directory_)
+    if os.path.exists(Globals.boost_directory_):
+      shutil.rmtree(Globals.boost_directory_)
+      os.mkdir(Globals.boost_directory_)
    
     print( "-- Checking if Boost folder exists: " + Globals.boost_source_directory_)
     if not os.path.exists(Globals.boost_source_directory_):
@@ -113,8 +113,8 @@ class Boost:
       
     Globals.target_success_path_      = Globals.boost_directory_ + '/'
     Globals.target_include_path_      = Globals.boost_directory_ + '/include/'
-    Globals.target_debug_lib_path_    = Globals.boost_directory_ + '/lib/debug/'
-    Globals.target_release_lib_path_  = Globals.boost_directory_ + '/lib/release/'
+    Globals.target_debug_lib_path_    = Globals.boost_directory_ + '/lib/'
+    Globals.target_release_lib_path_  = Globals.boost_directory_ + '/lib/'
    
     os.chdir(Globals.boost_source_directory_)
     sys.path.append(os.path.normpath(os.getcwd()))
@@ -135,9 +135,9 @@ class Boost:
         if os.path.exists(Globals.target_include_path_ + 'boost/'):
           shutil.rmtree(Globals.target_include_path_ + 'boost/')
         shutil.copytree('boost', Globals.target_include_path_ + 'boost/')
-        shutil.
-        shutil.copy(Globals.boost_directory_ + '/' + Globals.boost_version + '/stage/lib/', Globals.target_debug_lib_path_)
-        shutil.copy(Globals.boost_directory_ + '/' + Globals.boost_version + '/stage/lib/', Globals.target_release_lib_path_)
+        print(Globals.boost_directory_ + '/' + Globals.boost_version + '/stage/lib/')
+        os.system("cp -f " + Globals.boost_directory_ + '/' + Globals.boost_version + '/stage/lib/*-mt-s-* ' + Globals.boost_directory_ + '\lib')
+        os.system("cp -f " + Globals.boost_directory_ + '/' + Globals.boost_version + '/stage/lib/*-mt-sd-* ' + Globals.boost_directory_ + '\lib')
       else:
         return Globals.PrintError('Boost library ' + Globals.boost_directory_ + ' had an error during the build. Check log files for more information')
       del sys.modules["windows"]

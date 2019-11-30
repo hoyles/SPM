@@ -1,1 +1,1 @@
-..\..\spm -e -q -d > estimate.log
+..\..\..\Build\windows\spm -e -q -d > estimate.log

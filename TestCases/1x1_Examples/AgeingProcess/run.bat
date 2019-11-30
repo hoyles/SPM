@@ -1,2 +1,2 @@
-..\..\..\Debug\SPM.exe -r
+..\..\..\Build\windows\spm -r
 pause

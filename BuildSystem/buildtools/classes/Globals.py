@@ -34,7 +34,7 @@ threads_          = "8"
 boost_version     = 'boost_1_58_0'
 
 allowed_build_targets_ = [ "release", "documentation", "boost", "archive", "clean", 
-                           "check", "unittests", "installer", "deb", "rlibrary"]
+                           "check", "unittests", "installer", "deb", "rlibrary", "version"]
 
 EX_OK = getattr(os, "EX_OK", 0)
 
