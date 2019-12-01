@@ -44,7 +44,10 @@ class Release:
     os.chdir(Globals.build_directory_);
     
     print( '--> Preparing CMake command')
-    build_string = Globals.buildtools_directory_ + '/buildtools/windows/cmake/bin/cmake ' + self.cmake_compiler_ + ' -S ' + Globals.root_directory_ + '/BuildSystem/' + ' -B ' + Globals.build_directory_
+    if Globals.operating_system_ == "windows":
+      build_string = Globals.buildtools_directory_ + '/buildtools/windows/cmake/bin/cmake ' + self.cmake_compiler_ + ' -S ' + Globals.root_directory_ + '/BuildSystem/' + ' -B ' + Globals.build_directory_
+    else:
+      build_string = 'cmake ' + self.cmake_compiler_ + ' ' + Globals.root_directory_ + '/BuildSystem'
     print( "--> CMake command: " + build_string)
     if os.system(build_string) != EX_OK:
       return Globals.PrintError("Failed to execute cmake successfully to rebuild the make files")
@@ -54,6 +57,7 @@ class Release:
       if os.system("mingw32-make -j " + Globals.threads_) != EX_OK:
         return Globals.PrintError("Failed to build code base. Please see above for build error")
     else:
+      os.chdir(Globals.build_directory_)
       if os.system("make -j " + Globals.threads_) != EX_OK:
         return Globals.PrintError("Failed to build code base. Please see above for build error")
 
@@ -155,9 +159,8 @@ class Boost:
         print( "")
         if os.path.exists(Globals.target_include_path_ + 'boost/'):
           shutil.rmtree(Globals.target_include_path_ + 'boost/')
-        shutil.copytree('boost', Globals.target_include_path_ + 'boost/')
-        shutil.copy(Globals.boost_directory_ + '/' + Globals.boost_version + '/stage/lib/', Globals.target_debug_lib_path_)
-        shutil.copy(Globals.boost_directory_ + '/' + Globals.boost_version + '/stage/lib/', Globals.target_release_lib_path_)
+        #print(Globals.boost_directory_ + '/' + Globals.boost_version + '/stage/lib/')
+        os.system("cp -f " + Globals.boost_directory_ + '/' + Globals.boost_version + '/stage/lib/* ' + Globals.boost_directory_ + '/lib')
       else:
         return Globals.PrintError('Boost library ' + Globals.boost_directory_ + ' had an error during the build. Check log files for more information')
       del sys.modules["linux"]
