@@ -24,7 +24,7 @@ If the \subcommand{proportion\_method} \texttt{= difference}, then the observati
 
 \subsection{\I{Proportions-at-age observations}}
 
-Proportions-at-age observations are observations of either the relative number of individuals at age or relative biomass at age, via some selectivity. 
+Proportions-at-age observations are observations of either the relative number of individuals at age, via some selectivity. 
 
 The observation is supplied for a given year and time-step, for some selected age classes of the population (i.e., for a range of ages multiplied by a selectivity), for categories aggregated over a set of spatial cells. Note that the categories defined in the observations must have an associated selectivity, defined by \subcommand{selectivities}.
 
@@ -231,7 +231,7 @@ and the $c_i$'s are the c.v.s for each age class $i$, and $Z \left(\theta,\delta
 The default value of $\delta$ is $1 \times 10^{-11}$.
 
 \subsection{\I{Proportions-by-category observations}\label{sec:proportions-by-category}}
-Proportions-by-category observations are observations of either the relative number of individuals between categories within age classes, or relative biomass between categories within age classes. 
+Proportions-by-category observations are observations of either the relative number of individuals between categories within age classes, via some selectivity. 
 
 The observation is supplied for a given year and time-step, for some selected age classes of the population (i.e., for a range of ages multiplied by a selectivity), for categories aggregated over a set of spatial cells. 
 
@@ -340,11 +340,11 @@ The default value of $\delta$ is $1 \times 10^{-11}$.
 
 \subsection{\I{Proportions-at-length observations}}
 
-Proportions-at-length observations are observations of either the relative number of individuals at age or relative biomass in length bins, via some selectivity. 
+Proportions-at-length observations are observations of either the relative number of individuals within a length bin, via some selectivity. 
 
 The observation is supplied for a given year and time-step, for some defined length bins of the population, for categories aggregated over a set of spatial cells. Note that the categories defined in the observations must have an associated selectivity, defined by \subcommand{selectivities}.
 
-The length bins must be defined in the observation. There is no option for a plus (or a minus group), but these can be specified by using a length bin with a suitable high (or low) length. 
+The length bins must be defined in the observation. There is no option for a plus (or a minus group), but these can be specified by using a length bin with a suitably high (or low) length. 
 
 Proportions-at-length observations can be supplied as; 
 \begin{enumerate}

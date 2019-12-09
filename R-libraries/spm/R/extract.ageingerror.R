@@ -11,7 +11,7 @@ function(lines){
   res<-list()
   res$label<-substring(lines[index.start],2,nchar(lines[index.start])-1)
   res$report.type<-substring(lines[index.start+1],14)
-  res$type<-substring(lines[index.start+2],21)
+  res$type<-substring(lines[index.start+2],7)
   col.labs<-spm.string.to.vector.of.words(lines[3+index.start])[-1]
   col.labs[1]<-substring(col.labs[1],regexpr(":",col.labs[1])+2)
   values<-spm.string.to.vector.of.words(lines[(4+index.start):(index.end-1)])

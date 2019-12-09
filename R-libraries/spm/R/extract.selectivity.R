@@ -11,7 +11,7 @@ function(lines){
   res<-list()
   res$label<-substring(lines[index.start],2,nchar(lines[index.start])-1)
   res$report.type<-substring(lines[index.start+1],14)
-  res$selectivity.label<-substring(lines[index.start+2],20)
+  res$label<-substring(lines[index.start+2],8)
   data<-spm.string.to.vector.of.words(lines[(index.start+3):(index.end-1)])
   data<-matrix(data,ncol=2,byrow=FALSE)
   data<-data.frame("ages"=as.numeric(data[-1,1]),"values"=as.numeric(data[-1,2]))

@@ -101,8 +101,8 @@ void CObservationReport::execute() {
     pObservation->fillComparisons(vComparisons);
 
     if (pProportionsAtAge != 0) {
-      cout << PARAM_TYPE << CONFIG_RATIO_SEPARATOR << " " << pProportionsAtAge->getType()  << "\n";
       cout << PARAM_LABEL << CONFIG_RATIO_SEPARATOR << " " << pProportionsAtAge->getLabel()  << "\n";
+      cout << PARAM_TYPE << CONFIG_RATIO_SEPARATOR << " " << pProportionsAtAge->getType()  << "\n";
       cout << PARAM_YEAR << CONFIG_RATIO_SEPARATOR << " " << pProportionsAtAge->getYear()  << "\n";
       cout << PARAM_TIME_STEP << CONFIG_RATIO_SEPARATOR << " " << pProportionsAtAge->getTimeStepString()  << "\n";
       cout << PARAM_MIN_AGE << CONFIG_RATIO_SEPARATOR << " " << pProportionsAtAge->getMinAge()  << "\n";
@@ -114,8 +114,8 @@ void CObservationReport::execute() {
            << "errorvalue" << CONFIG_SPACE_SEPARATOR << "processerror" << CONFIG_SPACE_SEPARATOR
            << "totalerror" << CONFIG_SPACE_SEPARATOR << "score\n";
     } else if (pProportionsByCategory != 0) {
-      cout << PARAM_TYPE << CONFIG_RATIO_SEPARATOR << " " << pProportionsByCategory->getType()  << "\n";
       cout << PARAM_LABEL << CONFIG_RATIO_SEPARATOR << " " << pProportionsByCategory->getLabel()  << "\n";
+      cout << PARAM_TYPE << CONFIG_RATIO_SEPARATOR << " " << pProportionsByCategory->getType()  << "\n";
       cout << PARAM_YEAR << CONFIG_RATIO_SEPARATOR << " " << pProportionsByCategory->getYear()  << "\n";
       cout << PARAM_TIME_STEP << CONFIG_RATIO_SEPARATOR << " " << pProportionsByCategory->getTimeStepString()  << "\n";
       cout << PARAM_MIN_AGE << CONFIG_RATIO_SEPARATOR << " " << pProportionsByCategory->getMinAge()  << "\n";
@@ -127,8 +127,8 @@ void CObservationReport::execute() {
            << "processerror" << CONFIG_SPACE_SEPARATOR << "totalerror" << CONFIG_SPACE_SEPARATOR
            << "score\n";
     } else if (pProportionsAtLength != 0) {
-      cout << PARAM_TYPE << CONFIG_RATIO_SEPARATOR << " " << pProportionsAtLength->getType()  << "\n";
       cout << PARAM_LABEL << CONFIG_RATIO_SEPARATOR << " " << pProportionsAtLength->getLabel()  << "\n";
+      cout << PARAM_TYPE << CONFIG_RATIO_SEPARATOR << " " << pProportionsAtLength->getType()  << "\n";
       cout << PARAM_YEAR << CONFIG_RATIO_SEPARATOR << " " << pProportionsAtLength->getYear()  << "\n";
       cout << PARAM_TIME_STEP << CONFIG_RATIO_SEPARATOR << " " << pProportionsAtLength->getTimeStepString()  << "\n";
       int iNBins = pProportionsAtLength->getNBins();
@@ -144,8 +144,8 @@ void CObservationReport::execute() {
            << "processerror" << CONFIG_SPACE_SEPARATOR << "totalerror" << CONFIG_SPACE_SEPARATOR
            << "score\n";
     } else if (pAbundance !=0 ) {
-      cout << PARAM_TYPE << CONFIG_RATIO_SEPARATOR << " " << pAbundance->getType()  << "\n";
       cout << PARAM_LABEL << CONFIG_RATIO_SEPARATOR << " " << pAbundance->getLabel()  << "\n";
+      cout << PARAM_TYPE << CONFIG_RATIO_SEPARATOR << " " << pAbundance->getType()  << "\n";
       cout << PARAM_YEAR << CONFIG_RATIO_SEPARATOR << " " << pAbundance->getYear()  << "\n";
       cout << PARAM_TIME_STEP << CONFIG_RATIO_SEPARATOR << " " << pAbundance->getTimeStepString()  << "\n";
       cout << PARAM_CATCHABILITY << CONFIG_RATIO_SEPARATOR << " " << pAbundance->getCatchability()  << "\n";
@@ -154,8 +154,8 @@ void CObservationReport::execute() {
            << "errorvalue" << CONFIG_SPACE_SEPARATOR << "processerror" << CONFIG_SPACE_SEPARATOR
            << "totalerror" << CONFIG_SPACE_SEPARATOR << "score\n";
     } else if (pBiomass !=0 ) {
-      cout << PARAM_TYPE << CONFIG_RATIO_SEPARATOR << " " << pBiomass->getType()  << "\n";
       cout << PARAM_LABEL << CONFIG_RATIO_SEPARATOR << " " << pBiomass->getLabel()  << "\n";
+      cout << PARAM_TYPE << CONFIG_RATIO_SEPARATOR << " " << pBiomass->getType()  << "\n";
       cout << PARAM_YEAR << CONFIG_RATIO_SEPARATOR << " " << pBiomass->getYear()  << "\n";
       cout << PARAM_TIME_STEP << CONFIG_RATIO_SEPARATOR << " " << pBiomass->getTimeStepString()  << "\n";
       cout << PARAM_CATCHABILITY << CONFIG_RATIO_SEPARATOR << " " << pBiomass->getCatchability()  << "\n";
@@ -164,8 +164,8 @@ void CObservationReport::execute() {
            << "errorvalue" << CONFIG_SPACE_SEPARATOR << "processerror" << CONFIG_SPACE_SEPARATOR
            << "totalerror" << CONFIG_SPACE_SEPARATOR << "score\n";
     } else if (pPresence !=0 ) {		
-      cout << PARAM_TYPE << CONFIG_RATIO_SEPARATOR << " " << pPresence->getType()  << "\n";
       cout << PARAM_LABEL << CONFIG_RATIO_SEPARATOR << " " << pPresence->getLabel()  << "\n";
+      cout << PARAM_TYPE << CONFIG_RATIO_SEPARATOR << " " << pPresence->getType()  << "\n";
       cout << PARAM_YEAR << CONFIG_RATIO_SEPARATOR << " " << pPresence->getYear()  << "\n";
       cout << PARAM_TIME_STEP << CONFIG_RATIO_SEPARATOR << " " << pPresence->getTimeStepString()  << "\n";
       cout << PARAM_CATCHABILITY << CONFIG_RATIO_SEPARATOR << " " << pPresence->getCatchability()  << "\n";

@@ -10,7 +10,7 @@ function(lines){
   if(index.start >= index.end) stop("Error")
   res<-list()
   res$report.type<-substring(lines[index.start+1],14)
-  res$label<-substring(lines[index.start+2],17)
+  res$label<-substring(lines[index.start+2],8)
   ages<-spm.string.to.vector.of.numbers(substring(lines[index.start+3],regexpr(":",lines[index.start+3])+1))
   weights<-spm.string.to.vector.of.numbers(substring(lines[index.start+4],regexpr(":",lines[index.start+4])+1))
   res$data<-list("ages"=ages,"weights"=weights)
