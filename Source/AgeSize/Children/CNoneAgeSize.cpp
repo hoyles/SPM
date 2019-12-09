@@ -85,6 +85,24 @@ void CNoneAgeSize::rebuild() {
   }
 }
 
+//**********************************************************************
+// double getProportionInLengthBin(double &age, double &LowerBin, double&UpperBin);
+// Get the proportion within the length bin
+//**********************************************************************
+double CNoneAgeSize::getProportionInLengthBin(double &age, double &LowerBin, double&UpperBin) {
+  try {
+
+    if (LowerBin < 1.0 && 1.0 <= UpperBin) {
+      return(1.0);
+	} else {
+      return(0.0);
+	}
+
+  } catch (string &Ex) {
+    Ex = "CNoneAgeSize.getProportionInLengthBin(" + getLabel() + ")->" + Ex;
+    throw Ex;
+  }
+}
 
 //**********************************************************************
 // CNoneAgeSize::~CNoneAgeSize()

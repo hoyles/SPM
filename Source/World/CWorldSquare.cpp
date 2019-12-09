@@ -247,7 +247,7 @@ double CWorldSquare::getAbundanceInCategoryForAge(int AgeIndex, int CategoryInde
 
 #ifndef OPTIMIZE
   } catch (string &Ex) {
-    Ex = "CWorldSquare.getAbundanceForAge()->" + Ex;
+    Ex = "CWorldSquare.getAbundanceInCategoryForAge()->" + Ex;
     throw Ex;
   }
 #endif

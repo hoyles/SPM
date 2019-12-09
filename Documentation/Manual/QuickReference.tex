@@ -316,6 +316,9 @@
 \defSub{linf} {Define the $L_\infty$ parameter of the von Bertalanffy relationship}
 \defSub{k} {Define the $k$ parameter of the von Bertalanffy relationship}
 \defSub{t0} {Define the $t_0$ parameter of the von Bertalanffy relationship}
+\defSub{distribution} {Define the distribution of sizes-at-age around the mean}
+\defSub{by\_length} {Specifies if the linear interpolation of c.v.s is a linear function of mean size or of age}
+\defSub{cv} {Define the c.v. of the distribution of sizes-at-age around the mean}
 \defSub{size\_weight} {Define the label of the associated size-weight relationship}
 \par\textbf{\commandlabsubarg{age\_size}{type}{schnute}}\par
 \defSub{y1} {Define the $y_1$ parameter of the Schnute relationship}
@@ -324,6 +327,9 @@
 \defSub{tau2} {Define the $\tau_2$ parameter of the Schnute relationship}
 \defSub{a} {Define the $a$ parameter of the Schnute relationship}
 \defSub{b} {Define the $b$ parameter of the Schnute relationship}
+\defSub{distribution} {Define the distribution of sizes-at-age around the mean}
+\defSub{by\_length} {Specifies if the linear interpolation of c.v.s is a linear function of mean size or of age}
+\defSub{cv} {Define the c.v. of the distribution of sizes-at-age around the mean}
 \defSub{size\_weight} {Define the label of the associated size-weight relationship}
 \par\defComLab{size\_weight} {Define a size-weight relationship with label}\par
 \defSub{type} {Define the type of relationship}
@@ -482,6 +488,22 @@
 \defSub{ageing\_error} {Define the label of the ageing-error matrix to be applied}
 \defSub{layer} {Name of the categorical layer used to group the spacial cells for the observation}
 \defSub{obs [label]}{Define the following data as observations for the categorical layer with value \argument{[label]}}
+\defSub{error\_value [label]}{Define the following data as error values (e.g., $N$ for multinomial likelihoods, c.v. for lognormal likelihoods, etc.) for the categorical layer with value \texttt{[label]}}
+\defSub{likelihood}{Define the likelihood for the observation}
+\defSub{delta}{Define the delta robustifying constant for the likelihood}
+\defSub{process\_error}{Define the process error term}
+\defSub{simulation\_likelihood}{Define the likelihood when doing simulations, if the observations is a pseudo-observation}
+\par\textbf{\commandlabsubarg{observation}{type}{proportions\_at\_length}}\par
+\defSub{year} {Define the year that the observation applies to}
+\defSub{time\_step} {Define the time-step that the observation applies to}
+\defSub{proportion\_method} {Define the method for interpolating the time-step for calculating the expected value of the observation}
+\defSub{proportion\_time\_step} {Define the interpolated proportion through the time-step for calculating the expected value of the observation}
+\defSub{categories} {Define the categories}
+\defSub{selectivities} {Define the selectivities applied to each category}
+\defSub{length\_bins} {Define the length bins for the observation}
+\defSub{layer} {Name of the categorical layer used to group the spatial cells for the observation}
+\defSub{obs [label]}{Define the following data as observations for the categorical layer with value \texttt{[label]}}
+\defSub{tolerance}{Define the tolerance on the sum-to-one error check in \SPM}
 \defSub{error\_value [label]}{Define the following data as error values (e.g., $N$ for multinomial likelihoods, c.v. for lognormal likelihoods, etc.) for the categorical layer with value \texttt{[label]}}
 \defSub{likelihood}{Define the likelihood for the observation}
 \defSub{delta}{Define the delta robustifying constant for the likelihood}

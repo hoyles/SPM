@@ -58,6 +58,7 @@ public:
   static void           errorSumGreaterThanEqualTo(string val1, string val2, string less);
   static void           errorSumGreaterThan(string val1, string val2, string less);
   static void           errorInvalidCharacter(string val1, string val2);
+  static void           errorNotIncreasing(string val1);
 // Functions
   CError() { }
   virtual ~CError() { }

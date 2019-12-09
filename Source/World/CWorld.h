@@ -71,6 +71,7 @@ public:
   string                    getCategoryNameForIndex(int Index);
   int                       getColIndexForAge(int Age);
   double                    getMeanWeight(int AgeIndex, int iCategoryIndex);
+  vector<double>            getLengthFrequency(int AgeIndex, int CategoryIndex, vector<double> &LengthBins);
   void                      mergeDifferenceGrid();
   void                      zeroGrid();
   void                      debugToScreen();

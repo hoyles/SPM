@@ -250,6 +250,15 @@ void CBiomassObservation::execute() {
 }
 
 //**********************************************************************
+// CBiomassObservation::getCatchability()
+// Get catchabilty
+//**********************************************************************
+double CBiomassObservation::getCatchability() {
+  double Q = pCatchability->getQ();
+  return(Q);
+}
+
+//**********************************************************************
 // CBiomassObservation::~CBiomassObservation()
 // Default De-Constructor
 //**********************************************************************

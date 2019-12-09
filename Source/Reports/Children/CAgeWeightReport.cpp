@@ -87,7 +87,7 @@ void CAgeWeightReport::execute() {
     // Output Header
     cout << CONFIG_ARRAY_START << sLabel << CONFIG_ARRAY_END << "\n";
     cout << PARAM_REPORT << "." << PARAM_TYPE << CONFIG_RATIO_SEPARATOR << " " << pParameterList->getString(PARAM_TYPE) << "\n";
-    cout << PARAM_AGE_SIZE << "." << PARAM_LABEL << CONFIG_RATIO_SEPARATOR << " " << sAgeSize << "\n";
+    cout << PARAM_LABEL << CONFIG_RATIO_SEPARATOR << " " << sAgeSize << "\n";
 
     // Output list of ages
     cout << PARAM_AGES << CONFIG_RATIO_SEPARATOR << " ";

@@ -86,13 +86,13 @@ void CDerivedQuantityByCellReport::execute() {
     // Output Header
     cout << CONFIG_ARRAY_START << sLabel << CONFIG_ARRAY_END << "\n";
     cout << PARAM_REPORT << "." << PARAM_TYPE << CONFIG_RATIO_SEPARATOR << " " << pParameterList->getString(PARAM_TYPE) << "\n";
-    cout << PARAM_DERIVED_QUANTITY_BY_CELL << "." << PARAM_LABEL << CONFIG_RATIO_SEPARATOR << " " << sDerivedQuantityByCell << "\n";
+    cout << PARAM_LABEL << CONFIG_RATIO_SEPARATOR << " " << sDerivedQuantityByCell << "\n";
     if(bPrintInitialisation) {
       // Output initialisation values
       for (int i=0; i < pDerivedQuantityByCell->getInitialisationSize(); ++i) {
         for (int j=0; j < pDerivedQuantityByCell->getInitialisationValuesSize(i); ++j) {
           vector<vector<double> > vvDerivedQuantityByCell = pDerivedQuantityByCell->getInitialisationValue(i, j);
-          cout << PARAM_INITIALIZATION << "." << PARAM_INITIALIZATION_PHASE << CONFIG_ARRAY_START << boost::lexical_cast<string>(i+1) << CONFIG_ARRAY_END << CONFIG_RATIO_SEPARATOR << " " ;
+          cout << PARAM_INITIALIZATION_PHASE << CONFIG_ARRAY_START << boost::lexical_cast<string>(i+1) << CONFIG_ARRAY_END << CONFIG_RATIO_SEPARATOR << " " ;
           cout << PARAM_YEAR << "=" << j+1 << "\n";
           for (int k = 0; k < pDerivedQuantityByCell->getHeight(); ++k) {
             for (int l = 0; l < pDerivedQuantityByCell->getWidth(); ++l) {

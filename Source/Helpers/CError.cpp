@@ -258,3 +258,12 @@ void CError::errorInvalidCharacter(string val1, string val2) {
   string sException = ERROR_INVALID_CHAR + string("'") + val1 + string("' in ") + val2 ;
   throw sException;
 }
+
+//**********************************************************************
+// void CError::errorNotIncreasing(string val1)
+// A is not increasing 
+//**********************************************************************
+void CError::errorNotIncreasing(string val1) {
+  string sException = ERROR_INVALID_CHAR + string("'") + val1 + string("' is not monotonically increasing when compared to the next value") ;
+  throw sException;
+}

@@ -1,8 +1,8 @@
 //============================================================================
-// Name        : CProportionsAtAgeObservation.cpp
-// Author      : S.Rasmussen
-// Date        : 17/02/2008
-// Copyright   : Copyright NIWA Science ©2008 - www.niwa.co.nz
+// Name        : CProportionsAtLengthObservation.cpp
+// Author      : A. Dunn
+// Date        : 02/12/2019
+// Copyright   : 
 // Description :
 // $Date$
 //============================================================================
@@ -12,70 +12,60 @@
 #include <boost/lexical_cast.hpp>
 
 // Local Headers
-#include "CProportionsAtAgeObservation.h"
-#include "../../AgeingError/CAgeingError.h"
-#include "../../AgeingError/CAgeingErrorManager.h"
+#include "CProportionsAtLengthObservation.h"
 #include "../../Helpers/CComparer.h"
 #include "../../Helpers/CConvertor.h"
 #include "../../Helpers/CCompoundCategories.h"
 #include "../../Helpers/CError.h"
 #include "../../Helpers/CMath.h"
 #include "../../Selectivities/CSelectivity.h"
+#include "../../AgeSize/CAgeSizeManager.h"
 
 // Using
 using std::cout;
 using std::endl;
 
 //**********************************************************************
-// CProportionsAtAgeObservation::CProportionsAtAgeObservation()
+// CProportionsAtLengthObservation::CProportionsAtLengthObservation()
 // Default Constructor
 //**********************************************************************
-CProportionsAtAgeObservation::CProportionsAtAgeObservation() {
+CProportionsAtLengthObservation::CProportionsAtLengthObservation() {
 
   // Default Values
-  pAgeResults         = 0;
-  iMinAge             = -1;
-  iMaxAge             = -1;
-  bAgePlus            = false;
+  pLengthResults      = 0;
+  iNBins              = 0;
+  iNAgeBins           = 0;
   bRescale            = false;
-  pAgeingError        = 0;
   pCategories         = 0;
 
   // Register estimables
   registerEstimable(PARAM_PROCESS_ERROR, &dProcessError);
 
   // Register user allowed parameters
-  pParameterList->registerAllowed(PARAM_MIN_AGE);
-  pParameterList->registerAllowed(PARAM_MAX_AGE);
-  pParameterList->registerAllowed(PARAM_AGE_PLUS_GROUP);
-  pParameterList->registerAllowed(PARAM_TOLERANCE);
-  pParameterList->registerAllowed(PARAM_OBS);
+  pParameterList->registerAllowed(PARAM_OBS); 
+  pParameterList->registerAllowed(PARAM_LENGTH_BINS);
+  pParameterList->registerAllowed(PARAM_TOLERANCE);  
   pParameterList->registerAllowed(PARAM_DELTA);
   pParameterList->registerAllowed(PARAM_ERROR_VALUE);
   pParameterList->registerAllowed(PARAM_PROCESS_ERROR);
-  pParameterList->registerAllowed(PARAM_AGEING_ERROR);
 }
 
 //**********************************************************************
-// void CProportionsAtAgeObservation::Validate()
+// void CProportionsAtLengthObservation::Validate()
 // Validate
 //**********************************************************************
-void CProportionsAtAgeObservation::validate() {
+void CProportionsAtLengthObservation::validate() {
   try {
     // Base
 
     CObservation::validate();
 
     // Populate our Parameters
-    iMinAge             = pParameterList->getInt(PARAM_MIN_AGE);
-    iMaxAge             = pParameterList->getInt(PARAM_MAX_AGE);
-    bAgePlus            = pParameterList->getBool(PARAM_AGE_PLUS_GROUP,true,true);
     dDelta              = pParameterList->getDouble(PARAM_DELTA,true,DELTA);
     dTolerance          = pParameterList->getDouble(PARAM_TOLERANCE,true,0.001);
     dProcessError       = pParameterList->getDouble(PARAM_PROCESS_ERROR,true,0);
-    sAgeingError        = pParameterList->getString(PARAM_AGEING_ERROR, true, "");
 
-    // Read in categories, and construct the vector<vector>> of categories and selectivities
+    // Read in categories, and construct the vector<vector> of categories and selectivities
     // rows = sets of proportions: columns are the categories to aggregate
     pCategories = new CCompoundCategories;
     pCategories->setCategories(vCategoryNames,getLabel());
@@ -90,28 +80,39 @@ void CProportionsAtAgeObservation::validate() {
     if (dDelta < 0)
       CError::errorLessThan(PARAM_DELTA, PARAM_ZERO);
 
-    if (iMinAge < pWorld->getMinAge())
-      CError::errorLessThan(PARAM_MIN_AGE, PARAM_MIN_AGE);
-    if (iMaxAge > pWorld->getMaxAge())
-      CError::errorGreaterThan(PARAM_MAX_AGE, PARAM_MAX_AGE);
     if (dProcessError < 0)
       CError::errorLessThan(PARAM_PROCESS_ERROR, PARAM_ZERO);
     if(sLikelihood == PARAM_DIRICHLET && dProcessError > 1)
       CError::errorGreaterThan(PARAM_PROCESS_ERROR, PARAM_ONE);
 
-    // Find out the Spread in Ages
-    iAgeSpread = (iMaxAge+1) - iMinAge;
     int iNGroups = pCategories->getNRows();
+
+    // Get our length bins
+    pParameterList->fillVector(vLengthBins, PARAM_LENGTH_BINS);
+
+	// Check LENGTH_BINS are monotonically increacing
+    for (int i = 0; i < ((int)vLengthBins.size()-1); ++i) {
+	  if(vLengthBins[i] >= vLengthBins[i+1]) {
+        CError::errorNotIncreasing(PARAM_LENGTH_BINS);
+	  }
+	}
 
     // Get our OBS
     vector<string> vOBS;
     pParameterList->fillVector(vOBS, PARAM_OBS);
 
-    if ((vOBS.size() % (iNGroups * iAgeSpread + 1)) !=0)
-      CError::errorListNotSize(PARAM_OBS, iAgeSpread * iNGroups);
+	// Check nBins is the same as the number of observations per row
+    iNBins =  vLengthBins.size() -1;
+    if ((vOBS.size() % (iNGroups * iNBins + 1)) !=0)
+      CError::errorListNotSize(PARAM_OBS, iNBins * iNGroups);
 
-    for (int i = 0; i < (int)vOBS.size(); i+=(iNGroups * iAgeSpread + 1)) {
-      for (int j = 0; j < (iNGroups * iAgeSpread); ++j) {
+    // Check at least 2 length bins
+	if (iNBins < 2)
+      CError::errorNotEnough(PARAM_LENGTH_BINS);
+
+    // Fill in the matrix of observations
+    for (int i = 0; i < (int)vOBS.size(); i+=(iNGroups * iNBins + 1)) {
+      for (int j = 0; j < (iNGroups * iNBins); ++j) {
         try {
           mvObservationMatrix[vOBS[i]].push_back(boost::lexical_cast<double>(vOBS[i+j+1]));
         } catch (boost::bad_lexical_cast) {
@@ -142,10 +143,10 @@ void CProportionsAtAgeObservation::validate() {
     }
 
     if(sThisLikelihood == PARAM_LOGNORMAL) {
-      if ((vErrorValues.size() % (iNGroups * iAgeSpread + 1)) !=0)
-        CError::errorListNotSize(PARAM_ERROR_VALUE, iAgeSpread * iNGroups);
-      for (int i = 0; i < (int)vErrorValues.size(); i+=(iNGroups * iAgeSpread + 1)) {
-        for (int j = 0; j < (iNGroups * iAgeSpread); ++j) {
+      if ((vErrorValues.size() % (iNGroups * iNBins + 1)) !=0)
+        CError::errorListNotSize(PARAM_ERROR_VALUE, iNBins * iNGroups);
+      for (int i = 0; i < (int)vErrorValues.size(); i+=(iNGroups * iNBins + 1)) {
+        for (int j = 0; j < (iNGroups * iNBins); ++j) {
           try {
             mvErrorMatrix[vErrorValues[i]].push_back(boost::lexical_cast<double>(vErrorValues[i+j+1]));
           } catch (boost::bad_lexical_cast) {
@@ -162,7 +163,7 @@ void CProportionsAtAgeObservation::validate() {
       if ((vErrorValues.size() % 2) != 0)
         throw string(PARAM_ERROR_VALUE + string(ERROR_NOT_CONTAIN_EVEN_ELEMENTS));
       for (int i = 0; i < (int)vErrorValues.size(); i+=2) {
-        for (int j = 0; j < (iNGroups * iAgeSpread); ++j) {
+        for (int j = 0; j < (iNGroups * iNBins); ++j) {
           try {
             mvErrorMatrix[vErrorValues[i]].push_back(boost::lexical_cast<double>(vErrorValues[i+1]));
             //mvErrorMatrix[vErrorValues[i]] = boost::lexical_cast<double>(vErrorValues[i+1]);
@@ -185,9 +186,9 @@ void CProportionsAtAgeObservation::validate() {
     // Loop Through our Partitions
     while (vObsPtr != mvObservationMatrix.end()) {
       // Validate Sizes
-      if ((iAgeSpread * iNGroups) > (int)((*vObsPtr).second).size())
+      if ((iNBins * iNGroups) > (int)((*vObsPtr).second).size())
         throw string(ERROR_QTY_LESS_PROPORTIONS + (*vObsPtr).first);
-      if ((iAgeSpread * iNGroups) < (int)((*vObsPtr).second).size())
+      if ((iNBins * iNGroups) < (int)((*vObsPtr).second).size())
         throw string(ERROR_QTY_MORE_PROPORTIONS + (*vObsPtr).first);
 
       // Rescale if Tolerance is exceeded
@@ -235,61 +236,58 @@ void CProportionsAtAgeObservation::validate() {
       vErrPtr++;
     }
   } catch (string &Ex) {
-    Ex = "CProportionsAtAgeObservation.validate(" + getLabel() + ")->" + Ex;
+    Ex = "CProportionsAtLengthObservation.validate(" + getLabel() + ")->" + Ex;
     throw Ex;
   }
 }
 
 //**********************************************************************
-// void CProportionsAtAgeObservation::build()
+// void CProportionsAtLengthObservation::build()
 // Build
 //**********************************************************************
-void CProportionsAtAgeObservation::build() {
+void CProportionsAtLengthObservation::build() {
   try {
     // Base Build
     CObservation::build();
-
-    // Ageing Error
-    if (sAgeingError != "")
-      pAgeingError = CAgeingErrorManager::Instance()->getAgeingError(sAgeingError);
-
-    // Create Array of Age Results
-    if (pAgeResults == 0)
-      pAgeResults = new double[iAgeSpread * pCategories->getNRows()];
-    for (int i = 0; i < (iAgeSpread * pCategories->getNRows()); ++i)
-      pAgeResults[i] = 0.0;
+    iNAgeBins = pWorld->getAgeSpread();
+	
+    // Create Array of Length Results
+    if (pLengthResults == 0)
+      pLengthResults = new double[iNBins * pCategories->getNRows()];
+    for (int i = 0; i < (iNBins * pCategories->getNRows()); ++i)
+      pLengthResults[i] = 0.0;
 
   } catch (string &Ex) {
-    Ex = "CProportionsAtAgeObservation.build(" + getLabel() + ")->" + Ex;
+    Ex = "CProportionsAtLengthObservation.build(" + getLabel() + ")->" + Ex;
     throw Ex;
   }
 }
 
 //**********************************************************************
-// void CProportionsAtAgeObservation::execute()
+// void CProportionsAtLengthObservation::execute()
 // Execute
 //**********************************************************************
-void CProportionsAtAgeObservation::execute() {
+void CProportionsAtLengthObservation::execute() {
 #ifndef OPTIMIZE
   try {
 #endif
     // Variables
-    int                 iSquareAgeOffset   = iMinAge - pWorld->getMinAge();
                         dScore             = 0.0;
     double              dRunningTotal      = 0.0;
     double              dCurrentProp       = 0.0;
     vector<string>      vKeys;
-    vector<int>         vAges;
+    vector<int>         vBin;
+    vector<double>      vLengths;
     vector<string>      vGroup;
-    vector<double>      vExpected;
     vector<double>      vObserved;
+    vector<double>      vExpected;
     vector<double>      vProcessError;
     vector<double>      vErrorValue;
     vector<double>      vScores;
+    CAgeSizeManager *pAgeSizeManager = CAgeSizeManager::Instance();
 
     // Base
     CObservation::execute();
-
     pWorldView->execute();
 
     // Loop Through Observations
@@ -301,7 +299,7 @@ void CProportionsAtAgeObservation::execute() {
       CWorldSquare *pStartSquare = pStartWorldView->getSquare((*mvObsPtr).first);
       CWorldSquare *pSquare      = pWorldView->getSquare((*mvObsPtr).first);
 
-      //apply ageing error & calculate proportion time_step
+      //calculate proportion time_step
       vector<double> vTemp(pSquare->getWidth(),0);
       for (int i = 0; i < (int)pSquare->getHeight(); ++i) {
         for (int j = 0; j < (int)pSquare->getWidth(); ++j) {
@@ -313,60 +311,56 @@ void CProportionsAtAgeObservation::execute() {
             vTemp[j] = std::abs(dStartValue - dEndValue) * dProportionTimeStep;
           }
         }
-        if (pAgeingError != 0)
-          pAgeingError->getExpected(vTemp);
         for (int j = 0; j < (int)pSquare->getWidth(); ++j) {
           pSquare->setValue(i,j,vTemp[j]);
         }
       }
-      // Loop Through Ages in that square and add them to count
-      for (int i = 0; i < iAgeSpread; ++i) {
-        // Loop Through Category Groups
-        for (int j = 0; j < pCategories->getNRows(); ++j) {
-          for (int k = 0; k < pCategories->getNElements(j); ++k) {
-            double dSelectResult = vSelectivities[pCategories->getIndex(j,k)]->getResult((i+iSquareAgeOffset));
-            pAgeResults[i + (j * iAgeSpread)] += dSelectResult * pSquare->getAbundanceInCategoryForAge((i+iSquareAgeOffset), pCategories->getCategoryIndex(j,k));
+      
+	  // Loop Through Category Groups
+      for (int j = 0; j < pCategories->getNRows(); ++j) {
+        vector<double> vLengthFrequency;
+        vLengthFrequency.resize(iNBins);
+		// loop Through category elements
+        for (int k = 0; k < pCategories->getNElements(j); ++k) {
+          // Loop Through Ages in that square and do the length conversion
+          for (int i = 0; i < iNAgeBins; ++i) {
+            double dSelectResult = vSelectivities[pCategories->getIndex(j,k)]->getResult((i));
+			double dNumberAtAge = dSelectResult * pSquare->getAbundanceInCategoryForAge((i), pCategories->getCategoryIndex(j,k));
+			vector<double> vLenghtProportions = pWorld->getLengthFrequency(i,pCategories->getCategoryIndex(j,k), vLengthBins);
+			for(int l = 0; l < (int)vLenghtProportions.size(); ++l) {
+			  vLengthFrequency[l] += dNumberAtAge * vLenghtProportions[l];
+			}
           }
         }
-      }
-      // And if the observation has a plus group
-      if(bAgePlus) {
-        // Loop Through Plus Group Ages in that square and add them to count for the Plus group
-        for (int i = iAgeSpread+iSquareAgeOffset; i < pWorld->getAgeSpread(); ++i) {
-          // Loop Through Categories
-          for (int j = 0; j < pCategories->getNRows(); ++j) {
-            for (int k = 0; k < pCategories->getNElements(j); ++k) {
-              double dSelectResult = vSelectivities[pCategories->getIndex(j,k)]->getResult(i);
-              pAgeResults[(iAgeSpread-1) + (j * iAgeSpread)] += dSelectResult * pSquare->getAbundanceInCategoryForAge(i, pCategories->getCategoryIndex(j,k));
-            }
-          }
+        for(int l = 0; (int)l<vLengthFrequency.size(); ++l) {
+          pLengthResults[l + (j * iNBins)] = vLengthFrequency[l];
         }
       }
       // Populate our Running Total
       dRunningTotal = 0.0;
 
-      for (int i = 0; i < (iAgeSpread * pCategories->getNRows()); ++i)
-        dRunningTotal += pAgeResults[i];
+      for (int i = 0; i < (iNBins * pCategories->getNRows()); ++i)
+        dRunningTotal += pLengthResults[i];
 
       for (int i = 0; i < (pCategories->getNRows()); ++i) {
-        for (int j = 0; j < iAgeSpread; ++j) {
+        for (int j = 0; j < iNBins; ++j) {
           // Get our Proportion
           if(!CComparer::isZero(dRunningTotal))
-            dCurrentProp = pAgeResults[(iAgeSpread * i) + j] / dRunningTotal;
+            dCurrentProp = pLengthResults[(iNBins * i) + j] / dRunningTotal;
           else
             dCurrentProp = 0.0;
 
           // Store the items we want to calculate scores for
           vKeys.push_back((*mvObsPtr).first);
           vGroup.push_back(pCategories->getGroup(i));
-          vAges.push_back(j+iMinAge);
+          vBin.push_back(j+1);
           vExpected.push_back(dCurrentProp);
-          vObserved.push_back(((*mvObsPtr).second)[(iAgeSpread * i) + j]);
+          vObserved.push_back(((*mvObsPtr).second)[(iNBins * i) + j]);
           vProcessError.push_back(dProcessError);
           //indentify the correct row of error values and extract the correct error value
           while (mvErrPtr != mvErrorMatrix.end()) {
             if ((*mvErrPtr).first == (*mvObsPtr).first) {
-              vErrorValue.push_back(((*mvErrPtr).second)[(iAgeSpread * i) + j]);
+              vErrorValue.push_back(((*mvErrPtr).second)[(iNBins * i) + j]);
               break;
             }
             mvErrPtr++;
@@ -374,9 +368,9 @@ void CProportionsAtAgeObservation::execute() {
         }
       }
 
-      // Clear Our Age Results
-      for (int i = 0; i < (iAgeSpread * pCategories->getNRows()); ++i)
-        pAgeResults[i] = 0.0;
+      // Clear Our Length Results
+      for (int i = 0; i < (iNBins * pCategories->getNRows()); ++i)
+        pLengthResults[i] = 0.0;
 
       mvObsPtr++;
     }
@@ -386,7 +380,7 @@ void CProportionsAtAgeObservation::execute() {
       // Simulate our values, then save them
       pLikelihood->simulateObserved(vKeys, vObserved, vExpected, vErrorValue, vProcessError, dDelta);
       for (int i = 0; i < (int)vObserved.size(); ++i)
-        saveComparison(vKeys[i], vAges[i], vGroup[i], vExpected[i], vObserved[i], vErrorValue[i], vProcessError[i], pLikelihood->adjustErrorValue(vProcessError[i], vErrorValue[i]), 0.0);
+        saveComparison(vKeys[i], vBin[i], vGroup[i], vExpected[i], vObserved[i], vErrorValue[i], vProcessError[i], pLikelihood->adjustErrorValue(vProcessError[i], vErrorValue[i]), 0.0);
 
     } else { // Generate Score
       dScore = pLikelihood->getInitialScore(vKeys, vExpected, vObserved, vProcessError, vErrorValue, dDelta);
@@ -395,24 +389,24 @@ void CProportionsAtAgeObservation::execute() {
       pLikelihood->getResult(vScores, vExpected, vObserved, vErrorValue, vProcessError, dDelta);
       for (int i = 0; i < (int)vScores.size(); ++i) {
         dScore += vScores[i];
-        saveComparison(vKeys[i], vAges[i], vGroup[i], vExpected[i], vObserved[i], vErrorValue[i], vProcessError[i], pLikelihood->adjustErrorValue(vProcessError[i], vErrorValue[i]), vScores[i]);
+        saveComparison(vKeys[i], vBin[i], vGroup[i], vExpected[i], vObserved[i], vErrorValue[i], vProcessError[i], pLikelihood->adjustErrorValue(vProcessError[i], vErrorValue[i]), vScores[i]);
       }
     }
 
 #ifndef OPTIMIZE
   } catch (string &Ex) {
-    Ex = "CProportionsAtAgeObservation.execute(" + getLabel() + ")->" + Ex;
+    Ex = "CProportionsAtLengthObservation.execute(" + getLabel() + ")->" + Ex;
     throw Ex;
   }
 #endif
 }
 
 //**********************************************************************
-// CProportionsAtAgeObservation::~CProportionsAtAgeObservation()
+// CProportionsAtLengthObservation::~CProportionsAtLengthObservation()
 // Default De-Constructor
 //**********************************************************************
-CProportionsAtAgeObservation::~CProportionsAtAgeObservation() {
-  // Clear Age Results
-  if (pAgeResults != 0)
-    delete [] pAgeResults;
+CProportionsAtLengthObservation::~CProportionsAtLengthObservation() {
+  // Clear Length Results
+  if (pLengthResults != 0)
+    delete [] pLengthResults;
 }

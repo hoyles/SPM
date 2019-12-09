@@ -260,6 +260,15 @@ void CPresenceObservation::execute() {
 }
 
 //**********************************************************************
+// CPresenceObservation::getCatchability()
+// Get catchabilty
+//**********************************************************************
+double CPresenceObservation::getCatchability() {
+  double Q = pCatchability->getQ();
+  return(Q);
+}
+
+//**********************************************************************
 // CPresenceObservation::~CPresenceObservation()
 // Default De-Constructor
 //**********************************************************************

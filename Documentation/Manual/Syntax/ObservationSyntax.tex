@@ -7,6 +7,7 @@ The observation types available are,
 \begin{description}
   \item Observations of proportions of individuals by age class
   \item Observations of proportions of individuals between categories within each age class
+  \item Observations of proportions of individuals by length bin
   \item Relative and absolute abundance observations
   \item Relative and absolute biomass observations
 	\item Relative proportions present observations
@@ -194,6 +195,83 @@ Each type of observation requires a set of subcommands and arguments specific to
 \defType{String}
 \defDefault{No default}
 \defValue{A valid likelihood; either binomial or binomial-approx}
+
+\defSub{delta}{Define the delta robustifying constant for the likelihood}
+\defType{Constant}
+\defDefault{1e-11}
+\defValue{A non-negative real number}
+
+\defSub{process\_error}{Define the process error term}
+\defType{Estimable}
+\defDefault{No process error}
+\defValue{A non-negative real number. A zero ($0$) can be used to specify no process error}
+
+\defSub{simulation\_likelihood}{Define the likelihood when doing simulations, if the observations is a pseudo-observation}
+\defType{String}
+\defDefault{No default}
+\defValue{A valid likelihood, except not \texttt{none}. Note that this command is ignored if the observation is not a pseudo-observation}
+
+\subsubsection[Proportions at age]{\commandlabsubarg{observation}{type}{proportions\_at\_length}}
+
+\defSub{year} {Define the year that the observation applies to}
+\defType{Integer}
+\defDefault{No default}
+\defValue{A positive integer between \commandsub{model}{initial\_year} and \commandsub{model}{current\_year}}
+
+\defSub{time\_step} {Define the time-step that the observation applies to}
+\defType{Integer}
+\defDefault{No default}
+\defValue{A valid time-step}
+
+\defSub{proportion\_method} {Define the method for interpolating the time-step for calculating the expected value of the observation}
+\defType{String}
+\defDefault{mean}
+\defValue{Either \texttt{mean} for the weighted mean, or \texttt{difference} for the difference between the start and end state}
+
+\defSub{proportion\_time\_step} {Define the interpolated proportion through the time-step for calculating the expected value of the observation}
+\defType{Constant}
+\defDefault{1.0}
+\defValue{A real number between 0 and 1, inclusive}
+
+\defSub{categories} {Define the categories}
+\defType{String vector}
+\defDefault{No default}
+\defValue{Valid categories from \commandsub{model}{categories}}
+
+\defSub{selectivities} {Define the selectivities applied to each category}
+\defType{String vector}
+\defDefault{No default}
+\defValue{Valid selectivity labels defined by \command{selectivity}}
+
+\defSub{length\_bins} {Define the length bins for the observation}
+\defType{Constant vector}
+\defDefault{No default}
+\defValue{Monotonically increasing values}
+
+\defSub{layer} {Name of the categorical layer used to group the spatial cells for the observation}
+\defType{String}
+\defDefault{No default}
+\defValue{A valid layer as defined by \command{layer}. Must be a layer of \texttt{type=categorical}}
+
+\defSub{obs [label]}{Define the following data as observations for the categorical layer with value \texttt{[label]}}
+\defType{Constant vector}
+\defDefault{No default}
+\defValue{The label is valid value from the associated observation layer. It is followed by a vector of values giving the proportions at length. This subcommand is repeated for each unique value of label}
+
+\defSub{tolerance}{Define the tolerance on the sum-to-one error check in \SPM}
+\defType{Constant}
+\defDefault{0.001}
+\defValue{The tolerance on the sum to one error check. If $abs(1-\sum O_i) > \text{\argument{tolerance}}$ then \SPM\ will report an error}
+
+\defSub{error\_value [label]}{Define the following data as error values (e.g., $N$ for multinomial likelihoods, c.v. for lognormal likelihoods, etc.) for the categorical layer with value \texttt{[label]}}
+\defType{Constant}
+\defDefault{No default}
+\defValue{A valid value from the associated observation layer. This subcommand is repeated for each unique value of label}
+
+\defSub{likelihood}{Define the likelihood for the observation}
+\defType{String}
+\defDefault{No default}
+\defValue{A valid likelihood; either Dirichlet, multinomial, or lognormal}
 
 \defSub{delta}{Define the delta robustifying constant for the likelihood}
 \defType{Constant}

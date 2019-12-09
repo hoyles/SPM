@@ -6,8 +6,9 @@ Observations are typically supplied as observations at an instance in time, over
 
 \SPM\ allows the following types of observations;
 \begin{itemize}
-  \item Observations of proportions by age class within categories
-  \item Observations of proportions between categories within age classes
+  \item Observations of proportions at age within categories
+  \item Observations of proportions by categories within age classes
+  \item Observations of proportions at length bin within categories
   \item Relative and absolute abundance/biomass observations
   \item Relative proportions present observations
 	
@@ -50,9 +51,9 @@ categories male
 
 \SPM\ then expects that there will be a single vector of proportions supplied, with one proportion for each age class within the defined age range, and that these proportions sum to one. 
 
-For example, if the age range was 3 to 10, then 8 proportions should be supplied (one proportion for each of the the ages 3, 4, 5, 6, 7, 8, 9, and 10). The expected values will be the expected proportions of males within each of these age classes (after ignoring any males aged less than 3 or older than 10), after applying a selectivity at the year and time-step specified. The supplied vector of proportions (i.e., in this example, the 8 proportions) must sum to one, which is evaluated with a default tolerance of 0.001. 
+For example, if the age range was 3 to 10, then 8 proportions should be supplied (one proportion for each of the ages 3, 4, 5, 6, 7, 8, 9, and 10). The expected values will be the expected proportions of males within each of these age classes (after ignoring any males aged less than 3 or older than 10), after applying a selectivity at the year and time-step specified. The supplied vector of proportions (i.e., in this example, the 8 proportions) must sum to one, which is evaluated with a default tolerance of 0.001. 
 
-The observations must be also supplied using all or some of the the values of defined by some \emph{categorical} layer. \SPM\ calculates the expected values by summing over the defined ages (via the age range and selectivity) and categories for those spatial cells where the categorical layer has the same value as defined for each vector of observations.
+The observations must be also supplied using all or some of the values of defined by some \emph{categorical} layer. \SPM\ calculates the expected values by summing over the defined ages (via the age range and selectivity) and categories for those spatial cells where the categorical layer has the same value as defined for each vector of observations.
 
 For example, in a $2 \times 2$ spatial model a categorical layer (e.g., with label Area) may define that cells $(1,1)$ and $(1,2)$ have value $A$ and cells $(2,1)$ and $(2,2)$ have value $B$, i.e.,
 
@@ -104,7 +105,7 @@ categories male female
 
 \SPM\ then expects that there will be a single vector of proportions supplied, with one proportion for each category and age class combination, and that these proportions sum to one. 
 
-For example, if there were two categories and the age range was 3 to 10, then 16 proportions should be supplied (one proportion for each of the the ages 3, 4, 5, 6, 7, 8, 9, and 10, for each category male and female). The expected values will be the expected proportions of males and within each of these age classes (after ignoring those aged less than 3 or older than 10), after applying a selectivity at the year and time-step specified. The supplied vector of proportions (i.e., in this example, the 16 proportions) must sum to one, which is evaluated with a default tolerance of 0.001. 
+For example, if there were two categories and the age range was 3 to 10, then 16 proportions should be supplied (one proportion for each of the ages 3, 4, 5, 6, 7, 8, 9, and 10, for each category male and female). The expected values will be the expected proportions of males and within each of these age classes (after ignoring those aged less than 3 or older than 10), after applying a selectivity at the year and time-step specified. The supplied vector of proportions (i.e., in this example, the 16 proportions) must sum to one, which is evaluated with a default tolerance of 0.001. 
 
 For example, using the earlier spatial model with a categorical layer that has label Area, the observations for those spatial cells where the categorical layer has value $A$ would be, 
 
@@ -131,7 +132,7 @@ categories male + female
 
 \SPM\ then expects that there will be a single vector of proportions supplied, with one proportion for each age class, and that these proportions sum to one. 
 
-For example, if there were two categories and the age range was 3 to 10, then 8 proportions should be supplied (one proportion for each of the the ages 3, 4, 5, 6, 7, 8, 9, and 10, for the sum of males and females within each age class). The expected values will be the expected proportions of males + females within each of these age classes (after ignoring those aged less than 3 or older than 10), after applying a selectivity at the year and time-step specified. The supplied vector of proportions (i.e., in this example, the 16 proportions) must sum to one, which is evaluated with a default tolerance of 0.001. 
+For example, if there were two categories and the age range was 3 to 10, then 8 proportions should be supplied (one proportion for each of the ages 3, 4, 5, 6, 7, 8, 9, and 10, for the sum of males and females within each age class). The expected values will be the expected proportions of males + females within each of these age classes (after ignoring those aged less than 3 or older than 10), after applying a selectivity at the year and time-step specified. The supplied vector of proportions (i.e., in this example, the 16 proportions) must sum to one, which is evaluated with a default tolerance of 0.001. 
 
 For example, using the earlier spatial model with a categorical layer that has label Area, the observations for those spatial cells where the categorical layer has value $A$ would be, 
 
@@ -245,7 +246,7 @@ selectivities male-selectivity
 selectivities2 female-selectivity
 \end{verbatim}}}
 
-defines that the proportion of males in each age class as a proportion of males $+$ females. \SPM\ then expects that there will be a vector of proportions supplied, with one proportion for each age class within the defined age range, i.e., if the age range was 3 to 10, then 8 proportions should be supplied (one proportion for each of the the ages 3, 4, 5, 6, 7, 8, 9, and 10). The expected values will be the expected proportions of male to male $+$ female within each of these age classes, after applying the selectivities at the year and time-step specified. 
+defines that the proportion of males in each age class as a proportion of males $+$ females. \SPM\ then expects that there will be a vector of proportions supplied, with one proportion for each age class within the defined age range, i.e., if the age range was 3 to 10, then 8 proportions should be supplied (one proportion for each of the ages 3, 4, 5, 6, 7, 8, 9, and 10). The expected values will be the expected proportions of male to male $+$ female within each of these age classes, after applying the selectivities at the year and time-step specified. 
 
 The observations must be supplied using all or some of the values defined by a categorical layer. \SPM\ calculates the expected values by summing over the ages (via the age range and selectivity) and categories for those spatial cells where the categorical layer has the same value as defined for each vector of observations.
 
@@ -337,6 +338,211 @@ where $Z \left(\theta,\delta \right)$ is a robustifying function to prevent divi
 
 The default value of $\delta$ is $1 \times 10^{-11}$.
 
+\subsection{\I{Proportions-at-length observations}}
+
+Proportions-at-length observations are observations of either the relative number of individuals at age or relative biomass in length bins, via some selectivity. 
+
+The observation is supplied for a given year and time-step, for some defined length bins of the population, for categories aggregated over a set of spatial cells. Note that the categories defined in the observations must have an associated selectivity, defined by \subcommand{selectivities}.
+
+The length bins must be defined in the observation. There is no option for a plus (or a minus group), but these can be specified by using a length bin with a suitable high (or low) length. 
+
+Proportions-at-length observations can be supplied as; 
+\begin{enumerate}
+	\item a set of proportions for a single category, 
+	\item a set of proportions for multiple categories, or
+	\item a set of proportions across aggregated categories.
+\end{enumerate}
+
+For example, for a model with the two categories \emph{male} and \emph{female}, we might supply either (i) a set of proportions for a single category (i.e., males) within each length bin; (ii) a set of proportions describing the proportions of individuals within each length bin across multiple categories (i.e., males and females) simultaneously, or (iii) a set of proportions for the total number of individuals over the aggregated categories  (i.e., males $+$ females) combined, within each length bin.
+
+The way the categories of the observation are defined specifies which of these alternatives are used. It is also possible to have an observation with multiple and aggregated categories simultaneously.
+
+\subsubsection*{\I{Proportions-at-length for a single category}}
+
+This form of defining the observation is the simplest, and is used to model a set of proportions of a single category by length bin. For example, to specify that the observations are of the proportions of male within each length bin, then the subcommand \subcommand{categories} for the \commandlabsubarg{observation}{type}{proportion\_by\_length} command is,
+
+{\small{\begin{verbatim}
+categories male
+\end{verbatim}}}
+
+\SPM\ then expects that there will be a single vector of proportions supplied, with one proportion for each length bin, and that these proportions sum to one. 
+
+For example, if the length bins were 0 30 60 90 120, then 4 proportions should be supplied (one proportion for each of the bins 0-30, 30-60, 60-90, 90-120). The expected values will be the expected proportions of males within each of these length bins (after ignoring any males with length less than zero or greater than 120), after applying a selectivity at the year and time-step specified. The supplied vector of proportions (i.e., in this example, the 8 proportions) must sum to one, which is evaluated with a default tolerance of 0.001. 
+
+The observations must be also supplied using all or some of the values of defined by some \emph{categorical} layer. \SPM\ calculates the expected values by summing over the defined ages (via the length bin range and selectivity) and categories for those spatial cells where the categorical layer has the same value as defined for each vector of observations.
+
+For example, in a $2 \times 2$ spatial model a categorical layer (e.g., with label Area) may define that cells $(1,1)$ and $(1,2)$ have value $A$ and cells $(2,1)$ and $(2,2)$ have value $B$, i.e.,
+
+{\small{\begin{verbatim}
+@layer Area
+type categorical
+data A A 
+data B B
+\end{verbatim}}}
+
+The observations for those spatial cells where the categorical layer has value $A$ would be, 
+
+{\small{\begin{verbatim}
+@observation MyProportions
+type proportions_at_length
+layer Area
+...
+categories male
+length_bins 0 30 60 90 120 150
+obs A 0.01 0.09 0.20 0.30 0.40
+...
+\end{verbatim}}}
+
+Or, for both $A$ and $B$ as,
+
+{\small{\begin{verbatim}
+@observation MyProportions
+type proportions_at_length
+layer Area
+...
+categories male
+length_bins 0 30 60 90 120 150
+obs A 0.01 0.09 0.20 0.30 0.40
+obs B 0.02 0.06 0.12 0.25 0.55
+...
+\end{verbatim}
+		
+Note that to have an observation for each individual spatial cell in a model, then define a categorical layer that has a single, unique value for each spatial cell for use in the observation. 
+		
+\subsubsection*{\I{Proportions-at-length for multiple categories}}
+		
+This form of the observation extends the idea above for multiple categories. It is used to model a set of proportions over several categories by length bin. For example, to specify that the observations are of the proportions of male or females within each length bin, then the subcommand \subcommand{categories} for the \commandlabsubarg{observation}{type}{proportion\_by\_length} command is,
+		
+{\small{\begin{verbatim}
+categories male female
+\end{verbatim}}}
+
+\SPM\ then expects that there will be a single vector of proportions supplied, with one proportion for each category and length bin combination, and that these proportions sum to one. 
+		
+For example, if there were two categories and the length bins were 0 30 60 90 120, then 8 proportions should be supplied (one proportion for each of the bins 0-30, 30-60, 60-90, 90-120, for each category male and female). The expected values will be the expected proportions of males and within each of these length bins (after ignoring any males with length less than zero or greater than 120), after applying a selectivity at the year and time-step specified. The supplied vector of proportions (i.e., in this example, the 16 proportions) must sum to one, which is evaluated with a default tolerance of 0.001. 
+	
+For example, using the earlier spatial model with a categorical layer that has label Area, the observations for those spatial cells where the categorical layer has value $A$ would be, 
+		
+{\small{\begin{verbatim}
+@observation MyProportions
+type proportions_at_age
+layer Area
+...
+categories male female
+length_bins 0 30 60 90 120 150
+obs A 0.01 0.05 0.10 0.20 0.20 0.01 0.05 0.15 0.20 0.03
+obs B 0.02 0.06 0.10 0.21 0.18 0.02 0.05 0.15 0.20 0.01
+...
+\end{verbatim}
+
+\subsubsection*{\I{Proportions-at-length across aggregated categories}}
+
+This form of the observation extends the idea above, but allows categories to be aggregated before the proportions are calculated. It is used to model a set of proportions from several categories that have been combined by length bin. To indicate that two (or more) categories are to be aggregated, separate them with a '+' symbol. For example, to specify that the observations are of the proportions of male and females combined within each length bin, then the subcommand \subcommand{categories} for the \commandlabsubarg{observation}{type}{proportion\_by\_length} command is,
+
+{\small{\begin{verbatim}
+categories male + female
+\end{verbatim}}}
+
+\SPM\ then expects that there will be a single vector of proportions supplied, with one proportion for each length bin, and that these proportions sum to one. 
+
+For example, if there were two categories and the length bins were 0 30 60 90 120, then 4 proportions should be supplied (one proportion for each of the bins 0-30, 30-60, 60-90, 90-120, for each category male and female). The expected values will be the expected proportions of males + females within each of these length bins (after ignoring any males with length less than zero or greater than 120), after applying a selectivity at the year and time-step specified. The supplied vector of proportions (i.e., in this example, the 16 proportions) must sum to one, which is evaluated with a default tolerance of 0.001.
+
+For example, using the earlier spatial model with a categorical layer that has label Area, the observations for those spatial cells where the categorical layer has value $A$ would be, 
+				
+{\small{\begin{verbatim}
+@observation MyProportions
+type proportions_at_age
+layer Area
+...
+categories male + female
+length_bins 0 30 60 90 120 150
+obs A 0.02 0.13 0.25 0.30 0.30
+obs B 0.02 0.06 0.18 0.35 0.39
+...
+\end{verbatim}
+
+The later form can then be extended to include multiple categories, or multiple aggregated categories. For example, to describe proportions for the three groups: immature males, mature males, and all females (immature and mature females added together) for 4 length bins, a total of 12 proportions are required 
+
+{\small{\begin{verbatim}
+@observation MyProportions
+type proportions_at_age
+layer Area
+...
+categories male_immature male_mature female_immature + female_mature
+length_bins 0 30 60 90 120 150
+obs A 0.05 0.15 0.15 0.05 0.02 0.03 0.08 0.04 0.05 0.15 0.15 0.08
+...
+\end{verbatim}}}
+
+\subsubsection{Likelihoods for proportions-at-length observations}
+
+\SPM\ implements three likelihoods for proportions-at-length observations, the Dirichlet distribution, the multinomial likelihood, and the lognormal likelihood. 
+
+\subsubsection*{The Dirichlet likelihood\index{Dirichlet likelihood ! proportions-at-length}}
+
+For the observed proportions at length $O_i$ for length bins $i$, with sample size $N$, and the expected proportions at the same length bins $E_i$, the negative log-likelihood is defined as; 
+
+\begin{equation}
+-\log \left(L \right) = -\log(\Gamma \sum\limits_i (\alpha_i)) + \sum\limits_i \log(\Gamma (\alpha_i)) - \sum\limits_i (\alpha_i-1) \log(Z(O_i,\delta))
+\end{equation}
+
+where $\alpha_i = Z \left(N E_i,\delta \right)$, $\sum\limits_i O_i = 1$, and $\sum\limits_i E_i = 1$. $Z \left(\theta,\delta \right)$ is a robustifying function to prevent division by zero errors, with parameter $\delta>0$. $Z \left(\theta,\delta \right)$ is defined as,
+
+\begin{equation}
+Z \left(\theta,\delta \right) = \begin{cases}
+\theta, & \text{where $\theta \ge r$} \\
+\delta/\left( 2-\theta/\delta \right), & \text{otherwise} \\  
+\end{cases}
+\end{equation}
+
+The default value of $\delta$ is $1 \times 10^{-11}$.
+
+\subsubsection*{The multinomial likelihood\index{Multinomial likelihood ! proportions-at-length}}
+
+For the observed proportions at age $O_i$ for length bins $i$, with sample size $N$, and the expected proportions at the same length bins $E_i$, the negative log-likelihood is defined as; 
+
+\begin{equation}
+-\log \left(L \right) =  -\log \left(N! \right) + \sum\limits_i \log \left( \left(NO_i \right)! \right) - NO_i \log \left(Z \left(E_i,\delta \right) \right)
+\end{equation}
+
+where $\sum\limits_i O_i = 1$ and $\sum\limits_i E_i = 1$. $Z \left(\theta,\delta \right)$ is a robustifying function to prevent division by zero errors, with parameter $\delta>0$. $Z \left(\theta,\delta \right)$ is defined as,
+
+\begin{equation}
+Z \left(\theta,\delta \right) = \begin{cases}
+\theta, & \text{where $\theta \ge r$} \\
+\delta/\left( 2-\theta/\delta \right), & \text{otherwise} \\  
+\end{cases}
+\end{equation}
+
+The default value of $\delta$ is $1 \times 10^{-11}$.
+
+\subsubsection*{The lognormal likelihood\index{Lognormal likelihood ! proportions-at-length}}
+
+For the observed proportions at age $O_i$ for length bins $i$, with c.v. $c_i$, and the expected proportions at the same length bins $E_i$, the negative log-likelihood is defined as; 
+
+\begin{equation}
+- \log \left(L \right) = \sum\limits_i \left( \log \left( \sigma _i \right) + 0.5\left( \frac{\log \left(O_i / Z \left(E_i,\delta \right) \right)}{\sigma_i} + 0.5 \sigma_i \right)^2 \right)
+\end{equation}
+
+where 
+
+\begin{equation}
+\sigma_i  = \sqrt{\log \left(1+c_i^2 \right)}
+\end{equation}
+
+and the $c_i$'s are the c.v.s for each length bin $i$, and $Z \left(\theta,\delta \right)$ is a robustifying function to prevent division by zero errors, with parameter $\delta>0$. $Z \left(\theta,\delta \right)$ is defined as,
+
+\begin{equation}
+Z \left(\theta,\delta \right) = \begin{cases}
+\theta, & \text{where $\theta \ge r$} \\
+\delta/\left( 2-\theta/\delta \right), & \text{otherwise} \\  
+\end{cases}
+\end{equation}
+
+The default value of $\delta$ is $1 \times 10^{-11}$.
+
+
+
 \subsection{\I{Abundance or biomass observations}}
 
 Abundance (or biomass) observations are observations of either a relative or absolute number (or biomass) of individuals from a set of categories after applying a selectivity. The observations classes are the same, except that a biomass observation will use the biomass as the observed (and expected) value (calculated from mean weight of individuals within each age and category) while an abundance observation is just the number of individuals. 
@@ -352,7 +558,7 @@ selectivities male-selectivity
 
 defines an observation for males after applying the selectivity male-selectivity. \SPM\ then expects that there will be a single observation supplied. The expected values for the observations will be the expected abundance (or biomass) of males, after applying the selectivities, at the year and time-step specified. 
 
-The observations must be supplied using all or some of the the values of defined by a categorical layer. \SPM\ calculates the expected values by summing over the defined ages (via the age range and selectivity) and categories for those spatial cells where the categorical layer has the same value as defined for each vector of observations.
+The observations must be supplied using all or some of the values of defined by a categorical layer. \SPM\ calculates the expected values by summing over the defined ages (via the age range and selectivity) and categories for those spatial cells where the categorical layer has the same value as defined for each vector of observations.
 
 For example, in a $2 \times 2$ spatial model a categorical layer (e.g., with label Area) may define that cells $(1,1)$ and $(1,2)$ have value $A$ and cells $(2,1)$ and $(2,2)$ have value $B$, i.e.,
 
@@ -468,7 +674,7 @@ selectivities male-selectivity
 
 defines an observation for males after applying the selectivity male-selectivity. \SPM\ then expects that there will be a single observation supplied. The expected values for the observations will be the expected relative probability of presence for males, after applying the selectivities, at the year and time-step specified. 
 
-The observations must be supplied using all or some of the the values of defined by a categorical layer. \SPM\ calculates the expected values by summing over the defined ages (via the age range and selectivity) and categories for those cells where the categorical layer has the same value as defined for each vector of observations.
+The observations must be supplied using all or some of the values of defined by a categorical layer. \SPM\ calculates the expected values by summing over the defined ages (via the age range and selectivity) and categories for those cells where the categorical layer has the same value as defined for each vector of observations.
 
 For example, in a $2 \times 2$ spatial model a categorical layer (e.g., with label Area) may define that cells $(1,1)$ and $(1,2)$ have value $A$ and cells $(2,1)$ and $(2,2)$ have value $B$, i.e.,
 

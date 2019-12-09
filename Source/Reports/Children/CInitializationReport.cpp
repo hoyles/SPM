@@ -86,7 +86,7 @@ void CInitializationReport::execute() {
     // Print Out
     cout << CONFIG_ARRAY_START << sLabel << CONFIG_ARRAY_END << "\n";
     cout << PARAM_REPORT << "." << PARAM_TYPE << CONFIG_RATIO_SEPARATOR << " " << pParameterList->getString(PARAM_TYPE) << "\n";
-    cout << PARAM_INITIALIZATION << "." << PARAM_INITIALIZATION_PHASE << CONFIG_RATIO_SEPARATOR << " " << sInitializationPhase << "\n";
+    cout << PARAM_INITIALIZATION_PHASE << CONFIG_RATIO_SEPARATOR << " " << sInitializationPhase << "\n";
     cout << PARAM_YEARS << CONFIG_RATIO_SEPARATOR << " " << pInitializationPhase->getActualYears() << "\n";
     if (pInitializationPhase->getConvergenceCheck()) {
       // lamdba value

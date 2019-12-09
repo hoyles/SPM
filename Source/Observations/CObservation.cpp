@@ -69,7 +69,7 @@ void CObservation::saveComparison(string key, int age, string group, double expe
 
   SComparison *pComparison = new SComparison();
   pComparison->sKey           = key;
-  pComparison->iAge           = age;
+  pComparison->iBin           = age;
   pComparison->sGroup         = group;
   pComparison->dExpectedValue = expected;
   pComparison->dObservedValue = observed;
@@ -93,7 +93,7 @@ void CObservation::saveComparison(string key, int age, double expected, double o
 
   SComparison *pComparison = new SComparison();
   pComparison->sKey           = key;
-  pComparison->iAge           = age;
+  pComparison->iBin           = age;
   pComparison->sGroup         = "";
   pComparison->dExpectedValue = expected;
   pComparison->dObservedValue = observed;
@@ -117,7 +117,7 @@ void CObservation::saveComparison(string key, double expected, double observed, 
 
   SComparison *pComparison = new SComparison();
   pComparison->sKey           = key;
-  pComparison->iAge           = -1;
+  pComparison->iBin           = -1;
   pComparison->sGroup         = "";
   pComparison->dExpectedValue = expected;
   pComparison->dObservedValue = observed;

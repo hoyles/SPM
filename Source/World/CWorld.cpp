@@ -324,6 +324,20 @@ double CWorld::getMeanWeight(int AgeIndex, int CategoryIndex) {
 }
 
 //**********************************************************************
+// CWorldSquare* CWorld::getLengthFreqency(int AgeIndex, int CategoryIndex, vector<double> LengthBins)
+// Get a square from our Difference Grid
+//**********************************************************************
+vector<double> CWorld::getLengthFrequency(int AgeIndex, int CategoryIndex, vector<double> &LengthBins) {
+   double dAge = (double)(AgeIndex+iMinAge);
+   vector<double> expected;
+   for (int i=0; i < ((int)LengthBins.size() -1); ++i) {
+	 double dProportion = vAgeSizeIndex[CategoryIndex]->getProportionInLengthBin(dAge, LengthBins[i], LengthBins[i+1]);
+	 expected.push_back( dProportion );
+   }
+   return( expected );
+}
+
+//**********************************************************************
 // string CWorld::getCategoryNameForIndex(int Index)
 //
 //**********************************************************************

@@ -134,6 +134,10 @@ void CSimulatedObservationReport::execute() {
 
       if (pList->getString(PARAM_TYPE) == PARAM_PROPORTIONS_AT_AGE)
         bWriteErrorValue = false;
+
+      if (pList->getString(PARAM_TYPE) == PARAM_PROPORTIONS_AT_LENGTH)
+        bWriteErrorValue = false;
+
     }
 
     cout << "\n";

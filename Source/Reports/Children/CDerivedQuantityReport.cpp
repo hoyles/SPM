@@ -84,11 +84,11 @@ void CDerivedQuantityReport::execute() {
     // Output Header
     cout << CONFIG_ARRAY_START << sLabel << CONFIG_ARRAY_END << "\n";
     cout << PARAM_REPORT << "." << PARAM_TYPE << CONFIG_RATIO_SEPARATOR << " " << pParameterList->getString(PARAM_TYPE) << "\n";
-    cout << PARAM_DERIVED_QUANTITY << "." << PARAM_LABEL << CONFIG_RATIO_SEPARATOR << " " << sDerivedQuantity << "\n";
+    cout << PARAM_LABEL << CONFIG_RATIO_SEPARATOR << " " << sDerivedQuantity << "\n";
 
     // Output initialisation values
     for (int i=0; i < pDerivedQuantity->getInitialisationSize(); ++i) {
-      cout << PARAM_INITIALIZATION << "." << PARAM_INITIALIZATION_PHASE << CONFIG_ARRAY_START << boost::lexical_cast<string>(i+1) << CONFIG_ARRAY_END << CONFIG_RATIO_SEPARATOR << " " ;
+      cout << PARAM_INITIALIZATION_PHASE << CONFIG_ARRAY_START << boost::lexical_cast<string>(i+1) << CONFIG_ARRAY_END << CONFIG_RATIO_SEPARATOR << " " ;
       for (int j=0; j < pDerivedQuantity->getInitialisationValuesSize(i); ++j) {
         cout << pDerivedQuantity->getInitialisationValue(i,j) << (j==(pDerivedQuantity->getInitialisationValuesSize(i)-1)?"":CONFIG_SPACE_SEPARATOR);
       }

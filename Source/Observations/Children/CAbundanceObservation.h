@@ -28,6 +28,8 @@ public:
   void                        validate();
   void                        build();
   void                        execute();
+  string                      getType() {return (PARAM_ABUNDANCE); }
+  double                      getCatchability();
 
 protected:
   // Variables

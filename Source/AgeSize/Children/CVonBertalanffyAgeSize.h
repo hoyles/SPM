@@ -27,6 +27,7 @@ public:
   double                      getMeanSize(double &age);
   double                      getMeanWeight(double &age);
   double                      getCV(double &age);
+  double                      getProportionInLengthBin(double &age, double &LowerBin, double&UpperBin);
 
 protected:
   double                      dLinf;
@@ -38,6 +39,7 @@ protected:
   string                      sSizeWeight;
   CSizeWeight*                pSizeWeight;
   double                      getMeanWeightFromSize(double &size, double &cv);
+  double                      getSd(double &age);
 
 };
 

@@ -1,4 +1,4 @@
-; TextPad syntax definitions for SPM version 1.1-2019-11-30
+; TextPad syntax definitions for SPM version 1.1-2019-12-01
 ; ===================================================================================
 ;
 ;
@@ -69,6 +69,7 @@ alpha
 ato95
 b
 b0
+by_length
 c
 catchability
 categories
@@ -92,6 +93,7 @@ derived_quantity
 derived_quantity_by_cell
 df
 difference_scale
+distribution
 e
 electivities
 error_value
@@ -118,6 +120,7 @@ latitude
 layer
 layers
 length
+length_bins
 likelihood
 linf
 log_scale
@@ -301,6 +304,7 @@ preference_threaded
 presence
 process
 proportions_at_age
+proportions_at_length
 proportions_by_category
 random_number_seed
 schnute

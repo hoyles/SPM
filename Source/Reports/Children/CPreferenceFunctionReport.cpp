@@ -128,7 +128,7 @@ void CPreferenceFunctionReport::execute() {
     // Output Header
     cout << CONFIG_ARRAY_START << sLabel << CONFIG_ARRAY_END << "\n";
     cout << PARAM_REPORT << "." << PARAM_TYPE << CONFIG_RATIO_SEPARATOR << " " << pParameterList->getString(PARAM_TYPE) << "\n";
-    cout << PARAM_PREFERENCE_FUNCTION << "." << PARAM_LABEL << CONFIG_RATIO_SEPARATOR << " " << sPreferenceFunction << "\n";
+    cout << PARAM_LABEL << CONFIG_RATIO_SEPARATOR << " " << sPreferenceFunction << "\n";
 
     vector<string> vDefinedParameters;
     pList->fillDefinedParameterVector(vDefinedParameters);

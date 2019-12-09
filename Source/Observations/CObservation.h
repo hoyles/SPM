@@ -17,7 +17,7 @@
 // structures
 struct SComparison {
   string sKey;
-  int iAge;
+  int iBin;
   string sGroup;
   double dExpectedValue;
   double dObservedValue;
@@ -53,6 +53,7 @@ public:
   virtual void               build();
   void                       prepare();
   virtual void               execute();
+  string                     getType();
 
 protected:
   // Functions

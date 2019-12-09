@@ -1,27 +1,26 @@
 //============================================================================
-// Name        : CNormalDistribution.h
-// Author      : S.Rasmussen
-// Date        : 7/05/2009
-// Copyright   : Copyright NIWA Science ©2009 - www.niwa.co.nz
+// Name        : CLogNormalDistribution.h
+// Author      : 
+// Date        : 
+// Copyright   : 
 // Description :
-// $Date: 2008-03-04 16:33:32 +1300 (Tue, 04 Mar 2008) $
 //============================================================================
-#ifndef CNORMALDISTRIBUTION_H_
-#define CNORMALDISTRIBUTION_H_
+#ifndef CLOGNORMALDISTRIBUTION_H_
+#define CLOGNORMALDISTRIBUTION_H_
 
 //**********************************************************************
 //
 //
 //**********************************************************************
-class CNormalDistribution {
+class CLogNormalDistribution {
 public:
   static double               getCDF(double x, double mu, double sigma);
   static double               getQuantile(double x, double mu, double sigma);
 
 protected:
   // Functions
-  CNormalDistribution() { };
-  virtual                     ~CNormalDistribution() { };
+  CLogNormalDistribution() { };
+  virtual                     ~CLogNormalDistribution() { };
 };
 
-#endif /* CNORMALDISTRIBUTION_H_ */
+#endif /* CLOGNORMALDISTRIBUTION_H_ */

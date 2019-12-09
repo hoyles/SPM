@@ -10,7 +10,6 @@ In SPM, but not in manual
   b0_value
   binomial
   binomial_approx
-  by_length
   category_index
   clayton_copula
   column
@@ -19,7 +18,6 @@ In SPM, but not in manual
   correlation
   difference
   dirichlet
-  distribution
   enabled_estimates
   estimable
   estimates
@@ -38,11 +36,13 @@ In SPM, but not in manual
   layer_varying_exploitation_rate_by_event
   layer_width
   matrix
+  max_length
   mean
   multinomial
   natural
   non_negative_integer
   normal_log
+  number_of_bins
   objective
   parabola
   pdfs

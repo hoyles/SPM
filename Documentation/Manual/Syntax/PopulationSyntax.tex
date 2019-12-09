@@ -1530,27 +1530,27 @@ The individual types of size-at-age relationships available are,
 \defValue{A real number}
 \defCondition{Only define if using the von Bertalanffy relationship}
 
-%\defSub{distribution} {Define the distribution of sizes-at-age around the mean}
-%\defType{String}
-%\defDefault{Normal}
-%\defValue{Either normal or lognormal}
-%\defCondition{Only define if using the von Bertalanffy relationship}
-%
-%\defSub{by\_length} {Specifies if the linear interpolation of c.v.s is a linear function of mean size or of age}
-%\defType{Logical}
-%\defDefault{True}
-%\defValue{If true, the the c.v. is a function of length, else a function of age}
-%
-%\defSub{cv} {Define the c.v. of the distribution of sizes-at-age around the mean}
-%\defType{Estimable}
-%\defDefault{No default}
-%\defValue{A positive real number}
+\defSub{distribution} {Define the distribution of sizes-at-age around the mean}
+\defType{String}
+\defDefault{Normal}
+\defValue{Either normal or lognormal}
+\defCondition{Only define if using the von Bertalanffy relationship}
+
+\defSub{by\_length} {Specifies if the linear interpolation of c.v.s is a linear function of mean size or of age}
+\defType{Logical}
+\defDefault{True}
+\defValue{If true, the the c.v. is a function of length, else a function of age}
+
+\defSub{cv} {Define the c.v. of the distribution of sizes-at-age around the mean}
+\defType{Estimable}
+\defDefault{No default}
+\defValue{A positive real number}
 %
 %\defSub{growth\_proportions} {Define the proportion of the year for each time-step for evaluating size}
 %\defType{Constant vector}
 %\defDefault{No default}
 %\defValue{A vector of values, $\le1$ of length equal to the number of time-steps}
-%
+
 \defSub{size\_weight} {Define the label of the associated size-weight relationship}
 \defType{String}
 \defDefault{No default}
@@ -1579,13 +1579,13 @@ The individual types of size-at-age relationships available are,
 \defSub{tau2} {Define the $\tau_2$ parameter of the Schnute relationship}
 \defType{String}
 \defDefault{Normal}
-\defValue{Either normal or lognormal}
+\defValue{A positive real number}
 \defCondition{Only define if using the Schnute relationship}
 
 \defSub{a} {Define the $a$ parameter of the Schnute relationship}
 \defType{String}
 \defDefault{Normal}
-\defValue{Either normal or lognormal}
+\defValue{A positive real number}
 \defCondition{Only define if using the Schnute relationship}
 
 \defSub{b} {Define the $b$ parameter of the Schnute relationship}
@@ -1594,15 +1594,21 @@ The individual types of size-at-age relationships available are,
 \defValue{Either normal or lognormal}
 \defCondition{Only define if using the Schnute relationship}
 
-%\defSub{by\_length} {Specifies if the linear interpolation of c.v.s is a linear function of mean size or of age}
-%\defType{Logical}
-%\defDefault{True}
-%\defValue{If true, the the c.v. is a function of length, else a function of age}
-%
-%\defSub{cv} {Define the c.v. of the distribution of sizes-at-age around the mean}
-%\defType{Estimable}
-%\defDefault{No default}
-%\defValue{A positive real number}
+\defSub{distribution} {Define the distribution of sizes-at-age around the mean}
+\defType{String}
+\defDefault{Normal}
+\defValue{Either normal or lognormal}
+\defCondition{Only define if using the von Bertalanffy relationship}
+
+\defSub{by\_length} {Specifies if the linear interpolation of c.v.s is a linear function of mean size or of age}
+\defType{Logical}
+\defDefault{True}
+\defValue{If true, the the c.v. is a function of length, else a function of age}
+
+\defSub{cv} {Define the c.v. of the distribution of sizes-at-age around the mean}
+\defType{Estimable}
+\defDefault{No default}
+\defValue{A positive real number}
 %
 %\defSub{growth\_proportions} {Define the proportion of the year for each time-step for evaluating size}
 %\defType{Constant vector}

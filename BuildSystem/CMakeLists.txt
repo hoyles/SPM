@@ -21,7 +21,7 @@ IF (WIN32)
   
   # Generic Build Settings
   SET(LINK_OPTIONS "-static icon.o")
-  SET(COMPILE_OPTIONS_MAIN "-DBOOST_THREAD_USE_LIB=1 -DBOOST_THREAD_PROVIDES_GENERIC_SHARED_MUTEX_ON_WIN -O0 -g3 -Wall -Wno-deprecated-declarations -fmessage-length=0 -fopenmp -static -std=c++11")
+  SET(COMPILE_OPTIONS_MAIN "-DBOOST_THREAD_USE_LIB=1 -DBOOST_THREAD_PROVIDES_GENERIC_SHARED_MUTEX_ON_WIN -O0 -g3 -Wno-deprecated-declarations -fmessage-length=0 -fopenmp -static -std=c++11")
   SET(COMPILE_OPTIONS_OPTI "-DBOOST_THREAD_USE_LIB=1 -DBOOST_THREAD_PROVIDES_GENERIC_SHARED_MUTEX_ON_WIN -DOPTIMIZE -O2 -g0 -Wall  -Wno-deprecated-declarations -fmessage-length=0 -fopenmp -static -std=c++11")
   SET(COMPILE_OPTIONS_TEST "-DBOOST_THREAD_USE_LIB=1 -DBOOST_THREAD_PROVIDES_GENERIC_SHARED_MUTEX_ON_WIN -DTEST -O0 -g3 -Wall -Wno-deprecated-declarations -fmessage-length=0 -fopenmp -static -std=c++11")
   ADD_CUSTOM_TARGET(icon ALL

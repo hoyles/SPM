@@ -33,6 +33,8 @@ public:
   int                        getMinAge() { return iMinAge; }
   int                        getMaxAge() { return iMaxAge; }
   bool                       getAgePlusGroup() { return bAgePlus; }
+  string                      getType() {return (PARAM_PROPORTIONS_AT_AGE); }
+  
 
 protected:
   // Variables

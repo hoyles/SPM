@@ -25,6 +25,8 @@ public:
   void                        validate();
   void                        build();
   void                        execute();
+  string                      getType() {return (PARAM_PRESENCE); }
+  double                      getCatchability();  
 
 protected:
   // Variables

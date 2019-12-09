@@ -8,19 +8,19 @@
 //============================================================================
 
 // Global Headers
-#include <boost/math/distributions/normal.hpp>
+#include <boost/math/distributions/lognormal.hpp>
 
 // Local Headers
-#include "CNormalDistribution.h"
+#include "CLogNormalDistribution.h"
 
 // Namespace
-using boost::math::normal;
+using boost::math::lognormal;
 
 //**********************************************************************
 // double CNormalDistribution::getCDF(double x, double mu, double sigma)
 // Get a a value from the normal CDF
 //**********************************************************************
-double CNormalDistribution::getCDF(double x, double mu, double sigma) {
+double CLogNormalDistribution::getCDF(double x, double mu, double sigma) {
 
   if (sigma <= 0) {
     if (x < mu)
@@ -29,15 +29,16 @@ double CNormalDistribution::getCDF(double x, double mu, double sigma) {
       return 1;
   }
 
-  normal s(mu, sigma);
+  lognormal s(mu, sigma);
   return cdf(s, x);
 }
 
+
 //**********************************************************************
-// double CNormalDistribution::getQuantile(double x, double mu, double sigma)
+// double CLogNormalDistribution::getQuantile(double x, double mu, double sigma)
 // Get a a value from the normal as quantiles
 //**********************************************************************
-double CNormalDistribution::getQuantile(double x, double mu, double sigma) {
+double CLogNormalDistribution::getQuantile(double x, double mu, double sigma) {
 
   if (sigma <= 0) {
     if (x < mu)
@@ -46,6 +47,6 @@ double CNormalDistribution::getQuantile(double x, double mu, double sigma) {
       return 1;
   }
 
-  normal s(mu, sigma);
+  lognormal s(mu, sigma);
   return quantile(s, x);
 }

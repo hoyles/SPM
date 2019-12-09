@@ -249,6 +249,15 @@ void CAbundanceObservation::execute() {
 }
 
 //**********************************************************************
+// CAbundanceObservation::getCatchability()
+// Get catchabilty
+//**********************************************************************
+double CAbundanceObservation::getCatchability() {
+  double Q = pCatchability->getQ();
+  return(Q);
+}
+
+//**********************************************************************
 // CAbundanceObservation::~CAbundanceObservation()
 // Default De-Constructor
 //**********************************************************************

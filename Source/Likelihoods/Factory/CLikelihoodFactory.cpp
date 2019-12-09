@@ -79,6 +79,18 @@ CLikelihood* CLikelihoodFactory::buildLikelihood(string observationType, string 
     else
       CError::errorUnknown(PARAM_LIKELIHOOD, type);
 
+  } else if (observationType == PARAM_PROPORTIONS_AT_LENGTH) {
+    if (type == PARAM_LOGNORMAL)
+      pLikelihood = new CLogNormalLikelihood();
+    else if (type == PARAM_MULTINOMIAL)
+      pLikelihood = new CMultinomialLikelihood();
+    else if (type == PARAM_DIRICHLET)
+      pLikelihood = new CDirichletLikelihood();
+    else if (type == PARAM_PSEUDO)
+      pLikelihood = new CPseudoLikelihood();
+    else
+      CError::errorUnknown(PARAM_LIKELIHOOD, type);
+
   } else
     CError::errorUnknown(PARAM_OBSERVATION, observationType);
 
