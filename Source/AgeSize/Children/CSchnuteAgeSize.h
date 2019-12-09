@@ -27,7 +27,7 @@ public:
   double                      getMeanSize(double &age);
   double                      getMeanWeight(double &age);
   double                      getCV(double &age);
-  double                      getProportionInLengthBin(double &age, double &LowerBin, double&UpperBin) { return 0; };
+  double                      getProportionInLengthBin(double &age, double &LowerBin, double&UpperBin);
   
 protected:
   double                      dY1;
@@ -42,6 +42,7 @@ protected:
   string                      sSizeWeight;
   CSizeWeight*                pSizeWeight;
   double                      getMeanWeightFromSize(double &size, double &cv);
+  double                      getSd(double &age);
 };
 
 #endif /* CSCHNUTEAGESIZE_H_ */

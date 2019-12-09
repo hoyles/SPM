@@ -180,8 +180,9 @@
 \contentsline {subsubsection}{\numberline {8.9.1}Abundance}{117}{subsubsection.8.9.1}%
 \contentsline {subsubsection}{\numberline {8.9.2}Biomass}{118}{subsubsection.8.9.2}%
 \contentsline {subsection}{\numberline {8.10}Age-size relationship}{118}{subsection.8.10}%
-\contentsline {subsubsection}{\numberline {8.10.1}von Bertalanffy}{119}{subsubsection.8.10.1}%
-\contentsline {subsubsection}{\numberline {8.10.2}Schnute}{120}{subsubsection.8.10.2}%
+\contentsline {subsubsection}{\numberline {8.10.1}None}{119}{subsubsection.8.10.1}%
+\contentsline {subsubsection}{\numberline {8.10.2}von Bertalanffy}{119}{subsubsection.8.10.2}%
+\contentsline {subsubsection}{\numberline {8.10.3}Schnute}{120}{subsubsection.8.10.3}%
 \contentsline {subsection}{\numberline {8.11}Size-weight}{121}{subsection.8.11}%
 \contentsline {subsubsection}{\numberline {8.11.1}None}{121}{subsubsection.8.11.1}%
 \contentsline {subsubsection}{\numberline {8.11.2}Basic}{121}{subsubsection.8.11.2}%
@@ -195,7 +196,7 @@
 \contentsline {subsubsection}{\numberline {8.12.7}InverseLogistic}{124}{subsubsection.8.12.7}%
 \contentsline {subsubsection}{\numberline {8.12.8}Logistic producing}{124}{subsubsection.8.12.8}%
 \contentsline {subsubsection}{\numberline {8.12.9}Double-normal}{125}{subsubsection.8.12.9}%
-\contentsline {subsubsection}{\numberline {8.12.10}Double-exponential}{125}{subsubsection.8.12.10}%
+\contentsline {subsubsection}{\numberline {8.12.10}Double-exponential}{126}{subsubsection.8.12.10}%
 \contentsline {subsubsection}{\numberline {8.12.11}Spline}{126}{subsubsection.8.12.11}%
 \contentsline {section}{\numberline {9}Estimation command and subcommand syntax}{129}{section.9}%
 \contentsline {subsection}{\numberline {9.1}Estimation methods}{129}{subsection.9.1}%

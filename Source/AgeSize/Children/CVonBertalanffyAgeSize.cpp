@@ -97,14 +97,8 @@ void CVonBertalanffyAgeSize::build() {
 // Validate the age-size relationship
 //**********************************************************************
 void CVonBertalanffyAgeSize::rebuild() {
-  try {
-    // Base
-    CAgeSize::rebuild();
 
-  } catch (string &Ex) {
-    Ex = "CVonBertalanffyAgeSize.rebuild(" + getLabel() + ")->" + Ex;
-    throw Ex;
-  }
+  CAgeSize::rebuild();
 }
 
 //**********************************************************************
@@ -112,22 +106,12 @@ void CVonBertalanffyAgeSize::rebuild() {
 // Apply age-size relationship
 //**********************************************************************
 double CVonBertalanffyAgeSize::getMeanSize(double &age) {
-  try {
 
-    if ((-dK * (age - dT0)) > 10)
-      throw("Fatal error in age-size relationship: exp(-k*(age-t0)) is enormous. The k or t0 parameters are probably wrong.");
-
-  } catch (string &Ex) {
-    Ex = "CVonBertalanffyAgeSize.getMeanSize(" + getLabel() + ")->" + Ex;
-    throw Ex;
-  }
-
-
+  if ((-dK * (age - dT0)) > 10)
+    throw("Fatal error in age-size relationship: exp(-k*(age-t0)) is enormous. The k or t0 parameters are probably wrong.");
   double dSize = dLinf * (1 - exp(-dK * (age - dT0)));
-
   if (dSize < 0)
     return 0.0;
-
   return dSize;
 }
 
@@ -136,23 +120,15 @@ double CVonBertalanffyAgeSize::getMeanSize(double &age) {
 // Apply size-weight relationship
 //**********************************************************************
 double CVonBertalanffyAgeSize::getMeanWeight(double &age) {
+
   double dWeight = 0;
-
-  try {
-    double dSize = this->getMeanSize( age );
-
-    if (bByLength) {
-      dWeight = getMeanWeightFromSize( dSize, dCV );
-    } else {
-      double cv = (age * dCV) / dSize;
-      dWeight = getMeanWeightFromSize( dSize, cv );
-    }
-
-  } catch (string &Ex) {
-    Ex = "CVonBertalanffyAgeSize.getMeanWeight(" + getLabel() + ")->" + Ex;
-    throw Ex;
+  double dSize = this->getMeanSize( age );
+  if (bByLength) {
+    dWeight = getMeanWeightFromSize( dSize, dCV );
+  } else {
+    double cv = (age * dCV) / dSize;
+    dWeight = getMeanWeightFromSize( dSize, cv );
   }
-
   return dWeight;
 }
 
@@ -161,16 +137,9 @@ double CVonBertalanffyAgeSize::getMeanWeight(double &age) {
 // Apply size-weight relationship
 //**********************************************************************
 double CVonBertalanffyAgeSize::getMeanWeightFromSize(double &size, double &cv) {
+
   double dWeight = 0;
-
-  try {
-    dWeight = pSizeWeight->getMeanWeight( size, sDistribution, cv );
-
-  } catch (string &Ex) {
-    Ex = "CVonBertalanffyAgeSize.getMeanWeightFromSize(" + getLabel() + ")->" + Ex;
-    throw Ex;
-  }
-
+  dWeight = pSizeWeight->getMeanWeight( size, sDistribution, cv );
   return dWeight;
 }
 
@@ -207,29 +176,22 @@ double CVonBertalanffyAgeSize::getSd(double &age) {
 // Get the proportion within the length bin
 //**********************************************************************
 double CVonBertalanffyAgeSize::getProportionInLengthBin(double &age, double &LowerBin, double&UpperBin) {
-  try {
 
-    double dSize = this->getMeanSize( age );
-	double dResult = 0;
-
-	if( sDistribution == PARAM_NORMAL ) {
-  	  double dSd = this->getSd( age );
-	  dResult = CNormalDistribution::getCDF(UpperBin, dSize, dSd) - CNormalDistribution::getCDF(LowerBin, dSize, dSd);
-	} else if ( sDistribution == PARAM_LOGNORMAL ) {
-	  double dVar = log(dCV*dCV + 1.0);
-	  double dMu = log(dSize) - (dVar/2.0);
-	  dResult = CLogNormalDistribution::getCDF(UpperBin, dMu, sqrt(dVar)) - CLogNormalDistribution::getCDF(LowerBin, dMu, sqrt(dVar));
-	} else {
-      CError::errorTypeNotSupported(PARAM_DISTRIBUTION, sDistribution);
-	}
-  
-  return( dResult );	
-  
-  } catch (string &Ex) {
-    Ex = "CVonBertalanffyAgeSize.getProportionInLengthBin(" + getLabel() + ")->" + Ex;
-    throw Ex;
+  double dSize = this->getMeanSize( age );
+  double dResult = 0;
+  if( sDistribution == PARAM_NORMAL ) {
+    double dSd = this->getSd( age );
+    dResult = CNormalDistribution::getCDF(UpperBin, dSize, dSd) - CNormalDistribution::getCDF(LowerBin, dSize, dSd);
+  } else if ( sDistribution == PARAM_LOGNORMAL ) {
+    double dVar = log(dCV*dCV + 1.0);
+    double dMu = log(dSize) - (dVar/2.0);
+    dResult = CLogNormalDistribution::getCDF(UpperBin, dMu, sqrt(dVar)) - CLogNormalDistribution::getCDF(LowerBin, dMu, sqrt(dVar));
+  } else {
+    CError::errorTypeNotSupported(PARAM_DISTRIBUTION, sDistribution);
   }
+  return( dResult );	
 }
+
 //**********************************************************************
 // CVonBertalanffyAgeSize::~CVonBertalanffyAgeSize()
 // Destructor

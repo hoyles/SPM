@@ -208,6 +208,41 @@ double CSchnuteAgeSize::getCV(double &age) {
 }
 
 //**********************************************************************
+// double CSchnuteAgeSize::getSd(double &age)
+// get the cv at age
+//**********************************************************************
+double CSchnuteAgeSize::getSd(double &age) {
+
+  if (bByLength) {
+    double dSize = this->getMeanSize( age );
+    return ( dCV * dSize );
+  } else {
+    return ( age * dCV );
+  }
+}
+
+//**********************************************************************
+// double CSchnuteAgeSize::getProportionInLengthBin(double &age, double &LowerBin, double&UpperBin)
+// Get the proportion within the length bin
+//**********************************************************************
+double CSchnuteAgeSize::getProportionInLengthBin(double &age, double &LowerBin, double&UpperBin) {
+
+  double dSize = this->getMeanSize( age );
+  double dResult = 0;
+  if( sDistribution == PARAM_NORMAL ) {
+    double dSd = this->getSd( age );
+    dResult = CNormalDistribution::getCDF(UpperBin, dSize, dSd) - CNormalDistribution::getCDF(LowerBin, dSize, dSd);
+  } else if ( sDistribution == PARAM_LOGNORMAL ) {
+    double dVar = log(dCV*dCV + 1.0);
+    double dMu = log(dSize) - (dVar/2.0);
+    dResult = CLogNormalDistribution::getCDF(UpperBin, dMu, sqrt(dVar)) - CLogNormalDistribution::getCDF(LowerBin, dMu, sqrt(dVar));
+  } else {
+    CError::errorTypeNotSupported(PARAM_DISTRIBUTION, sDistribution);
+  }
+  return( dResult );	
+}
+
+//**********************************************************************
 // CSchnuteAgeSize::~CSchnuteAgeSize()
 // Destructor
 //**********************************************************************
