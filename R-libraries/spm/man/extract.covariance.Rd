@@ -2,12 +2,15 @@
 % Please edit documentation in R/extract.covariance.R
 \name{extract.covariance}
 \alias{extract.covariance}
-\title{Utility extract function}
+\title{Helper function for 'extract'}
 \usage{
 extract.covariance(lines)
 }
+\arguments{
+\item{lines}{list of lines to process}
+}
 \description{
-Utility extract function
+Helper function for 'extract'
 }
 \author{
 Alistair Dunn

@@ -52,31 +52,31 @@
   \item Citing \SPM, \hyperpage{1}
   \item Classification layers, \hyperpage{16}
   \item Command 
-    \subitem  age\_size, \hyperpage{119}, \hyperpage{198}
-    \subitem  ageing\_error, \hyperpage{149}, \hyperpage{205}
-    \subitem  catchability, \hyperpage{135}, \hyperpage{202}
-    \subitem  derived\_quantity, \hyperpage{117}, \hyperpage{198}
+    \subitem  age\_size, \hyperpage{119}, \hyperpage{190}
+    \subitem  ageing\_error, \hyperpage{149}, \hyperpage{197}
+    \subitem  catchability, \hyperpage{135}, \hyperpage{194}
+    \subitem  derived\_quantity, \hyperpage{117}, \hyperpage{190}
     \subitem  derived\_quantity\_by\_cell, \hyperpage{115}, 
-		\hyperpage{197}
-    \subitem  estimate, \hyperpage{133}, \hyperpage{201}
-    \subitem  estimation, \hyperpage{129}, \hyperpage{200}
-    \subitem  include, \hyperpage{163}, \hyperpage{209}
+		\hyperpage{189}
+    \subitem  estimate, \hyperpage{133}, \hyperpage{193}
+    \subitem  estimation, \hyperpage{129}, \hyperpage{192}
+    \subitem  include, \hyperpage{163}, \hyperpage{201}
     \subitem  Include files, \hyperpage{11}
-    \subitem  initialisation\_phase, \hyperpage{86}, \hyperpage{189}
-    \subitem  layer, \hyperpage{111}, \hyperpage{196}
-    \subitem  mcmc, \hyperpage{131}, \hyperpage{201}
-    \subitem  minimiser, \hyperpage{129}, \hyperpage{200}
-    \subitem  model, \hyperpage{85}, \hyperpage{189}
-    \subitem  observation, \hyperpage{137}, \hyperpage{202}
-    \subitem  pdf, \hyperpage{109}, \hyperpage{195}
-    \subitem  penalty, \hyperpage{136}, \hyperpage{202}
-    \subitem  preference\_function, \hyperpage{104}, \hyperpage{193}
-    \subitem  process, \hyperpage{88}, \hyperpage{189}
-    \subitem  profile, \hyperpage{133}, \hyperpage{201}
-    \subitem  report, \hyperpage{151}, \hyperpage{205}
-    \subitem  selectivity, \hyperpage{122}, \hyperpage{199}
-    \subitem  size\_weight, \hyperpage{121}, \hyperpage{198}
-    \subitem  time\_step, \hyperpage{87}, \hyperpage{189}
+    \subitem  initialisation\_phase, \hyperpage{86}, \hyperpage{181}
+    \subitem  layer, \hyperpage{111}, \hyperpage{188}
+    \subitem  mcmc, \hyperpage{131}, \hyperpage{193}
+    \subitem  minimiser, \hyperpage{129}, \hyperpage{192}
+    \subitem  model, \hyperpage{85}, \hyperpage{181}
+    \subitem  observation, \hyperpage{137}, \hyperpage{194}
+    \subitem  pdf, \hyperpage{109}, \hyperpage{187}
+    \subitem  penalty, \hyperpage{136}, \hyperpage{194}
+    \subitem  preference\_function, \hyperpage{104}, \hyperpage{185}
+    \subitem  process, \hyperpage{88}, \hyperpage{181}
+    \subitem  profile, \hyperpage{133}, \hyperpage{193}
+    \subitem  report, \hyperpage{151}, \hyperpage{197}
+    \subitem  selectivity, \hyperpage{122}, \hyperpage{191}
+    \subitem  size\_weight, \hyperpage{121}, \hyperpage{190}
+    \subitem  time\_step, \hyperpage{87}, \hyperpage{181}
   \item Command block format, \hyperpage{11}
   \item Command line arguments, \hyperpage{7}, \hyperpage{9}
   \item Commands, \hyperpage{10}
@@ -161,7 +161,7 @@
 
   \indexspace
 
-  \item Include an external file, \hyperpage{163}, \hyperpage{209}
+  \item Include an external file, \hyperpage{163}, \hyperpage{201}
   \item Including external files, \hyperpage{8}
   \item Independence copula, \hyperpage{44}
   \item Initialisation, \hyperpage{13}, \hyperpage{20}, \hyperpage{86}

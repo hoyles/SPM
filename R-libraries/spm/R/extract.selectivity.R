@@ -1,9 +1,10 @@
-#' Utility extract function
+#' Helper function for 'extract'
 #'
 #' @author Alistair Dunn
+#' @param lines list of lines to process
+#' @export
 #'
-"extract.selectivity" <-
-function(lines){
+"extract.selectivity" <- function(lines){
   if(missing(lines)) stop("ERROR: Missing argument lines")
   index.start<-(1:length(lines))[substring(lines,1,1)=="["][1]
   index.end<-(1:length(lines))[substring(lines,1,4)=="*end"][1]

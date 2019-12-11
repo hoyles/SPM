@@ -2,12 +2,15 @@
 % Please edit documentation in R/extract.MCMC.r
 \name{extract.MCMC}
 \alias{extract.MCMC}
-\title{Utility extract function}
+\title{Helper function for 'extract'}
 \usage{
 extract.MCMC(lines)
 }
+\arguments{
+\item{lines}{list of lines to process}
+}
 \description{
-Utility extract function
+Helper function for 'extract'
 }
 \author{
 Alistair Dunn

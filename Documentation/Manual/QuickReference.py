@@ -12,42 +12,9 @@ FILE = [open('Syntax/PopulationSyntax.tex', 'r'),
         open('Syntax/GeneralSyntax.tex', 'r')]
 OUTFILE = open('QuickReference.tex', 'w')
 VERSION = open('SPMversion.tex', 'r')
-SYNTAX_OUTFILE = open('SPM.syn', 'w')
 ERROR_OUTFILE = open('syntax_errors.txt', 'w')
 
 OUTFILE.write("\section{Quick reference\label{sec:quick-reference}}\n")
-
-SYNTAX_OUTFILE.write("; TextPad syntax definitions for SPM version ")
-SYNTAX_OUTFILE.write(VERSION.read())
-SYNTAX_OUTFILE.write("; ===================================================================================\n;\n;\n")
-SYNTAX_OUTFILE.write("C=1\n")
-SYNTAX_OUTFILE.write("[Syntax]\n")
-SYNTAX_OUTFILE.write("Namespace1 = 6\n")
-SYNTAX_OUTFILE.write("IgnoreCase = No\n")
-SYNTAX_OUTFILE.write("KeyWordLength = 0\n")
-SYNTAX_OUTFILE.write("BracketChars = ([])\n")
-SYNTAX_OUTFILE.write("OperatorChars = -+*/!~%^&|=$:!_<>\n")
-SYNTAX_OUTFILE.write("PreprocStart =\n")
-SYNTAX_OUTFILE.write("HexPrefix = 0x\n")
-SYNTAX_OUTFILE.write("SyntaxStart =\n")
-SYNTAX_OUTFILE.write("SyntaxEnd =\n")
-SYNTAX_OUTFILE.write("CommentStart = {\n")
-SYNTAX_OUTFILE.write("CommentEnd = }\n")
-SYNTAX_OUTFILE.write("CommentStartAlt =\n")
-SYNTAX_OUTFILE.write("CommentEndAlt =\n")
-SYNTAX_OUTFILE.write("SingleComment = #\n")
-SYNTAX_OUTFILE.write("SingleCommentCol =\n")
-SYNTAX_OUTFILE.write("SingleCommentAlt = @comment\n")
-SYNTAX_OUTFILE.write("SingleCommentColAlt =\n")
-SYNTAX_OUTFILE.write("SingleCommentEsc =\n")
-SYNTAX_OUTFILE.write("StringsSpanLines = No\n")
-SYNTAX_OUTFILE.write("StringStart = \"\n")
-SYNTAX_OUTFILE.write("StringEnd = \"\n")
-SYNTAX_OUTFILE.write("StringAlt =\n")
-SYNTAX_OUTFILE.write("StringEsc = \\ \n")
-SYNTAX_OUTFILE.write("CharStart = '\n")
-SYNTAX_OUTFILE.write("CharEnd = '\n")
-SYNTAX_OUTFILE.write("CharEsc = \\ \n")
 
 Keywords1 = []
 Keywords2 = []
@@ -133,37 +100,6 @@ for i in range(len(Keywords5)):
 for i in range(len(Keywords6)):
   Keywords6[i] = Keywords6[i].replace("\\", "")
 
-SYNTAX_OUTFILE.write("\n[Keywords 1]\n")
-for i in Keywords1 :
-  SYNTAX_OUTFILE.write("@" + i)
-  SYNTAX_OUTFILE.write("\n")
-
-SYNTAX_OUTFILE.write("\n[Keywords 2]\n")
-for i in Keywords2 :
-  SYNTAX_OUTFILE.write(i)
-  SYNTAX_OUTFILE.write("\n")
-
-SYNTAX_OUTFILE.write("\n[Keywords 3]\n")
-for i in Keywords3 :
-  SYNTAX_OUTFILE.write(i)
-  SYNTAX_OUTFILE.write("\n")
-
-SYNTAX_OUTFILE.write("\n")
-SYNTAX_OUTFILE.write("\n[Keywords 4]\n")
-for i in Keywords4 :
-  SYNTAX_OUTFILE.write(i)
-  SYNTAX_OUTFILE.write("\n")
-
-SYNTAX_OUTFILE.write("\n[Keywords 5]\n")
-for i in Keywords5 :
-  SYNTAX_OUTFILE.write(i)
-  SYNTAX_OUTFILE.write("\n")
-
-SYNTAX_OUTFILE.write("\n[Preprocessor keywords]\n")
-for i in Keywords6 :
-  SYNTAX_OUTFILE.write(i)
-  SYNTAX_OUTFILE.write("\n")
-
 # Compare against translations file
 r = re.compile('\".*?\"')
 TRANSLATION = open('../../Source/Translations/English_UK.h', 'r')
@@ -191,9 +127,3 @@ ERROR_OUTFILE.write('\n\n\nIn manual, but not in SPM\n')
 for i in range(len(KEYWORDS)):
   if (KEYWORDS[i] not in DEFINED) :
     ERROR_OUTFILE.write("  " + KEYWORDS[i] + "\n")
-
-
-
-
-
-

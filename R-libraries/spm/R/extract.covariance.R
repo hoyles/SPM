@@ -1,9 +1,10 @@
-#' Utility extract function
+#' Helper function for 'extract'
 #'
 #' @author Alistair Dunn
+#' @param lines list of lines to process
+#' @export
 #'
-extract.covariance <- function (lines)
-{
+"extract.covariance" <- function (lines) {
   make.matrix<-function(lines,columns) {
     data <- matrix(0, length(lines) , length(lines))
     for(i in 1:length(lines)) {

@@ -163,10 +163,10 @@ Section "Modify path for SPM" SEC04
   ${EnvVarUpdate} $0 "PATH" "A" "HKLM" "$INSTDIR"  ; Append the new one
 SectionEnd
 
-;Section /o "Copy example files" SEC05
-;  SetOutPath "$INSTDIR\\examples"
-;  File /r "examples\*"
-;SectionEnd
+Section /o "Copy example files" SEC05
+  SetOutPath "$INSTDIR\\Examples"
+  File /r "..\\Examples\*"
+SectionEnd
 
 Section /o "Copy the R library" SEC06
   SetOutPath "$INSTDIR"

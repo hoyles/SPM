@@ -17,6 +17,8 @@ extract.objectivefunction	extract.objectivefunction
 extract.observation	extract.observation
 extract.partition	extract.partition
 extract.partitionbiomass	extract.partitionbiomass
+extract.preferencefunction	extract.preferencefunction
+extract.process	extract.process
 extract.randomnumberseed	extract.randomnumberseed
 extract.selectivity	extract.selectivity
 extract.simulations	extract.simulations

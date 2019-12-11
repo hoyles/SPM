@@ -2,12 +2,15 @@
 % Please edit documentation in R/extract.size.weight.r
 \name{extract.sizeweight}
 \alias{extract.sizeweight}
-\title{Utility extract function}
+\title{Helper function for 'extract'}
 \usage{
 extract.sizeweight(lines)
 }
+\arguments{
+\item{lines}{list of lines to process}
+}
 \description{
-Utility extract function
+Helper function for 'extract'
 }
 \author{
 Alistair Dunn

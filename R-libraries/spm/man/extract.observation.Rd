@@ -2,12 +2,15 @@
 % Please edit documentation in R/extract.observation.R
 \name{extract.observation}
 \alias{extract.observation}
-\title{Utility extract function}
+\title{Helper function for 'extract'}
 \usage{
 extract.observation(lines)
 }
+\arguments{
+\item{lines}{list of lines to process}
+}
 \description{
-Utility extract function
+Helper function for 'extract'
 }
 \author{
 Alistair Dunn

@@ -2,12 +2,15 @@
 % Please edit documentation in R/extract.simulations.r
 \name{extract.simulations}
 \alias{extract.simulations}
-\title{Utility extract function}
+\title{Helper function for 'extract'}
 \usage{
 extract.simulations(file, path = "")
 }
+\arguments{
+\item{lines}{list of lines to process}
+}
 \description{
-Utility extract function
+Helper function for 'extract'
 }
 \author{
 Alistair Dunn

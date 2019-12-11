@@ -7,8 +7,7 @@
 #' @param total If true, then sum over selected categories and ages. Default = TRUE
 #' @export
 #'
-"calc.abundance" <-
-function (data, categories = NULL, ages = NULL, total = T) {
+"calc.abundance" <- function (data, categories = NULL, ages = NULL, total = T) {
   if (!is.null(categories)) data <- data[data$category %in% categories, ]
   index <- paste(data$col, data$row, sep = "-")
   data <- data[, regexpr("age", names(data)) > 0]

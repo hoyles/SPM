@@ -2,12 +2,15 @@
 % Please edit documentation in R/extract.derivedquantitybycell.R
 \name{extract.derivedquantitybycell}
 \alias{extract.derivedquantitybycell}
-\title{Utility extract function}
+\title{Helper function for 'extract'}
 \usage{
 extract.derivedquantitybycell(lines)
 }
+\arguments{
+\item{lines}{list of lines to process}
+}
 \description{
-Utility extract function
+Helper function for 'extract'
 }
 \author{
 Alistair Dunn

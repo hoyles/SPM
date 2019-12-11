@@ -15,7 +15,7 @@ from Builder import *
 from Documentation import *
 from Archiver import *
 from UnitTests import *
-#from Installer import *
+from Installer import *
 from DebBuilder import *
 from CommandLineInterface import *
 from Version import *
@@ -64,7 +64,7 @@ def start():
 		unit_tests = UnitTests()
 		return unit_tests.start()
 	#elif build_target == "examples":
-	#	examples = UnitTests()
+	#	examples = Examples()
 	#	return examples.start()
 	elif build_target == "clean":
 		cleaner = Cleaner()

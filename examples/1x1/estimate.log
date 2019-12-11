@@ -1,13 +1,13 @@
 SPM (Spatial Population Model)
 Call: spm -e -q -g 0 -o MPD.dat 
-Date: Sat Nov 30 13:23:27 2019
-v1.1-2019-11-30 (rev. 2019-11-30 00:04:56 UTC). Copyright (c) 2008-2019, NIWA
+Date: Wed Dec 11 09:17:00 2019
+v1.1-2019-12-09 (rev. 2019-12-09 23:07:07 UTC). Copyright (c) 2008-2019, NIWA
 User name: alist
-Machine name: HP1040 (Windows_NT, PID=10040)
+Machine name: DELL-9020 (Windows_NT, PID=5696)
 
 [initialisation-phase1]
 report.type: initialisation
-initialisation.initialisation_phase: Phase1
+initialisation_phase: Phase1
 years: 175
 lambda: 1e-10
 lambda_hat: 3.13799e-07 1.21673e-08 4.71776e-10 1.82927e-11
@@ -289,12 +289,13 @@ row column category age[1] age[2] age[3] age[4] age[5] age[6] age[7] age[8] age[
 
 [CAA-1998]
 report.type: observation
-observation.label: CAA-year-1998
-observation.year: 1998
-observation.time_step: step_one
-observation.min_age: 1
-observation.max_age: 35
-observation.age_plus_group: true
+label: CAA-year-1998
+type: proportions_at_age
+year: 1998
+time_step: step_one
+min_age: 1
+max_age: 35
+age_plus_group: true
 area category age observed expected residual errorvalue processerror totalerror score
 All immature+mature 1 0 0.00037434 -0.00037434 343 25 23.3016 0
 All immature+mature 2 0 0.000822058 -0.000822058 343 25 23.3016 0
@@ -335,12 +336,13 @@ All immature+mature 35 0 0.0255555 -0.0255555 343 25 23.3016 0
 
 [CAA-1999]
 report.type: observation
-observation.label: CAA-year-1999
-observation.year: 1999
-observation.time_step: step_one
-observation.min_age: 1
-observation.max_age: 35
-observation.age_plus_group: true
+label: CAA-year-1999
+type: proportions_at_age
+year: 1999
+time_step: step_one
+min_age: 1
+max_age: 35
+age_plus_group: true
 area category age observed expected residual errorvalue processerror totalerror score
 All immature+mature 1 0 0.000379115 -0.000379115 564 25 23.9389 0
 All immature+mature 2 0 0.000832654 -0.000832654 564 25 23.9389 0
@@ -381,12 +383,13 @@ All immature+mature 35 0.0416667 0.0254933 0.0161734 564 25 23.9389 3.65892
 
 [CAA-2000]
 report.type: observation
-observation.label: CAA-year-2000
-observation.year: 2000
-observation.time_step: step_one
-observation.min_age: 1
-observation.max_age: 35
-observation.age_plus_group: true
+label: CAA-year-2000
+type: proportions_at_age
+year: 2000
+time_step: step_one
+min_age: 1
+max_age: 35
+age_plus_group: true
 area category age observed expected residual errorvalue processerror totalerror score
 All immature+mature 1 0 0.000388149 -0.000388149 651 25 24.0754 0
 All immature+mature 2 0 0.000853385 -0.000853385 651 25 24.0754 0
@@ -427,12 +430,13 @@ All immature+mature 35 0 0.0253467 -0.0253467 651 25 24.0754 0
 
 [CAA-2001]
 report.type: observation
-observation.label: CAA-year-2001
-observation.year: 2001
-observation.time_step: step_one
-observation.min_age: 1
-observation.max_age: 35
-observation.age_plus_group: true
+label: CAA-year-2001
+type: proportions_at_age
+year: 2001
+time_step: step_one
+min_age: 1
+max_age: 35
+age_plus_group: true
 area category age observed expected residual errorvalue processerror totalerror score
 All immature+mature 1 0 0.000394792 -0.000394792 840 25 24.2775 0
 All immature+mature 2 0 0.00086911 -0.00086911 840 25 24.2775 0
@@ -473,12 +477,13 @@ All immature+mature 35 0.04 0.0251643 0.0148357 840 25 24.2775 3.56395
 
 [CAA-2002]
 report.type: observation
-observation.label: CAA-year-2002
-observation.year: 2002
-observation.time_step: step_one
-observation.min_age: 1
-observation.max_age: 35
-observation.age_plus_group: true
+label: CAA-year-2002
+type: proportions_at_age
+year: 2002
+time_step: step_one
+min_age: 1
+max_age: 35
+age_plus_group: true
 area category age observed expected residual errorvalue processerror totalerror score
 All immature+mature 1 0 0.000410078 -0.000410078 598 25 23.9968 0
 All immature+mature 2 0 0.000902459 -0.000902459 598 25 23.9968 0
@@ -519,12 +524,13 @@ All immature+mature 35 0.0416667 0.0248249 0.0168418 598 25 23.9968 3.69536
 
 [CAA-2003]
 report.type: observation
-observation.label: CAA-year-2003
-observation.year: 2003
-observation.time_step: step_one
-observation.min_age: 1
-observation.max_age: 35
-observation.age_plus_group: true
+label: CAA-year-2003
+type: proportions_at_age
+year: 2003
+time_step: step_one
+min_age: 1
+max_age: 35
+age_plus_group: true
 area category age observed expected residual errorvalue processerror totalerror score
 All immature+mature 1 0 0.000428842 -0.000428842 456 25 23.7006 0
 All immature+mature 2 0 0.000945897 -0.000945897 456 25 23.7006 0
@@ -565,12 +571,13 @@ All immature+mature 35 0.166667 0.0243306 0.142336 456 25 23.7006 17.7819
 
 [CAA-2004]
 report.type: observation
-observation.label: CAA-year-2004
-observation.year: 2004
-observation.time_step: step_one
-observation.min_age: 1
-observation.max_age: 35
-observation.age_plus_group: true
+label: CAA-year-2004
+type: proportions_at_age
+year: 2004
+time_step: step_one
+min_age: 1
+max_age: 35
+age_plus_group: true
 area category age observed expected residual errorvalue processerror totalerror score
 All immature+mature 1 0 0.000458615 -0.000458615 538 25 23.8899 0
 All immature+mature 2 0 0.00101308 -0.00101308 538 25 23.8899 0
@@ -611,12 +618,13 @@ All immature+mature 35 0 0.0235717 -0.0235717 538 25 23.8899 0
 
 [CAA-2005]
 report.type: observation
-observation.label: CAA-year-2005
-observation.year: 2005
-observation.time_step: step_one
-observation.min_age: 1
-observation.max_age: 35
-observation.age_plus_group: true
+label: CAA-year-2005
+type: proportions_at_age
+year: 2005
+time_step: step_one
+min_age: 1
+max_age: 35
+age_plus_group: true
 area category age observed expected residual errorvalue processerror totalerror score
 All immature+mature 1 0 0.00050708 -0.00050708 438 25 23.6501 0
 All immature+mature 2 0 0.00112412 -0.00112412 438 25 23.6501 0
@@ -657,12 +665,13 @@ All immature+mature 35 0 0.0223998 -0.0223998 438 25 23.6501 0
 
 [CAA-2006]
 report.type: observation
-observation.label: CAA-year-2006
-observation.year: 2006
-observation.time_step: step_one
-observation.min_age: 1
-observation.max_age: 35
-observation.age_plus_group: true
+label: CAA-year-2006
+type: proportions_at_age
+year: 2006
+time_step: step_one
+min_age: 1
+max_age: 35
+age_plus_group: true
 area category age observed expected residual errorvalue processerror totalerror score
 All immature+mature 1 0 0.000555645 -0.000555645 817 25 24.2577 0
 All immature+mature 2 0 0.00124009 -0.00124009 817 25 24.2577 0
@@ -703,12 +712,13 @@ All immature+mature 35 0.04 0.0209241 0.0190759 817 25 24.2577 3.73977
 
 [CAA-2007]
 report.type: observation
-observation.label: CAA-year-2007
-observation.year: 2007
-observation.time_step: step_one
-observation.min_age: 1
-observation.max_age: 35
-observation.age_plus_group: true
+label: CAA-year-2007
+type: proportions_at_age
+year: 2007
+time_step: step_one
+min_age: 1
+max_age: 35
+age_plus_group: true
 area category age observed expected residual errorvalue processerror totalerror score
 All immature+mature 1 0 0.000611492 -0.000611492 915 25 24.3351 0
 All immature+mature 2 0 0.00136916 -0.00136916 915 25 24.3351 0
@@ -749,104 +759,124 @@ All immature+mature 35 0 0.0190971 -0.0190971 915 25 24.3351 0
 
 [CPUE-1998]
 report.type: observation
-observation.label: CPUE-1998
-observation.year: 1998
-observation.time_step: step_one
+label: CPUE-1998
+type: abundance
+year: 1998
+time_step: step_one
+catchability: 0.000132488
 area observed expected residual errorvalue processerror totalerror score
 All 103.012 126.124 -23.1123 0.2 0 0.2 -1.19322
 *end
 
 [CPUE-1999]
 report.type: observation
-observation.label: CPUE-1999
-observation.year: 1999
-observation.time_step: step_one
+label: CPUE-1999
+type: abundance
+year: 1999
+time_step: step_one
+catchability: 0.000132488
 area observed expected residual errorvalue processerror totalerror score
 All 103.413 124.504 -21.0907 0.2 0 0.2 -1.26801
 *end
 
 [CPUE-2000]
 report.type: observation
-observation.label: CPUE-2000
-observation.year: 2000
-observation.time_step: step_one
+label: CPUE-2000
+type: abundance
+year: 2000
+time_step: step_one
+catchability: 0.000132488
 area observed expected residual errorvalue processerror totalerror score
 All 153.399 121.433 31.9655 0.2 0 0.2 -0.801419
 *end
 
 [CPUE-2001]
 report.type: observation
-observation.label: CPUE-2001
-observation.year: 2001
-observation.time_step: step_one
+label: CPUE-2001
+type: abundance
+year: 2001
+time_step: step_one
+catchability: 0.000132488
 area observed expected residual errorvalue processerror totalerror score
 All 194.992 119.079 75.9133 0.2 0 0.2 1.73287
 *end
 
 [CPUE-2002]
 report.type: observation
-observation.label: CPUE-2002
-observation.year: 2002
-observation.time_step: step_one
+label: CPUE-2002
+type: abundance
+year: 2002
+time_step: step_one
+catchability: 0.000132488
 area observed expected residual errorvalue processerror totalerror score
 All 94.3754 114.361 -19.986 0.2 0 0.2 -1.24005
 *end
 
 [CPUE-2003]
 report.type: observation
-observation.label: CPUE-2003
-observation.year: 2003
-observation.time_step: step_one
+label: CPUE-2003
+type: abundance
+year: 2003
+time_step: step_one
+catchability: 0.000132488
 area observed expected residual errorvalue processerror totalerror score
 All 104.182 108.833 -4.65079 0.2 0 0.2 -1.61189
 *end
 
 [CPUE-2004]
 report.type: observation
-observation.label: CPUE-2004
-observation.year: 2004
-observation.time_step: step_one
+label: CPUE-2004
+type: abundance
+year: 2004
+time_step: step_one
+catchability: 0.000132488
 area observed expected residual errorvalue processerror totalerror score
 All 87.5232 101.109 -13.5857 0.2 0 0.2 -1.42109
 *end
 
 [CPUE-2005]
 report.type: observation
-observation.label: CPUE-2005
-observation.year: 2005
-observation.time_step: step_one
+label: CPUE-2005
+type: abundance
+year: 2005
+time_step: step_one
+catchability: 0.000132488
 area observed expected residual errorvalue processerror totalerror score
 All 98.4496 90.4929 7.95673 0.2 0 0.2 -1.4817
 *end
 
 [CPUE-2006]
 report.type: observation
-observation.label: CPUE-2006
-observation.year: 2006
-observation.time_step: step_one
+label: CPUE-2006
+type: abundance
+year: 2006
+time_step: step_one
+catchability: 0.000132488
 area observed expected residual errorvalue processerror totalerror score
 All 78.1727 81.1813 -3.00862 0.2 0 0.2 -1.61507
 *end
 
 [CPUE-2007]
 report.type: observation
-observation.label: CPUE-2007
-observation.year: 2007
-observation.time_step: step_one
+label: CPUE-2007
+type: abundance
+year: 2007
+time_step: step_one
+catchability: 0.000132488
 area observed expected residual errorvalue processerror totalerror score
 All 59.0832 72.2837 -13.2005 0.2 0 0.2 -1.1968
 *end
 
 [Maturation-selectivity]
 report.type: selectivity
-selectivity.label: Maturation
+label: Maturation
 ages: 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35
 values: 0 0 0 0 0.00733746 0.0120938 0.0312622 0.076997 0.17044 0.312622 0.454803 0.548247 0.593982 0.61315 0.620656 0.623517 0.624595 0.625001 0.625153 0.62521 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
 *end
 
 [FishingSel-selectivity]
 report.type: selectivity
-selectivity.label: FishingSel
+label: FishingSel
 ages: 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35
 values: 0.00109474 0.00267358 0.0065146 0.0157865 0.0377532 0.0875667 0.19012 0.364765 0.584128 0.774558 0.893663 0.953611 0.980501 0.991935 0.996687 0.998643 0.999445 0.999773 0.999907 0.999962 0.999984 0.999994 0.999997 0.999999 1 1 1 1 1 1 1 1 1 1 1
 *end
@@ -930,7 +960,7 @@ value: 3.29177
 
 [AgeError]
 report.type: ageing_error
-ageing_error.label: normal
+label: normal
 ages: 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35
 1: 1 2.86652e-07 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 2: 0.00620967 0.987581 0.00620967 3.18634e-14 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
@@ -976,8 +1006,8 @@ random_number_seed: 0
 
 [SSB]
 report.type: derived_quantity
-derived_quantity.label: SSB
-initialisation.initialisation_phase[1]: 0 0 0 0 4707.97 20816.6 70976.6 211862 552970 1.21525e+06 2.20866e+06 3.41717e+06 4.71518e+06 6.02381e+06 7.30127e+06 8.52557e+06 9.6847e+06 1.07721e+07 1.17847e+07 1.27216e+07 1.35837e+07 1.43733e+07 1.50933e+07 1.57475e+07 1.63398e+07 1.68744e+07 1.73558e+07 1.77881e+07 1.81756e+07 1.85222e+07 1.88317e+07 1.91076e+07 1.93532e+07 1.95716e+07 1.97656e+07 1.99359e+07 2.00854e+07 2.02168e+07 2.03321e+07 2.04333e+07 2.05222e+07 2.06003e+07 2.06689e+07 2.07291e+07 2.07819e+07 2.08284e+07 2.08691e+07 2.09049e+07 2.09363e+07 2.09639e+07 2.09882e+07 2.10094e+07 2.10281e+07 2.10445e+07 2.10589e+07 2.10716e+07 2.10827e+07 2.10924e+07 2.1101e+07 2.11085e+07 2.11151e+07 2.11209e+07 2.1126e+07 2.11305e+07 2.11344e+07 2.11379e+07 2.11409e+07 2.11436e+07 2.11459e+07 2.11479e+07 2.11497e+07 2.11513e+07 2.11527e+07 2.11539e+07 2.1155e+07 2.11559e+07 2.11568e+07 2.11575e+07 2.11581e+07 2.11587e+07 2.11592e+07 2.11596e+07 2.116e+07 2.11603e+07 2.11606e+07 2.11609e+07 2.11611e+07 2.11613e+07 2.11615e+07 2.11616e+07 2.11617e+07 2.11619e+07 2.1162e+07 2.11621e+07 2.11621e+07 2.11622e+07 2.11623e+07 2.11623e+07 2.11624e+07 2.11624e+07 2.11624e+07 2.11625e+07 2.11625e+07 2.11625e+07 2.11625e+07 2.11626e+07 2.11626e+07 2.11626e+07 2.11626e+07 2.11626e+07 2.11626e+07 2.11626e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07
+label: SSB
+initialisation_phase[1]: 0 0 0 0 4707.97 20816.6 70976.6 211862 552970 1.21525e+06 2.20866e+06 3.41717e+06 4.71518e+06 6.02381e+06 7.30127e+06 8.52557e+06 9.6847e+06 1.07721e+07 1.17847e+07 1.27216e+07 1.35837e+07 1.43733e+07 1.50933e+07 1.57475e+07 1.63398e+07 1.68744e+07 1.73558e+07 1.77881e+07 1.81756e+07 1.85222e+07 1.88317e+07 1.91076e+07 1.93532e+07 1.95716e+07 1.97656e+07 1.99359e+07 2.00854e+07 2.02168e+07 2.03321e+07 2.04333e+07 2.05222e+07 2.06003e+07 2.06689e+07 2.07291e+07 2.07819e+07 2.08284e+07 2.08691e+07 2.09049e+07 2.09363e+07 2.09639e+07 2.09882e+07 2.10094e+07 2.10281e+07 2.10445e+07 2.10589e+07 2.10716e+07 2.10827e+07 2.10924e+07 2.1101e+07 2.11085e+07 2.11151e+07 2.11209e+07 2.1126e+07 2.11305e+07 2.11344e+07 2.11379e+07 2.11409e+07 2.11436e+07 2.11459e+07 2.11479e+07 2.11497e+07 2.11513e+07 2.11527e+07 2.11539e+07 2.1155e+07 2.11559e+07 2.11568e+07 2.11575e+07 2.11581e+07 2.11587e+07 2.11592e+07 2.11596e+07 2.116e+07 2.11603e+07 2.11606e+07 2.11609e+07 2.11611e+07 2.11613e+07 2.11615e+07 2.11616e+07 2.11617e+07 2.11619e+07 2.1162e+07 2.11621e+07 2.11621e+07 2.11622e+07 2.11623e+07 2.11623e+07 2.11624e+07 2.11624e+07 2.11624e+07 2.11625e+07 2.11625e+07 2.11625e+07 2.11625e+07 2.11626e+07 2.11626e+07 2.11626e+07 2.11626e+07 2.11626e+07 2.11626e+07 2.11626e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07
 years: 1994 1995 1996 1997 1998 1999 2000 2001 2002 2003 2004 2005 2006 2007
 values: 2.11627e+07 2.11627e+07 2.11627e+07 2.11627e+07 2.11229e+07 2.08132e+07 2.02142e+07 1.97242e+07 1.87697e+07 1.76309e+07 1.60534e+07 1.39152e+07 1.19867e+07 1.01358e+07
 *end
@@ -1022,7 +1052,7 @@ type: category_transition_rate
 
 [agesize]
 report.type: age_size
-age_size.label: VB
+label: VB
 ages: 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35
 sizes: 18.639 31.9982 44.1711 55.2629 65.3697 74.579 82.9704 90.6166 97.5838 103.932 109.717 114.988 119.791 124.167 128.155 131.788 135.099 138.116 140.865 143.37 145.652 147.732 149.627 151.353 152.927 154.36 155.667 156.857 157.942 158.93 159.83 160.651 161.399 162.08 162.701
 cv: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
@@ -1031,14 +1061,14 @@ weights: 0.081073 0.402507 1.04691 2.03419 3.3471 4.94748 6.78709 8.8145 10.9795
 
 [sizeweight]
 report.type: size_weight
-age_size.label: VB
+label: VB
 sizes: 10 20 30 40 50 60 70 80 90 100 110 120 130 140 150 160 170
 weights: 13.2355 34.3536 46.6284 52.1742 54.4772 55.404 55.7726 55.9185 55.9761 55.9988 56.0078 56.0113 56.0127 56.0133 56.0135 56.0136 56.0136
 *end
 
 [ageweight]
 report.type: age_weight
-age_size.label: VB
+label: VB
 ages: 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35
 weights: 0.081073 0.402507 1.04691 2.03419 3.3471 4.94748 6.78709 8.8145 10.9795 13.2355 15.5413 17.8611 20.1651 22.4287 24.6325 26.7615 28.8045 30.7538 32.6044 34.3536 36.0006 37.5462 38.9922 40.3416 41.5977 42.7646 43.8466 44.8482 45.7739 46.6284 47.4161 48.1415 48.8089 49.4223 49.9856
 *end

@@ -56,6 +56,13 @@ class Release:
     if Globals.operating_system_ == "windows":
       if os.system("mingw32-make -j " + Globals.threads_) != EX_OK:
         return Globals.PrintError("Failed to build code base. Please see above for build error")
+      else:
+        print('-->strip ' + Globals.build_directory_ + '/spm.exe')
+        os.system('strip ' + Globals.build_directory_ + '/spm.exe')
+        print('-->strip ' + Globals.build_directory_ + '/spm_unittests.exe')
+        os.system('strip ' + Globals.build_directory_ + '/spm_unittests.exe')
+        print('-->strip ' + Globals.build_directory_ + '/spm_unoptimised.exe')
+        os.system('strip ' + Globals.build_directory_ + '/spm_unoptimised.exe')
     else:
       os.chdir(Globals.build_directory_)
       if os.system("make -j " + Globals.threads_) != EX_OK:
