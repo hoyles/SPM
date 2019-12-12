@@ -102,7 +102,7 @@ void CCategoryTransitionByAgeProcess::validate() {
       for (int j = 0; j < iAgeSpread; ++j) {
         try {
           mvNMatrix[vNs[i]].push_back(boost::lexical_cast<double>(vNs[i+j+1]));
-        } catch (boost::bad_lexical_cast) {
+        } catch (boost::bad_lexical_cast&) {
           string Ex = string("Non-numeric value in ") + PARAM_N + string(" for ") + PARAM_PROCESS + string(" ") + getLabel();
           throw Ex;
         }

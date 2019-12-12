@@ -245,8 +245,8 @@ double CSchnuteAgeSize::getProportionInLengthBin(double &age, double &LowerBin, 
     } else {
       CError::errorTypeNotSupported(PARAM_DISTRIBUTION, sDistribution);
     }
-    return( dResult );	
   }
+  return( dResult );	
 }
 
 //**********************************************************************

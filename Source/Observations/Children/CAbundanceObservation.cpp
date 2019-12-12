@@ -73,7 +73,7 @@ void CAbundanceObservation::validate() {
     for (int i = 0; i < (int)vOBS.size(); i+=2) {
       try {
         mProportionMatrix[vOBS[i]] = boost::lexical_cast<double>(vOBS[i+1]);
-      } catch (boost::bad_lexical_cast) {
+      } catch (boost::bad_lexical_cast&) {
         string Ex = string("Non-numeric value in ") + PARAM_OBS + string(" for ") + PARAM_OBSERVATION + string(" ") + getLabel();
         throw Ex;
       }
@@ -95,7 +95,7 @@ void CAbundanceObservation::validate() {
     for (int i = 0; i < (int)vErrorValues.size(); i+=2) {
       try {
         mErrorValue[vErrorValues[i]] = boost::lexical_cast<double>(vErrorValues[i+1]);
-      } catch (boost::bad_lexical_cast) {
+      } catch (boost::bad_lexical_cast&) {
         string Ex = string("Non-numeric value in ") + PARAM_ERROR_VALUE + string(" for ") + PARAM_OBSERVATION + string(" ") + getLabel();
         throw Ex;
       }

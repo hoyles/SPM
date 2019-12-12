@@ -118,7 +118,7 @@ void CNotNegIntegerLayer::validate() {
         pGrid[iRow][iCol] = boost::lexical_cast<int>(vData[i]);
         // register as estimable - don't do for integer values for now
         // registerEstimable(PARAM_DATA, i, &pGrid[iRow][iCol]);
-      } catch (boost::bad_lexical_cast) {
+      } catch (boost::bad_lexical_cast&) {
         string Ex = string("Non-integer value in layer ") + getLabel();
         throw Ex;
       }

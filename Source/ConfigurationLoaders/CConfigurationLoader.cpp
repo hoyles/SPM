@@ -260,7 +260,7 @@ void CConfigurationLoader::assignParameters(CBaseObject *Object) {
             try {
               firstNumber  = boost::lexical_cast<int>(sValue.substr(0, iRangeSpacerIndex));
               secondNumber = boost::lexical_cast<int>(sValue.substr(iRangeSpacerIndex+1, sValue.length()));
-            } catch (boost::bad_lexical_cast) {
+            } catch (boost::bad_lexical_cast&) {
               string Ex = string("Non-integer value in ") + sName;
               throw Ex;
             }
@@ -429,7 +429,7 @@ void CConfigurationLoader::loadEstimateValuesFile(bool skipLoadingFile) {
       for(int i = 0; i < (int)vValues.size(); ++i) {
         try {
           pEstimateManager->addEstimateValue(vEstimates[i], boost::lexical_cast<double>(vValues[i]));
-        } catch (boost::bad_lexical_cast) {
+        } catch (boost::bad_lexical_cast&) {
           string Ex = string("Non-numeric value in ") + vValues[i] +  " of " + PARAM_ESTIMATE;
           throw Ex;
         }

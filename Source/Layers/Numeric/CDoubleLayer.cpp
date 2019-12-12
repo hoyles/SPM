@@ -127,7 +127,7 @@ void CDoubleLayer::validate() {
         pGrid[iRow][iCol] = boost::lexical_cast<double>(vData[i]);
         // register as estimable
         registerEstimable(PARAM_DATA, i, &pGrid[iRow][iCol]);
-      } catch (boost::bad_lexical_cast) {
+      } catch (boost::bad_lexical_cast&) {
         string Ex = string("Non-numeric value in layer ") + getLabel();
         throw Ex;
       }

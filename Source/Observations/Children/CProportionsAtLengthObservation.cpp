@@ -114,7 +114,7 @@ void CProportionsAtLengthObservation::validate() {
       for (int j = 0; j < (iNGroups * iNBins); ++j) {
         try {
           mvObservationMatrix[vOBS[i]].push_back(boost::lexical_cast<double>(vOBS[i+j+1]));
-        } catch (boost::bad_lexical_cast) {
+        } catch (boost::bad_lexical_cast&) {
           string Ex = string("Non-numeric value in ") + PARAM_OBS + string(" for ") + PARAM_OBSERVATION + string(" ") + getLabel();
           throw Ex;
         }
@@ -148,7 +148,7 @@ void CProportionsAtLengthObservation::validate() {
         for (int j = 0; j < (iNGroups * iNBins); ++j) {
           try {
             mvErrorMatrix[vErrorValues[i]].push_back(boost::lexical_cast<double>(vErrorValues[i+j+1]));
-          } catch (boost::bad_lexical_cast) {
+          } catch (boost::bad_lexical_cast&) {
             string Ex = string("Non-numeric value in ") + PARAM_ERROR_VALUE + string(" for ") + PARAM_OBSERVATION + string(" ") + getLabel();
             throw Ex;
           }
@@ -165,8 +165,7 @@ void CProportionsAtLengthObservation::validate() {
         for (int j = 0; j < (iNGroups * iNBins); ++j) {
           try {
             mvErrorMatrix[vErrorValues[i]].push_back(boost::lexical_cast<double>(vErrorValues[i+1]));
-            //mvErrorMatrix[vErrorValues[i]] = boost::lexical_cast<double>(vErrorValues[i+1]);
-          } catch (boost::bad_lexical_cast) {
+          } catch (boost::bad_lexical_cast&) {
             string Ex = string("Non-numeric value in ") + PARAM_ERROR_VALUE + string(" for ") + PARAM_OBSERVATION + string(" ") + getLabel();
             throw Ex;
           }
