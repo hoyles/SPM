@@ -3,3 +3,5 @@ Build/
 **/*.bak
 **/*.aux
 **/*.pyc
+BuildSystem/spm_unittests.log
+BuildSystem/spm_unittests.log

@@ -13,6 +13,9 @@ FILE = [open('Syntax/PopulationSyntax.tex', 'r'),
 SYNTAX_OUTFILE = open('SPM.xml', 'w')
 VERSION = open('SPMversion.tex', 'r')
 
+SYNTAX_OUTFILE.write("<!--Notepad++ syntax definitions for SPM version ")
+SYNTAX_OUTFILE.write(VERSION.read())
+SYNTAX_OUTFILE.write("    ========================================================-->\n\n")
 SYNTAX_OUTFILE.write("<NotepadPlus>\n")
 SYNTAX_OUTFILE.write("    <UserLang name=\"SPM\" ext=\"spm\" udlVersion=\"2.1\">\n")
 SYNTAX_OUTFILE.write("        <Settings>\n")
