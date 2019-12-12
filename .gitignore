@@ -1,11 +1,5 @@
-/Build
-__pycache__
-*.bak
-*.pyc
-Setup_SPM.exe
-*.pyc
-*.pyc
-*.pyc
-*.aux
-*.pyc
-BuildSystem/buildtools/classes/__pycache__/Archiver.cpython-38.pyc
+Build/
+**/__pycache__/
+**/*.bak
+**/*.aux
+**/*.pyc
