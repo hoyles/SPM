@@ -2,12 +2,15 @@
 % Please edit documentation in R/extract.age.size.r
 \name{extract.agesize}
 \alias{extract.agesize}
-\title{Utility extract function}
+\title{Helper function for 'extract'}
 \usage{
 extract.agesize(lines)
 }
+\arguments{
+\item{lines}{list of lines to process}
+}
 \description{
-Utility extract function
+Helper function for 'extract'
 }
 \author{
 Alistair Dunn

@@ -2,12 +2,15 @@
 % Please edit documentation in R/extract.objectivefunction.R
 \name{extract.objectivefunction}
 \alias{extract.objectivefunction}
-\title{Utility extract function}
+\title{Helper function for 'extract'}
 \usage{
 extract.objectivefunction(lines)
 }
+\arguments{
+\item{lines}{list of lines to process}
+}
 \description{
-Utility extract function
+Helper function for 'extract'
 }
 \author{
 Alistair Dunn

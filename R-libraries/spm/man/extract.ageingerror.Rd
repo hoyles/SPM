@@ -2,12 +2,15 @@
 % Please edit documentation in R/extract.ageingerror.R
 \name{extract.ageingerror}
 \alias{extract.ageingerror}
-\title{Utility extract function}
+\title{Helper function for 'extract'}
 \usage{
 extract.ageingerror(lines)
 }
+\arguments{
+\item{lines}{list of lines to process}
+}
 \description{
-Utility extract function
+Helper function for 'extract'
 }
 \author{
 Alistair Dunn

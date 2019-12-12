@@ -1,9 +1,10 @@
-#' Utility extract function
+#' Helper function for 'extract'
 #'
 #' @author Alistair Dunn
+#' @param lines list of lines to process
+#' @export
 #'
-"extract.observation" <-
-function(lines){
+"extract.observation" <- function(lines){
   if(missing(lines)) stop("ERROR: Missing argument lines")
   index.start<-(1:length(lines))[substring(lines,1,1)=="["][1]
   index.end<-(1:length(lines))[substring(lines,1,4)=="*end"][1]
@@ -16,37 +17,37 @@ function(lines){
     res$year<-as.numeric(substring(lines[index.start+3],7))
     res$time_step<-substring(lines[index.start+4],12)
     res$catchability<-substring(lines[index.start+5],15)
-	this.line<-index.start+5
-  else if(res$type=="biomass") {
+	  this.line<-index.start+5
+  } else if(res$type=="biomass") {
     res$year<-as.numeric(substring(lines[index.start+3],7))
     res$time_step<-substring(lines[index.start+4],12)
     res$catchability<-substring(lines[index.start+5],15)
-	this.line<-index.start+5
-  else if(res$type=="presence") {
+	  this.line<-index.start+5
+  } else if(res$type=="presence") {
     res$year<-as.numeric(substring(lines[index.start+3],7))
     res$time_step<-substring(lines[index.start+4],12)
     res$catchability<-substring(lines[index.start+5],15)
-	this.line<-index.start+5
-  else if(res$type=="proportions_at_age") {
+	  this.line<-index.start+5
+  } else if(res$type=="proportions_at_age") {
     res$year<-as.numeric(substring(lines[index.start+3],7))
     res$time_step<-substring(lines[index.start+4],12)
     res$min_age<-as.numeric(substring(lines[index.start+5],10))
     res$max_age<-substring(lines[index.start+6],10)
     res$age_plus_group<-substring(lines[index.start+7],17)
-	this.line<-index.start+7
-  else if(res$type=="proportions_by_category") {
+	  this.line<-index.start+7
+  } else if(res$type=="proportions_by_category") {
     res$year<-as.numeric(substring(lines[index.start+3],7))
     res$time_step<-substring(lines[index.start+4],12)
     res$min_age<-as.numeric(substring(lines[index.start+5],10))
     res$max_age<-substring(lines[index.start+6],10)
     res$age_plus_group<-substring(lines[index.start+7],17)
-	this.line<-index.start+7
-  else if(res$type=="proportions_at_length") {
+	  this.line<-index.start+7
+  } else if(res$type=="proportions_at_length") {
     res$year<-as.numeric(substring(lines[index.start+3],7))
     res$time_step<-substring(lines[index.start+4],12)
     res$number_of_bins<-as.numeric(substring(lines[index.start+5],17))
     res$length_bins<-substring(lines[index.start+6],14)
-	this.line<-index.start+6
+	  this.line<-index.start+6
   } else {
     stop(paste("Error: Obsevration type '",res$type,"' not known",sep="")) 
   }

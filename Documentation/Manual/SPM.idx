@@ -419,27 +419,27 @@
 \indexentry{Examples ! A simple non-spatial model|hyperpage}{165}
 \indexentry{Examples ! Example 2|hyperpage}{169}
 \indexentry{Examples ! A $10 \times 6$ spatial model|hyperpage}{169}
-\indexentry{Command ! model|hyperpage}{189}
-\indexentry{Command ! initialisation\_phase|hyperpage}{189}
-\indexentry{Command ! time\_step|hyperpage}{189}
-\indexentry{Command ! process|hyperpage}{189}
-\indexentry{Command ! preference\_function|hyperpage}{193}
-\indexentry{Command ! pdf|hyperpage}{195}
-\indexentry{Command ! layer|hyperpage}{196}
-\indexentry{Command ! derived\_quantity\_by\_cell|hyperpage}{197}
-\indexentry{Command ! derived\_quantity|hyperpage}{198}
-\indexentry{Command ! age\_size|hyperpage}{198}
-\indexentry{Command ! size\_weight|hyperpage}{198}
-\indexentry{Command ! selectivity|hyperpage}{199}
-\indexentry{Command ! estimation|hyperpage}{200}
-\indexentry{Command ! minimiser|hyperpage}{200}
-\indexentry{Command ! mcmc|hyperpage}{201}
-\indexentry{Command ! profile|hyperpage}{201}
-\indexentry{Command ! estimate|hyperpage}{201}
-\indexentry{Command ! catchability|hyperpage}{202}
-\indexentry{Command ! penalty|hyperpage}{202}
-\indexentry{Command ! observation|hyperpage}{202}
-\indexentry{Command ! ageing\_error|hyperpage}{205}
-\indexentry{Command ! report|hyperpage}{205}
-\indexentry{Command ! include|hyperpage}{209}
-\indexentry{Include an external file|hyperpage}{209}
+\indexentry{Command ! model|hyperpage}{181}
+\indexentry{Command ! initialisation\_phase|hyperpage}{181}
+\indexentry{Command ! time\_step|hyperpage}{181}
+\indexentry{Command ! process|hyperpage}{181}
+\indexentry{Command ! preference\_function|hyperpage}{185}
+\indexentry{Command ! pdf|hyperpage}{187}
+\indexentry{Command ! layer|hyperpage}{188}
+\indexentry{Command ! derived\_quantity\_by\_cell|hyperpage}{189}
+\indexentry{Command ! derived\_quantity|hyperpage}{190}
+\indexentry{Command ! age\_size|hyperpage}{190}
+\indexentry{Command ! size\_weight|hyperpage}{190}
+\indexentry{Command ! selectivity|hyperpage}{191}
+\indexentry{Command ! estimation|hyperpage}{192}
+\indexentry{Command ! minimiser|hyperpage}{192}
+\indexentry{Command ! mcmc|hyperpage}{193}
+\indexentry{Command ! profile|hyperpage}{193}
+\indexentry{Command ! estimate|hyperpage}{193}
+\indexentry{Command ! catchability|hyperpage}{194}
+\indexentry{Command ! penalty|hyperpage}{194}
+\indexentry{Command ! observation|hyperpage}{194}
+\indexentry{Command ! ageing\_error|hyperpage}{197}
+\indexentry{Command ! report|hyperpage}{197}
+\indexentry{Command ! include|hyperpage}{201}
+\indexentry{Include an external file|hyperpage}{201}

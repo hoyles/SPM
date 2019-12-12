@@ -1,1 +1,1 @@
-..\..\..\..\spm -r -q -d -g 0 > run.log
+..\..\..\..\Build\windows\spm -r -q -d -g 0 > run.log

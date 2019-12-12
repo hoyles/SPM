@@ -2,12 +2,15 @@
 % Please edit documentation in R/extract.partition.R
 \name{extract.partition}
 \alias{extract.partition}
-\title{Utility extract function}
+\title{Helper function for 'extract'}
 \usage{
 extract.partition(lines)
 }
+\arguments{
+\item{lines}{list of lines to process}
+}
 \description{
-Utility extract function
+Helper function for 'extract'
 }
 \author{
 Alistair Dunn

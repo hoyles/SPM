@@ -1,9 +1,10 @@
-#' Utility extract function
+#' Helper function for 'extract'
 #'
 #' @author Alistair Dunn
+#' @param lines list of lines to process
+#' @export
 #'
-"extract.simulations" <-
-function(file,path="")
+"extract.simulations" <- function(file,path="")
 {
   if (missing(path)) path <- ""
   filename <- spm.make.filename(path = path, file = file)

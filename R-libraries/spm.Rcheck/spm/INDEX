@@ -10,35 +10,38 @@ PFthreshold             Evaluate the threshold preference function
 calc.abundance          Generate a multivariate uniform distribution
                         based on the bounds for the extimated parameters
 extract                 Extract SPM output into R
-extract.MCMC            Utility extract function
-extract.ageingerror     Utility extract function
-extract.agesize         Utility extract function
-extract.ageweight       Utility extract function
-extract.covariance      Utility extract function
+extract.MCMC            Helper function for 'extract'
+extract.ageingerror     Helper function for 'extract'
+extract.agesize         Helper function for 'extract'
+extract.ageweight       Helper function for 'extract'
+extract.covariance      Helper function for 'extract'
 extract.derivedquantity
-                        Utility extract function
+                        Helper function for 'extract'
 extract.derivedquantitybycell
-                        Utility extract function
+                        Helper function for 'extract'
 extract.estimatesummary
-                        Utility extract function
-extract.estimatevalue   Utility extract function
+                        Helper function for 'extract'
+extract.estimatevalue   Helper function for 'extract'
 extract.initialisationphase
-                        Utility extract function
-extract.layer           Utility extract function
+                        Helper function for 'extract'
+extract.layer           Helper function for 'extract'
 extract.layerderivedview
-                        Utility extract function
+                        Helper function for 'extract'
 extract.objectivefunction
-                        Utility extract function
-extract.observation     Utility extract function
-extract.partition       Utility extract function
+                        Helper function for 'extract'
+extract.observation     Helper function for 'extract'
+extract.partition       Helper function for 'extract'
 extract.partitionbiomass
-                        Utility extract function
+                        Helper function for 'extract'
+extract.preferencefunction
+                        Helper function for 'extract'
+extract.process         Helper function for 'extract'
 extract.randomnumberseed
-                        Utility extract function
-extract.selectivity     Utility extract function
-extract.simulations     Utility extract function
-extract.sizeweight      Utility extract function
-extract.spatialmap      Utility extract function
+                        Helper function for 'extract'
+extract.selectivity     Helper function for 'extract'
+extract.simulations     Helper function for 'extract'
+extract.sizeweight      Helper function for 'extract'
+extract.spatialmap      Helper function for 'extract'
 generate.MVU            Generate a multivariate uniform distribution
                         based on the bounds for the extimated parameters
 spm-package             SPM extract package

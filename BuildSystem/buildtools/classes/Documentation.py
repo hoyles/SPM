@@ -46,6 +46,8 @@ class Latex:
     os.chdir(Globals.root_directory_ + '/Documentation/Manual/')
     print('-- Building SPM.syn')
     os.system('python QuickReference.py')
+    os.system('python SyntaxTextpad.py')
+    os.system('python SyntaxNotepad++.py')
 
     for i in range(0,3):
       if Globals.operating_system_ != "windows":

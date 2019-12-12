@@ -79,64 +79,9 @@ to your NAMESPACE file.
 Undocumented arguments in documentation object 'PFthreshold'
   'lambda'
 
-Undocumented arguments in documentation object 'extract.MCMC'
-  'lines'
-
-Undocumented arguments in documentation object 'extract.ageingerror'
-  'lines'
-
-Undocumented arguments in documentation object 'extract.agesize'
-  'lines'
-
-Undocumented arguments in documentation object 'extract.ageweight'
-  'lines'
-
-Undocumented arguments in documentation object 'extract.covariance'
-  'lines'
-
-Undocumented arguments in documentation object 'extract.derivedquantity'
-  'lines'
-
-Undocumented arguments in documentation object 'extract.derivedquantitybycell'
-  'lines'
-
-Undocumented arguments in documentation object 'extract.estimatesummary'
-  'lines'
-
-Undocumented arguments in documentation object 'extract.estimatevalue'
-  'lines'
-
-Undocumented arguments in documentation object 'extract.layer'
-  'lines'
-
-Undocumented arguments in documentation object 'extract.layerderivedview'
-  'lines'
-
-Undocumented arguments in documentation object 'extract.objectivefunction'
-  'lines'
-
-Undocumented arguments in documentation object 'extract.observation'
-  'lines'
-
-Undocumented arguments in documentation object 'extract.partition'
-  'lines'
-
-Undocumented arguments in documentation object 'extract.partitionbiomass'
-  'lines'
-
-Undocumented arguments in documentation object 'extract.randomnumberseed'
-  'lines'
-
-Undocumented arguments in documentation object 'extract.selectivity'
-  'lines'
-
 Undocumented arguments in documentation object 'extract.simulations'
   'file' 'path'
-
-Undocumented arguments in documentation object 'extract.sizeweight'
-  'lines'
-
-Undocumented arguments in documentation object 'extract.spatialmap'
+Documented arguments not in \usage in documentation object 'extract.simulations':
   'lines'
 
 Undocumented arguments in documentation object 'spm.area'

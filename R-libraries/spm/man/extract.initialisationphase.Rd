@@ -2,15 +2,15 @@
 % Please edit documentation in R/extract.initialisationphase.R
 \name{extract.initialisationphase}
 \alias{extract.initialisationphase}
-\title{Utility extract function}
+\title{Helper function for 'extract'}
 \usage{
 extract.initialisationphase(lines)
 }
 \arguments{
-\item{lines}{a file of scanned lines}
+\item{lines}{list of lines to process}
 }
 \description{
-Utility extract function
+Helper function for 'extract'
 }
 \author{
 Alistair Dunn

@@ -38,7 +38,7 @@ total_score: 0
 
 [age_size]
 report.type: age_size
-age_size.label: schnute
+label: schnute
 ages: 1 2 3 4 5
 sizes: 1 63.5799 86.6018 95.0711 98.1868
 cv: 0 0 0 0 0
