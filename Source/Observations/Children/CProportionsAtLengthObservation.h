@@ -43,7 +43,6 @@ protected:
   CAgeSize                     *pAgeSize;
   double                       *pLengthResults;
   int                          iNBins;
-  int                          iNAgeBins;
   vector<double>               vLengthBins;
   bool                         bRescale;
   double                       dTolerance;

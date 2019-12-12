@@ -34,7 +34,6 @@ CProportionsAtLengthObservation::CProportionsAtLengthObservation() {
   // Default Values
   pLengthResults      = 0;
   iNBins              = 0;
-  iNAgeBins           = 0;
   bRescale            = false;
   pCategories         = 0;
 
@@ -249,7 +248,6 @@ void CProportionsAtLengthObservation::build() {
   try {
     // Base Build
     CObservation::build();
-    iNAgeBins = pWorld->getAgeSpread();
 	
     // Create Array of Length Results
     if (pLengthResults == 0)
@@ -272,7 +270,7 @@ void CProportionsAtLengthObservation::execute() {
   try {
 #endif
     // Variables
-                        dScore             = 0.0;
+	                    dScore             = 0.0;
     double              dRunningTotal      = 0.0;
     double              dCurrentProp       = 0.0;
     vector<string>      vKeys;
@@ -284,7 +282,6 @@ void CProportionsAtLengthObservation::execute() {
     vector<double>      vProcessError;
     vector<double>      vErrorValue;
     vector<double>      vScores;
-    CAgeSizeManager *pAgeSizeManager = CAgeSizeManager::Instance();
 
     // Base
     CObservation::execute();
@@ -318,22 +315,21 @@ void CProportionsAtLengthObservation::execute() {
       
 	  // Loop Through Category Groups
       for (int j = 0; j < pCategories->getNRows(); ++j) {
-        vector<double> vLengthFrequency;
-        vLengthFrequency.resize(iNBins);
-		// loop Through category elements
+        vector<double> vLengthFrequency(iNBins);
+ 		// loop Through category elements
         for (int k = 0; k < pCategories->getNElements(j); ++k) {
           // Loop Through Ages in that square and do the length conversion
-          for (int i = 0; i < iNAgeBins; ++i) {
-            double dSelectResult = vSelectivities[pCategories->getIndex(j,k)]->getResult((i));
-			double dNumberAtAge = dSelectResult * pSquare->getAbundanceInCategoryForAge((i), pCategories->getCategoryIndex(j,k));
-			vector<double> vLenghtProportions = pWorld->getLengthFrequency(i,pCategories->getCategoryIndex(j,k), vLengthBins);
+          for (int i = 0; i < (int)pSquare->getWidth(); ++i) {			  
+            double dSelectResult = vSelectivities[pCategories->getIndex(j,k)]->getResult(i);
+			double dNumberAtAge = dSelectResult * pSquare->getAbundanceInCategoryForAge(i, pCategories->getCategoryIndex(j,k));
+			vector<double> vLenghtProportions = pWorld->getLengthFrequency(i ,pCategories->getCategoryIndex(j,k), vLengthBins);
 			for(int l = 0; l < (int)vLenghtProportions.size(); ++l) {
 			  vLengthFrequency[l] += dNumberAtAge * vLenghtProportions[l];
 			}
           }
         }
-        for(int l = 0; (int)l<vLengthFrequency.size(); ++l) {
-          pLengthResults[l + (j * iNBins)] = vLengthFrequency[l];
+        for(int m = 0; m < (int)vLengthFrequency.size(); ++m) {
+          pLengthResults[m + (j * iNBins)] = vLengthFrequency[m];
         }
       }
       // Populate our Running Total
