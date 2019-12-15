@@ -44,6 +44,7 @@ public:
   string                      getFirstTimeStepLabel();
   int                         getCurrentYear() {return iCurrentYear;}
   int                         getCurrentTimeStep() { return iCurrentTimeStep; }
+  CTimeStep*                  getTimeStep(int i) { return vTimeSteps[i]; }
   int                         getTimeStepIndexForProcess(string &label);
   void                        clone(CTimeStepManager *Manager);
   void                        validate();
@@ -66,7 +67,7 @@ protected:
   vector<CTimeStep*>               vMasterTimeStepList;
   vector<CTimeStep*>               vTimeSteps;
   CDerivedQuantityManager          *pDerivedQuantityManager;
-  CDerivedQuantityByCellManager  *pDerivedQuantityByCellManager;
+  CDerivedQuantityByCellManager    *pDerivedQuantityByCellManager;
 
 private:
   static boost::thread_specific_ptr<CTimeStepManager> clInstance;

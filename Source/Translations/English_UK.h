@@ -245,6 +245,7 @@
 #define PARAM_GAMMADIFF                           "numerical_differences"
 #define PARAM_GAUSSIAN_COPULA                     "gaussian_copula"
 #define PARAM_GUMBEL_COPULA                       "gumbel_copula"
+#define PARAM_GROWTH_PROPORTION                   "growth_proportion"
 #define PARAM_H                                   "h"
 #define PARAM_HEADER                              "header"
 #define PARAM_HEIGHT                              "height"

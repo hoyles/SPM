@@ -33,7 +33,7 @@ protected:
   string                      sSizeWeight;
   CSizeWeight*                pSizeWeight;
   double                      getMeanWeightFromSize(double &size, double &cv) { return 1; };
-
+  double                      getGrowthProportion() { return 0; };
 };
 
 #endif /* CNONEAGESIZE_H_ */

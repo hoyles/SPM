@@ -31,6 +31,7 @@
 #include "../Population/CLayerVaryingExploitationRateProcess.h"
 #include "../Population/CLayerVaryingExploitationRateByeventProcess.h"
 #include "../Population/CLocalBHRecruitmentProcess.h"
+#include "../Population/CNoneProcess.h"
 #include "../Population/CPreySuitabilityPredationProcess.h"
 #include "../Population/CProportionalRecruitmentProcess.h"
 #include "CProcessFactory.h"
@@ -61,7 +62,7 @@ CProcess* CProcessFactory::buildProcess(string type, bool registerWithManager) {
     pProcess = new CAnnualMortalityRateProcess();
   else if (type == PARAM_LAYER_VARYING_EXPLOITATION_RATE)
     pProcess = new CLayerVaryingExploitationRateProcess();
- else if (type == PARAM_LAYER_VARYING_EXPLOITATION_RATE_BYEVENT)
+  else if (type == PARAM_LAYER_VARYING_EXPLOITATION_RATE_BYEVENT)
     pProcess = new CLayerVaryingExploitationRateByeventProcess();
   else if (type == PARAM_EVENT_MORTALITY)
     pProcess = new CEventMortalityProcess();
@@ -87,6 +88,8 @@ CProcess* CProcessFactory::buildProcess(string type, bool registerWithManager) {
     pProcess = new CAdjacentCellMovementProcess();
   else if (type == PARAM_MIGRATION_MOVEMENT)
     pProcess = new CMigrationMovementProcess();
+  else if (type == PARAM_NONE)
+    pProcess = new CNoneProcess();
   else
     CError::errorUnknown(PARAM_PROCESS, type);
 

@@ -33,7 +33,7 @@ public:
   virtual double              getMeanWeightFromSize(double &size, double &cv) = 0;
   virtual double              getCV(double &age) = 0;
   virtual double              getProportionInLengthBin(double &age, double &LowerBin, double&UpperBin) = 0;
-
+  virtual double              getGrowthProportion() = 0;
 
 };
 

@@ -26,6 +26,7 @@
 #include "../../TestFixtures/ConfigurationFiles/Selectivities/Constant.h"
 #include "../../TestFixtures/ConfigurationFiles/Catchabilities/Catchability.h"
 #include "../../TestFixtures/ConfigurationFiles/Layers/StringLayer.h"
+#include "../../TestFixtures/ConfigurationFiles/AgeingError/AgeingError.h"
 #include "../../TestFixtures/ConfigurationFiles/Observations/ProportionsAtLength.h"
 
 //**********************************************************************

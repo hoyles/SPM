@@ -67,9 +67,11 @@ The names and number of categories are user defined, but there must be at least 
 Hence, the definition of the population structure includes;
 \begin{itemize}
   \item The number and labels of the categories, $k_{categories}$
-	\item The age\_size relationship for each category
+	\item The age\_size relationship for each category (and the growth that occurs in each time step)
   \item The minimum and maximum ages that define the ages of the model, $l_{ages}$
   \item If the last age is a plus group
+	\ the initialisation phases that occur
+	\ the time steps carried out during the annual cycle
 \end{itemize}
 
 For example, to specify a model with 2 categories (male and female) with ages 1-20 (with the last age a plus group) and an age-size relationship defined with the label \texttt{male-growth} and \texttt{female-growth}, then the \texttt{@model} example from above becomes,
@@ -87,6 +89,8 @@ age_size male-growth female-growth
 \end{verbatim}}}
 
 See below for how to define age-size relationships using \texttt{@age\_size}. 
+
+
 
 \subsection{\I{Layers}\label{sec:layers}}
 
@@ -382,6 +386,8 @@ current_year 2010
 
 The annual cycle is run during initialisation and over the model years. It is broken into time-steps. Within each time-step, processes are carried out in the order specified, and can be the same or different to processes in other time-steps or in the initialisation phases of the model. Further, observations (see later) can be associated with the state of the model at the end of a time-step --- i.e., time-steps are used to break the annual cycle into discrete 'chunks', and to allow the model to appropriately generate expected values for observations. 
 
+In addition, any growth within that time step year is specified using \argument{growth\_proportion}. This is a value that is added to the age of an individual , specifying the proportion of a year to add to the age of an individual in order to calculate its size and weight in that time step. 
+
 For example, to specify a model with the time-steps \texttt{one} and \texttt{two}, and the processes \texttt{myRecruitment} and \texttt{myMaturation} in \texttt{one} and processes \texttt{myAgeing} and \texttt{myMortality} on \texttt{two}, then the \texttt{@model} example from above becomes,
 {\small{\begin{verbatim}
 @model
@@ -397,16 +403,18 @@ age_size male-growth female-growth
 initialisation_phases phase1
 initial_year 1990
 current_year 2010
-time\_steps one two
+time_steps one two
 \end{verbatim}}}
 
 with the time-step definitions 
 {\small{\begin{verbatim}
 @time_step one
 processes myRecruitment myMaturation
+growth_proportion 0.5
 
 @time_step two
 processes myAgeing myMortality
+growth_proportion 0.0
 \end{verbatim}}}
 
 See later for how to define processes using \texttt{@process}. 
@@ -418,6 +426,8 @@ Processes produce changes in the model partition, by adding, removing or moving 
 \SPM\ has two types of processes, \emph{population}\index{Population processes} and \emph{movement}\index{Movement processes} processes. Population processes are those processes which modify, move or otherwise change the numbers of individuals \emph{within} a spatial cell, i.e., they do not affect the spatial location of a cohort. Movement processes, on the other hand, move, shift or otherwise modify cohorts \emph{between} spatial cells, but do not affect the age or category of the numbers in each cohort. 
 
 The population processes include recruitment\index{Recruitment}, ageing\index{Ageing},  mortality\index{Mortality} events (e.g., natural and exploitation) and category transition processes\index{Category transition} (i.e., processes that move individuals between categories, while preserving their age structure). See Section \ref{sec:population-section} for a complete list of available processes.
+
+In addition, there is the `none'\index\{None process}, that does not modify or effect the population. This is primarily used for debugging and checking, substituting a \emph{none} process into a time step so that the model time steps, or the number of processes within a time step, do not otherwise have to be modified. 
 
 Each of these processes is carried out in the user-defined prescribed order when initialising the model, and then for a user-defined order in each year in the annual cycle\index{Annual cycle}.
 
@@ -433,6 +443,10 @@ An \SPM\ model can be parametrised by both population processes (for example, ag
 \subsection{\I{Population processes}}
 
 Population processes are those processes that change the population state of individuals, but retain their location. The population processes are described below.
+
+\subsubsection{\I{None}}
+
+The `none'\index\{None process} is a special process that does not modify or otherwise have any effect the population. This is primarily used for debugging and checking, substituting a \emph{none} process into a time step so that the model time steps, or the number of processes within a time step, do not otherwise have to be modified. 
 
 \subsubsection{\I{Recruitment}}
 
@@ -1400,6 +1414,8 @@ selectivities One
 
 The age-size relationship defines the size at age (and the weight at size, see Section \ref{sec:mean-weight}) of individuals at age/category within the model. There are three size-age relationships available in \SPM. The first is the naive no relationship (where each individual has size 1 irrespective of age). The second  and third are the von-Bertalanffy and Schnute relationships respectively. The size-at-age relationship is used to determine the size frequency, given age, and then with the size-weight relationship, a weight-at-age of individuals within an age/category. 
 
+Note that the actual size-at-age (and hence weight) for the von Bertalanffy and Schnute growth curves depend on the age of the individual, and will modified by the \commandsub{time\_step}{growth\_proportion}, i.e., if the age of an individual is $3$, and the \commandsub{time\_step}{growth\_proportion} is $0.5$, then the mean size will be for an individual aged $3.5$. In the case of the naive relationship (\commandsub{age\_size}{none}), the specification of the growth proportion is ignored.
+
 The three age-size relationships are,
 
 \begin{description}
@@ -1482,7 +1498,6 @@ Note that selectivities are indexed by age, with indices from \argument{min\_age
 Note that the function values for some choices of parameters for some selectivities can result in an computer numeric overflow error (i.e., the number calculated from parameter values is either too large or too small to be represented in computer memory). \SPM\ implements range checks on some parameters to test for a possible numeric overflow error before attempting to calculate function values. For example, the logistic selectivity is implemented such that if $(a50-x)/ato_95 > 5$ then the value of the selectivity at $x=0$, i.e., for $a50=5$, $ato_95=0.1$, then the value of the selectivity at $x=1$, without range checking would be $7.1 \times 10^{-52}$. With range checking, that value is $0$ (as $(a50 x)/ato_95=40 > 5$).
 
 The available selectivities are;
-
 \begin{itemize}
   \item Constant
   \item Knife-edge
@@ -1704,7 +1719,9 @@ y2 1
 
 \subsubsection[Spline]{\argument{spline}}\index{Selectivities!Spline}
 
-The spline selectivity implements a cubic spline that has non-estimable knots, and an estimable value for each knot. The cubic spline is either (i) a natural splines where the where the second derivatives are set to 0 at the boundaries, i.e., the values at the boundaries are horizontal, (ii) a spline with a fixed first derivative at the boundaries (linear, but not necessarily horizontal) and (iii) spline which turns into a parabola at the boundaries.
+The spline selectivity implements a cubic spline that has non-estimable knots, and an estimable value for each knot. The cubic spline is either (i) \argument{natural}, a natural splines where the where the second derivatives are set to 0 at the boundaries, i.e., the values at the boundaries are horizontal, (ii) \argument{fixed}, a spline with a fixed first derivative at the boundaries (linear, but not necessarily horizontal) and (iii) \argument{parabolic}, a spline which turns into a parabola at the boundaries.
+
+Splines are calculated in $\log$ space, and back-transformed into natural space when applied to ensure the values are strictly positive.
 
 For example, to define a spline selectivity for a model with ages $1$ to $6$ with $3$ knots defined for the ages $1$, $3$, and $6$, and where the shape of the selectivity is horizontal at the ends, use
 

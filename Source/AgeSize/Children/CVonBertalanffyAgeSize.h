@@ -10,6 +10,12 @@
 #define CVONBERTALANFFYAGESIZE_H_
 
 #include "../CAgeSize.h"
+#include "../../InitializationPhases/CInitializationPhaseManager.h"
+
+// Classes
+class CTimeStepManager;
+class CTimeStep;
+class CInitializationPhase;
 
 //**********************************************************************
 //
@@ -34,13 +40,16 @@ protected:
   double                      dK;
   double                      dT0;
   double                      dCV;
+  double                      getGrowthProportion();
   std::string                 sDistribution;
   bool                        bByLength;
   string                      sSizeWeight;
   CSizeWeight*                pSizeWeight;
   double                      getMeanWeightFromSize(double &size, double &cv);
   double                      getSd(double &age);
-
+  CTimeStepManager            *pTimeStepManager;
+  CInitializationPhaseManager *pInitializationPhaseManager;
+  CInitializationPhase        *pInitializationPhase;
 };
 
 #endif /* CVONBERTALANFFYAGESIZE_H_ */

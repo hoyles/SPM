@@ -11,12 +11,18 @@
 #include "CSchnuteAgeSize.h"
 #include "../../Helpers/CError.h"
 #include "../../SizeWeight/CSizeWeight.h"
+#include "../../TimeSteps/CTimeStepManager.h"
+#include "../../TimeSteps/CTimeStep.h"
+#include "../../InitializationPhases/CInitializationPhase.h"
+#include "../../InitializationPhases/CInitializationPhaseManager.h"
 
 //**********************************************************************
 // CSchnuteAgeSize::CSchnuteAgeSize()
 // Default Constructor
 //**********************************************************************
 CSchnuteAgeSize::CSchnuteAgeSize() {
+
+  pTimeStepManager = CTimeStepManager::Instance();
 
   // regsiter estimables
   registerEstimable(PARAM_Y1, &dY1);
@@ -88,6 +94,8 @@ void CSchnuteAgeSize::build() {
     // Base
     CAgeSize::build();
 
+    pInitializationPhaseManager = CInitializationPhaseManager::Instance();
+
     sSizeWeight = pParameterList->getString(PARAM_SIZE_WEIGHT);
     CSizeWeightManager *pSizeWeightManager = CSizeWeightManager::Instance();
     pSizeWeight = pSizeWeightManager->getSizeWeight(sSizeWeight);
@@ -102,7 +110,7 @@ void CSchnuteAgeSize::build() {
 }
 
 //**********************************************************************
-// voidCSchnuteAgeSize::rebuild()
+// void CSchnuteAgeSize::rebuild()
 // Validate the age-size relationship
 //**********************************************************************
 void CSchnuteAgeSize::rebuild() {
@@ -117,29 +125,47 @@ void CSchnuteAgeSize::rebuild() {
 }
 
 //**********************************************************************
+// CSchnuteAgeSize::getGrowthProportion()
+// Get the growth proportion for this state and time step
+//**********************************************************************
+double CSchnuteAgeSize::getGrowthProportion() {
+
+  int iTimeStep;
+  double dGrowth;
+
+  if( pRuntimeController->getCurrentState() == STATE_INITIALIZATION ) {
+    pInitializationPhase = pInitializationPhaseManager->getInitializationPhase(pInitializationPhaseManager->getLastExecutedInitializationPhase());
+    iTimeStep = pInitializationPhase->getCurrentTimeStep();
+    dGrowth   = pInitializationPhase->getTimeStep(iTimeStep)->getGrowthProportion();
+
+  } else {
+    iTimeStep = pTimeStepManager->getCurrentTimeStep();
+    dGrowth = pTimeStepManager->getTimeStep(iTimeStep)->getGrowthProportion();
+  }
+
+  return(dGrowth);
+
+}
+
+//**********************************************************************
 // double CSchnuteAgeSize::getMeanSize(double &age)
 // Apply age-size relationship
 //**********************************************************************
 double CSchnuteAgeSize::getMeanSize(double &age) {
+  
   double dSize = 0;
   double dTemp = 0;
+  double dGrowth = getGrowthProportion();
 
-  try {
-
-    if (dA != 0) {
-      dTemp = (1 - exp( - dA * (age - dTau1))) / (1 - exp(- dA * (dTau2 - dTau1)));
-    } else {
-      dTemp = (age - dTau1) / (dTau2 - dTau1);
-    }
-    if (dB != 0) {
-      dSize = pow((pow(dY1,dB) + (pow(dY2,dB) - pow(dY1,dB)) * dTemp), 1 / dB);
-    } else {
-      dSize = dY1 * exp(log( dY2/ dY1) * dTemp);
-    }
-
-  } catch (string &Ex) {
-    Ex = "CSchnuteAgeSize.getMeanSize(" + getLabel() + ")->" + Ex;
-    throw Ex;
+  if (dA != 0) {
+    dTemp = (1 - exp( - dA * ( ( age + dGrowth ) - dTau1))) / (1 - exp(- dA * (dTau2 - dTau1)));
+  } else {
+    dTemp = (( age + dGrowth ) - dTau1) / (dTau2 - dTau1);
+  }
+  if (dB != 0) {
+    dSize = pow((pow(dY1,dB) + (pow(dY2,dB) - pow(dY1,dB)) * dTemp), 1 / dB);
+  } else {
+    dSize = dY1 * exp(log( dY2/ dY1) * dTemp);
   }
 
   if (dSize < 0)
@@ -153,21 +179,16 @@ double CSchnuteAgeSize::getMeanSize(double &age) {
 // Apply size-weight relationship
 //**********************************************************************
 double CSchnuteAgeSize::getMeanWeight(double &age) {
+
   double dWeight = 0;
+  double dSize = this->getMeanSize( age );
 
-  try {
-    double dSize = this->getMeanSize( age );
-
-    if (bByLength) {
-      dWeight = getMeanWeightFromSize( dSize, dCV );
-    } else {
-      double cv = (age * dCV) / dSize;
-      dWeight = getMeanWeightFromSize( dSize, cv );
-    }
-
-  } catch (string &Ex) {
-    Ex = "CSchnuteAgeSize.getMeanWeight(" + getLabel() + ")->" + Ex;
-    throw Ex;
+  if (bByLength) {
+    dWeight = getMeanWeightFromSize( dSize, dCV );
+  } else {
+    double dGrowth = getGrowthProportion();
+    double cv = ( ( age + dGrowth ) * dCV) / dSize;
+    dWeight = getMeanWeightFromSize( dSize, cv );
   }
 
   return dWeight;
@@ -179,16 +200,8 @@ double CSchnuteAgeSize::getMeanWeight(double &age) {
 //**********************************************************************
 double CSchnuteAgeSize::getMeanWeightFromSize(double &size, double &cv) {
 
-double dWeight = 0;
-
-  try {
-    dWeight = pSizeWeight->getMeanWeight( size, sDistribution, cv );
-
-  } catch (string &Ex) {
-    Ex = "CSchnuteAgeSize.getMeanWeightFromSize(" + getLabel() + ")->" + Ex;
-    throw Ex;
-  }
-
+  double dWeight = 0;
+  dWeight = pSizeWeight->getMeanWeight( size, sDistribution, cv );
   return dWeight;
 }
 
@@ -216,7 +229,8 @@ double CSchnuteAgeSize::getSd(double &age) {
     double dSize = this->getMeanSize( age );
     return ( dCV * dSize );
   } else {
-    return ( age * dCV );
+  double dGrowth = getGrowthProportion();
+    return ( ( age + dGrowth ) * dCV );
   }
 }
 

@@ -123,11 +123,17 @@
 \defDefault{No default}
 \defValue{Defines the labels of the processes for that time-step}
 
+\defSub{growth\_proportion} {Define the amount of growth (as a proportion of a year) to add to the age of an individual to calculate its size and weight in that time-step}
+\defType{Constant}
+\defDefault{0.0}
+\defValue{Defines the growth proportion for calculating size and weight in that time-step}
+
 \subsection{\I{Processes}}
 
 The population processes available are,
 
 \begin{itemize}
+	\item None process
 	\item Constant recruitment process
   \item Beverton-Holt stock-recruit relationship recruitment process
   \item Local Beverton-Holt stock-recruit relationship recruitment process
@@ -159,6 +165,10 @@ Each type of process requires a set of subcommands and arguments specific to tha
 \defType{String}
 \defDefault{No default}
 \defValue{A valid type of process}
+
+\subsubsection[None]{\commandlabsubarg{process}{type}{none}}
+
+There are no other subcommands for \commandlabsubarg{process}{type}{none}.
 
 \subsubsection[Constant recruitment process]{\commandlabsubarg{process}{type}{constant\_recruitment}}
 
@@ -1549,11 +1559,6 @@ There are no other subcommands for \commandlabsubarg{age\_size}{type}{none}.
 \defType{Estimable}
 \defDefault{No default}
 \defValue{A positive real number}
-%
-%\defSub{growth\_proportions} {Define the proportion of the year for each time-step for evaluating size}
-%\defType{Constant vector}
-%\defDefault{No default}
-%\defValue{A vector of values, $\le1$ of length equal to the number of time-steps}
 
 \defSub{size\_weight} {Define the label of the associated size-weight relationship}
 \defType{String}
@@ -1613,12 +1618,7 @@ There are no other subcommands for \commandlabsubarg{age\_size}{type}{none}.
 \defType{Estimable}
 \defDefault{No default}
 \defValue{A positive real number}
-%
-%\defSub{growth\_proportions} {Define the proportion of the year for each time-step for evaluating size}
-%\defType{Constant vector}
-%\defDefault{No default}
-%\defValue{A vector of values, $\le1$ of length equal to the number of time-steps}
-%
+
 \defSub{size\_weight} {Define the label of the associated size-weight relationship}
 \defType{String}
 \defDefault{No default}

@@ -46,10 +46,10 @@ protected:
   // Variables
   vector<CInitializationPhase*> vInitializationPhases;
   vector<CInitializationPhase*> vInitializationPhaseOrder;
-  int                         lastExecutedInitializationPhase;
-  CReportManager              *pReportManager;
-  CDerivedQuantityByCellManager        *pDerivedQuantityByCellManager;
-  CDerivedQuantityManager     *pDerivedQuantityManager;
+  int                           lastExecutedInitializationPhase;
+  CReportManager                *pReportManager;
+  CDerivedQuantityByCellManager *pDerivedQuantityByCellManager;
+  CDerivedQuantityManager       *pDerivedQuantityManager;
 
 private:
   // Variables

@@ -28,6 +28,7 @@ public:
   void                        rebuild();
   void                        execute();
   int                         getCurrentTimeStep() { return iCurrentTimeStep; }
+  CTimeStep*                  getTimeStep(int i) { return vTimeSteps[i]; }
   vector<string>              getTimeStepNames() { return vTimeStepNames; }
   void                        setExecutionOrderIndex(int index) { iExecutionOrderIndex = index; }
   int                         getNYears() { return iYears; }
@@ -53,6 +54,7 @@ protected:
   CWorldSquare                  *pPreviousSquare;
   vector<double>                vLambdaHat;
   vector<int>                   vLambdaHatYears;
+  double                        dGrowth;
 
 };
 

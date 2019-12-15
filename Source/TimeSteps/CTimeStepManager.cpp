@@ -37,9 +37,9 @@ CTimeStepManager::CTimeStepManager() {
   pObservationManager             = 0;
   pReporterManager                = 0;
   pDerivedQuantityManager         = 0;
-  pDerivedQuantityByCellManager = 0;
+  pDerivedQuantityByCellManager   = 0;
 
-  iCurrentYear                = 0;
+  iCurrentYear                    = 0;
 }
 
 //**********************************************************************
@@ -140,8 +140,8 @@ string CTimeStepManager::getFirstTimeStepLabel() {
 
 
 //**********************************************************************
-// void CTimeStepManager::validate()
-// Validate The Time Steps
+// void CTimeStepManager::getTimeStepIndexForProcess(string &label)
+// get Time Step Index For Process
 //**********************************************************************
 int CTimeStepManager::getTimeStepIndexForProcess(string &label) {
   for (int i = 0; i < (int)vTimeSteps.size(); ++i) {
@@ -189,14 +189,14 @@ void CTimeStepManager::build() {
       TimeStep->build();
     }
 
-    CWorld *pWorld = CWorld::Instance();
-    iFirstHumanYear   = pWorld->getInitialYear();
-    iNumberOfYears    = pWorld->getCurrentYear() - iFirstHumanYear;
+    CWorld *pWorld  = CWorld::Instance();
+    iFirstHumanYear = pWorld->getInitialYear();
+    iNumberOfYears  = pWorld->getCurrentYear() - iFirstHumanYear;
 
-    pDerivedQuantityByCellManager      = CDerivedQuantityByCellManager::Instance();
-    pDerivedQuantityManager   = CDerivedQuantityManager::Instance();
-    pObservationManager       = CObservationManager::Instance();
-    pReporterManager          = CReportManager::Instance();
+    pDerivedQuantityByCellManager = CDerivedQuantityByCellManager::Instance();
+    pDerivedQuantityManager       = CDerivedQuantityManager::Instance();
+    pObservationManager           = CObservationManager::Instance();
+    pReporterManager              = CReportManager::Instance();
 
 #ifndef OPTIMIZE
   } catch (string &Ex) {

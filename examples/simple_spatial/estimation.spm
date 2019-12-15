@@ -17,9 +17,9 @@ population_size 250
 # MCMC
 @mcmc
 start 1
-length 600000
+length 60000 # 1500000
 keep 500
-adapt_stepsize_at 500 1000 10000 20000 30000 40000 50000 60000
+adapt_stepsize_at 500 1000 10000 20000 30000
 proposal_distribution t
 df 4
 max_correlation 0.8

@@ -10,6 +10,12 @@
 #define CSCHNUTEAGESIZE_H_
 
 #include "../CAgeSize.h"
+#include "../../InitializationPhases/CInitializationPhaseManager.h"
+
+// Classes
+class CTimeStepManager;
+class CTimeStep;
+class CInitializationPhase;
 
 //**********************************************************************
 //
@@ -37,12 +43,17 @@ protected:
   double                      dA;
   double                      dB;
   double                      dCV;
+  double                      getGrowthProportion();
   std::string                 sDistribution;
   bool                        bByLength;
   string                      sSizeWeight;
   CSizeWeight*                pSizeWeight;
   double                      getMeanWeightFromSize(double &size, double &cv);
   double                      getSd(double &age);
+  CTimeStepManager            *pTimeStepManager;
+  CInitializationPhaseManager *pInitializationPhaseManager;
+  CInitializationPhase        *pInitializationPhase;
+  
 };
 
 #endif /* CSCHNUTEAGESIZE_H_ */

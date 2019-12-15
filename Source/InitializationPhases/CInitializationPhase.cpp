@@ -164,7 +164,6 @@ void CInitializationPhase::execute() {
   for (int i = 0; i < iYears; ++i) {
     for (int j = 0; j < (int)vTimeSteps.size(); ++j) {
       iCurrentTimeStep = j;
-
       vTimeSteps[j]->execute();
       pDerivedQuantityByCellManager->calculate(iExecutionOrderIndex);
       pDerivedQuantityManager->calculate(iExecutionOrderIndex);

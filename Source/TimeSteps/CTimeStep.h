@@ -32,6 +32,7 @@ public:
   void                        build();
   void                        execute();
   vector<string>              getProcessNames() { return vProcessNames; }
+  double                      getGrowthProportion() { return dGrowthProportion; }
   void                        addInitialisationDerivedQuantity(CDerivedQuantity* dq) { vInitialisationDerivedQuantities.push_back(dq); }
   void                        addDerivedQuantity(CDerivedQuantity *dq);
 
@@ -39,7 +40,7 @@ protected:
   // Variables
   vector<string>              vProcessNames;
   vector<CProcess*>           vProcesses;
-
+  double                      dGrowthProportion;
   vector<CDerivedQuantity*>                       vInitialisationDerivedQuantities;
   map<unsigned, vector<CDerivedQuantity*> >       mvDerivedQuantities;
   vector<CDerivedQuantityByCell*>                 vInitialisationDerivedQuantitiesByCell;

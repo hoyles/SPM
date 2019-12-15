@@ -11,12 +11,18 @@
 #include "CVonBertalanffyAgeSize.h"
 #include "../../Helpers/CError.h"
 #include "../../SizeWeight/CSizeWeight.h"
+#include "../../TimeSteps/CTimeStepManager.h"
+#include "../../TimeSteps/CTimeStep.h"
+#include "../../InitializationPhases/CInitializationPhase.h"
+#include "../../InitializationPhases/CInitializationPhaseManager.h"
 
 //**********************************************************************
 // CVonBertalanffyAgeSize::CVonBertalanffyAgeSize()
 // Default Constructor
 //**********************************************************************
 CVonBertalanffyAgeSize::CVonBertalanffyAgeSize() {
+
+  pTimeStepManager = CTimeStepManager::Instance();
 
   // Register estimables
   registerEstimable(PARAM_LINF, &dLinf);
@@ -32,7 +38,6 @@ CVonBertalanffyAgeSize::CVonBertalanffyAgeSize() {
   pParameterList->registerAllowed(PARAM_DISTRIBUTION);
   pParameterList->registerAllowed(PARAM_BY_LENGTH);
   pParameterList->registerAllowed(PARAM_SIZE_WEIGHT);
-
 }
 
 //**********************************************************************
@@ -75,9 +80,10 @@ void CVonBertalanffyAgeSize::validate() {
 // Validate the age-size relationship
 //**********************************************************************
 void CVonBertalanffyAgeSize::build() {
-  try {
-    // Base
+
     CAgeSize::build();
+
+    pInitializationPhaseManager = CInitializationPhaseManager::Instance();
 
     sSizeWeight = pParameterList->getString(PARAM_SIZE_WEIGHT);
     CSizeWeightManager *pSizeWeightManager = CSizeWeightManager::Instance();
@@ -86,10 +92,6 @@ void CVonBertalanffyAgeSize::build() {
     // Rebuild
     rebuild();
 
-  } catch (string &Ex) {
-    Ex = "CVonBertalanffyAgeSize.build(" + getLabel() + ")->" + Ex;
-    throw Ex;
-  }
 }
 
 //**********************************************************************
@@ -99,6 +101,30 @@ void CVonBertalanffyAgeSize::build() {
 void CVonBertalanffyAgeSize::rebuild() {
 
   CAgeSize::rebuild();
+
+}
+
+//**********************************************************************
+// voidCVonBertalanffyAgeSize::getGrowthProportion()
+// Get the growth proportion for this state and time step
+//**********************************************************************
+double CVonBertalanffyAgeSize::getGrowthProportion() {
+
+  int iTimeStep;
+  double dGrowth;
+
+  if( pRuntimeController->getCurrentState() == STATE_INITIALIZATION ) {
+    pInitializationPhase = pInitializationPhaseManager->getInitializationPhase(pInitializationPhaseManager->getLastExecutedInitializationPhase());
+    iTimeStep = pInitializationPhase->getCurrentTimeStep();
+    dGrowth   = pInitializationPhase->getTimeStep(iTimeStep)->getGrowthProportion();
+
+  } else {
+    iTimeStep = pTimeStepManager->getCurrentTimeStep();
+    dGrowth = pTimeStepManager->getTimeStep(iTimeStep)->getGrowthProportion();
+  }
+
+  return(dGrowth);
+
 }
 
 //**********************************************************************
@@ -106,12 +132,16 @@ void CVonBertalanffyAgeSize::rebuild() {
 // Apply age-size relationship
 //**********************************************************************
 double CVonBertalanffyAgeSize::getMeanSize(double &age) {
-
-  if ((-dK * (age - dT0)) > 10)
+  
+  double dGrowth = getGrowthProportion();
+   
+  if ((-dK * ( ( age + dGrowth ) - dT0)) > 10)
     throw("Fatal error in age-size relationship: exp(-k*(age-t0)) is enormous. The k or t0 parameters are probably wrong.");
-  double dSize = dLinf * (1 - exp(-dK * (age - dT0)));
+
+  double dSize = dLinf * (1 - exp(-dK * ( (age + dGrowth ) - dT0)));
   if (dSize < 0)
     return 0.0;
+
   return dSize;
 }
 
@@ -123,10 +153,12 @@ double CVonBertalanffyAgeSize::getMeanWeight(double &age) {
 
   double dWeight = 0;
   double dSize = this->getMeanSize( age );
+  
   if (bByLength) {
     dWeight = getMeanWeightFromSize( dSize, dCV );
   } else {
-    double cv = (age * dCV) / dSize;
+    double dGrowth = getGrowthProportion();
+    double cv = ( ( age + dGrowth ) * dCV) / dSize;
     dWeight = getMeanWeightFromSize( dSize, cv );
   }
   return dWeight;
@@ -138,7 +170,7 @@ double CVonBertalanffyAgeSize::getMeanWeight(double &age) {
 //**********************************************************************
 double CVonBertalanffyAgeSize::getMeanWeightFromSize(double &size, double &cv) {
 
-  double dWeight = 0;
+  double dWeight;
   dWeight = pSizeWeight->getMeanWeight( size, sDistribution, cv );
   return dWeight;
 }
@@ -157,6 +189,7 @@ double CVonBertalanffyAgeSize::getCV(double &age) {
   }
 }
 
+
 //**********************************************************************
 // double CVonBertalanffyAgeSize::getSd(double &age)
 // get the cv at age
@@ -167,7 +200,8 @@ double CVonBertalanffyAgeSize::getSd(double &age) {
     double dSize = this->getMeanSize( age );
     return ( dCV * dSize );
   } else {
-    return ( age * dCV );
+    double dGrowth = getGrowthProportion();
+    return ( ( age + dGrowth ) * dCV );
   }
 }
 
@@ -190,8 +224,8 @@ double CVonBertalanffyAgeSize::getProportionInLengthBin(double &age, double &Low
       double dSd = this->getSd( age );
       dResult = CNormalDistribution::getCDF(UpperBin, dSize, dSd) - CNormalDistribution::getCDF(LowerBin, dSize, dSd);
     } else if ( sDistribution == PARAM_LOGNORMAL ) {
-      double dVar = log(dCV*dCV + 1.0);
-      double dMu = log(dSize) - (dVar/2.0);
+      double dVar = log( (dCV * dCV ) + 1.0 );
+      double dMu = log( dSize ) - ( dVar / 2.0 );
       dResult = CLogNormalDistribution::getCDF(UpperBin, dMu, sqrt(dVar)) - CLogNormalDistribution::getCDF(LowerBin, dMu, sqrt(dVar));
     } else {
       CError::errorTypeNotSupported(PARAM_DISTRIBUTION, sDistribution);
