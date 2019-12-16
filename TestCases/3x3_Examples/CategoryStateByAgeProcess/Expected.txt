@@ -1,6 +1,6 @@
 [initialisation]
 report.type: initialisation
-initialisation.initialisation_phase: phase1
+initialisation_phase: phase1
 years: 1
 row column category age[1] age[2] age[3] age[4] age[5]
 1 1 immature 0 3.33333 6.66667 10 0

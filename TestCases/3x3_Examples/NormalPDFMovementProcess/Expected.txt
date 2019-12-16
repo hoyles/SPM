@@ -59,7 +59,7 @@ row column category age[1]
 
 [normalPDF]
 report.type: preference_function
-preference_function.label: normalPDF
+label: normalPDF
 label: normalPDF
 layers: double_layer base
 pdfs: Normal1 Normal2

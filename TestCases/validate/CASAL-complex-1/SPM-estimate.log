@@ -419,7 +419,7 @@ total_score: 5.53612
 
 [random_seed]
 report.type: random_number_seed
-random_number_seed: 13581
+random_number_seed: 98864
 *end
 
 [MaturationMale]

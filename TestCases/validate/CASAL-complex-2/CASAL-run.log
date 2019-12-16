@@ -1,11 +1,11 @@
 CASAL (C++ algorithmic stock assessment laboratory)
 Call: casal -r -q 
-Date: Wed Dec 11 10:33:19 2019
+Date: Sun Dec 15 21:34:51 2019
 v2.30-2016-05-01 23:58:51 UTC (rev.5470)  (c) Copyright 2002-2012, NIWA
 User name: alist
-Machine name: DELL-9020 (Microsoft Windows, PID=3136)
+Machine name: DELL-9020 (Microsoft Windows, PID=11856)
 
-Random number seed : 13599
+Random number seed : 98891
 
 A male fish of size 50 cm has a weight of 0.777443 kg in your model. This size-weight scale check assumes that the growth curve is in centimetres, and that the catch is in tonnes.
 

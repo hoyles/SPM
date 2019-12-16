@@ -54,7 +54,6 @@ protected:
   CWorldSquare                  *pPreviousSquare;
   vector<double>                vLambdaHat;
   vector<int>                   vLambdaHatYears;
-  double                        dGrowth;
 
 };
 
