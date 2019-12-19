@@ -30,7 +30,7 @@ public:
   virtual double             getResult(int RIndex, int CIndex, int TRIndex, int TCIndex) = 0;
   virtual void               validate();
   void                       build();
-  bool                       getIsStatic();
+  virtual bool               getIsStatic();
 
 protected:
   // Variables

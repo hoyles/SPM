@@ -34,6 +34,7 @@ COpenMPPreferenceMovementProcess::COpenMPPreferenceMovementProcess() {
   pLayer = 0;
   sType = PARAM_PREFERENCE_MOVEMENT;
   bIsStatic = false;
+  dRunningTotal = 0.0;
 
   // Register user allowed parameters
   pParameterList->registerAllowed(PARAM_CATEGORIES);
@@ -127,6 +128,7 @@ void COpenMPPreferenceMovementProcess::build() {
     }
 
   } catch (string &Ex) {
+    cout << "EX: " << Ex;
     Ex = "CPreferenceMovementProcess.build(" + getLabel() + ")->" + Ex;
     throw Ex;
   }
@@ -186,10 +188,17 @@ void COpenMPPreferenceMovementProcess::execute() {
     omp_set_dynamic(0);
     omp_set_num_threads(procs);
 
+    vector<vector<vector<double>>> cache;
+    cache.assign(procs, vector<vector<double>>());
+    for (int i = 0; i < procs; ++i) {
+      cache[i].assign(iWorldHeight, vector<double>());
+      for (int a = 0; a < iWorldHeight; ++a)
+        cache[i][a].assign(iWorldWidth, 0.0);
+    }
+
     #pragma omp parallel for
     for (int i = (iWorldHeight-1); i >= 0; --i) {
       for (int j = (iWorldWidth-1); j >= 0; --j) {
-        CDoubleLayer pLayer = CDoubleLayer();
 
         // Get Current Squares
         CWorldSquare* pBaseSquare = pWorld->getBaseSquare(i, j);
@@ -197,7 +206,6 @@ void COpenMPPreferenceMovementProcess::execute() {
           continue;
 
         CWorldSquare* pDiff       = pWorld->getDifferenceSquare(i, j);
-
         // Only rebuild the cache if we have too
         // Reset our Running Total (For Proportions)
         double dRunningTotal = 0.0;
@@ -209,7 +217,6 @@ void COpenMPPreferenceMovementProcess::execute() {
               double dCurrent = 0.0;
               // Get Target Square
               CWorldSquare* pTargetBase = pWorld->getBaseSquare(k, l);
-
               // Make sure the target cell is enabled
               if (pTargetBase->getEnabled()) {
                 dCurrent = 1.0;
@@ -220,7 +227,7 @@ void COpenMPPreferenceMovementProcess::execute() {
                 dCurrent = 0.0;
               }
 
-              pLayer.setValue(k+1, l+1, dCurrent);
+              cache[i][k][l] = dCurrent;
               dRunningTotal += dCurrent;
             }
           }
@@ -244,7 +251,7 @@ void COpenMPPreferenceMovementProcess::execute() {
                 if (bIsStatic)
                   dCurrent = vPreferenceCache[i][j][k][l];
                 else
-                  dCurrent = pLayer.getValue(k, l, 0, 0);
+                  dCurrent = cache[i][k][l];
 
                 // if the amount is low, then don't bother moving
                 if (dCurrent <= TRUE_ZERO)
@@ -257,21 +264,22 @@ void COpenMPPreferenceMovementProcess::execute() {
                   dCurrent /= dRunningTotal;
                 }
 
-                // Get Current Number of Fish, multipled by proportion to move
-                dCurrent *= dProportion * pBaseSquare->getValue(Category, m);
-
-                // Move
-                pDiff->subValue(Category, m, dCurrent);
-                pTargetDiff->addValue(Category, m, dCurrent);
+//                #pragma omp ordered
+//                {
+                  // Get Current Number of Fish, multipled by proportion to move
+                  dCurrent *= dProportion * pBaseSquare->getValue(Category, m);
+                  // Move
+                  pDiff->subValue(Category, m, dCurrent);
+                  pTargetDiff->addValue(Category, m, dCurrent);
+//                }
               }
             }
           }
         }
-//        delete pLayer;
       }
     }
-
   } catch (string &Ex) {
+    cout << "EX: " << Ex << endl;
     Ex = "CPreferenceMovementProcess.execute(" + getLabel() + ")->" + Ex;
     throw Ex;
   }

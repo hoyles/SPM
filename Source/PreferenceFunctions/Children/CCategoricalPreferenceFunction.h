@@ -29,7 +29,7 @@ public:
   vector<string>              getLabels() { return vLabels; }
   double                      getResult(int RIndex, int CIndex, int TRIndex, int TCIndex);
   void                        validate();
-  void                        build();
+  void                        build() override;
   bool                        getIsStatic();
 
 protected:
