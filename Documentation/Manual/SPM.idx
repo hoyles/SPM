@@ -195,7 +195,7 @@
 \indexentry{Multi-threaded CPU process|hyperpage}{41}
 \indexentry{Single-threaded CPU process|hyperpage}{41}
 \indexentry{Total preference function|hyperpage}{41}
-\indexentry{Preference function|hyperpage}{41}
+\indexentry{Preference function|hyperpage}{42}
 \indexentry{Constant preference function|hyperpage}{42}
 \indexentry{Preference function ! Constant|hyperpage}{42}
 \indexentry{Normal preference function|hyperpage}{42}
@@ -212,13 +212,13 @@
 \indexentry{Preference function ! Threshold|hyperpage}{42}
 \indexentry{Categorical preference function|hyperpage}{42}
 \indexentry{Preference function ! Categorical|hyperpage}{42}
-\indexentry{Monotonic categorical preference function|hyperpage}{42}
-\indexentry{Preference function ! Monotonic categorical|hyperpage}{42}
+\indexentry{Monotonic categorical preference function|hyperpage}{43}
+\indexentry{Preference function ! Monotonic categorical|hyperpage}{43}
 \indexentry{Copulas|hyperpage}{43}
 \indexentry{Probability Distribution Functions (PDF)|hyperpage}{43}
 \indexentry{Normal density function|hyperpage}{43}
-\indexentry{Lognormal density function|hyperpage}{43}
-\indexentry{Exponential density function|hyperpage}{43}
+\indexentry{Lognormal density function|hyperpage}{44}
+\indexentry{Exponential density function|hyperpage}{44}
 \indexentry{Uniform density function|hyperpage}{44}
 \indexentry{Gaussian copula|hyperpage}{44}
 \indexentry{Gumbel copula|hyperpage}{44}
@@ -229,20 +229,20 @@
 \indexentry{Size-age relationship|hyperpage}{46}
 \indexentry{von Bertalanffy growth curve|hyperpage}{47}
 \indexentry{Schnute growth curve|hyperpage}{47}
-\indexentry{Size-weight relationship|hyperpage}{47}
+\indexentry{Size-weight relationship|hyperpage}{48}
 \indexentry{Basic size-weight relationship|hyperpage}{48}
 \indexentry{Selectivities|hyperpage}{48}
 \indexentry{Selectivities!Constant|hyperpage}{49}
 \indexentry{Selectivities!Knife-edge|hyperpage}{49}
-\indexentry{Selectivities!All-values|hyperpage}{49}
+\indexentry{Selectivities!All-values|hyperpage}{50}
 \indexentry{Selectivities!All-values-bounded|hyperpage}{50}
 \indexentry{Selectivities!Increasing|hyperpage}{50}
-\indexentry{Selectivities!Logistic|hyperpage}{50}
+\indexentry{Selectivities!Logistic|hyperpage}{51}
 \indexentry{Selectivities!Inverse-logistic|hyperpage}{51}
 \indexentry{Selectivities!Logistic-producing|hyperpage}{51}
 \indexentry{Selectivities!Double-normal|hyperpage}{52}
 \indexentry{Selectivities!Double-exponential|hyperpage}{52}
-\indexentry{Selectivities!Spline|hyperpage}{52}
+\indexentry{Selectivities!Spline|hyperpage}{53}
 \indexentry{The estimation section|hyperpage}{55}
 \indexentry{Maximum posterior density estimate (MPD)|hyperpage}{55}
 \indexentry{MPD (Maximum posterior density estimate)|hyperpage}{55}

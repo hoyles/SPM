@@ -148,12 +148,11 @@ int CNotNegIntegerLayer::getLayerMin() {
         dMin = std::min(dMin,pGrid[i][j]);
       }
     }
-
-    return(dMin);
-
     // check it's positive
     if (dMin <= ZERO)
       CError::errorLessThanEqualTo(PARAM_VALUE, PARAM_ZERO);
+
+    return(dMin);
 
   } catch (string &Ex) {
     Ex = "CNotNegIntegerLayer.getLayerMin(" + getLabel() + ")->" + Ex;

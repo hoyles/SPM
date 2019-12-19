@@ -139,7 +139,7 @@
     \subitem  Example 1, \hyperpage{165}
     \subitem  Example 2, \hyperpage{169}
   \item Exit status value, \hyperpage{12}
-  \item Exponential density function, \hyperpage{43}
+  \item Exponential density function, \hyperpage{44}
   \item Exponential preference function, \hyperpage{42}
 
   \indexspace
@@ -184,7 +184,7 @@
   \item local Beverton-Holt recruitment, \hyperpage{24}
   \item Local minimums, \hyperpage{57}
   \item Logistic preference function, \hyperpage{42}
-  \item Lognormal density function, \hyperpage{43}
+  \item Lognormal density function, \hyperpage{44}
   \item Lognormal likelihood 
     \subitem  abundance, \hyperpage{75}
     \subitem  biomass, \hyperpage{75}
@@ -219,7 +219,7 @@
   \item Model overview, \hyperpage{3}
   \item Model structure, \hyperpage{85}
   \item Model years, \hyperpage{22}
-  \item Monotonic categorical preference function, \hyperpage{42}
+  \item Monotonic categorical preference function, \hyperpage{43}
   \item Mortality, \hyperpage{23}, \hyperpage{29}
   \item Movement, \hyperpage{23}, \hyperpage{38}
   \item Movement 
@@ -267,7 +267,7 @@
   \item Population section, \hyperpage{4}, \hyperpage{13}
   \item Population structure, \hyperpage{14}
   \item Posterior profiles, \hyperpage{57}
-  \item Preference function, \hyperpage{40, 41}
+  \item Preference function, \hyperpage{40}, \hyperpage{42}
   \item Preference function 
     \subitem  Categorical, \hyperpage{42}
     \subitem  Constant, \hyperpage{42}
@@ -275,7 +275,7 @@
     \subitem  Exponential, \hyperpage{42}
     \subitem  Inverse-Logistic, \hyperpage{42}
     \subitem  Logistic, \hyperpage{42}
-    \subitem  Monotonic categorical, \hyperpage{42}
+    \subitem  Monotonic categorical, \hyperpage{43}
     \subitem  Normal, \hyperpage{42}
     \subitem  Threshold, \hyperpage{42}
   \item Preference functions, \hyperpage{103}
@@ -388,7 +388,7 @@
 
   \item Schnute growth curve, \hyperpage{47}
   \item Selectivities, \hyperpage{48}, \hyperpage{122}
-    \subitem All-values, \hyperpage{49}
+    \subitem All-values, \hyperpage{50}
     \subitem All-values-bounded, \hyperpage{50}
     \subitem Constant, \hyperpage{49}
     \subitem Double-exponential, \hyperpage{52}
@@ -396,15 +396,15 @@
     \subitem Increasing, \hyperpage{50}
     \subitem Inverse-logistic, \hyperpage{51}
     \subitem Knife-edge, \hyperpage{49}
-    \subitem Logistic, \hyperpage{50}
+    \subitem Logistic, \hyperpage{51}
     \subitem Logistic-producing, \hyperpage{51}
-    \subitem Spline, \hyperpage{52}
+    \subitem Spline, \hyperpage{53}
   \item Setting the number of threads, \hyperpage{9}
   \item Simulating observations, \hyperpage{78}
   \item Single-threaded CPU process, \hyperpage{41}
   \item Size-age relationship, \hyperpage{46}
   \item Size-weight, \hyperpage{121}
-  \item Size-weight relationship, \hyperpage{47}
+  \item Size-weight relationship, \hyperpage{48}
   \item Software license, \hyperpage{1}
   \item Spatial structure, \hyperpage{13}
   \item Specifying the parameters to be estimated, \hyperpage{55}

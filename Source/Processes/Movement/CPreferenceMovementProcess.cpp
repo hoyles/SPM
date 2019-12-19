@@ -185,7 +185,7 @@ void CPreferenceMovementProcess::execute() {
         if (!pBaseSquare->getEnabled())
           continue;
 
-        pDiff       = pWorld->getDifferenceSquare(i, j);
+        pDiff = pWorld->getDifferenceSquare(i, j);
 
         // Only rebuild the cache if we have too
         if (!bIsStatic) {

@@ -1138,6 +1138,8 @@ We assume that the population and spatial extent are defined, and that there is 
 
 Note that two forms of the preference movement algorithm are implemented in \SPM. They implement the same algorithm, except that the \commandsubarg{process}{type}{preference\_threaded}\index{Threads!preference functions}\ implements movement as a multi-threaded CPU process\index{Multi-threaded CPU process} (allowing multiple between cell movements to be evaluated by the computer simultaneously) and \commandsubarg{process}{type}{preference} implements movement as a single-threaded CPU process\index{Single-threaded CPU process}. The simultaneous evaluation of movements between cells in the multi-threaded movement process can result in a significantly faster processing time for an individual model (though, due to the thread management overhead, only for large models). Note that a consequence of this is that the order of calculations for the multi-thread and single-thread processes \emph{may} differ in some cases, and that this may result in a slightly different outcome.
 
+Use the command line argument \texttt{spm -t \emph{number}} to specify the number of threads for threaded preference movement. Note that \SPM\ defaults to the maximum number of threads available (i.e., twice the number of cores for your CPU) less one, unless otherwise specified. 
+
 \subsubsection*{The total preference function\index{Total preference function}}
 
 Movement in \SPM\ can be defined as a probability distribution based on an underlying preference function. Here, we define the preference for a cell $x$ as the preference function $f_x(\theta_x,P(x))$, where $\theta_x$ are the parameters for $f_x$. So, given a set of $n$ attributes for cell $x$, we can define a preference function for each, and hence we define the aggregated or total preference function for any cell $x$ as the weighted product of individual preference functions,
@@ -1161,7 +1163,7 @@ Note that there are three forms of preference function,
 
 Preference functions of the first type are determined only by the parameters of the preference function and some underlying, fixed, attribute. Preference functions of the others are dynamic, i.e. they depend on the relative locations of the cells or on the density of a cell at a particular point in time.
 
-\SPM can also incorporate dependence between two variables as a preference function using the copula method (see later).
+\SPM\ can also incorporate dependence between two variables as a preference function using the copula method (see later).
 
 \subsubsection*{Preference functions\index{Preference function}}
 
