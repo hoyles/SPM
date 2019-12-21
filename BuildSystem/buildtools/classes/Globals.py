@@ -31,7 +31,7 @@ target_debug_lib_path_   = ""
 target_release_lib_path_ = ""
 
 threads_          = "8"
-boost_version     = 'boost_1_58_0'
+boost_version     = 'boost_1_71_0'
 
 allowed_build_targets_ = [ "release", "documentation", "boost", "archive", "clean", 
                            "check", "unittests", "installer", "deb", "rlibrary", "version"]

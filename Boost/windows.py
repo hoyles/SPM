@@ -19,12 +19,12 @@ class Builder():
     boostFileName = Globals.boost_source_directory_ + '/' + Globals.boost_version
   
     # Decompress our boost archive
-    if os.path.exists(boostFileName + '_windows.zip'):
+    if os.path.exists(boostFileName + '.7z'):
         os.chdir(Globals.target_success_path_)
-        print('-- Decompressing Boost: ' + boostFileName + '_windows.zip 1> spm_unzip.log 2>&1')
-        os.system('unzip ' + boostFileName + '_windows.zip 1> spm_unzip.log 2>&1') 
+        print('-- Decompressing Boost: 7za.exe ' + boostFileName + '.7z 1> spm_unzip.log 2>&1')
+        os.system('7za.exe x ' + boostFileName + '.7z 1> spm_unzip.log 2>&1') 
     else:
-        return Globals.PrintError('Unable to Decompress ' + boostFileName + '_windows.zip')
+        return Globals.PrintError('Unable to Decompress ' + boostFileName + '.7z')
     
     # Build Boost
     print('-- Building Boost - check spm_build.log for progress')

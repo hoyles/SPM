@@ -152,7 +152,7 @@ This allows each estimated parameter to move in the MCMC even if its variance is
 The proposal distribution can also change adaptively during the chain, using two different mechanisms. Both are offered as means of improving the convergence properties of the chain. It is important to note that any adaptive behaviour must finish before the end of the burn-in period, i.e., the proposal distribution must be finalised before the kept portion of the chain starts. The adaptive mechanisms are as follows: 
 
 \begin{enumerate}
-\item You can request that the stepsize change adaptively at one or more sample numbers. At each adaptation, the stepsize is doubled if the acceptance rate since the last adaptation is more than $0.5$, or halved if the acceptance rate is less than $0.2$. (See Gelman et al. \citep{823} for justification.)
+\item You can request that the stepsize change adaptively at one or more sample numbers. At each adaptation, the stepsize is modified using the acceptance rate, by increasing or decreasing the stepsize by the ratio of the difference between the current acceptance rate (since the previous adaption) and the target acceptance rate. The default acceptance ratio is $0.24$ (See Gelman et al. \citep{823} for justification).
 
 %\item You can request that the entire covariance matrix change adaptively at one or more sample numbers. At each adaptation, it is replaced with a matrix based on the sample covariance of an earlier section of the chain. The theory here is that the covariance of a portion of chain could potentially be a better estimate of the covariance of the posterior distribution than the inverse Hessian. \NYI.
 \end{enumerate}

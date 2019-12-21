@@ -55,7 +55,7 @@
   \item Command 
     \subitem  age\_size, \hyperpage{119}, \hyperpage{192}
     \subitem  ageing\_error, \hyperpage{149}, \hyperpage{199}
-    \subitem  catchability, \hyperpage{135}, \hyperpage{196}
+    \subitem  catchability, \hyperpage{136}, \hyperpage{196}
     \subitem  derived\_quantity, \hyperpage{117}, \hyperpage{192}
     \subitem  derived\_quantity\_by\_cell, \hyperpage{116}, 
 		\hyperpage{191}
@@ -99,7 +99,7 @@
   \indexspace
 
   \item Defining ageing error, \hyperpage{149}
-  \item Defining catchability constants, \hyperpage{135}
+  \item Defining catchability constants, \hyperpage{136}
   \item Defining penalties, \hyperpage{136}
   \item Density-dependent prey-suitability, \hyperpage{33}
   \item Derived quantities, \hyperpage{3}, \hyperpage{45}, 

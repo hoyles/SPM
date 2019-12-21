@@ -167,6 +167,11 @@ Only one method of carrying out MCMCs is available, Markov Chain Monte Carlo usi
 \defDefault{no default}
 \defValue{Defines the points during the MCMC iterations to re-evaluate the MCMC stepsize argument}
 
+\defSub{acceptance\_ratio} {Target acceptance ratio for modifying the stepsize during adaptive updates in the MCMC chain}
+\defType{Constant}
+\defDefault{0.24}
+\defValue{Defines the target acceptance ratio when re-evaluating the MCMC stepsize argument}
+
 \subsection{\I{Profiles}}
 
 \defComLab{profile}{Define the profile parameters and arguments}
