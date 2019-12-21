@@ -8,7 +8,7 @@ project(SPM)
 #   cmake -G "Unix Makefiles"
 #   make all
 
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 SET(MAIN_NAME spm_unoptimised)
@@ -30,13 +30,13 @@ IF (WIN32)
   SET(MAIN_LIBRARIES
     gomp
     pthread
-    boost_system-mgw81-mt-s-1_58
-    boost_filesystem-mgw81-mt-s-1_58
-    boost_thread-mgw81-mt-s-1_58
-    boost_program_options-mgw81-mt-s-1_58
-    boost_chrono-mgw81-mt-s-1_58
+    boost_system-mgw81-mt-s-x64-1_71
+    boost_filesystem-mgw81-mt-s-x64-1_71
+    boost_thread-mgw81-mt-s-x64-1_71
+    boost_program_options-mgw81-mt-s-x64-1_71
+    boost_chrono-mgw81-mt-s-x64-1_71
   )
-  SET(TEST_LIBRARIES boost_unit_test_framework-mgw81-mt-sd-1_58)
+  SET(TEST_LIBRARIES boost_unit_test_framework-mgw81-mt-s-x64-1_71)
   
 ELSE (WIN32)
   SET(BOOST_LIBS "${CMAKE_BINARY_DIR}/Boost/include/")
