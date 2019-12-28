@@ -76,6 +76,7 @@ class Latex:
     
     os.system("cp -f SPM.pdf " + Globals.root_directory_ + "/Build")
     os.system("cp -f SPM.syn " + Globals.root_directory_ + "/Build")
+    os.system("cp -f SPM.xml " + Globals.root_directory_ + "/Build")
     
     print('-- Built the SPM manual')
 

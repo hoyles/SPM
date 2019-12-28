@@ -173,9 +173,10 @@ Section /o "Copy the R library" SEC06
   File "..\\Build\\spm_1.1.zip"
 SectionEnd
 
-Section /o "Copy the TextPad syntax file" SEC08
+Section /o "Copy the syntax files" SEC08
   SetOutPath "$INSTDIR"
   File "..\\Build\\SPM.syn"
+  File "..\\Build\\SPM.xml"
 SectionEnd
 
 LangString DESC_SEC01 ${LANG_ENGLISH} "Copy the ${PRODUCT_NAME} v${PRODUCT_VERSION} program files to the installation directory (required)"
@@ -184,7 +185,7 @@ LangString DESC_SEC03 ${LANG_ENGLISH} "Associate .spm files with notepad++.exe"
 LangString DESC_SEC04 ${LANG_ENGLISH} "Add the installation directory of ${PRODUCT_NAME} to your Windows PATH? (recommended)"
 LangString DESC_SEC05 ${LANG_ENGLISH} "Copy the example files"
 LangString DESC_SEC06 ${LANG_ENGLISH} "Copy the R ${PRODUCT_NAME} library"
-LangString DESC_SEC08 ${LANG_ENGLISH} "Copy the TextPad syntax file (SPM.syn)"
+LangString DESC_SEC08 ${LANG_ENGLISH} "Copy the syntax files (SPM.syn for TextPad and SPM.xml for Notepad++)"
 
 !insertmacro MUI_FUNCTION_DESCRIPTION_BEGIN
   !insertmacro MUI_DESCRIPTION_TEXT ${SEC01} $(DESC_SEC01)
@@ -244,6 +245,7 @@ Section Uninstall
   Delete "$INSTDIR\Run SPM.lnk"
   Delete "$INSTDIR\Install.log"
   Delete "$INSTDIR\SPM.syn"
+  Delete "$INSTDIR\SPM.xml"
   Delete "$INSTDIR\spm_1.1.zip"
   RmDir /r "$INSTDIR\examples"
   
