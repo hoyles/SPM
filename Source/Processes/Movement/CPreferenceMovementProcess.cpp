@@ -208,7 +208,7 @@ void CPreferenceMovementProcess::execute() {
                 dCurrent = 0.0;
               }
 
-              pLayer->setValue(k+1, l+1, dCurrent);
+              pLayer->setValue(k, l, dCurrent);
               dRunningTotal += dCurrent;
             }
           }

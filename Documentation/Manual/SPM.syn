@@ -1,4 +1,4 @@
-; TextPad syntax definitions for SPM version 1.1-2019-12-19
+; TextPad syntax definitions for SPM version 1.1-2019-12-21
 ; ===================================================================================
 ;
 ;
@@ -57,9 +57,11 @@ CharEsc = \
 @time_step
 
 [Keywords 2]
+Lmin
 N
 a
 a50
+acceptance_ratio
 adapt_stepsize_at
 age
 age_plus_group
@@ -285,6 +287,7 @@ local_bh_recruitment
 logistic
 logistic_producing
 lognormal
+mean_size_at_age
 metropolis_hastings
 migration
 monotonic_categorical
@@ -318,6 +321,7 @@ threshold
 uniform
 uniform_log
 von_bertalanffy
+von_bertalanffy_k_at_age
 
 [Keywords 5]
 

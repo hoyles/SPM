@@ -22,7 +22,7 @@ public:
   CNumericLayer();
   virtual                     ~CNumericLayer();
   int                         countValidSpaces();
-  virtual void                setValue(int Row, int Col, double Value);
+  virtual void                setValue(int RowIndex, int ColIndex, double Value);
   virtual double              getValue(int RowIndex, int ColIndex, int TargetRow=0, int TargetCol=0)=0;
   virtual void                validate();
   virtual void                build() = 0;

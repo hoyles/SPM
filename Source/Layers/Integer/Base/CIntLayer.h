@@ -22,7 +22,7 @@ public:
   CIntLayer();
   virtual                     ~CIntLayer();
   int                         countValidSpaces();
-  virtual void                setValue(int Row, int Col, int Value);
+  virtual void                setValue(int RowIndex, int ColIndex, int Value);
   virtual int                 getValue(int RowIndex, int ColIndex, int TargetRow=0, int TargetCol=0)=0;
   virtual void                validate();
   virtual void                build() = 0;

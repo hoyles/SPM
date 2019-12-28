@@ -49,6 +49,10 @@ double CDoubleLayer::getValue(int RowIndex, int ColIndex, int TargetRow=0, int T
       CError::errorGreaterThanEqualTo(PARAM_ROW_INDEX, PARAM_LAYER_HEIGHT);
     if (ColIndex >= iWidth)
       CError::errorGreaterThanEqualTo(PARAM_COLUMN_INDEX, PARAM_LAYER_WIDTH);
+    if (RowIndex < 0)
+      CError::errorLessThanEqualTo(PARAM_ROW, PARAM_ZERO);
+    if (ColIndex < 0)
+      CError::errorLessThanEqualTo(PARAM_COLUMN, PARAM_ZERO);
 
   } catch (string &Ex) {
     Ex = "CDoubleLayer.getValue(" + getLabel() + ")->" + Ex;
@@ -63,16 +67,16 @@ double CDoubleLayer::getValue(int RowIndex, int ColIndex, int TargetRow=0, int T
 // void CDoubleLayer::addValue(int Row, int Col, double Value)
 // Add Value to our Grid
 //**********************************************************************
-void CDoubleLayer::setValue(int Row, int Col, double Value) {
+void CDoubleLayer::setValue(int RowIndex, int ColIndex, double Value) {
 #ifndef OPTIMIZE
   try {
-    if (Row > iHeight)
+    if (RowIndex >= iHeight)
       CError::errorGreaterThanEqualTo(PARAM_ROW, PARAM_LAYER_HEIGHT);
-    if (Col > iWidth)
+    if (ColIndex >= iWidth)
       CError::errorGreaterThanEqualTo(PARAM_COLUMN, PARAM_LAYER_WIDTH);
-    if (Row <= 0)
+    if (RowIndex < 0)
       CError::errorLessThanEqualTo(PARAM_ROW, PARAM_ZERO);
-    if (Col <= 0)
+    if (ColIndex < 0)
       CError::errorLessThanEqualTo(PARAM_COLUMN, PARAM_ZERO);
 
   } catch(string &Ex) {
@@ -81,7 +85,7 @@ void CDoubleLayer::setValue(int Row, int Col, double Value) {
   }
 #endif
 
-  pGrid[(Row-1)][(Col-1)] = Value;
+  pGrid[RowIndex][ColIndex] = Value;
 }
 
 //**********************************************************************

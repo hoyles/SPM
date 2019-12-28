@@ -14,6 +14,8 @@
 #include "../Children/CNoneAgeSize.h"
 #include "../Children/CSchnuteAgeSize.h"
 #include "../Children/CVonBertalanffyAgeSize.h"
+#include "../Children/CVonBertalanffyKAtAgeAgeSize.h"
+#include "../Children/CMeanAgeSize.h"
 #include "../../Helpers/CError.h"
 
 
@@ -29,8 +31,12 @@ CAgeSize* CAgeSizeFactory::buildAgeSize(string type, bool registerWithManager) {
     pAgeSize = new CNoneAgeSize();
   else if (type == PARAM_VONBERTALANFFY)
     pAgeSize = new CVonBertalanffyAgeSize();
+  else if (type == PARAM_VONBERTALANFFYKATAGE)
+    pAgeSize = new CVonBertalanffyKAtAgeAgeSize();
   else if (type == PARAM_SCHNUTE)
     pAgeSize = new CSchnuteAgeSize();
+  else if (type == PARAM_MEAN_SIZE_AT_AGE)
+    pAgeSize = new CMeanAgeSize();
   else
     CError::errorUnknown(PARAM_AGE_SIZE, type);
 

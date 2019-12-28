@@ -22,7 +22,7 @@ public:
   CCategoricalLayer();
   virtual                     ~CCategoricalLayer();
   int                         countValidSpaces();
-  virtual void                setValue(int Row, int Col, string Value);
+  virtual void                setValue(int RowIndex, int ColIndex, string Value);
   virtual string              getValue(int RowIndex, int ColIndex)=0;
   virtual void                validate();
   virtual void                build() = 0;

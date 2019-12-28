@@ -229,6 +229,8 @@
 \indexentry{Size-age relationship|hyperpage}{46}
 \indexentry{von Bertalanffy growth curve|hyperpage}{47}
 \indexentry{Schnute growth curve|hyperpage}{47}
+\indexentry{von Bertalanffy k-at-age growth curve|hyperpage}{47}
+\indexentry{mean size-at-age growth curve|hyperpage}{47}
 \indexentry{Size-weight relationship|hyperpage}{48}
 \indexentry{Basic size-weight relationship|hyperpage}{48}
 \indexentry{Selectivities|hyperpage}{48}
@@ -391,58 +393,58 @@
 \indexentry{Command ! derived\_quantity|hyperpage}{117}
 \indexentry{Age-size relationship|hyperpage}{119}
 \indexentry{Command ! age\_size|hyperpage}{119}
-\indexentry{Size-weight|hyperpage}{121}
-\indexentry{Command ! size\_weight|hyperpage}{122}
-\indexentry{Selectivities|hyperpage}{122}
-\indexentry{Command ! selectivity|hyperpage}{122}
-\indexentry{Estimation methods|hyperpage}{129}
-\indexentry{Command ! estimation|hyperpage}{129}
-\indexentry{Point estimation|hyperpage}{129}
-\indexentry{Command ! minimiser|hyperpage}{129}
-\indexentry{Markov Chain Monte Carlo (MCMC)|hyperpage}{131}
-\indexentry{Command ! mcmc|hyperpage}{131}
-\indexentry{Profiles|hyperpage}{133}
-\indexentry{Command ! profile|hyperpage}{133}
-\indexentry{Command ! estimate|hyperpage}{133}
-\indexentry{Defining catchability constants|hyperpage}{136}
-\indexentry{Command ! catchability|hyperpage}{136}
-\indexentry{Defining penalties|hyperpage}{136}
-\indexentry{Command ! penalty|hyperpage}{136}
-\indexentry{Observation types|hyperpage}{137}
-\indexentry{Command ! observation|hyperpage}{137}
-\indexentry{Defining ageing error|hyperpage}{149}
-\indexentry{Command ! ageing\_error|hyperpage}{149}
-\indexentry{Available reports|hyperpage}{151}
-\indexentry{Report commands and subcommands|hyperpage}{151}
-\indexentry{Command ! report|hyperpage}{151}
-\indexentry{Command ! include|hyperpage}{163}
-\indexentry{Include an external file|hyperpage}{163}
-\indexentry{Examples|hyperpage}{165}
-\indexentry{Examples ! Example 1|hyperpage}{165}
-\indexentry{Examples ! A simple non-spatial model|hyperpage}{165}
-\indexentry{Examples ! Example 2|hyperpage}{169}
-\indexentry{Examples ! A $10 \times 6$ spatial model|hyperpage}{169}
-\indexentry{Command ! model|hyperpage}{183}
-\indexentry{Command ! initialisation\_phase|hyperpage}{183}
-\indexentry{Command ! time\_step|hyperpage}{183}
-\indexentry{Command ! process|hyperpage}{183}
-\indexentry{Command ! preference\_function|hyperpage}{187}
-\indexentry{Command ! pdf|hyperpage}{189}
-\indexentry{Command ! layer|hyperpage}{190}
-\indexentry{Command ! derived\_quantity\_by\_cell|hyperpage}{191}
-\indexentry{Command ! derived\_quantity|hyperpage}{192}
-\indexentry{Command ! age\_size|hyperpage}{192}
-\indexentry{Command ! size\_weight|hyperpage}{192}
-\indexentry{Command ! selectivity|hyperpage}{193}
-\indexentry{Command ! estimation|hyperpage}{194}
-\indexentry{Command ! minimiser|hyperpage}{194}
-\indexentry{Command ! mcmc|hyperpage}{195}
-\indexentry{Command ! profile|hyperpage}{195}
-\indexentry{Command ! estimate|hyperpage}{195}
-\indexentry{Command ! catchability|hyperpage}{196}
-\indexentry{Command ! penalty|hyperpage}{196}
-\indexentry{Command ! observation|hyperpage}{196}
-\indexentry{Command ! ageing\_error|hyperpage}{199}
-\indexentry{Command ! report|hyperpage}{199}
-\indexentry{Command ! include|hyperpage}{203}
-\indexentry{Include an external file|hyperpage}{203}
+\indexentry{Size-weight|hyperpage}{123}
+\indexentry{Command ! size\_weight|hyperpage}{123}
+\indexentry{Selectivities|hyperpage}{124}
+\indexentry{Command ! selectivity|hyperpage}{124}
+\indexentry{Estimation methods|hyperpage}{131}
+\indexentry{Command ! estimation|hyperpage}{131}
+\indexentry{Point estimation|hyperpage}{131}
+\indexentry{Command ! minimiser|hyperpage}{131}
+\indexentry{Markov Chain Monte Carlo (MCMC)|hyperpage}{133}
+\indexentry{Command ! mcmc|hyperpage}{133}
+\indexentry{Profiles|hyperpage}{135}
+\indexentry{Command ! profile|hyperpage}{135}
+\indexentry{Command ! estimate|hyperpage}{135}
+\indexentry{Defining catchability constants|hyperpage}{138}
+\indexentry{Command ! catchability|hyperpage}{138}
+\indexentry{Defining penalties|hyperpage}{138}
+\indexentry{Command ! penalty|hyperpage}{138}
+\indexentry{Observation types|hyperpage}{139}
+\indexentry{Command ! observation|hyperpage}{139}
+\indexentry{Defining ageing error|hyperpage}{151}
+\indexentry{Command ! ageing\_error|hyperpage}{151}
+\indexentry{Available reports|hyperpage}{153}
+\indexentry{Report commands and subcommands|hyperpage}{153}
+\indexentry{Command ! report|hyperpage}{153}
+\indexentry{Command ! include|hyperpage}{165}
+\indexentry{Include an external file|hyperpage}{165}
+\indexentry{Examples|hyperpage}{167}
+\indexentry{Examples ! Example 1|hyperpage}{167}
+\indexentry{Examples ! A simple non-spatial model|hyperpage}{167}
+\indexentry{Examples ! Example 2|hyperpage}{171}
+\indexentry{Examples ! A $10 \times 6$ spatial model|hyperpage}{171}
+\indexentry{Command ! model|hyperpage}{185}
+\indexentry{Command ! initialisation\_phase|hyperpage}{185}
+\indexentry{Command ! time\_step|hyperpage}{185}
+\indexentry{Command ! process|hyperpage}{185}
+\indexentry{Command ! preference\_function|hyperpage}{189}
+\indexentry{Command ! pdf|hyperpage}{191}
+\indexentry{Command ! layer|hyperpage}{192}
+\indexentry{Command ! derived\_quantity\_by\_cell|hyperpage}{193}
+\indexentry{Command ! derived\_quantity|hyperpage}{194}
+\indexentry{Command ! age\_size|hyperpage}{194}
+\indexentry{Command ! size\_weight|hyperpage}{195}
+\indexentry{Command ! selectivity|hyperpage}{195}
+\indexentry{Command ! estimation|hyperpage}{197}
+\indexentry{Command ! minimiser|hyperpage}{197}
+\indexentry{Command ! mcmc|hyperpage}{197}
+\indexentry{Command ! profile|hyperpage}{198}
+\indexentry{Command ! estimate|hyperpage}{198}
+\indexentry{Command ! catchability|hyperpage}{198}
+\indexentry{Command ! penalty|hyperpage}{198}
+\indexentry{Command ! observation|hyperpage}{199}
+\indexentry{Command ! ageing\_error|hyperpage}{202}
+\indexentry{Command ! report|hyperpage}{202}
+\indexentry{Command ! include|hyperpage}{205}
+\indexentry{Include an external file|hyperpage}{205}

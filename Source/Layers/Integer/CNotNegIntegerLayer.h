@@ -23,7 +23,7 @@ public:
   virtual                     ~CNotNegIntegerLayer();
   CLayer*                     clone() { return (new CNotNegIntegerLayer(*this)); }
   int                         getValue(int RowIndex, int ColIndex, int TargetRow, int TargetCol);
-  void                        setValue(int Row, int Col, int Value);
+  void                        setValue(int RowIndex, int ColIndex, int Value);
   int                         getLayerMin();
   int                         getLayerMax();
   void                        validate();

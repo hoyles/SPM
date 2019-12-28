@@ -334,6 +334,21 @@
 \defSub{by\_length} {Specifies if the linear interpolation of c.v.s is a linear function of mean size or of age}
 \defSub{cv} {Define the c.v. of the distribution of sizes-at-age around the mean}
 \defSub{size\_weight} {Define the label of the associated size-weight relationship}
+\par\textbf{\commandlabsubarg{age\_size}{type}{von\_bertalanffy\_k\_at\_age}}\par
+\defSub{linf} {Define the $L_\infty$ parameter of the von Bertalanffy k-at-age relationship}
+\defSub{Lmin} {Define the $L_min$ parameter of the von Bertalanffy k-at-age relationship}
+\defSub{k} {Define the $k$ parameter of the von Bertalanffy with k-at-age relationship}
+\defSub{t0} {Define the $t_0$ parameter of the von Bertalanffy with k-at-age relationship}
+\defSub{distribution} {Define the distribution of sizes-at-age around the mean}
+\defSub{by\_length} {Specifies if the linear interpolation of c.v.s is a linear function of mean size or of age}
+\defSub{cv} {Define the c.v. of the distribution of sizes-at-age around the mean}
+\defSub{size\_weight} {Define the label of the associated size-weight relationship}
+\par\textbf{\commandlabsubarg{age\_size}{type}{mean\_size\_at\_age}}\par
+\defSub{sizes} {Define the mean size at age for each age class in the partition}
+\defSub{distribution} {Define the distribution of sizes-at-age around the mean}
+\defSub{by\_length} {Specifies if the linear interpolation of c.v.s is a linear function of mean size or of age}
+\defSub{cv} {Define the c.v. of the distribution of sizes-at-age around the mean}
+\defSub{size\_weight} {Define the label of the associated size-weight relationship}
 \par\defComLab{size\_weight} {Define a size-weight relationship with label}\par
 \defSub{type} {Define the type of relationship}
 \par\textbf{\commandlabsubarg{size\_weight}{type}{none}}\par
@@ -422,6 +437,7 @@
 \defSub{proposal\_distribution} {The shape of the proposal distribution (either \textit{t} or normal)}
 \defSub{df} {Degrees of freedom of the multivariate t proposal distribution}
 \defSub{adapt\_stepsize\_at} {Iterations in the chain to check and resize the MCMC stepsize}
+\defSub{acceptance\_ratio} {Target acceptance ratio for modifying the stepsize during adaptive updates in the MCMC chain}
 \par\defComLab{profile}{Define the profile parameters and arguments}\par\par
 \defSub{parameter} {Name of the parameter to be profiled}
 \defSub{steps} {Number of steps (values) at which to profile the parameter}

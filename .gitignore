@@ -6,3 +6,10 @@ Build/
 BuildSystem/spm_unittests.log
 BuildSystem/spm_unittests.log
 Documentation/Manual/SPM.tps
+*.idx
+*.idx
+*.ilg
+*.ind
+*.log
+*.out
+*.gz

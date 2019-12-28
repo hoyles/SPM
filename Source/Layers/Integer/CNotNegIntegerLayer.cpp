@@ -48,6 +48,10 @@ int CNotNegIntegerLayer::getValue(int RowIndex, int ColIndex, int TargetRow=0, i
       CError::errorGreaterThanEqualTo(PARAM_ROW_INDEX, PARAM_LAYER_HEIGHT);
     if (ColIndex >= iWidth)
       CError::errorGreaterThanEqualTo(PARAM_COLUMN_INDEX, PARAM_LAYER_WIDTH);
+    if (RowIndex < 0)
+      CError::errorLessThanEqualTo(PARAM_ROW, PARAM_ZERO);
+    if (ColIndex < 0)
+      CError::errorLessThanEqualTo(PARAM_COLUMN, PARAM_ZERO);
 
   } catch (string &Ex) {
     Ex = "CNotNegIntegerLayer.getValue(" + getLabel() + ")->" + Ex;
@@ -59,19 +63,19 @@ int CNotNegIntegerLayer::getValue(int RowIndex, int ColIndex, int TargetRow=0, i
 }
 
 //**********************************************************************
-// void CNotNegIntegerLayer::addValue(int Row, int Col, int Value)
+// void CNotNegIntegerLayer::addValue(int RowIndex, int ColIndex, int Value)
 // Add Value to our Grid
 //**********************************************************************
-void CNotNegIntegerLayer::setValue(int Row, int Col, int Value) {
+void CNotNegIntegerLayer::setValue(int RowIndex, int ColIndex, int Value) {
 #ifndef OPTIMIZE
   try {
-    if (Row > iHeight)
+    if (RowIndex >= iHeight)
       CError::errorGreaterThanEqualTo(PARAM_ROW, PARAM_LAYER_HEIGHT);
-    if (Col > iWidth)
+    if (ColIndex >= iWidth)
       CError::errorGreaterThanEqualTo(PARAM_COLUMN, PARAM_LAYER_WIDTH);
-    if (Row <= 0)
+    if (RowIndex < 0)
       CError::errorLessThanEqualTo(PARAM_ROW, PARAM_ZERO);
-    if (Col <= 0)
+    if (ColIndex < 0)
       CError::errorLessThanEqualTo(PARAM_COLUMN, PARAM_ZERO);
 
   } catch(string &Ex) {
@@ -80,7 +84,7 @@ void CNotNegIntegerLayer::setValue(int Row, int Col, int Value) {
   }
 #endif
 
-  pGrid[(Row-1)][(Col-1)] = Value;
+  pGrid[RowIndex][ColIndex] = Value;
 }
 
 //**********************************************************************

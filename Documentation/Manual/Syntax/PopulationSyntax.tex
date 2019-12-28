@@ -1511,6 +1511,8 @@ The individual types of size-at-age relationships available are,
 	\item none
 	\item von Bertalanffy
 	\item Schnute
+	\item von Bertalanffy with k-at-age
+	\item mean size at age
 \end{itemize}
 
 \defComLab{age\_size} {Define an age-size relationship with label}
@@ -1608,6 +1610,82 @@ There are no other subcommands for \commandlabsubarg{age\_size}{type}{none}.
 \defDefault{Normal}
 \defValue{Either normal or lognormal}
 \defCondition{Only define if using the von Bertalanffy relationship}
+
+\defSub{by\_length} {Specifies if the linear interpolation of c.v.s is a linear function of mean size or of age}
+\defType{Logical}
+\defDefault{True}
+\defValue{If true, the c.v. is a function of length, else a function of age}
+
+\defSub{cv} {Define the c.v. of the distribution of sizes-at-age around the mean}
+\defType{Estimable}
+\defDefault{No default}
+\defValue{A positive real number}
+
+\defSub{size\_weight} {Define the label of the associated size-weight relationship}
+\defType{String}
+\defDefault{No default}
+\defValue{A valid label from \command{size\_weight}}
+
+\subsubsection[von Bertalanffy k-at-age]{\commandlabsubarg{age\_size}{type}{von\_bertalanffy\_k\_at\_age}}
+
+\defSub{linf} {Define the $L_\infty$ parameter of the von Bertalanffy k-at-age relationship}
+\defType{Estimable}
+\defDefault{No default}
+\defValue{A positive real number}
+\defCondition{Only define if using the von Bertalanffy k-at-age relationship}
+
+\defSub{Lmin} {Define the $L_min$ parameter of the von Bertalanffy k-at-age relationship}
+\defType{Estimable}
+\defDefault{No default}
+\defValue{A positive real number}
+\defCondition{Only define if using the von Bertalanffy k-at-age relationship}
+
+\defSub{k} {Define the $k$ parameter of the von Bertalanffy with k-at-age relationship}
+\defType{Estimable}
+\defDefault{No default}
+\defValue{A positive real number}
+\defCondition{Only define if using the von Bertalanffy with k-at-age relationship}
+
+\defSub{t0} {Define the $t_0$ parameter of the von Bertalanffy with k-at-age relationship}
+ \defType{Estimable}
+\defDefault{No default}
+\defValue{A real number}
+\defCondition{Only define if using the von Bertalanffy k-at-age relationship}
+
+\defSub{distribution} {Define the distribution of sizes-at-age around the mean}
+\defType{String}
+\defDefault{Normal}
+\defValue{Either normal or lognormal}
+\defCondition{Only define if using the von Bertalanffy k-at-age relationship}
+
+\defSub{by\_length} {Specifies if the linear interpolation of c.v.s is a linear function of mean size or of age}
+\defType{Logical}
+\defDefault{True}
+\defValue{If true, the c.v. is a function of length, else a function of age}
+
+\defSub{cv} {Define the c.v. of the distribution of sizes-at-age around the mean}
+\defType{Estimable}
+\defDefault{No default}
+\defValue{A positive real number}
+
+\defSub{size\_weight} {Define the label of the associated size-weight relationship}
+\defType{String}
+\defDefault{No default}
+\defValue{A valid label from \command{size\_weight}}
+
+\subsubsection[mean size-at-age]{\commandlabsubarg{age\_size}{type}{mean\_size\_at\_age}}
+
+\defSub{sizes} {Define the mean size at age for each age class in the partition}
+\defType{Estimable}
+\defDefault{No default}
+\defValue{A vector of positive real numbers with length the same as the number of age classes in the partition}
+\defCondition{Only define if using the mean size-at-age relationship}
+
+\defSub{distribution} {Define the distribution of sizes-at-age around the mean}
+\defType{String}
+\defDefault{Normal}
+\defValue{Either normal or lognormal}
+\defCondition{Only define if using the mean size-at-age relationship}
 
 \defSub{by\_length} {Specifies if the linear interpolation of c.v.s is a linear function of mean size or of age}
 \defType{Logical}
