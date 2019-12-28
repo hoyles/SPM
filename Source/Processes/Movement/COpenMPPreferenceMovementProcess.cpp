@@ -196,7 +196,7 @@ void COpenMPPreferenceMovementProcess::execute() {
         cache[i][a].assign(iWorldWidth, 0.0);
     }
 
-    #pragma omp parallel for
+    #pragma omp parallel for collapse(2)
     for (int i = (iWorldHeight-1); i >= 0; --i) {
       for (int j = (iWorldWidth-1); j >= 0; --j) {
 
@@ -264,14 +264,11 @@ void COpenMPPreferenceMovementProcess::execute() {
                   dCurrent /= dRunningTotal;
                 }
 
-//                #pragma omp ordered
-//                {
                   // Get Current Number of Fish, multipled by proportion to move
                   dCurrent *= dProportion * pBaseSquare->getValue(Category, m);
                   // Move
                   pDiff->subValue(Category, m, dCurrent);
                   pTargetDiff->addValue(Category, m, dCurrent);
-//                }
               }
             }
           }
