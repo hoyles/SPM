@@ -396,9 +396,9 @@
     \subitem Double-normal, \hyperpage{52}
     \subitem Increasing, \hyperpage{50}
     \subitem Inverse-logistic, \hyperpage{51}
-    \subitem Knife-edge, \hyperpage{49}
+    \subitem Knife-edge, \hyperpage{50}
     \subitem Logistic, \hyperpage{51}
-    \subitem Logistic-producing, \hyperpage{51}
+    \subitem Logistic-producing, \hyperpage{52}
     \subitem Spline, \hyperpage{53}
   \item Setting the number of threads, \hyperpage{9}
   \item Simulating observations, \hyperpage{78}

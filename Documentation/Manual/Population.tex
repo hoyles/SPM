@@ -1416,7 +1416,7 @@ selectivities One
 
 The age-size relationship defines the size at age (and the weight at size, see Section \ref{sec:mean-weight}) of individuals at age/category within the model. The age-size relationships in \SPM\ include a naive relationship (where each individual has size 1 irrespective of age), von-Bertalanffy and Schnute relationships, and the mean size of an individual at each age $i$. The size-at-age relationship is used to determine the size frequency, given age, and then with the size-weight relationship, a weight-at-age of individuals within an age/category. 
 
-Note that the actual size-at-age (and hence weight) can depend on the age of the individual (excpet in the case of the naive relationship), and will modified by the \commandsub{time\_step}{growth\_proportion}, i.e., if the age of an individual is $3$, and the \commandsub{time\_step}{growth\_proportion} is $0.5$, then the mean size will be for an individual aged $3.5$. In the case of the naive relationship (\commandsub{age\_size}{none}), the specification of the growth proportion is ignored. For the von Bertalanffy k-at-age and the mean size at age relationships, this is simply a value between age $i$ and age $i+1$, based on the growth proportion, from a linear interpolation of the sizes at those ages.
+Note that the actual size-at-age (and hence weight) can depend on the age of the individual (except in the case of the naive relationship), and will modified by the \commandsub{time\_step}{growth\_proportion}, i.e., if the age of an individual is $3$, and the \commandsub{time\_step}{growth\_proportion} is $0.5$, then the mean size will be for an individual aged $3.5$. In the case of the naive relationship (\commandsub{age\_size}{none}), the specification of the growth proportion is ignored. For the von Bertalanffy k-at-age and the mean size at age relationships, this is simply a value between age $i$ and age $i+1$, based on the growth proportion, from a linear interpolation of the sizes at those ages.
 
 The age-size relationships are,
 
@@ -1442,7 +1442,10 @@ The age-size relationships are,
 
 \item{von Bertalanffy with k-at-age:}\index{von Bertalanffy k-at-age growth curve} where size at age is defined as,
 \begin{equation} 
-\bar{s}(age)= L_\infty \left( 1 - \exp \left( -k \left(age-t_0 \right) \right) \right)
+\bar{s}(age_i)=\displaystyle\begin{cases}
+L_{min} + b i, & i \le \text{minimum age} \\
+L_\infty + \left( (\bar{s}(age_{i-1}) - L_\infty) \exp(-k_{i-1}) \right), & \text{otherwise}
+\end{cases}
 \end{equation}
 
 \item{mean size-at-age:}\index{mean size-at-age growth curve} where size at age is defined as the size at age provided for each age in the partition.
