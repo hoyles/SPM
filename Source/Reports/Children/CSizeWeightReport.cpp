@@ -66,6 +66,11 @@ void CSizeWeightReport::build() {
     // Get our relationship
     CAgeSizeManager *pManager = CAgeSizeManager::Instance();
     pAgeSize = pManager->getAgeSize(sAgeSize);
+    
+    bByLength = pAgeSize->getByLength();
+    if( !bByLength ) {
+      CError::error((string)PARAM_BY_LENGTH + (string)" = false is not supported for " + (string)PARAM_SIZE_WEIGHT + (string) " reports.");
+    }
 
   } catch (string &Ex) {
     Ex = "CSizeWeightReport.build(" + getLabel() + ")->" + Ex;
@@ -99,9 +104,11 @@ void CSizeWeightReport::execute() {
 
     cout << PARAM_WEIGHTS << CONFIG_RATIO_SEPARATOR << CONFIG_SPACE_SEPARATOR;
     for (int i = 0; i < ((int)vSizeList.size()-1); ++i) {
-      cout << pAgeSize->getMeanWeight(vSizeList[i]) << CONFIG_SPACE_SEPARATOR;
+      dCV = pAgeSize->getCVFromSize(vSizeList[i]);
+      cout << pAgeSize->getMeanWeightFromSize(vSizeList[i], dCV) << CONFIG_SPACE_SEPARATOR;
     }
-    cout << pAgeSize->getMeanWeight(vSizeList[vSizeList.size()-1]) << "\n";
+    dCV = pAgeSize->getCVFromSize(vSizeList[vSizeList.size()-1]);
+    cout << pAgeSize->getMeanWeightFromSize(vSizeList[vSizeList.size()-1], dCV) << "\n";
     cout << CONFIG_END_REPORT << "\n" << endl;
 
     this->end();

@@ -33,7 +33,9 @@ public:
   double                      getMeanSize(double &age);
   double                      getMeanWeight(double &age);
   double                      getCV(double &age);
+  double                      getCVFromSize(double &size);  
   double                      getProportionInLengthBin(double &age, double &LowerBin, double&UpperBin);
+  bool                        getByLength() { return bByLength;};  
 
 protected:
   double                      dLinf;

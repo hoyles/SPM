@@ -220,6 +220,20 @@ double CSchnuteAgeSize::getCV(double &age) {
 }
 
 //**********************************************************************
+// double CSchnuteAgeSize::getCVFromSize(double &size)
+// get the cv at size
+//**********************************************************************
+double CSchnuteAgeSize::getCVFromSize(double &size) {
+
+  if (bByLength) {
+    return ( dCV );
+  } else {
+    CError::error("age_size.by_length = false is not supported for cvs at size");
+    return(0);
+  }
+}
+
+//**********************************************************************
 // double CSchnuteAgeSize::getSd(double &age)
 // get the cv at age
 //**********************************************************************

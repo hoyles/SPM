@@ -23,8 +23,9 @@
 CMeanAgeSize::CMeanAgeSize() {
 
   pTimeStepManager = CTimeStepManager::Instance();
-
+  
   // Register estimables
+  registerEstimable(PARAM_CV, &dCV);
 
   // Register user allowed parameters
   pParameterList->registerAllowed(PARAM_SIZES);
@@ -41,15 +42,17 @@ CMeanAgeSize::CMeanAgeSize() {
 void CMeanAgeSize::validate() {
   try {
 
+    CBaseBuild::validate();
+
     // Get our variables
     dCV             = pParameterList->getDouble(PARAM_CV,true,0);
     sDistribution   = pParameterList->getString(PARAM_DISTRIBUTION, true, PARAM_NORMAL);
     bByLength       = pParameterList->getBool(PARAM_BY_LENGTH,true,1);
-		
-    iNAges          = pWorld->getAgeSpread();
 
+    iNAges          = pWorld->getAgeSpread();
+   
     pParameterList->fillVector(vSizes, PARAM_SIZES);
-    // Register the Ks as estimable
+    // Register the Sizes as estimable
     for (int i = 0; i < (int)vSizes.size(); ++i)
       registerEstimable(PARAM_SIZES, i, &vSizes[i]);	
 
@@ -59,7 +62,7 @@ void CMeanAgeSize::validate() {
     // Local validation
     if (dCV < 0)
       CError::errorLessThan(PARAM_CV, PARAM_ZERO);
-    if ((int)vSizes.size() < iNAges)
+    if ((int)vSizes.size() != iNAges)
       CError::errorListNotSize(PARAM_SIZES,iNAges);
     if ( (sDistribution != PARAM_NORMAL) && (sDistribution != PARAM_LOGNORMAL) )
       CError::errorUnknown(PARAM_DISTRIBUTION, sDistribution);
@@ -131,12 +134,12 @@ double CMeanAgeSize::getMeanSize(double &age) {
   double dSize  = vSizes[age - pWorld->getMinAge()];
   double dGrowth = getGrowthProportion();
   
-  if ( dGrowth > 0 && age < pWorld->getMaxAge() ) {
+  if ( dGrowth > 0 && age < pWorld->getMaxAge() )
     dSize += ( vSizes[age - pWorld->getMinAge() + 1] - dSize ) * dGrowth;
-  }
 
   if (dSize < 0)
     return 0.0;
+
   return dSize;
 }
 
@@ -156,6 +159,7 @@ double CMeanAgeSize::getMeanWeight(double &age) {
     double cv = ( ( age + dGrowth ) * dCV) / dSize;
     dWeight = getMeanWeightFromSize( dSize, cv );
   }
+
   return dWeight;
 }
 
@@ -181,6 +185,20 @@ double CMeanAgeSize::getCV(double &age) {
   } else {
     double dSize = this->getMeanSize( age );
     return ( (age * dCV) / dSize );
+  }
+}
+
+//**********************************************************************
+// double CMeanAgeSize::getCVFromSize(double &size)
+// get the cv at size
+//**********************************************************************
+double CMeanAgeSize::getCVFromSize(double &size) {
+
+  if (bByLength) {
+    return ( dCV );
+  } else {
+    CError::error("age_size.by_length = false is not supported for cvs at size");
+    return(0);
   }
 }
 

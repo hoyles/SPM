@@ -165,7 +165,7 @@ double CVonBertalanffyAgeSize::getMeanWeight(double &age) {
 }
 
 //**********************************************************************
-// double CVonBertalanffyAgeSize::getMeanWeightFromSize(double &size)
+// double CVonBertalanffyAgeSize::getMeanWeightFromSize(double &size, double &cv)
 // Apply size-weight relationship
 //**********************************************************************
 double CVonBertalanffyAgeSize::getMeanWeightFromSize(double &size, double &cv) {
@@ -186,6 +186,20 @@ double CVonBertalanffyAgeSize::getCV(double &age) {
   } else {
     double dSize = this->getMeanSize( age );
     return ( (age * dCV) / dSize );
+  }
+}
+
+//**********************************************************************
+// double CVonBertalanffyAgeSize::getCVFromSize(double &size)
+// get the cv at size
+//**********************************************************************
+double CVonBertalanffyAgeSize::getCVFromSize(double &size) {
+
+  if (bByLength) {
+    return ( dCV );
+  } else {
+    CError::error("age_size.by_length = false is not supported for cvs at size");
+    return(0);
   }
 }
 

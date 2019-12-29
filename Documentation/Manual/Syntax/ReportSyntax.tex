@@ -397,21 +397,25 @@ Prints the estimated parameters in a format suitable for use with \texttt{spm -i
 \defType{String}
 \defDefault{No default}
 \defValue{A valid label from \command{age\_size}}
+\defCondition{Only available if the age\_size relationship c.v.s are defined by length}
 
 \defSub{sizes} {Define the sizes for which to report the mean weights}
 \defType{Constant vector}
 \defDefault{No default}
 \defValue{Values of sizes to report the mean weight}
+\defCondition{Only available if the age\_size relationship c.v.s are defined by length}
 
 \defSub{file\_name} {Define the name of the output file where the report is written}
 \defType{String}
 \defDefault{No default}
 \defValue{A valid file name. If not supplied, then output is directed to the standard out}
+\defCondition{Only available if the age\_size relationship c.v.s are defined by length}
 
 \defSub{overwrite} {Specify if any previous file with the same name as the output file should be overwritten or appended to}
 \defType{Switch}
 \defDefault{True}
 \defValue{Either True or False}
+\defCondition{Only available if the age\_size relationship c.v.s are defined by length}
 
 \subsubsection[Print mean weight at age]{\commandlabsubarg{report}{type}{age\_weight}}
 

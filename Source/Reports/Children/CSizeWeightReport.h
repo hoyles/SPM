@@ -32,6 +32,8 @@ protected:
   string                      sAgeSize;
   CAgeSize                   *pAgeSize;
   vector<double>              vSizeList;
+  bool                        bByLength;
+  double                      dCV;
 
 };
 

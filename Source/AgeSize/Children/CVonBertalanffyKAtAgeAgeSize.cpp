@@ -23,12 +23,6 @@ CVonBertalanffyKAtAgeAgeSize::CVonBertalanffyKAtAgeAgeSize() {
 
   pTimeStepManager = CTimeStepManager::Instance();
 
-  double                      dLmin;
-  double                      dLinf;
-  vector<double>              vKs;
-  double                      dB;
-  double                      dCV;  
-  
   // Register estimables
   registerEstimable(PARAM_LINF, &dLinf);
   registerEstimable(PARAM_LMIN, &dLmin);
@@ -53,6 +47,8 @@ CVonBertalanffyKAtAgeAgeSize::CVonBertalanffyKAtAgeAgeSize() {
 void CVonBertalanffyKAtAgeAgeSize::validate() {
   try {
 
+    CBaseBuild::validate();
+
     // Get our variables
     dLinf           = pParameterList->getDouble(PARAM_LINF);
     dLmin           = pParameterList->getDouble(PARAM_LMIN);
@@ -67,18 +63,19 @@ void CVonBertalanffyKAtAgeAgeSize::validate() {
     // Register the Ks as estimable
     for (int i = 0; i < (int)vKs.size(); ++i)
       registerEstimable(PARAM_K, i, &vKs[i]);	
- 
+
    // Validate parent
     CAgeSize::validate();
 
     // Local validation
-    if (dLinf <= 0)
+    if ( dLinf <= 0 )
       CError::errorLessThanEqualTo(PARAM_LINF, PARAM_ZERO);
-    if (dCV < 0)
+    if ( dCV < 0 )
       CError::errorLessThan(PARAM_CV, PARAM_ZERO);
-    if ((int)vKs.size() < iNAges)
+    if ( dB < 0 )
+      CError::errorLessThanEqualTo(PARAM_B, PARAM_ZERO);
+    if ( (int)vKs.size() < iNAges )
       CError::errorListNotSize(PARAM_K,iNAges);
-
     if ( (sDistribution != PARAM_NORMAL) && (sDistribution != PARAM_LOGNORMAL) )
       CError::errorUnknown(PARAM_DISTRIBUTION, sDistribution);
 
@@ -102,13 +99,11 @@ void CVonBertalanffyKAtAgeAgeSize::build() {
     CSizeWeightManager *pSizeWeightManager = CSizeWeightManager::Instance();
     pSizeWeight = pSizeWeightManager->getSizeWeight(sSizeWeight);
 
-
     vSize.resize(iNAges);
   
-    vSize[0] = dLmin;
     for ( int i=0; i < iNAges; ++i ) {
-      if ( i <= pWorld->getMinAge() ) {
-        vSize[i] = dLmin + dB * i;
+      if (i == 0) {
+        vSize[i] = dLmin + dB * pWorld->getMinAge();
       } else {
         vSize[i] = dLinf + ( vSize[i-1] - dLinf ) * (exp( -vKs[i-1] ) );
       }
@@ -116,7 +111,6 @@ void CVonBertalanffyKAtAgeAgeSize::build() {
 
     // Rebuild
     rebuild();
-
 }
 
 //**********************************************************************
@@ -157,13 +151,12 @@ double CVonBertalanffyKAtAgeAgeSize::getGrowthProportion() {
 // Apply age-size relationship
 //**********************************************************************
 double CVonBertalanffyKAtAgeAgeSize::getMeanSize(double &age) {
-  
+
   double dSize  = vSize[age - pWorld->getMinAge()];
   double dGrowth = getGrowthProportion();
   
-  if ( dGrowth > 0 && age < pWorld->getMaxAge() ) {
+  if ( dGrowth > 0 && age < pWorld->getMaxAge() ) 
     dSize += ( vSize[age - pWorld->getMinAge() + 1] - dSize ) * dGrowth;
-  }
 
   if (dSize < 0)
     return 0.0;
@@ -187,11 +180,12 @@ double CVonBertalanffyKAtAgeAgeSize::getMeanWeight(double &age) {
     double cv = ( ( age + dGrowth ) * dCV) / dSize;
     dWeight = getMeanWeightFromSize( dSize, cv );
   }
+
   return dWeight;
 }
 
 //**********************************************************************
-// double CVonBertalanffyKAtAgeAgeSize::getMeanWeightFromSize(double &size)
+// double CVonBertalanffyKAtAgeAgeSize::getMeanWeightFromSize(double &size, double &cv)
 // Apply size-weight relationship
 //**********************************************************************
 double CVonBertalanffyKAtAgeAgeSize::getMeanWeightFromSize(double &size, double &cv) {
@@ -215,6 +209,19 @@ double CVonBertalanffyKAtAgeAgeSize::getCV(double &age) {
   }
 }
 
+//**********************************************************************
+// double CVonBertalanffyKAtAgeAgeSize::getCVFromSize(double &size)
+// get the cv at size
+//**********************************************************************
+double CVonBertalanffyKAtAgeAgeSize::getCVFromSize(double &size) {
+
+  if (bByLength) {
+    return ( dCV );
+  } else {
+    CError::error("age_size.by_length = false is not supported for cvs at size");
+    return(0);
+  }
+}
 
 //**********************************************************************
 // double CVonBertalanffyKAtAgeAgeSize::getSd(double &age)

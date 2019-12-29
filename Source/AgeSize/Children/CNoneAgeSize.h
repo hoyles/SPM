@@ -27,7 +27,9 @@ public:
   double                      getMeanSize(double &size) { return 1; };
   double                      getMeanWeight(double &age) { return 1; };
   double                      getCV(double &age) { return 0; };
+  double                      getCVFromSize(double &size) { return 0; };  
   double                      getProportionInLengthBin(double &age, double &LowerBin, double&UpperBin);
+  bool                        getByLength() { return 0;};
 
 protected:
   string                      sSizeWeight;
