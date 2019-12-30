@@ -1,154 +1,154 @@
-@report CAA-1998
+@report CAA-1998-simulated
 type simulated_observation
 observation CAA-1998
 file_name simulations/observations
 overwrite True
 
-@report CAA-1999
+@report CAA-1999-simulated
 type simulated_observation
 observation CAA-1999
 file_name simulations/observations
 overwrite False
 
-@report CAA-2000
+@report CAA-2000-simulated
 type simulated_observation
 observation CAA-2000
 file_name simulations/observations
 overwrite False
 
-@report CAA-2001
+@report CAA-2001-simulated
 type simulated_observation
 observation CAA-2001
 file_name simulations/observations
 overwrite False
 
-@report CAA-2002
+@report CAA-2002-simulated
 type simulated_observation
 observation CAA-2002
 file_name simulations/observations
 overwrite False
 
-@report CAA-2003
+@report CAA-2003-simulated
 type simulated_observation
 observation CAA-2003
 file_name simulations/observations
 overwrite False
 
-@report CAA-2004
+@report CAA-2004-simulated
 type simulated_observation
 observation CAA-2004
 file_name simulations/observations
 overwrite False
 
-@report CAA-2005
+@report CAA-2005-simulated
 type simulated_observation
 observation CAA-2005
 file_name simulations/observations
 overwrite False
 
-@report CAA-2006
+@report CAA-2006-simulated
 type simulated_observation
 observation CAA-2006
 file_name simulations/observations
 overwrite False
 
-@report CAA-2007
+@report CAA-2007-simulated
 type simulated_observation
 observation CAA-2007
 file_name simulations/observations
 overwrite False
 
-@report cpue-1998
+@report cpue-1998-simulated
 type simulated_observation
 observation cpue-1998
 file_name simulations/observations
 overwrite False
 
-@report cpue-1999
+@report cpue-1999-simulated
 type simulated_observation
 observation cpue-1999
 file_name simulations/observations
 overwrite False
 
-@report cpue-2000
+@report cpue-2000-simulated
 type simulated_observation
 observation cpue-2000
 file_name simulations/observations
 overwrite False
 
-@report cpue-2001
+@report cpue-2001-simulated
 type simulated_observation
 observation cpue-2001
 file_name simulations/observations
 overwrite False
 
-@report cpue-2002
+@report cpue-2002-simulated
 type simulated_observation
 observation cpue-2002
 file_name simulations/observations
 overwrite False
 
-@report cpue-2003
+@report cpue-2003-simulated
 type simulated_observation
 observation cpue-2003
 file_name simulations/observations
 overwrite False
 
-@report cpue-2004
+@report cpue-2004-simulated
 type simulated_observation
 observation cpue-2004
 file_name simulations/observations
 overwrite False
 
-@report cpue-2005
+@report cpue-2005-simulated
 type simulated_observation
 observation cpue-2005
 file_name simulations/observations
 overwrite False
 
-@report cpue-2006
+@report cpue-2006-simulated
 type simulated_observation
 observation cpue-2006
 file_name simulations/observations
 overwrite False
 
-@report cpue-2007
+@report cpue-2007-simulated
 type simulated_observation
 observation cpue-2007
 file_name simulations/observations
 overwrite False
 
-@report mature-2002
+@report mature-2002-simulated
 type simulated_observation
 observation mature-2002
 file_name simulations/observations
 overwrite False
 
-@report mature-2003
+@report mature-2003-simulated
 type simulated_observation
 observation mature-2003
 file_name simulations/observations
 overwrite False
 
-@report mature-2004
+@report mature-2004-simulated
 type simulated_observation
 observation mature-2004
 file_name simulations/observations
 overwrite False
 
-@report mature-2005
+@report mature-2005-simulated
 type simulated_observation
 observation mature-2005
 file_name simulations/observations
 overwrite False
 
-@report mature-2006
+@report mature-2006-simulated
 type simulated_observation
 observation mature-2006
 file_name simulations/observations
 overwrite False
 
-@report mature-2007
+@report mature-2007-simulated
 type simulated_observation
 observation mature-2007
 file_name simulations/observations

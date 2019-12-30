@@ -14,6 +14,7 @@
 #include "CReportManager.h"
 #include "CReport.h"
 #include "../Helpers/ForEach.h"
+#include "../Helpers/CError.h"
 
 // Using
 using std::cout;
@@ -82,6 +83,17 @@ void CReportManager::validate() {
 
     foreach(CReport *Reporter, vReporters) {
       Reporter->validate();
+    }
+
+    // Look for Duplicate Labels
+    map<string, int>            mLabelList;
+    foreach(CReport *Reporter, vReporters) {
+      // Increase Count for this label
+      mLabelList[Reporter->getLabel()] += 1;
+
+      // Check if we have more than 1
+      if (mLabelList[Reporter->getLabel()] > 1)
+        CError::errorDuplicate(PARAM_REPORT, Reporter->getLabel());
     }
 
   } catch (string &Ex) {

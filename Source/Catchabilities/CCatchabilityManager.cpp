@@ -103,6 +103,20 @@ void CCatchabilityManager::validate() {
     foreach(CCatchability *Catchability, vCatchabilities) {
       Catchability->validate();
     }
+
+    // Look for Duplicate Labels
+    map<string, int>            mLabelList;
+    foreach(CCatchability *Catchability, vCatchabilities) {
+      // Increase Count for this label
+      mLabelList[Catchability->getLabel()] += 1;
+
+      // Check if we have more than 1
+      if (mLabelList[Catchability->getLabel()] > 1)
+        CError::errorDuplicate(PARAM_CATCHABILITY, Catchability->getLabel());
+    }
+
+
+
   } catch (string &Ex) {
     Ex = "CCatchabilityManager.validate()->" + Ex;
     throw Ex;

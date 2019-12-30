@@ -113,6 +113,18 @@ void CPDFManager::validate() {
       vPtr++;
     }
 
+    // Look for Duplicate Labels
+    map<string, int>            mLabelList;
+    vPtr = vPDFs.begin();
+    while (vPtr != vPDFs.end()) {
+      // Increase Count for this label
+      mLabelList[(*vPtr)->getLabel()] += 1;
+      // Check if we have more than 1
+      if (mLabelList[(*vPtr)->getLabel()] > 1)
+        CError::errorDuplicate(PARAM_PDF, (*vPtr)->getLabel());
+      vPtr++;
+    }
+
   } catch (string &Ex) {
     Ex = "CPDFManager.validate()->" + Ex;
     throw Ex;

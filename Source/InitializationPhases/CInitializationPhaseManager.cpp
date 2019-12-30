@@ -111,6 +111,18 @@ void CInitializationPhaseManager::validate() {
       InitializationPhase->validate();
     }
 
+    // Look for Duplicate Labels
+    map<string, int>            mLabelList;
+    foreach(CInitializationPhase *InitializationPhase, vInitializationPhases) {
+      // Increase Count for this label
+      mLabelList[InitializationPhase->getLabel()] += 1;
+
+      // Check if we have more than 1
+      if (mLabelList[InitializationPhase->getLabel()] > 1)
+        CError::errorDuplicate(PARAM_INITIALIZATION_PHASE, InitializationPhase->getLabel());
+    }
+
+
   } catch(string &Ex) {
     Ex = "CInitialisationManager.validate()->" + Ex;
     throw Ex;

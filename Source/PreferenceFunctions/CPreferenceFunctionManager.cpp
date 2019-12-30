@@ -108,11 +108,24 @@ void CPreferenceFunctionManager::clone(CPreferenceFunctionManager *Manager) {
 // validate
 //**********************************************************************
 void CPreferenceFunctionManager::validate() {
+
   try {
     // Loop through and Validate
     vector<CPreferenceFunction*>::iterator vPtr = vPreferenceFunctions.begin();
     while (vPtr != vPreferenceFunctions.end()) {
       (*vPtr)->validate();
+      vPtr++;
+    }
+
+    // Look for Duplicate Labels
+    map<string, int>            mLabelList;
+    vPtr = vPreferenceFunctions.begin();
+    while (vPtr != vPreferenceFunctions.end()) {
+      // Increase Count for this label
+      mLabelList[(*vPtr)->getLabel()] += 1;
+      // Check if we have more than 1
+      if (mLabelList[(*vPtr)->getLabel()] > 1)
+        CError::errorDuplicate(PARAM_PREFERENCE_FUNCTION, (*vPtr)->getLabel());
       vPtr++;
     }
 

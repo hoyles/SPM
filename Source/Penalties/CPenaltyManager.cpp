@@ -174,6 +174,17 @@ void CPenaltyManager::validate() {
       Penalty->validate();
     }
 
+    // Look for Duplicate Labels
+    map<string, int>            mLabelList;
+    foreach(CPenalty *Penalty, vPenaltyList) {
+      // Increase Count for this label
+      mLabelList[Penalty->getLabel()] += 1;
+
+      // Check if we have more than 1
+      if (mLabelList[Penalty->getLabel()] > 1)
+        CError::errorDuplicate(PARAM_PENALTY, Penalty->getLabel());
+    }
+
   } catch (string &Ex) {
     Ex = "CPenaltyManager.validate()->" + Ex;
     throw Ex;

@@ -69,7 +69,7 @@ void CSizeWeightReport::build() {
     
     bByLength = pAgeSize->getByLength();
     if( !bByLength ) {
-      CError::error((string)PARAM_BY_LENGTH + (string)" = false is not supported for " + (string)PARAM_SIZE_WEIGHT + (string) " reports.");
+      CError::error((string)PARAM_AGE_SIZE + "." + (string)PARAM_BY_LENGTH + (string)" = false is not supported for " + (string)PARAM_SIZE_WEIGHT + (string) " reports.");
     }
 
   } catch (string &Ex) {

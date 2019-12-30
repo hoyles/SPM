@@ -170,6 +170,17 @@ void CTimeStepManager::validate() {
       TimeStep->validate();
     }
 
+    // Look for Duplicate Labels
+    map<string, int>            mLabelList;
+    foreach(CTimeStep *TimeStep, vMasterTimeStepList) {
+      // Increase Count for this label
+      mLabelList[TimeStep->getLabel()] += 1;
+
+      // Check if we have more than 1
+      if (mLabelList[TimeStep->getLabel()] > 1)
+        CError::errorDuplicate(PARAM_TIME_STEP, TimeStep->getLabel());
+    }
+
   } catch(string &Ex) {
     Ex = "CTimeStepManager.validate()->" + Ex;
     throw Ex;

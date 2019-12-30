@@ -89,6 +89,18 @@ void CDerivedQuantityManager::validate() {
       DerivedQuantity->validate();
     }
 
+    // Look for Duplicate Labels
+    map<string, int>            mLabelList;
+    foreach(CDerivedQuantity *DerivedQuantity, vDerivedQuantities) {
+      // Increase Count for this label
+      mLabelList[DerivedQuantity->getLabel()] += 1;
+
+      // Check if we have more than 1
+      if (mLabelList[DerivedQuantity->getLabel()] > 1)
+        CError::errorDuplicate(PARAM_DERIVED_QUANTITY, DerivedQuantity->getLabel());
+    }
+
+
   } catch (string &Ex) {
     Ex = "CDerivedQuantityManager.validate()->" + Ex;
     throw Ex;
