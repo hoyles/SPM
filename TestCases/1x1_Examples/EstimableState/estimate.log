@@ -1660,7 +1660,7 @@ value: 30719.8
 
 *end
 
-[estimate_value]
+[estimates]
 report.type: estimate_value
 parameter: catchability[CPUEq].q process[BHrecruitment].r0 selectivity[FishingSel].a50 selectivity[FishingSel].ato95 process[InitialStateI].N(1) process[InitialStateI].N(2) process[InitialStateI].N(3) process[InitialStateI].N(4) process[InitialStateI].N(5) process[InitialStateI].N(6) process[InitialStateI].N(7) process[InitialStateI].N(8) process[InitialStateI].N(9) process[InitialStateI].N(10) process[InitialStateI].N(11) process[InitialStateI].N(12) process[InitialStateI].N(13) process[InitialStateI].N(14) process[InitialStateI].N(15) process[InitialStateI].N(16) process[InitialStateI].N(17) process[InitialStateI].N(18) process[InitialStateI].N(19) process[InitialStateI].N(20) process[InitialStateI].N(21) process[InitialStateI].N(22) process[InitialStateI].N(23) process[InitialStateI].N(24) process[InitialStateI].N(25) process[InitialStateI].N(26) process[InitialStateI].N(27) process[InitialStateI].N(28) process[InitialStateI].N(29) process[InitialStateI].N(30) process[InitialStateI].N(31) process[InitialStateI].N(32) process[InitialStateI].N(33) process[InitialStateI].N(34) process[InitialStateI].N(35) process[InitialStateM].N(1) process[InitialStateM].N(2) process[InitialStateM].N(3) process[InitialStateM].N(4) process[InitialStateM].N(5) process[InitialStateM].N(6) process[InitialStateM].N(7) process[InitialStateM].N(8) process[InitialStateM].N(9) process[InitialStateM].N(10) process[InitialStateM].N(11) process[InitialStateM].N(12) process[InitialStateM].N(13) process[InitialStateM].N(14) process[InitialStateM].N(15) process[InitialStateM].N(16) process[InitialStateM].N(17) process[InitialStateM].N(18) process[InitialStateM].N(19) process[InitialStateM].N(20) process[InitialStateM].N(21) process[InitialStateM].N(22) process[InitialStateM].N(23) process[InitialStateM].N(24) process[InitialStateM].N(25) process[InitialStateM].N(26) process[InitialStateM].N(27) process[InitialStateM].N(28) process[InitialStateM].N(29) process[InitialStateM].N(30) process[InitialStateM].N(31) process[InitialStateM].N(32) process[InitialStateM].N(33) process[InitialStateM].N(34) process[InitialStateM].N(35)
 0.000132501 344062 8.62019 3.29197 140.758 273251 239940 210691 185006 161261 139891 118997 96445.7 70253.9 42404.2 20300.3 8052.82 2870.99 975.275 324.851 107.393 35.3974 11.659 4.4772 2.29075 1.3644 0.940531 0.732649 0.625356 0.568151 0.535918 0.280109 116065 154085 140.758 140.758 140.758 140.758 140.758 140.758 140.758 140.758 140.758 133.677 1192 2759.25 6262.96 13544.9 26328.3 42404.2 54169.4 57338.9 54549.1 49445 43949.1 38769.5 34102 29964.2 26318.1 23111.6 20295 17821.2 15648.8 13741.2 12066.1 10595.1 9303.6 8169.36 7173.56 6298.94 5531.13 4856.83 4264.75 30719.8
@@ -1772,7 +1772,7 @@ weights: 0.081073 0.402507 1.04691 2.03419 3.3471 4.94748 6.78709 8.8145 10.9795
 report.type: size_weight
 label: VB
 sizes: 10 20 30 40 50 60 70 80 90 100 110 120 130 140 150 160 170
-weights: 13.2355 34.3536 46.6284 52.1742 54.4772 55.404 55.7726 55.9185 55.9761 55.9988 56.0078 56.0113 56.0127 56.0133 56.0135 56.0136 56.0136
+weights: 0.0127961 0.0999149 0.332461 0.780161 1.5119 2.59594 4.10008 6.0917 8.63785 11.8053 15.6605 20.2698 25.6991 32.0145 39.2814 47.5655 56.9321
 *end
 
 [ageweight]

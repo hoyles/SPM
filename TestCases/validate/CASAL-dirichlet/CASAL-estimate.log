@@ -1,11 +1,11 @@
 CASAL (C++ algorithmic stock assessment laboratory)
 Call: casal -e -q 
-Date: Sun Dec 15 21:34:45 2019
+Date: Tue Dec 31 15:20:24 2019
 v2.30-2016-05-01 23:58:51 UTC (rev.5470)  (c) Copyright 2002-2012, NIWA
 User name: alist
-Machine name: DELL-9020 (Microsoft Windows, PID=1912)
+Machine name: DELL-9020 (Microsoft Windows, PID=22240)
 
-Random number seed : 98885
+Random number seed : 58824
 
 Note, this is a weightless model. 'Biomass' and 'weight in tons' should be read as numbers of fish throughout.
 Note, this is a weightless model. 'Biomass' and 'weight in tons' should be read as numbers of fish throughout.

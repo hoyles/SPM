@@ -202,7 +202,7 @@ void CRuntimeController::parseCommandLine(int argc, const char* argv[]) {
     string sReportName = vmParams["estimates"].as<string>();
 
     CReport* report = CReportFactory::buildReport(PARAM_ESTIMATE_VALUE, true);
-    report->addParameter(PARAM_LABEL, PARAM_ESTIMATE_VALUE);
+    report->addParameter(PARAM_LABEL, string(""));
     report->addParameter(PARAM_TYPE, PARAM_ESTIMATE_VALUE);
     report->addParameter(PARAM_FILE_NAME, sReportName);
   }

@@ -18,11 +18,6 @@ type objective_function
 type age_size
 age_size default
 
-@report size-weight
-type size_weight
-sizes 10 20 30 40 50 60 70 80 90 100 110 120 130
-age_size default
-
 @report age-weight
 type age_weight
 age_size default

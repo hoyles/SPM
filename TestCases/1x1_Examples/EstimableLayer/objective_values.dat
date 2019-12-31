@@ -1,4 +1,4 @@
-[Objective_Score]
+[Objective_Score-file]
 report.type: objective_function
 obs->CAA-year-1998: 60.2425
 obs->CAA-year-1999: 57.0658

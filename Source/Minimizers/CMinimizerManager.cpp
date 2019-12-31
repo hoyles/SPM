@@ -96,6 +96,17 @@ void CMinimizerManager::validate() {
       Minimizer->validate();
     }
 
+    // Look for Duplicate Labels
+    map<string, int>            mLabelList;
+    foreach(CMinimizer *Minimizer, vMinimizerList) {
+      // Increase Count for this label
+      mLabelList[Minimizer->getLabel()] += 1;
+
+      // Check if we have more than 1
+      if (mLabelList[Minimizer->getLabel()] > 1)
+        CError::errorDuplicate(PARAM_MINIMIZER, Minimizer->getLabel());
+    }
+
     // Reset Variable
     pMinimizer = 0;
 

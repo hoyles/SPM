@@ -39,6 +39,8 @@ protected:
   void                        assignParameters(CBaseObject *Object);
   string                      getTypeFromCurrentSection();
   void                        splitLineIntoVector(string line, vector<string> &parameters);
+  bool                        bModelHasBeenDefined = 0;
+  bool                        bEstimationHasBeenDefined = 0;
 
   // Variables
   vector<string>              vLines;

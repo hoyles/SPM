@@ -41,7 +41,7 @@ void CBaseValidate::validate() {
     string temp = CConvertor::stringToLowercase(sLabel);
     bool invalid_label = temp.find_first_not_of("abcdefghijklmnopqrstuvwxyz0123456789[]-_.()") != std::string::npos;
     if (invalid_label) {
-      THROW_EXCEPTION("The label " + sLabel + " contains invalid characters. Please ensure it is alphanumeric with the following special characters: []-_.()");
+      CError::error("The label " + sLabel + " contains invalid characters. Please ensure it is alphanumeric with the following special characters: []-_.()");
     }
 
     // Validate known parameters against bad ones

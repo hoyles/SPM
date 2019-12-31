@@ -59,6 +59,8 @@ using std::endl;
 // Default Constructor
 //**********************************************************************
 CConfigurationLoader::CConfigurationLoader() {
+  bModelHasBeenDefined = false;
+  bEstimationHasBeenDefined = false;
 }
 
 //**********************************************************************
@@ -137,11 +139,14 @@ void CConfigurationLoader::processSection() {
   CBaseObject *pBaseObject    = 0;
 
   string sType = getTypeFromCurrentSection();
-
+  
   try {
-    if (sSection == PARAM_MODEL)
+    if (sSection == PARAM_MODEL) {
+      if(bModelHasBeenDefined)
+        CError::error("Command can only be declared once in the config file");
       pBaseObject = CWorld::Instance();
-    else if (sSection == PARAM_AGEING_ERROR)
+      bModelHasBeenDefined = true;
+    } else if (sSection == PARAM_AGEING_ERROR)
       pBaseObject = CAgeingErrorFactory::buildAgeingError(sType);
     else if (sSection == PARAM_SIZE_WEIGHT)
       pBaseObject = CSizeWeightFactory::buildSizeWeight(sType);
@@ -179,9 +184,12 @@ void CConfigurationLoader::processSection() {
       pBaseObject = CSelectivityFactory::buildSelectivity(sType);
     else if (sSection == PARAM_TIME_STEP)
       pBaseObject = CTimeStepFactory::buildTimeStep(sType);
-    else if (sSection == PARAM_ESTIMATION)
+    else if (sSection == PARAM_ESTIMATION) {
+      if(bEstimationHasBeenDefined)
+        CError::error("Command can only be declared once in the config file");
       pBaseObject = CMinimizerManager::Instance();
-    else if (sSection == PARAM_MCMC)
+      bEstimationHasBeenDefined = true;
+    } else if (sSection == PARAM_MCMC)
       pBaseObject = CMCMC::Instance();
     else
       CError::errorUnknown(PARAM_SECTION, "");

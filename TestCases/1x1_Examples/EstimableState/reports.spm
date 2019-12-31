@@ -30,14 +30,14 @@ type covariance
 @report Objective_Score
 type objective_function
 
-@report Objective_Score
+@report Objective_Score-file
 type objective_function
 file_name objective_values.dat
 
 @report estimate-summary
 type estimate_summary
 
-@report estimate_value
+@report estimates
 type estimate_value
 
 @report AgeError

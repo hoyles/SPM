@@ -1,9 +1,9 @@
 SPM (Spatial Population Model)
 Call: ..\..\Build\windows\spm -e -q -g 0 -o MPD.dat 
-Date: Sun Dec 15 14:07:04 2019
-v1.1-2019-12-12 (rev. 2019-12-12 21:02:50 UTC). Copyright (c) 2008-2019, NIWA
+Date: Tue Dec 31 15:38:26 2019
+v1.1-2019-12-30 (rev. 2019-12-30 23:29:40 UTC). Copyright (c) 2008-2019, NIWA
 User name: alist
-Machine name: DELL-9020 (Windows_NT, PID=9332)
+Machine name: DELL-9020 (Windows_NT, PID=19500)
 
 [initialisation-phase1]
 report.type: initialisation
@@ -1063,7 +1063,7 @@ weights: 0.081073 0.402507 1.04691 2.03419 3.3471 4.94748 6.78709 8.8145 10.9795
 report.type: size_weight
 label: VB
 sizes: 10 20 30 40 50 60 70 80 90 100 110 120 130 140 150 160 170
-weights: 13.2355 34.3536 46.6284 52.1742 54.4772 55.404 55.7726 55.9185 55.9761 55.9988 56.0078 56.0113 56.0127 56.0133 56.0135 56.0136 56.0136
+weights: 0.0127961 0.0999149 0.332461 0.780161 1.5119 2.59594 4.10008 6.0917 8.63785 11.8053 15.6605 20.2698 25.6991 32.0145 39.2814 47.5655 56.9321
 *end
 
 [ageweight]

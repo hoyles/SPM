@@ -1,4 +1,4 @@
-#[CAA-1998]
+#[CAA-1998-simulated]
 #report.type: simulated_observation
 #observation.label: CAA-year-1998
 @observation CAA-year-1998
@@ -19,7 +19,7 @@ obs All 0 0 0 0 0 0 0 0.07407407407407407 0.1111111111111111 0 0.111111111111111
 error_value All 343 
 #end
 
-#[CAA-1999]
+#[CAA-1999-simulated]
 #report.type: simulated_observation
 #observation.label: CAA-year-1999
 @observation CAA-year-1999
@@ -40,7 +40,7 @@ obs All 0 0 0 0.045454545454545456 0 0 0.045454545454545456 0.22727272727272727 
 error_value All 564 
 #end
 
-#[CAA-2000]
+#[CAA-2000-simulated]
 #report.type: simulated_observation
 #observation.label: CAA-year-2000
 @observation CAA-year-2000
@@ -61,7 +61,7 @@ obs All 0 0 0.03125 0 0 0.03125 0.03125 0.0625 0.0625 0.125 0.09375 0.03125 0.12
 error_value All 651 
 #end
 
-#[CAA-2001]
+#[CAA-2001-simulated]
 #report.type: simulated_observation
 #observation.label: CAA-year-2001
 @observation CAA-year-2001
@@ -82,7 +82,7 @@ obs All 0 0 0 0 0.043478260869565216 0 0 0.043478260869565216 0 0.17391304347826
 error_value All 840 
 #end
 
-#[CAA-2002]
+#[CAA-2002-simulated]
 #report.type: simulated_observation
 #observation.label: CAA-year-2002
 @observation CAA-year-2002
@@ -103,7 +103,7 @@ obs All 0 0 0 0 0 0 0 0 0.20833333333333334 0.125 0.083333333333333329 0.0833333
 error_value All 598 
 #end
 
-#[CAA-2003]
+#[CAA-2003-simulated]
 #report.type: simulated_observation
 #observation.label: CAA-year-2003
 @observation CAA-year-2003
@@ -124,7 +124,7 @@ obs All 0 0 0 0 0 0.040000000000000001 0.20000000000000001 0.080000000000000002 
 error_value All 456 
 #end
 
-#[CAA-2004]
+#[CAA-2004-simulated]
 #report.type: simulated_observation
 #observation.label: CAA-year-2004
 @observation CAA-year-2004
@@ -145,7 +145,7 @@ obs All 0 0 0 0 0 0 0 0.10000000000000001 0.050000000000000003 0.050000000000000
 error_value All 538 
 #end
 
-#[CAA-2005]
+#[CAA-2005-simulated]
 #report.type: simulated_observation
 #observation.label: CAA-year-2005
 @observation CAA-year-2005
@@ -166,7 +166,7 @@ obs All 0 0 0 0.037037037037037035 0.037037037037037035 0 0.037037037037037035 0
 error_value All 438 
 #end
 
-#[CAA-2006]
+#[CAA-2006-simulated]
 #report.type: simulated_observation
 #observation.label: CAA-year-2006
 @observation CAA-year-2006
@@ -187,7 +187,7 @@ obs All 0 0 0 0 0.041666666666666664 0.041666666666666664 0.083333333333333329 0
 error_value All 817 
 #end
 
-#[CAA-2007]
+#[CAA-2007-simulated]
 #report.type: simulated_observation
 #observation.label: CAA-year-2007
 @observation CAA-year-2007
@@ -208,7 +208,7 @@ obs All 0 0 0 0 0 0.032258064516129031 0.032258064516129031 0 0.1290322580645161
 error_value All 915 
 #end
 
-#[CPUE-1998]
+#[CPUE-1998-simulated]
 #report.type: simulated_observation
 #observation.label: CPUE-1998
 @observation CPUE-1998
@@ -224,7 +224,7 @@ obs All 132.7679133393224
 error_value All 0.20000000000000001 
 #end
 
-#[CPUE-1999]
+#[CPUE-1999-simulated]
 #report.type: simulated_observation
 #observation.label: CPUE-1999
 @observation CPUE-1999
@@ -240,7 +240,7 @@ obs All 176.64551719045321
 error_value All 0.20000000000000001 
 #end
 
-#[CPUE-2000]
+#[CPUE-2000-simulated]
 #report.type: simulated_observation
 #observation.label: CPUE-2000
 @observation CPUE-2000
@@ -256,7 +256,7 @@ obs All 140.11378198161839
 error_value All 0.20000000000000001 
 #end
 
-#[CPUE-2001]
+#[CPUE-2001-simulated]
 #report.type: simulated_observation
 #observation.label: CPUE-2001
 @observation CPUE-2001
@@ -272,7 +272,7 @@ obs All 94.929405743815494
 error_value All 0.20000000000000001 
 #end
 
-#[CPUE-2002]
+#[CPUE-2002-simulated]
 #report.type: simulated_observation
 #observation.label: CPUE-2002
 @observation CPUE-2002
@@ -288,7 +288,7 @@ obs All 148.29233710476333
 error_value All 0.20000000000000001 
 #end
 
-#[CPUE-2003]
+#[CPUE-2003-simulated]
 #report.type: simulated_observation
 #observation.label: CPUE-2003
 @observation CPUE-2003
@@ -304,7 +304,7 @@ obs All 130.68084572096114
 error_value All 0.20000000000000001 
 #end
 
-#[CPUE-2004]
+#[CPUE-2004-simulated]
 #report.type: simulated_observation
 #observation.label: CPUE-2004
 @observation CPUE-2004
@@ -320,7 +320,7 @@ obs All 140.93310967979292
 error_value All 0.20000000000000001 
 #end
 
-#[CPUE-2005]
+#[CPUE-2005-simulated]
 #report.type: simulated_observation
 #observation.label: CPUE-2005
 @observation CPUE-2005
@@ -336,7 +336,7 @@ obs All 100.90006021963291
 error_value All 0.20000000000000001 
 #end
 
-#[CPUE-2006]
+#[CPUE-2006-simulated]
 #report.type: simulated_observation
 #observation.label: CPUE-2006
 @observation CPUE-2006
@@ -352,7 +352,7 @@ obs All 101.97866533354204
 error_value All 0.20000000000000001 
 #end
 
-#[CPUE-2007]
+#[CPUE-2007-simulated]
 #report.type: simulated_observation
 #observation.label: CPUE-2007
 @observation CPUE-2007

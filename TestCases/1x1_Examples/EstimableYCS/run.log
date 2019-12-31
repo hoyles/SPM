@@ -1029,7 +1029,7 @@ value: 1
 
 *end
 
-[estimate_value]
+[estimates]
 report.type: estimate_value
 parameter: catchability[CPUEq].q process[BHrecruitment].r0 selectivity[FishingSel].a50 selectivity[FishingSel].ato95 process[BHrecruitment].ycs_values(1) process[BHrecruitment].ycs_values(2) process[BHrecruitment].ycs_values(3) process[BHrecruitment].ycs_values(4) process[BHrecruitment].ycs_values(5) process[BHrecruitment].ycs_values(6) process[BHrecruitment].ycs_values(7) process[BHrecruitment].ycs_values(8) process[BHrecruitment].ycs_values(9) process[BHrecruitment].ycs_values(10) process[BHrecruitment].ycs_values(11) process[BHrecruitment].ycs_values(12) process[BHrecruitment].ycs_values(13) process[BHrecruitment].ycs_values(14)
 0.0001 550000 8 3 1 1 1 1 1 1 1 1 1 1 1 1 1 1
@@ -1140,7 +1140,7 @@ weights: 0.081073 0.402507 1.04691 2.03419 3.3471 4.94748 6.78709 8.8145 10.9795
 report.type: size_weight
 label: VB
 sizes: 10 20 30 40 50 60 70 80 90 100 110 120 130 140 150 160 170
-weights: 13.2355 34.3536 46.6284 52.1742 54.4772 55.404 55.7726 55.9185 55.9761 55.9988 56.0078 56.0113 56.0127 56.0133 56.0135 56.0136 56.0136
+weights: 0.0127961 0.0999149 0.332461 0.780161 1.5119 2.59594 4.10008 6.0917 8.63785 11.8053 15.6605 20.2698 25.6991 32.0145 39.2814 47.5655 56.9321
 *end
 
 [ageweight]

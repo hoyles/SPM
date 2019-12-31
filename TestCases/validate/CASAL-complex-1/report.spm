@@ -87,20 +87,20 @@ observation chatTANbiomass2001
 type observation
 observation chatTANbiomass2002
 
-@report male
+@report male_age_weight
 type age_weight
 age_size male
 
-@report female
+@report female_age_weight
 type age_weight
 age_size female
 
-@report male
+@report male_size_weight
 type size_weight
 age_size male
 sizes 50
 
-@report female
+@report female_size_weight
 type size_weight
 age_size female
 sizes 50

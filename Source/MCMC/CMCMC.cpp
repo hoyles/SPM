@@ -213,7 +213,7 @@ void CMCMC::execute() {
 
     // Create Cholskey decomposition from covariance matrix
     if ( !choleskyDecomposition() )
-      THROW_EXCEPTION("Cholskey decomposition failed")
+      CError::error("Cholskey decomposition failed");
 
     // Get MCMC starting values
     if (dStart > 0.0 ) {
@@ -363,7 +363,7 @@ void CMCMC::generateRandomStart() {
 
     // Sanity check
     if ((int)vCandidates.size() != iEstimateCount)
-      THROW_EXCEPTION("INTERNAL ERROR: Check candidate vector size d")
+      CError::error("INTERNAL ERROR: Check candidate vector size d");
 
     do {
       bCandidatesOk = true;
@@ -573,7 +573,7 @@ bool CMCMC::choleskyDecomposition() {
 
   //sanity check
   if (mxCovariance.size1() != mxCovariance.size2() )
-    THROW_EXCEPTION("Invalid covariance matrix (size1!=size2)");
+    CError::error("Invalid covariance matrix (size1!=size2)");
 
   int iN = mxCovariance.size1();
   mxCovarianceLT = mxCovariance;

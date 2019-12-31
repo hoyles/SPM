@@ -419,7 +419,7 @@ total_score: 1389.87
 
 [random_seed]
 report.type: random_number_seed
-random_number_seed: 98891
+random_number_seed: 58835
 *end
 
 [MaturationMale]
@@ -530,31 +530,31 @@ area observed expected residual errorvalue processerror totalerror score
 all 1567 4413.47 -2846.47 0.15 0 0.15 21.6773
 *end
 
-[male]
+[male_age_weight]
 report.type: age_weight
 label: male
 ages: 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25
 weights: 0.000376782 0.000890542 0.00150865 0.00213914 0.00272389 0.00323465 0.00366334 0.00401335 0.00429359 0.00451483 0.0046877 0.00482175 0.00492512 0.00500449 0.00506524 0.00511163 0.00514699 0.00517391 0.00519438 0.00520994 0.00522175 0.00523072 0.00523752 0.00524269
 *end
 
-[female]
+[female_age_weight]
 report.type: age_weight
 label: female
 ages: 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25
 weights: 0.000386113 0.000989678 0.00182207 0.00279271 0.0038166 0.00482816 0.00578318 0.00665584 0.00743411 0.00811559 0.00870394 0.00920632 0.0096316 0.00998914 0.0102881 0.010537 0.0107434 0.0109142 0.0110552 0.0111713 0.0112668 0.0113452 0.0114096 0.0114624
 *end
 
-[male]
+[male_size_weight]
 report.type: size_weight
 label: male
 sizes: 50
-weights: 0.00525887
+weights: 0.000777443
 *end
 
-[female]
+[female_size_weight]
 report.type: size_weight
 label: female
 sizes: 50
-weights: 0.0116989
+weights: 0.000766692
 *end
 

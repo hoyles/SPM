@@ -31,3 +31,9 @@ cd ..
 cd ProportionsAtAgeObservation
 ..\..\..\Build\windows\spm -r -q -d > Expected.txt
 cd ..
+cd MeanSizeAtAge
+..\..\..\Build\windows\spm -r -q -d > Expected.txt
+cd ..
+cd vonBkatage
+..\..\..\Build\windows\spm -r -q -d > Expected.txt
+cd ..
