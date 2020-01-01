@@ -17,7 +17,7 @@ See the SPM User Manual for more information.
 License
 =======
 
-See the SPM User Manual for a copy of the software license.
+See the SPM User Manual for a copy of the software license (CPL v1.0).
 
 Installation
 ============

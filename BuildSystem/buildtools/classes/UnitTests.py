@@ -28,9 +28,9 @@ class UnitTests:
     start = time.time()
 
     result = False;
-    print('--> Calling: ' + Globals.build_directory_ + "/spm_unittests --loglevel=all > spm_unittests.log 2>&1")
+    print('--> Calling: ' + Globals.build_directory_ + "/spm_unittests --log_level=all > spm_unittests.log 2>&1")
     print('')
-    if os.system(Globals.build_directory_ + "/spm_unittests --loglevel=all > spm_unittests.log 2>&1") != EX_OK:
+    if os.system(Globals.build_directory_ + "/spm_unittests --log_level=all > spm_unittests.log 2>&1") != EX_OK:
       elapsed = time.time() - start
       print('[FAILED] - ' + Globals.build_directory_ + ' in ' + str(round(elapsed, 2)) + ' seconds')
       result = True

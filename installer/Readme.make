@@ -14,20 +14,28 @@ See the SPM User Manual for a copy of the software license.
 To build SPM from the source files
 ==================================
 
-To build the Microsoft Windows version of SPM uing MinGW gcc, issue 
-the following commands in the SPM/ directory
+To build SPM, issue the following commands in the SPM/BuildSystem/ directory
 
-> cmake -G "MinGW Makefiles"
-> mingw32-make all
-> strip spm.exe
+> doBuild help
 
-Note that you will need the BOOST (version 1.38.0) libraries and header
-files installed. Currently, the locations of these are hard-coded in the 
-CMake CMakeLists.txt file. You may need to edit the paths of these 
-libraries in order for SPM to compile.
+to view available build options, then 
+
+> doBuild boost
+> doBuild release
+
+to build the binary. 
+
+Documentation, unittests, R Librarties, etc., can also be built with doBuild
+
+Note that the compilation requires BOOST C++ libraries (version 1.71.0 is 
+included in the archive). 
+
+Currently, the locations of the version of BOOST and locations are 
+hard-coded in the CMake CMakeLists.txt file. You will need to edit this file
+if a different version is desired.
 
 Other compilers may work, but we have not tested compilation using 
-anything other than MinGW gcc 3.4.5 (mingw-vista special r3).
+anything other than gcc 8.1.0 (x86_64-posix-seh-rev0).
 
 Contact
 =======

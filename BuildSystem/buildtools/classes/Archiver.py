@@ -35,74 +35,68 @@ class Archiver:
       print('-- Re-Entering build system to build boost')
       print('-- All output is being diverted to boost.log')
       print('-- Expected build time 10-60 minutes')
-      if os.system(self.do_build_ + '  boost > boost.log 2>&1') != EX_OK:
-        return Globals.PrintError('Failed to build boost. Please check boost.log for the error')
-      os.system('rm -rf boost.log')
+#      if os.system(self.do_build_ + '  boost > boost.log 2>&1') != EX_OK:
+#        return Globals.PrintError('Failed to build boost. Please check boost.log for the error')
 
       print('--> Building release version of SPM')
       print('-- Re-Entering the build system to build SPM')
       print('-- All output is being diverted to release_build.log')
-      if os.system(self.do_build_ + ' release > release_build.log 2>&1') != EX_OK:
-        return Globals.PrintError('Failed to build spm. Please check release_build.log for the error')
-      os.system('rm -rf release_build.log')
+#      if os.system(self.do_build_ + ' release > release_build.log 2>&1') != EX_OK:
+#        return Globals.PrintError('Failed to build spm. Please check release_build.log for the error')
 
       print('--> Building documentation')
       print('-- Re-Entering the build system to build the documentation')
       print('-- All output is being diverted to documentation_build.log')
-      if os.system(self.do_build_ + ' documentation > documentation_build.log 2>&1') != EX_OK:
-        return Globals.PrintError('Failed to build the documentation. Please check documenation_build.log for error')
-      os.system('rm -rf documentation_build.log')
+#      if os.system(self.do_build_ + ' documentation > documentation_build.log 2>&1') != EX_OK:
+#        return Globals.PrintError('Failed to build the documentation. Please check documenation_build.log for error')
 
-      print('--> Building test version of SPM')
-      print('-- Re-Entering the build system to build a unit test library')
-      print('-- All output is being diverted to unit_test_build.log')
-      if os.system(self.do_build_ + ' library test > unit_test_build.log 2>&1') != EX_OK:
-        return Globals.PrintError('Failed to build release library. Please check unit_test_build.log for the error')
-      os.system('rm -rf unit_test_build.log')
+      print('--> Building R Library')
+      print('-- Re-Entering the build system to build the R Library')
+      print('-- All output is being diverted to RLibrary_build.log')
+#      if os.system(self.do_build_ + ' rlibrary > RLibrary.log 2>&1') != EX_OK:
+#        return Globals.PrintError('Failed to build the R Library. Please check RLibrary_build.log for error')
+
+      print('--> Running the unit tests of SPM')
+      print('-- Re-Entering the build system to run the unit test library')
+      print('-- All output is being diverted to spm_unittests.log')
+#      if os.system(self.do_build_ + ' unittests > spm_unittests.log 2>&1') != EX_OK:
+#        return Globals.PrintError('Failed to run unit tests successfuly. Please check spm_unittests.log for the error')
+
+      print('--> Building Windows installer for SPM')
+      print('-- Re-Entering the build system to build the installer')
+      print('-- All output is being diverted to installer_build.log')
+#      if os.system(self.do_build_ + ' installer > installer_build.log 2>&1') != EX_OK:
+#        return Globals.PrintError('Failed to build the installer. Please check installer_build.log for the error')
 
     ## Now we actually do the zipping of the binary
-    output_directory = "bin/" + Globals.operating_system_ + "/archive/"
+    output_directory = Globals.root_directory_ + '/Build/archive'
+    binary_path = Globals.root_directory_ + '/Build'
+    
+    os.chdir(binary_path)
+    
     if not os.path.exists(output_directory):
       os.makedirs(output_directory);
+    else:
+      os.system('rm -rf ' + output_directory + '/*')
+
     print("-- Target output directory: " + output_directory)
-
-    if os.path.exists(output_directory + "spm.tar.gz"):
+    
+    if os.path.exists(binary_path + "/spm_archive.zip"):
       print("-- Removing old Archive")
-      os.system("rm -rf " + output_directory + "spm.tar.gz")
+      os.system("rm -rf " + binary_path + "/spm_archive.zip")
 
-    # Shitty stuff to make building archive easier
-    binary_path = self.output_directory_ = os.path.normpath(os.getcwd()) + "/bin/" + Globals.operating_system_
 
-    os.system('rm -rf spm')
-    os.system('rm -rf spm.tar')
-    os.system('rm -rf spm.zip')
-    os.system('mkdir spm')
-    os.makedirs('spm/R-Libraries')
-    os.system('cp ' + binary_path + '/frontend/' + binary_name + ' spm/' + binary_name)
-    os.system('cp ' + binary_path + '/library_release/' + library_name + ' spm/spm_release' + extension)
-    os.system('cp ' + binary_path + '/library_adolc/' + library_name + ' spm/spm_adolc' + extension)
-    os.system('cp ' + binary_path + '/library_betadiff/' + library_name + ' spm/spm_betadiff' + extension)
-    os.system('cp ' + binary_path + '/library_cppad/' + library_name + ' spm/spm_cppad' + extension)
-    os.system('cp ' + binary_path + '/library_test/' + library_name + ' spm/spm_test' + extension)
-    os.system('cp ../Documentation/UserManual/spm.pdf spm/"spm User Manual.pdf"')
-    print("-- Manual copied")
-    os.system('cp ../Documentation/GettingStartedGuide/GettingStartedGuide.pdf spm/GettingStartedGuide.pdf')
-    print("-- Starters' guide copied")
-    os.system('cp ../Documentation/ContributorsManual/ContributorsGuide.pdf spm/ContributorsGuide.pdf')    
-    print("-- Contributors' guide copied")
-    os.system('cp ../Documentation/UserManual/spm.syn spm/spm.syn')    
-    os.system('cp ../Documentation/UserManual/TextPad_syntax_highlighter.readme spm/TextPad_syntax_highlighter.readme')        
-    os.system('cp -r ../Examples spm/Examples')
+    os.system('cp -r ../Examples/ ' + output_directory)
     print("-- Example code copied")
-    os.system('cp -r ../README.txt spm/README.txt')
-    ## deal with R libraries
+    os.system('cp -r ../Installer/README.txt ' + output_directory)
+    os.system('cp -r ../Installer/README.make ' + output_directory)
+
+    os.system('cp -r Setup_SPM.exe ' + output_directory)
+    os.system('cp -r SPM*.* ' + output_directory)\
+    
     if Globals.operating_system_ == "windows":
-      os.system('cp ../R-libraries/spm_1.0.zip spm/R-Libraries/spm.zip')
-    else: 
-      os.system('cp ../R-libraries/spm_1.0.tar.gz spm/R-Libraries/spm.tar.gz')
-      
-    if Globals.operating_system_ == "windows":
-      os.system("zip -r spm.zip spm/*")
+      os.chdir(output_directory)
+      os.system("zip -r ../spm_archive.zip *")
     else:
       os.system('tar cvf spm.tar spm/')
       os.system('gzip spm.tar')
