@@ -181,6 +181,82 @@ class Boost:
 
 
 """
+This class is responsible for build the third party libraries part of the code base
+"""
+class Kthohr:
+  include_directory = ""
+  lib_directory     = ""
+  lib_debug_directory = ""
+  lib_release_directory = ""
+  
+  def start(self):
+    print("--> Starting build of Kthohr")
+    print("-- Operating System: " + Globals.operating_system_)
+    print("-- Compiler: " + Globals.compiler_)
+  
+    # Clean out any existing files if they already exist
+    print('-- Cleaning Kthohr files in: ' + Globals.kthohr_directory_)
+    if os.path.exists(Globals.kthohr_directory_):
+      shutil.rmtree(Globals.kthohr_directory_)
+      os.mkdir(Globals.kthohr_directory_)
+    
+    print( "-- Checking if kthohr folder exists: " + Globals.kthohr_source_directory_)
+    if not os.path.exists(Globals.kthohr_source_directory_):
+      return Globals.PrintError('kthohr folder does not exist')
+
+    print( "-- Checking if kthohr build folder exists: " + Globals.kthohr_directory_)
+    if not os.path.exists(Globals.kthohr_directory_):
+      print( "-- Creating output directory: " + Globals.kthohr_directory_)
+      os.makedirs(Globals.kthohr_directory_)
+
+    self.lib_directory = Globals.kthohr_directory_ + "/lib"
+    if not os.path.exists(self.lib_directory):
+      print("-- Creating lib directory: " + self.lib_directory)
+      os.makedirs(self.lib_directory)
+      
+    Globals.target_success_path_      = Globals.kthohr_directory_ + '/'
+    Globals.target_debug_lib_path_    = Globals.kthohr_directory_ + '/lib/'
+    Globals.target_release_lib_path_  = Globals.kthohr_directory_ + '/lib/'
+   
+    os.chdir(Globals.kthohr_source_directory_)
+    sys.path.append(os.path.normpath(os.getcwd()))
+
+    if Globals.operating_system_ == "windows":
+      if not os.path.exists(Globals.kthohr_source_directory_ + '/windows.py'):
+        return Globals.PrintError('kthohr library ' + Globals.kthohr_source_directory_ + ' does not have a windows.py file.\nThis file is required to build this library on Windows')
+      import windows as kthohr_builder
+      builder = kthohr_builder.Builder()        
+      print("")
+      print( "--> Building kthohr: " + Globals.kthohr_directory_)
+
+      success = builder.start()
+      if success:
+        os.system('echo ' + 'kthohr' + Globals.kthohr_version + ' > ' + Globals.kthohr_directory_ + '.success')        
+      else:
+        return Globals.PrintError('kthohr library ' + Globals.kthohr_directory_ + ' had an error during the build. Check log files for more information')
+      del sys.modules["windows"]      
+    else:
+      if not os.path.exists(Globals.kthohr_source_directory_ + '/linux.py'):
+        return Globals.PrintError('kthohr library ' + Globals.kthohr_source_directory_ + ' does not have a linux.py file.\nThis file is required to build this library on Linux')
+      import linux as kthohr_builder
+      builder = kthohr_builder.Builder()        
+      print( "")
+      print( "--> Building kthohr: " + Globals.kthohr_directory_)
+      success = builder.start()
+      if success:
+        os.system('echo ' + 'kthohr' + Globals.kthohr_version + ' > ' + Globals.kthohr_directory_ + '.success')        
+      else:
+        return Globals.PrintError('kthohr library ' + Globals.kthohr_directory_ + ' had an error during the build. Check log files for more information')
+      del sys.modules["linux"]
+          
+    if not success:
+      return False
+  
+    print( "")
+    print( "--> kthohr libraries have been built successfully")
+    return True
+
+"""
 This class is responsible for cleaning the build folders
 """   
 class Cleaner:    

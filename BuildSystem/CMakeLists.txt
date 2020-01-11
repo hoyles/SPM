@@ -18,6 +18,7 @@ SET(OPTI_NAME spm)
 IF (WIN32)
   INCLUDE_DIRECTORIES("${CMAKE_BINARY_DIR}/Boost/include/")
   LINK_DIRECTORIES("${CMAKE_BINARY_DIR}/Boost/lib")
+  LINK_DIRECTORIES("${CMAKE_BINARY_DIR}/kthohr/lib")
   
   # Generic Build Settings
   SET(LINK_OPTIONS "-static icon.o")
@@ -27,7 +28,7 @@ IF (WIN32)
   ADD_CUSTOM_TARGET(icon ALL
     COMMAND windres --output icon.o --input "../../Source/spm.rc"
   )
-  SET(MAIN_LIBRARIES
+  SET(MAIN_LIBRARIES    
     gomp
     pthread
     boost_system-mgw81-mt-s-x64-1_71
@@ -35,12 +36,16 @@ IF (WIN32)
     boost_thread-mgw81-mt-s-x64-1_71
     boost_program_options-mgw81-mt-s-x64-1_71
     boost_chrono-mgw81-mt-s-x64-1_71
+    lapack
+    blas    
+    gfortran
+    quadmath
   )
   SET(TEST_LIBRARIES boost_unit_test_framework-mgw81-mt-s-x64-1_71)
   
 ELSE (WIN32)
-  SET(BOOST_LIBS "${CMAKE_BINARY_DIR}/Boost/include/")
-  SET(BOOST_HEADERS "${CMAKE_BINARY_DIR}/Boost/lib")
+  SET(BOOST_LIBS "${CMAKE_BINARY_DIR}/Boost/lib ${CMAKE_BINARY_DIR}/kthohr/lib")
+  SET(BOOST_HEADERS "${CMAKE_BINARY_DIR}/Boost/include/")
   SET(LINK_OPTIONS "-L ${BOOST_LIBS} -lstdc++ -Wl,--no-as-needed -ldl")
   SET(COMPILE_OPTIONS_LIBR "-DBOOST_THREAD_USE_LIB=1 -O0 -g3 -ggdb -Wall -Werror -fmessage-length=0 -fopenmp -Wno-unused-local-typedefs -I ${BOOST_HEADERS} -std=c++17 ")
   SET(COMPILE_OPTIONS_MAIN "-DBOOST_THREAD_USE_LIB=1 -O0 -g3 -Wall -fmessage-length=0 -fopenmp -Wno-unused-local-typedefs -I ${BOOST_HEADERS} -std=c++17")
@@ -53,6 +58,10 @@ ELSE (WIN32)
     boost_program_options    
     gomp
     pthread
+    lapack
+    blas
+    quadmath
+    gfortran
     )
   SET(TEST_LIBRARIES boost_unit_test_framework)
 ENDIF (WIN32)

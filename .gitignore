@@ -13,3 +13,12 @@ Documentation/Manual/SPM.tps
 *.log
 *.out
 *.gz
+/Debug/
+/Source/MCMC/Children/kthohr/mcmc
+/kthohr/lapack-3.9.0
+/kthohr/mcmc
+/kthohr/pax_global_header
+/kthohr/spm_lapack_unzip.log
+/kthohr/spm_mcmc_unzip.log
+/kthohr/spm_unzip.log
+/kthohr/__pycache__

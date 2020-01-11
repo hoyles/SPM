@@ -23,6 +23,7 @@
 #include "../InitializationPhases/CInitializationPhaseManager.h"
 #include "../Layers/CLayerManager.h"
 #include "../MCMC/CMCMC.h"
+#include "../MCMC/CMCMCManager.h"
 #include "../Minimizers/CMinimizerManager.h"
 #include "../ObjectiveFunction/CObjectiveFunction.h"
 #include "../Observations/CObservationManager.h"
@@ -62,6 +63,7 @@ CRuntimeThread::CRuntimeThread() {
   vManagers.push_back(CDerivedQuantityManager::Instance());
   vManagers.push_back(CInitializationPhaseManager::Instance());
   vManagers.push_back(CMinimizerManager::Instance());
+  vManagers.push_back(CMCMCManager::Instance());
   vManagers.push_back(CObservationManager::Instance());
   vManagers.push_back(CPenaltyManager::Instance());
   vManagers.push_back(CProfileManager::Instance());
@@ -231,10 +233,7 @@ void CRuntimeThread::executeMCMC() {
   rebuild();
 
   // Start our MCMC run
-  CMCMC *mcmc = CMCMC::Instance();
-  mcmc->validate();
-  mcmc->build();
-  mcmc->execute();
+  CMCMCManager::Instance()->execute();
 
   // Change State
   eCurrentState = STATE_FINALIZATION;

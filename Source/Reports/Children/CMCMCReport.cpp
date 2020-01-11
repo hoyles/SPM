@@ -15,6 +15,7 @@
 #include "../../Helpers/CError.h"
 #include "../../Helpers/ForEach.h"
 #include "../../MCMC/CMCMC.h"
+#include "../../MCMC/CMCMCManager.h"
 #include "../../TimeSteps/CTimeStepManager.h"
 
 //**********************************************************************
@@ -54,7 +55,7 @@ void CMCMCReport::build() {
     // Base
     CFileReport::build();
 
-    pMCMC = CMCMC::Instance();
+    pMCMC = CMCMCManager::Instance()->getMCMC();
 
   } catch (string &Ex) {
     Ex = "CMCMCReport.build(" + getLabel() + ")->" + Ex;

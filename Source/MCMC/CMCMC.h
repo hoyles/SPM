@@ -41,13 +41,10 @@ using namespace boost::numeric;
 //**********************************************************************
 class CMCMC : public CBaseExecute {
 public:
-  static CMCMC*              Instance();
-  static void                Destroy();
-
   // Methods
-  void                       validate();
-  void                       build();
-  void                       execute();
+  virtual void               validate() = 0;
+  virtual void               build() = 0;
+  virtual void               execute() = 0;
   vector<SChainItem>         getMCMCChain() { return vChain; }
   ublas::matrix<double>      getOriginalCovariance() { return mxOriginalCovariance; }
   ublas::matrix<double>      getCovariance() { return mxCovariance; }
@@ -61,46 +58,17 @@ protected:
   // Functions
   CMCMC();
   virtual                    ~CMCMC();
-  void                       buildCovarianceMatrix();
-  void                       generateEstimates();
-  void                       generateRandomStart();
-  void                       generateNewCandidate();
-  void                       fillMultivariateNormal(double stepsize);
-  void                       fillMultivariatet(double stepsize);
-  bool                       choleskyDecomposition();
-  void                       updateStepSize(int iteration);
 
   // Variables
   string                     sType;
-  double                     dStart;
   int                        iLength;
-  int                        iKeep;
-  int                        iEstimateCount;
-  int                        iJumps;
-  int                        iSuccessfulJumps;
-  int                        iJumpsSinceAdapt;
   bool                       bLastItem;
-  int                        iSuccessfulJumpsSinceAdapt;
-  double                     dMaxCorrelation;
-  string                     sCorrelationMethod;
-  double                     dCorrelationDiff;
-  double                     dStepSize;
-  double                     dAcceptanceRatio;
-  string                     sProposalDistribution;
-  int                        iDF;
   ublas::matrix<double>      mxOriginalCovariance;
   ublas::matrix<double>      mxCovariance;
   ublas::matrix<double>      mxCovarianceLT;
-  vector<double>             vCandidates;
-  vector<bool>               vbIsEnabledEstimate;
   SChainItem                 newItem;
   vector<SChainItem>         vChain;
-  vector<int>                vAdaptStepSize;
-  CMinimizer                 *pMinimizer;
   vector<string>             vEstimateNames;
-
-private:
-  static CMCMC*              clInstance;
 };
 
 #endif /*CMCMC_H_*/

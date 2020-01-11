@@ -153,6 +153,7 @@
 #define PARAM_AGE_WEIGHT                          "age_weight"
 #define PARAM_AGEING                              "ageing"
 #define PARAM_AGEING_ERROR                        "ageing_error"
+#define PARAM_ALGORITHM                           "algorithm"
 #define PARAM_ALL_VALUES_BOUNDED                  "all_values_bounded"
 #define PARAM_ALL_VALUES                          "all_values"
 #define PARAM_ALPHA                               "alpha"

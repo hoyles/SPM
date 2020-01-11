@@ -24,6 +24,8 @@ buildtools_directory_    = ""
 build_directory_         = ""
 boost_directory_         = ""
 boost_source_directory_  = ""
+kthohr_directory_        = ""
+kthohr_source_directory_ = ""
 
 target_success_path_     = ""
 target_include_path_     = ""
@@ -32,8 +34,9 @@ target_release_lib_path_ = ""
 
 threads_          = "8"
 boost_version     = 'boost_1_71_0'
+kthohr_version    = '3.9.0'
 
-allowed_build_targets_ = [ "release", "documentation", "boost", "archive", "clean", 
+allowed_build_targets_ = [ "release", "documentation", "boost", "kthohr", "archive", "clean", 
                            "check", "unittests", "installer", "deb", "rlibrary", "version"]
 
 EX_OK = getattr(os, "EX_OK", 0)

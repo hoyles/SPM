@@ -33,7 +33,7 @@
 #include "../InitializationPhases/Factory/CInitializationPhaseFactory.h"
 #include "../Layers/Factory/CLayerFactory.h"
 #include "../MCMC/CMCMC.h"
-//#include "../MCMC/CMCMCManager.h"
+#include "../MCMC/Factory/CMCMCFactory.h"
 #include "../Minimizers/CMinimizerManager.h"
 #include "../Minimizers/Factory/CMinimizerFactory.h"
 #include "../Observations/Factory/CObservationFactory.h"
@@ -166,6 +166,8 @@ void CConfigurationLoader::processSection() {
       pBaseObject = CLayerFactory::buildLayer(sType);
     else if (sSection == PARAM_MINIMIZER)
       pBaseObject = CMinimizerFactory::buildMinimizer(sType);
+    else if (sSection == PARAM_MCMC)
+      pBaseObject = CMCMCFactory::buildMCMC(sType);
     else if (sSection == PARAM_OBSERVATION)
       pBaseObject = CObservationFactory::buildObservation(sType);
     else if (sSection == PARAM_PENALTY)
@@ -189,9 +191,7 @@ void CConfigurationLoader::processSection() {
         CError::error("Command can only be declared once in the config file");
       pBaseObject = CMinimizerManager::Instance();
       bEstimationHasBeenDefined = true;
-    } else if (sSection == PARAM_MCMC)
-      pBaseObject = CMCMC::Instance();
-    else
+    } else
       CError::errorUnknown(PARAM_SECTION, "");
 
   } catch (string &Ex) {
