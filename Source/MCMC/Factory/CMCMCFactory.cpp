@@ -12,6 +12,7 @@
 #include "../CMCMCManager.h"
 #include "../../Helpers/CError.h"
 #include "../Children/CIndependenceMetropolis.h"
+#include "../Children/CKthohr.h"
 
 
 /**
@@ -22,6 +23,8 @@ CMCMC* CMCMCFactory::buildMCMC(const string& type, bool registerWithManager) {
 
   if (type == "" || type == PARAM_METROPOLIS_HASTINGS)
     mcmc = new CIndependenceMetropolis();
+  else if (type == PARAM_KTHOHR)
+    mcmc = new CKthohr();
   else
     CError::errorUnknown(PARAM_MCMC, type);
 
