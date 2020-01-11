@@ -217,7 +217,7 @@ void CKthohr::execute_rwmh() {
   for (int i = 0; i < iKeep; ++i) {
     vector<double> values;
     for (int j = 0; j < iEstimateCount; ++j) {
-      values.push_back(chain(i, j));
+      values.push_back(chain.row(i)(j));
     }
     SChainItem newItem;
     newItem.iIteration                = i;
