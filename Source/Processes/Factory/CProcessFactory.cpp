@@ -16,6 +16,7 @@
 #include "../Movement/COpenMPPreferenceMovementProcess.h"
 #include "../Movement/CPreferenceMovementProcess.h"
 #include "../Population/CAgeingProcess.h"
+#include "../Population/CAgeMortalityRateProcess.h"
 #include "../Population/CAnnualMortalityRateProcess.h"
 #include "../Population/CBHRecruitmentProcess.h"
 #include "../Population/CBiomassEventMortalityProcess.h"
@@ -56,6 +57,8 @@ CProcess* CProcessFactory::buildProcess(string type, bool registerWithManager) {
     pProcess = new CAgeingProcess();
   else if (type == PARAM_CONSTANT_MORTALITY_RATE)
     pProcess = new CConstantMortalityRateProcess();
+  else if (type == PARAM_AGE_MORTALITY_RATE)
+    pProcess = new CAgeMortalityRateProcess();
   else if (type == PARAM_CONSTANT_EXPLOITATION_RATE)
     pProcess = new CConstantExploitationRateProcess();
    else if (type == PARAM_ANNUAL_MORTALITY_RATE)

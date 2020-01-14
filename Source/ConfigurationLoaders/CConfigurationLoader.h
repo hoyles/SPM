@@ -41,6 +41,7 @@ protected:
   void                        splitLineIntoVector(string line, vector<string> &parameters);
   bool                        bModelHasBeenDefined = 0;
   bool                        bEstimationHasBeenDefined = 0;
+  bool                        bMCMCHasBeenDefined = 0;
 
   // Variables
   vector<string>              vLines;

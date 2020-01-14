@@ -42,9 +42,9 @@ using namespace boost::numeric;
 class CMCMC : public CBaseExecute {
 public:
   // Methods
-  virtual void               validate() = 0;
-  virtual void               build() = 0;
-  virtual void               execute() = 0;
+  void                       validate();
+  void                       build();
+  void                       execute();
   vector<SChainItem>         getMCMCChain() { return vChain; }
   ublas::matrix<double>      getOriginalCovariance() { return mxOriginalCovariance; }
   ublas::matrix<double>      getCovariance() { return mxCovariance; }
@@ -57,6 +57,14 @@ public:
 protected:
   // Functions
   CMCMC();
+  void                       buildCovarianceMatrix();
+  void                       generateEstimates();
+  void                       generateRandomStart();
+  void                       generateNewCandidate();
+  void                       fillMultivariateNormal(double stepsize);
+  void                       fillMultivariatet(double stepsize);
+  bool                       choleskyDecomposition();
+  void                       updateStepSize(int iteration);
   virtual                    ~CMCMC();
 
   // Variables
@@ -69,6 +77,26 @@ protected:
   SChainItem                 newItem;
   vector<SChainItem>         vChain;
   vector<string>             vEstimateNames;
+
+  double                     dStart;
+  int                        iKeep;
+  int                        iEstimateCount;
+  int                        iJumps;
+  int                        iSuccessfulJumps;
+  int                        iJumpsSinceAdapt;
+  int                        iSuccessfulJumpsSinceAdapt;
+  double                     dMaxCorrelation;
+  string                     sCorrelationMethod;
+  double                     dCorrelationDiff;
+  double                     dStepSize;
+  double                     dAcceptanceRatio;
+  string                     sProposalDistribution;
+  int                        iDF;
+  vector<double>             vCandidates;
+  vector<bool>               vbIsEnabledEstimate;
+  vector<int>                vAdaptStepSize;
+  CMinimizer                 *pMinimizer;
+
 };
 
 #endif /*CMCMC_H_*/

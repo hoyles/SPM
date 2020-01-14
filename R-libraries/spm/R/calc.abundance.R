@@ -1,4 +1,4 @@
-#' Generate a multivariate uniform distribution based on the bounds for the extimated parameters
+#' Generate a multivariate uniform distribution based on the bounds for the estimated parameters
 #'
 #' @author Alistair Dunn
 #' @param data data representing a partition

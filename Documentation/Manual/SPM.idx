@@ -166,13 +166,14 @@
 \indexentry{Ageing|hyperpage}{28}
 \indexentry{Mortality|hyperpage}{29}
 \indexentry{Constant mortality|hyperpage}{29}
+\indexentry{Age mortality|hyperpage}{30}
 \indexentry{Constant exploitation rate|hyperpage}{30}
-\indexentry{Annual mortality|hyperpage}{30}
-\indexentry{Layer varying exploitation rate|hyperpage}{30}
+\indexentry{Annual mortality|hyperpage}{31}
+\indexentry{Layer varying exploitation rate|hyperpage}{31}
 \indexentry{Event mortality|hyperpage}{31}
-\indexentry{Maximum exploitation rate|hyperpage}{31}
-\indexentry{Holling mortality|hyperpage}{32}
 \indexentry{Maximum exploitation rate|hyperpage}{32}
+\indexentry{Holling mortality|hyperpage}{32}
+\indexentry{Maximum exploitation rate|hyperpage}{33}
 \indexentry{Density-dependent prey-suitability|hyperpage}{33}
 \indexentry{Maximum exploitation rate|hyperpage}{34}
 \indexentry{Category state|hyperpage}{35}
@@ -181,16 +182,16 @@
 \indexentry{Category transition|hyperpage}{36}
 \indexentry{Category transition process|hyperpage}{36}
 \indexentry{Category transition|hyperpage}{36}
-\indexentry{Category transition rate process|hyperpage}{36}
-\indexentry{Category transition|hyperpage}{36}
+\indexentry{Category transition rate process|hyperpage}{37}
+\indexentry{Category transition|hyperpage}{37}
 \indexentry{Category transition by age process|hyperpage}{37}
 \indexentry{Category transition|hyperpage}{37}
-\indexentry{Movement processes|hyperpage}{38}
-\indexentry{Movement|hyperpage}{38}
+\indexentry{Movement processes|hyperpage}{39}
+\indexentry{Movement|hyperpage}{39}
 \indexentry{Migration movement|hyperpage}{39}
-\indexentry{Adjacent cell movement|hyperpage}{39}
-\indexentry{Preference movement|hyperpage}{40}
-\indexentry{Preference function|hyperpage}{40}
+\indexentry{Adjacent cell movement|hyperpage}{40}
+\indexentry{Preference movement|hyperpage}{41}
+\indexentry{Preference function|hyperpage}{41}
 \indexentry{Threads!preference functions|hyperpage}{41}
 \indexentry{Multi-threaded CPU process|hyperpage}{41}
 \indexentry{Single-threaded CPU process|hyperpage}{41}
@@ -206,44 +207,44 @@
 \indexentry{Preference function ! Logistic|hyperpage}{42}
 \indexentry{Inverse-Logistic preference function|hyperpage}{42}
 \indexentry{Preference function ! Inverse-Logistic|hyperpage}{42}
-\indexentry{Exponential preference function|hyperpage}{42}
-\indexentry{Preference function ! Exponential|hyperpage}{42}
-\indexentry{Threshold preference function|hyperpage}{42}
-\indexentry{Preference function ! Threshold|hyperpage}{42}
-\indexentry{Categorical preference function|hyperpage}{42}
-\indexentry{Preference function ! Categorical|hyperpage}{42}
+\indexentry{Exponential preference function|hyperpage}{43}
+\indexentry{Preference function ! Exponential|hyperpage}{43}
+\indexentry{Threshold preference function|hyperpage}{43}
+\indexentry{Preference function ! Threshold|hyperpage}{43}
+\indexentry{Categorical preference function|hyperpage}{43}
+\indexentry{Preference function ! Categorical|hyperpage}{43}
 \indexentry{Monotonic categorical preference function|hyperpage}{43}
 \indexentry{Preference function ! Monotonic categorical|hyperpage}{43}
-\indexentry{Copulas|hyperpage}{43}
-\indexentry{Probability Distribution Functions (PDF)|hyperpage}{43}
-\indexentry{Normal density function|hyperpage}{43}
+\indexentry{Copulas|hyperpage}{44}
+\indexentry{Probability Distribution Functions (PDF)|hyperpage}{44}
+\indexentry{Normal density function|hyperpage}{44}
 \indexentry{Lognormal density function|hyperpage}{44}
 \indexentry{Exponential density function|hyperpage}{44}
 \indexentry{Uniform density function|hyperpage}{44}
 \indexentry{Gaussian copula|hyperpage}{44}
 \indexentry{Gumbel copula|hyperpage}{44}
-\indexentry{Frank copula|hyperpage}{44}
-\indexentry{Independence copula|hyperpage}{44}
-\indexentry{Derived quantities|hyperpage}{45}
+\indexentry{Frank copula|hyperpage}{45}
+\indexentry{Independence copula|hyperpage}{45}
+\indexentry{Derived quantities|hyperpage}{46}
 \indexentry{Derived quantities by cell|hyperpage}{46}
-\indexentry{Size-age relationship|hyperpage}{46}
+\indexentry{Size-age relationship|hyperpage}{47}
 \indexentry{von Bertalanffy growth curve|hyperpage}{47}
 \indexentry{Schnute growth curve|hyperpage}{47}
-\indexentry{von Bertalanffy k-at-age growth curve|hyperpage}{47}
-\indexentry{mean size-at-age growth curve|hyperpage}{47}
+\indexentry{von Bertalanffy k-at-age growth curve|hyperpage}{48}
+\indexentry{mean size-at-age growth curve|hyperpage}{48}
 \indexentry{Size-weight relationship|hyperpage}{48}
 \indexentry{Basic size-weight relationship|hyperpage}{48}
-\indexentry{Selectivities|hyperpage}{48}
-\indexentry{Selectivities!Constant|hyperpage}{49}
+\indexentry{Selectivities|hyperpage}{49}
+\indexentry{Selectivities!Constant|hyperpage}{50}
 \indexentry{Selectivities!Knife-edge|hyperpage}{50}
 \indexentry{Selectivities!All-values|hyperpage}{50}
 \indexentry{Selectivities!All-values-bounded|hyperpage}{50}
-\indexentry{Selectivities!Increasing|hyperpage}{50}
+\indexentry{Selectivities!Increasing|hyperpage}{51}
 \indexentry{Selectivities!Logistic|hyperpage}{51}
 \indexentry{Selectivities!Inverse-logistic|hyperpage}{51}
 \indexentry{Selectivities!Logistic-producing|hyperpage}{52}
 \indexentry{Selectivities!Double-normal|hyperpage}{52}
-\indexentry{Selectivities!Double-exponential|hyperpage}{52}
+\indexentry{Selectivities!Double-exponential|hyperpage}{53}
 \indexentry{Selectivities!Spline|hyperpage}{53}
 \indexentry{The estimation section|hyperpage}{55}
 \indexentry{Maximum posterior density estimate (MPD)|hyperpage}{55}
@@ -381,22 +382,22 @@
 \indexentry{Command ! time\_step|hyperpage}{87}
 \indexentry{Processes|hyperpage}{87}
 \indexentry{Command ! process|hyperpage}{88}
-\indexentry{Preference functions|hyperpage}{103}
+\indexentry{Preference functions|hyperpage}{104}
 \indexentry{Command ! preference\_function|hyperpage}{104}
-\indexentry{Probability Density Functions|hyperpage}{109}
+\indexentry{Probability Density Functions|hyperpage}{110}
 \indexentry{Command ! pdf|hyperpage}{110}
 \indexentry{Layers|hyperpage}{111}
-\indexentry{Command ! layer|hyperpage}{111}
+\indexentry{Command ! layer|hyperpage}{112}
 \indexentry{Derived quantities by cell|hyperpage}{116}
 \indexentry{Command ! derived\_quantity\_by\_cell|hyperpage}{116}
-\indexentry{Derived quantities|hyperpage}{117}
-\indexentry{Command ! derived\_quantity|hyperpage}{117}
+\indexentry{Derived quantities|hyperpage}{118}
+\indexentry{Command ! derived\_quantity|hyperpage}{118}
 \indexentry{Age-size relationship|hyperpage}{119}
 \indexentry{Command ! age\_size|hyperpage}{119}
-\indexentry{Size-weight|hyperpage}{123}
-\indexentry{Command ! size\_weight|hyperpage}{123}
+\indexentry{Size-weight|hyperpage}{124}
+\indexentry{Command ! size\_weight|hyperpage}{124}
 \indexentry{Selectivities|hyperpage}{124}
-\indexentry{Command ! selectivity|hyperpage}{124}
+\indexentry{Command ! selectivity|hyperpage}{125}
 \indexentry{Estimation methods|hyperpage}{131}
 \indexentry{Command ! estimation|hyperpage}{131}
 \indexentry{Point estimation|hyperpage}{131}

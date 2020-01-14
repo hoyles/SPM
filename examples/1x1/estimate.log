@@ -1,9 +1,9 @@
 SPM (Spatial Population Model)
 Call: ..\..\Build\windows\spm -e -q -g 0 -o MPD.dat 
-Date: Tue Dec 31 15:38:26 2019
-v1.1-2019-12-30 (rev. 2019-12-30 23:29:40 UTC). Copyright (c) 2008-2019, NIWA
+Date: Mon Jan 13 17:00:18 2020
+v1.1-2020-01-11 (rev. 2020-01-11 04:19:35 UTC). Copyright (c) 2008-2020, NIWA
 User name: alist
-Machine name: DELL-9020 (Windows_NT, PID=19500)
+Machine name: DELL-9020 (Windows_NT, PID=10536)
 
 [initialisation-phase1]
 report.type: initialisation

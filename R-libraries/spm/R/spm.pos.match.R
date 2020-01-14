@@ -5,5 +5,5 @@
 "spm.pos.match"<-
 function(vector, regexp)
 {
-  min((1:length(vector))[spm.regexpr(regexp, vector) > 0])
+  min((1:length(vector))[regexpr(regexp, vector) > 0])
 }

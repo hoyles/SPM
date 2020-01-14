@@ -16,6 +16,7 @@ tolerance 0.0002
 covariance false
 
 @mcmc
+type metropolis_hastings
 start 1
 length 1100000
 keep 1000

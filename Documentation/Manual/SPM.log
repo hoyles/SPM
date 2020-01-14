@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7200 64-bit) (preloaded format=pdflatex 2019.11.10)  1 JAN 2020 10:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7200 64-bit) (preloaded format=pdflatex 2019.11.10)  12 JAN 2020 13:38
 entering extended mode
 **./SPM.tex
 (SPM.tex
@@ -553,7 +553,7 @@ G,.JBIG2,.JB2,.eps]
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 ABD: EveryShipout initializing macros
-<Figures/SPM.png, id=1140, 203.5605pt x 203.5605pt>
+<Figures/SPM.png, id=1144, 203.5605pt x 203.5605pt>
 File: Figures/SPM.png Graphic file (type png)
 <use Figures/SPM.png>
 Package pdftex.def Info: Figures/SPM.png  used on input line 214.
@@ -596,7 +596,7 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 258.
  (SPMversion.tex)
-<Figures/QR_code.png, id=1158, 166.6225pt x 166.6225pt>
+<Figures/QR_code.png, id=1162, 166.6225pt x 166.6225pt>
 File: Figures/QR_code.png Graphic file (type png)
 <use Figures/QR_code.png>
 Package pdftex.def Info: Figures/QR_code.png  used on input line 258.
@@ -683,7 +683,7 @@ LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
 \openout2 = `Population.aux'.
 
  (Population.tex
-<Figures/SquareStructure.png, id=1613, 493.845pt x 345.54094pt>
+<Figures/SquareStructure.png, id=1618, 493.845pt x 345.54094pt>
 File: Figures/SquareStructure.png Graphic file (type png)
 <use Figures/SquareStructure.png>
 Package pdftex.def Info: Figures/SquareStructure.png  used on input line 36.
@@ -879,7 +879,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 360.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 360.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 360.
 Package rerunfilecheck Info: File `SPM.out' has not changed.
-(rerunfilecheck)             Checksum: 00A000C9DCCB60405855FDC555B073AE;23666.
+(rerunfilecheck)             Checksum: 00CCB98C3C5D48CA045447843BC30387;23761.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 360.
  )
 (\end occurred inside a group at level 12)
@@ -898,10 +898,10 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 360.
 ### simple group (level 1) entered at line 83 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 11922 strings out of 492895
- 179551 string characters out of 3123734
- 406585 words of memory out of 3000000
- 14224 multiletter control sequences out of 15000+200000
+ 11927 strings out of 492895
+ 179630 string characters out of 3123734
+ 406584 words of memory out of 3000000
+ 14225 multiletter control sequences out of 15000+200000
  80883 words of font info for 168 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,15n,43p,1464b,2264s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -923,9 +923,9 @@ nts/type1/urw/times/utmbi8a.pfb><C:/Users/alist/AppData/Local/Programs/MiKTeX 2
 .9/fonts/type1/urw/times/utmr8a.pfb><C:/Users/alist/AppData/Local/Programs/MiKT
 eX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Users/alist/AppData/Local/Programs/
 MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on SPM.pdf (227 pages, 1174660 bytes).
+Output written on SPM.pdf (227 pages, 1175682 bytes).
 PDF statistics:
- 3916 PDF objects out of 4296 (max. 8388607)
- 1129 named destinations out of 1200 (max. 500000)
- 2308 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 3924 PDF objects out of 4296 (max. 8388607)
+ 1133 named destinations out of 1200 (max. 500000)
+ 2316 words of extra memory for PDF output out of 10000 (max. 10000000)
 

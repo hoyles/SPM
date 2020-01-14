@@ -356,6 +356,23 @@ There are no other subcommands for \commandlabsubarg{process}{type}{none}.
 \defDefault{No layer}
 \defValue{A valid layer as defined by \command{layer}. If a numeric layer, then mortality applied is the mortality rate multiplied by the value of the layer. Note that the layer values must be non-negative}
 
+\subsubsection[Age mortality rate process]{\commandlabsubarg{process}{type}{age\_mortality\_rate}}
+
+\defSub{m} {Define the age specific mortality rate to be applied}
+\defType{Estimable vector, of length equal to the number of age classes in the model}
+\defDefault{No default}
+\defValue{A vector of positive real numbers}
+
+\defSub{categories} {Define the categories that mortality is applied to}
+\defType{String vector}
+\defDefault{No default}
+\defValue{Valid categories from \commandsub{model}{categories}}
+
+\defSub{layer} {Name of the layer}
+\defType{String}
+\defDefault{No layer}
+\defValue{A valid layer as defined by \command{layer}. If a numeric layer, then mortality applied is the mortality rate multiplied by the value of the layer. Note that the layer values must be non-negative}
+
 \subsubsection[Constant exploitation rate process]{\commandlabsubarg{process}{type}{constant\_exploitation\_rate}}
 
 \defSub{u} {Define the constant exploitation rate to be applied}

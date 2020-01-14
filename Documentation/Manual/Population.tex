@@ -633,9 +633,9 @@ Note that ageing is \emph{not} applied by \SPM\ by default. As with other proces
 
 \subsubsection{\I{Mortality}\label{sec:mortality}}
 
-The following types of mortality processes are permissible in \SPM, constant rate, constant exploitation rate, annually varying rate, layer varying exploitation rate, event, biomass-event, a density-dependent relationship based on the Holling \citep{Holling1959} Type II or Type III function, and a density-dependent relationship based on prey-suitability process. These processes remove individuals from the partition, either as a rate (for constant or annually varying mortality processes), as an exploitation rate, as a total number (abundance), or as a biomass of individuals. \SPM\ does not implement the Baranov catch equation or any other process where both natural and event mortality are applied simultaneously. To approximate concurrent natural and event mortality, the population processes must be defined to remove some natural mortality (e.g., as a constant or annually varying), then some event mortality (e.g., fishing) in sequence. It is up to the user to specify how this happens.
+The following types of mortality processes are permissible in \SPM, constant rate, age mortality, constant exploitation rate, annually varying rate, layer varying exploitation rate, event, biomass-event, a density-dependent relationship based on the Holling \citep{Holling1959} Type II or Type III function, and a density-dependent relationship based on prey-suitability process. These processes remove individuals from the partition, either as a rate (for constant or annually varying mortality processes), as an exploitation rate, as a total number (abundance), or as a biomass of individuals. \SPM\ does not implement the Baranov catch equation or any other process where both natural and event mortality are applied simultaneously. To approximate concurrent natural and event mortality, the population processes must be defined to remove some natural mortality (e.g., as a constant or annually varying), then some event mortality (e.g., fishing) in sequence. It is up to the user to specify how this happens.
 
-The constant rate, constant exploitation rate, annually varying rate, event, biomass-event mortalities can depend on a layer. In these cases, the value of instantaneous mortality applied to the population state within each cell is the product of the layer value, a selectivity, and the mortality rate. If the layer is static, mortality is effectively constant each year but can be different in each cell; if the layer is a derived quantity and therefore calculated each year, mortality can change every year in every cell. The exploitation rate with an annually varying layer applies user-defined layers for each year specified, then calculated mortality as in the event mortalities.
+The constant rate, age mortality, constant exploitation rate, annually varying rate, event, biomass-event mortalities can depend on a layer. In these cases, the value of instantaneous mortality applied to the population state within each cell is the product of the layer value, a selectivity (except for age mortality), and the mortality rate. If the layer is static, mortality is effectively constant each year but can be different in each cell; if the layer is a derived quantity and therefore calculated each year, mortality can change every year in every cell. The exploitation rate with an annually varying layer applies user-defined layers for each year specified, then calculated mortality as in the event mortalities.
 
 \subsubsection*{Constant mortality rate}
 
@@ -664,6 +664,28 @@ And the resulting number of individuals remaining in cell $a$ in category $k$ at
 \begin{equation}
   n'(a,k,l) = n(a,k,l) \exp \left({-M(a,k,l)}\right)
 \end{equation}
+
+\subsubsection*{Age mortality rate}
+
+To specify an constant annual mortality rate by age \index{Age mortality} for categories `male' and `female' for a model with age classes 1--5, then, 
+{\small{\begin{verbatim}
+@process NaturalMortality
+type age_mortality_rate
+categories male female
+#ages  1    2    3    4    5 
+M   0.20 0.15 0.15 0.10 0.20
+\end{verbatim}}}
+
+An age varying rate could also be defined as a multiplier of a layer. For example, let the mortality rate applied to the population at cell $a$ in category $k$ and age $l$ be denoted $M(a,k,l)$, and given a value from a layer $L_a$  at $a$, and a mortality rate $M$ for some user-defined categories $k$ then, 
+\begin{equation}
+  M(a,k,l) = ML_a
+\end{equation}
+
+And the resulting number of individuals remaining in cell $a$ in category $k$ at age $l$ from applying the constant mortality process is,
+\begin{equation}
+  n'(a,k,l) = n(a,k,l) \exp \left({-M_a(k,l)}\right)
+\end{equation}
+
 
 \subsubsection*{Constant exploitation rate}
 

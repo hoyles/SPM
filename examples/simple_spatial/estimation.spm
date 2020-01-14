@@ -16,6 +16,7 @@ population_size 250
 
 # MCMC
 @mcmc
+type metropolis_hastings
 start 1
 length 60000 # 1500000
 keep 500
@@ -33,44 +34,37 @@ lower_bound 1e5
 upper_bound 1e8
 
 # ESTIMATION
-@estimate
-parameter catchability[CPUEq].q
+@estimate catchability[CPUEq].q
 lower_bound 1e-7
 upper_bound 1e-1
 type uniform
 
-@estimate
-parameter preference_function[ImmatureDistance].lambda
+@estimate preference_function[ImmatureDistance].lambda
 lower_bound 0.0001
 upper_bound 0.05
 type uniform
 
-@estimate
-parameter preference_function[ImmatureDepth].a50
+@estimate preference_function[ImmatureDepth].a50
 lower_bound 10
 upper_bound 5000
 type uniform
 
-@estimate
-parameter preference_function[ImmatureDepth].ato95
+@estimate preference_function[ImmatureDepth].ato95
 lower_bound 1
 upper_bound 5000
 type uniform
 
-@estimate
-parameter preference_function[ImmatureLatitude].a50
+@estimate preference_function[ImmatureLatitude].a50
 lower_bound 60
 upper_bound 80
 type uniform
 
-@estimate
-parameter preference_function[ImmatureLatitude].ato95
+@estimate preference_function[ImmatureLatitude].ato95
 lower_bound 0.01
 upper_bound 30
 type uniform
 
-@estimate
-parameter preference_function[MatureDistance].lambda
+@estimate preference_function[MatureDistance].lambda
 lower_bound 0.0001
 upper_bound 0.05
 type uniform
@@ -81,56 +75,47 @@ lower_bound 100
 upper_bound 5000
 type uniform
 
-@estimate
-parameter preference_function[MatureDepth].sigma_l
+@estimate preference_function[MatureDepth].sigma_l
 lower_bound 1
 upper_bound 5000
 type uniform
 
-@estimate
-parameter preference_function[MatureDepth].sigma_r
+@estimate preference_function[MatureDepth].sigma_r
 lower_bound 1
 upper_bound 10000
 type uniform
 
-@estimate
-parameter preference_function[MatureLatitude].a50
+@estimate preference_function[MatureLatitude].a50
 lower_bound 60
 upper_bound 80
 type uniform
 
-@estimate
-parameter preference_function[MatureLatitude].ato95
+@estimate preference_function[MatureLatitude].ato95
 lower_bound 0.01
 upper_bound 30
 type uniform
 
-@estimate
-parameter selectivity[FishingSel].a50
+@estimate selectivity[FishingSel].a50
 lower_bound 1
 upper_bound 20
 type uniform
 
-@estimate
-parameter selectivity[FishingSel].ato95
+@estimate selectivity[FishingSel].ato95
 lower_bound 0.01
 upper_bound 50
 type uniform
 
-@estimate
-parameter selectivity[Maturation].a50
+@estimate selectivity[Maturation].a50
 lower_bound 5
 upper_bound 18
 type uniform
 
-@estimate
-parameter selectivity[Maturation].ato95
+@estimate selectivity[Maturation].ato95
 lower_bound 0.01
 upper_bound 15
 type uniform
 
-@estimate
-parameter process[BHrecruitment].r0
+@estimate process[BHrecruitment].r0
 lower_bound 1e5
 upper_bound 1e7
 type uniform

@@ -42,25 +42,25 @@
 \contentsline {subsubsection}{\numberline {4.7.4}Mortality}{29}{subsubsection.4.7.4}% 
 \contentsline {subsubsection}{\numberline {4.7.5}Category states}{35}{subsubsection.4.7.5}% 
 \contentsline {subsubsection}{\numberline {4.7.6}Category transitions}{36}{subsubsection.4.7.6}% 
-\contentsline {subsection}{\numberline {4.8}Movement processes}{38}{subsection.4.8}% 
+\contentsline {subsection}{\numberline {4.8}Movement processes}{39}{subsection.4.8}% 
 \contentsline {subsubsection}{\numberline {4.8.1}Migration movement}{39}{subsubsection.4.8.1}% 
-\contentsline {subsubsection}{\numberline {4.8.2}Adjacent cell movement}{39}{subsubsection.4.8.2}% 
-\contentsline {subsubsection}{\numberline {4.8.3}Preference movement}{40}{subsubsection.4.8.3}% 
-\contentsline {subsection}{\numberline {4.9}Derived quantities}{45}{subsection.4.9}% 
+\contentsline {subsubsection}{\numberline {4.8.2}Adjacent cell movement}{40}{subsubsection.4.8.2}% 
+\contentsline {subsubsection}{\numberline {4.8.3}Preference movement}{41}{subsubsection.4.8.3}% 
+\contentsline {subsection}{\numberline {4.9}Derived quantities}{46}{subsection.4.9}% 
 \contentsline {subsection}{\numberline {4.10}Derived quantities by cell}{46}{subsection.4.10}% 
-\contentsline {subsection}{\numberline {4.11}Size-age relationship}{46}{subsection.4.11}% 
+\contentsline {subsection}{\numberline {4.11}Size-age relationship}{47}{subsection.4.11}% 
 \contentsline {subsection}{\numberline {4.12}Size-weight relationship}{48}{subsection.4.12}% 
-\contentsline {subsection}{\numberline {4.13}Selectivities}{48}{subsection.4.13}% 
-\contentsline {subsubsection}{\numberline {4.13.1}Constant}{49}{subsubsection.4.13.1}% 
+\contentsline {subsection}{\numberline {4.13}Selectivities}{49}{subsection.4.13}% 
+\contentsline {subsubsection}{\numberline {4.13.1}Constant}{50}{subsubsection.4.13.1}% 
 \contentsline {subsubsection}{\numberline {4.13.2}Knife-edge}{50}{subsubsection.4.13.2}% 
 \contentsline {subsubsection}{\numberline {4.13.3}All-values}{50}{subsubsection.4.13.3}% 
 \contentsline {subsubsection}{\numberline {4.13.4}All-values-bounded}{50}{subsubsection.4.13.4}% 
-\contentsline {subsubsection}{\numberline {4.13.5}Increasing}{50}{subsubsection.4.13.5}% 
+\contentsline {subsubsection}{\numberline {4.13.5}Increasing}{51}{subsubsection.4.13.5}% 
 \contentsline {subsubsection}{\numberline {4.13.6}Logistic}{51}{subsubsection.4.13.6}% 
 \contentsline {subsubsection}{\numberline {4.13.7}Inverse logistic}{51}{subsubsection.4.13.7}% 
 \contentsline {subsubsection}{\numberline {4.13.8}Logistic producing}{52}{subsubsection.4.13.8}% 
 \contentsline {subsubsection}{\numberline {4.13.9}Double-normal}{52}{subsubsection.4.13.9}% 
-\contentsline {subsubsection}{\numberline {4.13.10}Double-exponential}{52}{subsubsection.4.13.10}% 
+\contentsline {subsubsection}{\numberline {4.13.10}Double-exponential}{53}{subsubsection.4.13.10}% 
 \contentsline {subsubsection}{\numberline {4.13.11}Spline}{53}{subsubsection.4.13.11}% 
 \contentsline {section}{\numberline {5}The estimation section}{55}{section.5}% 
 \contentsline {subsection}{\numberline {5.1}Role of the estimation section}{55}{subsection.5.1}% 
@@ -126,82 +126,83 @@
 \contentsline {subsubsection}{\numberline {8.4.4}Local Beverton-Holt recruitment process}{90}{subsubsection.8.4.4}% 
 \contentsline {subsubsection}{\numberline {8.4.5}Ageing process}{92}{subsubsection.8.4.5}% 
 \contentsline {subsubsection}{\numberline {8.4.6}Constant mortality rate process}{92}{subsubsection.8.4.6}% 
-\contentsline {subsubsection}{\numberline {8.4.7}Constant exploitation rate process}{92}{subsubsection.8.4.7}% 
-\contentsline {subsubsection}{\numberline {8.4.8}Annual mortality rate process}{93}{subsubsection.8.4.8}% 
-\contentsline {subsubsection}{\numberline {8.4.9}Layer varying exploitation rate process}{94}{subsubsection.8.4.9}% 
-\contentsline {subsubsection}{\numberline {8.4.10}Event mortality process}{94}{subsubsection.8.4.10}% 
-\contentsline {subsubsection}{\numberline {8.4.11}Biomass event mortality process}{95}{subsubsection.8.4.11}% 
-\contentsline {subsubsection}{\numberline {8.4.12}Holling mortality rate}{96}{subsubsection.8.4.12}% 
-\contentsline {subsubsection}{\numberline {8.4.13}Prey-suitability predation process}{97}{subsubsection.8.4.13}% 
-\contentsline {subsubsection}{\numberline {8.4.14}Category state by age process}{98}{subsubsection.8.4.14}% 
-\contentsline {subsubsection}{\numberline {8.4.15}Category transition process}{99}{subsubsection.8.4.15}% 
-\contentsline {subsubsection}{\numberline {8.4.16}Category transition rate process}{100}{subsubsection.8.4.16}% 
-\contentsline {subsubsection}{\numberline {8.4.17}Category transition by age process}{100}{subsubsection.8.4.17}% 
-\contentsline {subsubsection}{\numberline {8.4.18}Migration movement}{101}{subsubsection.8.4.18}% 
-\contentsline {subsubsection}{\numberline {8.4.19}Adjacent cell movement}{102}{subsubsection.8.4.19}% 
-\contentsline {subsubsection}{\numberline {8.4.20}Preference movement}{103}{subsubsection.8.4.20}% 
-\contentsline {subsubsection}{\numberline {8.4.21}Multi-threaded preference movement}{103}{subsubsection.8.4.21}% 
-\contentsline {subsection}{\numberline {8.5}Preference functions}{103}{subsection.8.5}% 
+\contentsline {subsubsection}{\numberline {8.4.7}Age mortality rate process}{92}{subsubsection.8.4.7}% 
+\contentsline {subsubsection}{\numberline {8.4.8}Constant exploitation rate process}{93}{subsubsection.8.4.8}% 
+\contentsline {subsubsection}{\numberline {8.4.9}Annual mortality rate process}{93}{subsubsection.8.4.9}% 
+\contentsline {subsubsection}{\numberline {8.4.10}Layer varying exploitation rate process}{94}{subsubsection.8.4.10}% 
+\contentsline {subsubsection}{\numberline {8.4.11}Event mortality process}{95}{subsubsection.8.4.11}% 
+\contentsline {subsubsection}{\numberline {8.4.12}Biomass event mortality process}{95}{subsubsection.8.4.12}% 
+\contentsline {subsubsection}{\numberline {8.4.13}Holling mortality rate}{96}{subsubsection.8.4.13}% 
+\contentsline {subsubsection}{\numberline {8.4.14}Prey-suitability predation process}{97}{subsubsection.8.4.14}% 
+\contentsline {subsubsection}{\numberline {8.4.15}Category state by age process}{99}{subsubsection.8.4.15}% 
+\contentsline {subsubsection}{\numberline {8.4.16}Category transition process}{99}{subsubsection.8.4.16}% 
+\contentsline {subsubsection}{\numberline {8.4.17}Category transition rate process}{100}{subsubsection.8.4.17}% 
+\contentsline {subsubsection}{\numberline {8.4.18}Category transition by age process}{101}{subsubsection.8.4.18}% 
+\contentsline {subsubsection}{\numberline {8.4.19}Migration movement}{102}{subsubsection.8.4.19}% 
+\contentsline {subsubsection}{\numberline {8.4.20}Adjacent cell movement}{102}{subsubsection.8.4.20}% 
+\contentsline {subsubsection}{\numberline {8.4.21}Preference movement}{103}{subsubsection.8.4.21}% 
+\contentsline {subsubsection}{\numberline {8.4.22}Multi-threaded preference movement}{103}{subsubsection.8.4.22}% 
+\contentsline {subsection}{\numberline {8.5}Preference functions}{104}{subsection.8.5}% 
 \contentsline {subsubsection}{\numberline {8.5.1}Constant}{104}{subsubsection.8.5.1}% 
-\contentsline {subsubsection}{\numberline {8.5.2}Normal}{104}{subsubsection.8.5.2}% 
+\contentsline {subsubsection}{\numberline {8.5.2}Normal}{105}{subsubsection.8.5.2}% 
 \contentsline {subsubsection}{\numberline {8.5.3}Double-normal}{105}{subsubsection.8.5.3}% 
-\contentsline {subsubsection}{\numberline {8.5.4}Logistic}{105}{subsubsection.8.5.4}% 
+\contentsline {subsubsection}{\numberline {8.5.4}Logistic}{106}{subsubsection.8.5.4}% 
 \contentsline {subsubsection}{\numberline {8.5.5}Inverse-logistic}{106}{subsubsection.8.5.5}% 
-\contentsline {subsubsection}{\numberline {8.5.6}Exponential}{106}{subsubsection.8.5.6}% 
+\contentsline {subsubsection}{\numberline {8.5.6}Exponential}{107}{subsubsection.8.5.6}% 
 \contentsline {subsubsection}{\numberline {8.5.7}Threshold}{107}{subsubsection.8.5.7}% 
 \contentsline {subsubsection}{\numberline {8.5.8}Categorical}{107}{subsubsection.8.5.8}% 
 \contentsline {subsubsection}{\numberline {8.5.9}Monotonic categorical}{108}{subsubsection.8.5.9}% 
 \contentsline {subsubsection}{\numberline {8.5.10}Gaussian copula}{108}{subsubsection.8.5.10}% 
-\contentsline {subsubsection}{\numberline {8.5.11}Gumbel copula}{108}{subsubsection.8.5.11}% 
+\contentsline {subsubsection}{\numberline {8.5.11}Gumbel copula}{109}{subsubsection.8.5.11}% 
 \contentsline {subsubsection}{\numberline {8.5.12}Frank copula}{109}{subsubsection.8.5.12}% 
-\contentsline {subsubsection}{\numberline {8.5.13}Independence copula}{109}{subsubsection.8.5.13}% 
-\contentsline {subsection}{\numberline {8.6}Probability Density Functions}{109}{subsection.8.6}% 
+\contentsline {subsubsection}{\numberline {8.5.13}Independence copula}{110}{subsubsection.8.5.13}% 
+\contentsline {subsection}{\numberline {8.6}Probability Density Functions}{110}{subsection.8.6}% 
 \contentsline {subsubsection}{\numberline {8.6.1}Normal}{110}{subsubsection.8.6.1}% 
 \contentsline {subsubsection}{\numberline {8.6.2}Lognormal}{110}{subsubsection.8.6.2}% 
-\contentsline {subsubsection}{\numberline {8.6.3}Exponential}{110}{subsubsection.8.6.3}% 
+\contentsline {subsubsection}{\numberline {8.6.3}Exponential}{111}{subsubsection.8.6.3}% 
 \contentsline {subsubsection}{\numberline {8.6.4}Uniform}{111}{subsubsection.8.6.4}% 
 \contentsline {subsection}{\numberline {8.7}Layers}{111}{subsection.8.7}% 
-\contentsline {subsubsection}{\numberline {8.7.1}Numeric}{111}{subsubsection.8.7.1}% 
+\contentsline {subsubsection}{\numberline {8.7.1}Numeric}{112}{subsubsection.8.7.1}% 
 \contentsline {subsubsection}{\numberline {8.7.2}Categorical}{112}{subsubsection.8.7.2}% 
 \contentsline {subsubsection}{\numberline {8.7.3}Distance}{112}{subsubsection.8.7.3}% 
 \contentsline {subsubsection}{\numberline {8.7.4}Haversine}{112}{subsubsection.8.7.4}% 
-\contentsline {subsubsection}{\numberline {8.7.5}Dijkstra}{112}{subsubsection.8.7.5}% 
-\contentsline {subsubsection}{\numberline {8.7.6}Haversine Dijkstra}{112}{subsubsection.8.7.6}% 
+\contentsline {subsubsection}{\numberline {8.7.5}Dijkstra}{113}{subsubsection.8.7.5}% 
+\contentsline {subsubsection}{\numberline {8.7.6}Haversine Dijkstra}{113}{subsubsection.8.7.6}% 
 \contentsline {subsubsection}{\numberline {8.7.7}Abundance}{113}{subsubsection.8.7.7}% 
 \contentsline {subsubsection}{\numberline {8.7.8}Biomass}{113}{subsubsection.8.7.8}% 
-\contentsline {subsubsection}{\numberline {8.7.9}Abundance-density}{113}{subsubsection.8.7.9}% 
-\contentsline {subsubsection}{\numberline {8.7.10}Biomass-density}{113}{subsubsection.8.7.10}% 
+\contentsline {subsubsection}{\numberline {8.7.9}Abundance-density}{114}{subsubsection.8.7.9}% 
+\contentsline {subsubsection}{\numberline {8.7.10}Biomass-density}{114}{subsubsection.8.7.10}% 
 \contentsline {subsubsection}{\numberline {8.7.11}Numeric meta-layer}{114}{subsubsection.8.7.11}% 
-\contentsline {subsubsection}{\numberline {8.7.12}Categorical meta-layer}{114}{subsubsection.8.7.12}% 
+\contentsline {subsubsection}{\numberline {8.7.12}Categorical meta-layer}{115}{subsubsection.8.7.12}% 
 \contentsline {subsubsection}{\numberline {8.7.13}Derived quantity layer}{115}{subsubsection.8.7.13}% 
-\contentsline {subsubsection}{\numberline {8.7.14}Derived quantity by cell layer}{115}{subsubsection.8.7.14}% 
+\contentsline {subsubsection}{\numberline {8.7.14}Derived quantity by cell layer}{116}{subsubsection.8.7.14}% 
 \contentsline {subsection}{\numberline {8.8}Derived quantities by cell}{116}{subsection.8.8}% 
 \contentsline {subsubsection}{\numberline {8.8.1}Abundance}{116}{subsubsection.8.8.1}% 
 \contentsline {subsubsection}{\numberline {8.8.2}Biomass}{117}{subsubsection.8.8.2}% 
-\contentsline {subsection}{\numberline {8.9}Derived quantities}{117}{subsection.8.9}% 
+\contentsline {subsection}{\numberline {8.9}Derived quantities}{118}{subsection.8.9}% 
 \contentsline {subsubsection}{\numberline {8.9.1}Abundance}{118}{subsubsection.8.9.1}% 
-\contentsline {subsubsection}{\numberline {8.9.2}Biomass}{118}{subsubsection.8.9.2}% 
+\contentsline {subsubsection}{\numberline {8.9.2}Biomass}{119}{subsubsection.8.9.2}% 
 \contentsline {subsection}{\numberline {8.10}Age-size relationship}{119}{subsection.8.10}% 
-\contentsline {subsubsection}{\numberline {8.10.1}None}{119}{subsubsection.8.10.1}% 
-\contentsline {subsubsection}{\numberline {8.10.2}von Bertalanffy}{119}{subsubsection.8.10.2}% 
-\contentsline {subsubsection}{\numberline {8.10.3}Schnute}{120}{subsubsection.8.10.3}% 
+\contentsline {subsubsection}{\numberline {8.10.1}None}{120}{subsubsection.8.10.1}% 
+\contentsline {subsubsection}{\numberline {8.10.2}von Bertalanffy}{120}{subsubsection.8.10.2}% 
+\contentsline {subsubsection}{\numberline {8.10.3}Schnute}{121}{subsubsection.8.10.3}% 
 \contentsline {subsubsection}{\numberline {8.10.4}von Bertalanffy k-at-age}{122}{subsubsection.8.10.4}% 
 \contentsline {subsubsection}{\numberline {8.10.5}mean size-at-age}{123}{subsubsection.8.10.5}% 
-\contentsline {subsection}{\numberline {8.11}Size-weight}{123}{subsection.8.11}% 
-\contentsline {subsubsection}{\numberline {8.11.1}None}{123}{subsubsection.8.11.1}% 
+\contentsline {subsection}{\numberline {8.11}Size-weight}{124}{subsection.8.11}% 
+\contentsline {subsubsection}{\numberline {8.11.1}None}{124}{subsubsection.8.11.1}% 
 \contentsline {subsubsection}{\numberline {8.11.2}Basic}{124}{subsubsection.8.11.2}% 
 \contentsline {subsection}{\numberline {8.12}Selectivities}{124}{subsection.8.12}% 
-\contentsline {subsubsection}{\numberline {8.12.1}Constant}{124}{subsubsection.8.12.1}% 
+\contentsline {subsubsection}{\numberline {8.12.1}Constant}{125}{subsubsection.8.12.1}% 
 \contentsline {subsubsection}{\numberline {8.12.2}Knife-edge}{125}{subsubsection.8.12.2}% 
 \contentsline {subsubsection}{\numberline {8.12.3}All-values}{125}{subsubsection.8.12.3}% 
 \contentsline {subsubsection}{\numberline {8.12.4}All-values-bounded}{125}{subsubsection.8.12.4}% 
-\contentsline {subsubsection}{\numberline {8.12.5}Increasing}{125}{subsubsection.8.12.5}% 
+\contentsline {subsubsection}{\numberline {8.12.5}Increasing}{126}{subsubsection.8.12.5}% 
 \contentsline {subsubsection}{\numberline {8.12.6}Logistic}{126}{subsubsection.8.12.6}% 
-\contentsline {subsubsection}{\numberline {8.12.7}InverseLogistic}{126}{subsubsection.8.12.7}% 
+\contentsline {subsubsection}{\numberline {8.12.7}InverseLogistic}{127}{subsubsection.8.12.7}% 
 \contentsline {subsubsection}{\numberline {8.12.8}Logistic producing}{127}{subsubsection.8.12.8}% 
-\contentsline {subsubsection}{\numberline {8.12.9}Double-normal}{127}{subsubsection.8.12.9}% 
+\contentsline {subsubsection}{\numberline {8.12.9}Double-normal}{128}{subsubsection.8.12.9}% 
 \contentsline {subsubsection}{\numberline {8.12.10}Double-exponential}{128}{subsubsection.8.12.10}% 
-\contentsline {subsubsection}{\numberline {8.12.11}Spline}{128}{subsubsection.8.12.11}% 
+\contentsline {subsubsection}{\numberline {8.12.11}Spline}{129}{subsubsection.8.12.11}% 
 \contentsline {section}{\numberline {9}Estimation command and subcommand syntax}{131}{section.9}% 
 \contentsline {subsection}{\numberline {9.1}Estimation methods}{131}{subsection.9.1}% 
 \contentsline {subsection}{\numberline {9.2}Point estimation}{131}{subsection.9.2}% 

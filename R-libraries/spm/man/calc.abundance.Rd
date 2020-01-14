@@ -2,7 +2,7 @@
 % Please edit documentation in R/calc.abundance.R
 \name{calc.abundance}
 \alias{calc.abundance}
-\title{Generate a multivariate uniform distribution based on the bounds for the extimated parameters}
+\title{Generate a multivariate uniform distribution based on the bounds for the estimated parameters}
 \usage{
 calc.abundance(data, categories = NULL, ages = NULL, total = T)
 }
@@ -16,7 +16,7 @@ calc.abundance(data, categories = NULL, ages = NULL, total = T)
 \item{total}{If true, then sum over selected categories and ages. Default = TRUE}
 }
 \description{
-Generate a multivariate uniform distribution based on the bounds for the extimated parameters
+Generate a multivariate uniform distribution based on the bounds for the estimated parameters
 }
 \author{
 Alistair Dunn

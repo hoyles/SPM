@@ -11,18 +11,21 @@
 #include "CMCMCFactory.h"
 #include "../CMCMCManager.h"
 #include "../../Helpers/CError.h"
-#include "../Children/CIndependenceMetropolis.h"
+#include "../Children/CMHMCMC.h"
+#include "../Children/CHMC.h"
 #include "../Children/CKthohr.h"
 
-
-/**
- *
- */
+//**********************************************************************
+// 
+// 
+//**********************************************************************
 CMCMC* CMCMCFactory::buildMCMC(const string& type, bool registerWithManager) {
   CMCMC *mcmc = 0;
 
   if (type == "" || type == PARAM_METROPOLIS_HASTINGS)
-    mcmc = new CIndependenceMetropolis();
+    mcmc = new CMHMCMC();
+  else if (type == PARAM_HAMILTONIAN_MONTE_CARLO)
+    mcmc = new CHMC();
   else if (type == PARAM_KTHOHR)
     mcmc = new CKthohr();
   else

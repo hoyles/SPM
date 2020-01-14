@@ -29,10 +29,10 @@ function(lines, from = -1, to = -1, contains = "", starts.with = "", clip.to = "
     }
   }
   if(contains != "") {
-    result <- result[spm.regexpr(contains, result) > 0]
+    result <- result[regexpr(contains, result) > 0]
   }
   if(starts.with != "") {
-    result <- result[spm.regexpr(paste("^", starts.with, sep = ""), result) > 0]
+    result <- result[regexpr(paste("^", starts.with, sep = ""), result) > 0]
   }
   return(result)
 }

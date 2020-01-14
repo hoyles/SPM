@@ -32,7 +32,6 @@
 #include "../Helpers/ForEach.h"
 #include "../InitializationPhases/Factory/CInitializationPhaseFactory.h"
 #include "../Layers/Factory/CLayerFactory.h"
-#include "../MCMC/CMCMC.h"
 #include "../MCMC/Factory/CMCMCFactory.h"
 #include "../Minimizers/CMinimizerManager.h"
 #include "../Minimizers/Factory/CMinimizerFactory.h"
@@ -61,6 +60,7 @@ using std::endl;
 CConfigurationLoader::CConfigurationLoader() {
   bModelHasBeenDefined = false;
   bEstimationHasBeenDefined = false;
+  bMCMCHasBeenDefined = false;
 }
 
 //**********************************************************************
@@ -166,9 +166,12 @@ void CConfigurationLoader::processSection() {
       pBaseObject = CLayerFactory::buildLayer(sType);
     else if (sSection == PARAM_MINIMIZER)
       pBaseObject = CMinimizerFactory::buildMinimizer(sType);
-    else if (sSection == PARAM_MCMC)
+    else if (sSection == PARAM_MCMC) {
+      if(bMCMCHasBeenDefined) 
+        CError::error("Command can only be declared once in the config file");
       pBaseObject = CMCMCFactory::buildMCMC(sType);
-    else if (sSection == PARAM_OBSERVATION)
+      bMCMCHasBeenDefined = true;
+    } else if (sSection == PARAM_OBSERVATION)
       pBaseObject = CObservationFactory::buildObservation(sType);
     else if (sSection == PARAM_PENALTY)
       pBaseObject = CPenaltyFactory::buildPenalty(sType);

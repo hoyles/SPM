@@ -5,10 +5,12 @@ In SPM, but not in manual
   1000
   age_index
   ages
+  algorithm
   area
   b0_value
   binomial
   binomial_approx
+  burn_in
   category_index
   clayton_copula
   column
@@ -26,9 +28,11 @@ In SPM, but not in manual
   flagged_penalties
   function
   gamma
+  hamiltonian_monte_carlo
   height
   index
   kruger_spline
+  kthohr
   label
   lambda_hat
   layer_height

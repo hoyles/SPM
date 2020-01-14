@@ -16,6 +16,7 @@ tolerance 0.0002
 covariance false
 
 @mcmc
+type metropolis_hastings
 start 0
 length 600000
 keep 500
@@ -37,26 +38,22 @@ upper_bound  1000000
 q 0.0001
 
 # ESTIMATION PARAMETERS
-@estimate
-parameter catchability[CPUEq].q
+@estimate catchability[CPUEq].q
 lower_bound 1e-10
 upper_bound 1e-1
 type uniform
 
-@estimate
-parameter process[BHrecruitment].r0
+@estimate process[BHrecruitment].r0
 lower_bound 1e4
 upper_bound 1e7
 type uniform
 
-@estimate
-parameter selectivity[FishingSel].a50
+@estimate selectivity[FishingSel].a50
 lower_bound 1
 upper_bound 20
 type uniform
 
-@estimate
-parameter selectivity[FishingSel].ato95
+@estimate selectivity[FishingSel].ato95
 lower_bound 0.01
 upper_bound 50
 type uniform

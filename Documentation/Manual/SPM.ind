@@ -9,13 +9,14 @@
   \item Abundance layers, \hyperpage{18}
   \item Abundance or biomass observations, \hyperpage{74}
   \item Abundance-density layers, \hyperpage{18}
-  \item Adjacent cell movement, \hyperpage{23}, \hyperpage{39}
+  \item Adjacent cell movement, \hyperpage{23}, \hyperpage{40}
+  \item Age mortality, \hyperpage{30}
   \item Age-size relationship, \hyperpage{119}
   \item Ageing, \hyperpage{23}, \hyperpage{28}
   \item Ageing error, \hyperpage{78}
   \item Annual cycle, \hyperpage{3}, \hyperpage{13}, \hyperpage{20}, 
 		\hyperpage{23}
-  \item Annual mortality, \hyperpage{30}
+  \item Annual mortality, \hyperpage{31}
   \item Available reports, \hyperpage{153}
 
   \indexspace
@@ -40,14 +41,14 @@
   \item CASAL, \hyperpage{4}
   \item Categorical layers, \hyperpage{16}
   \item Categorical meta-layers, \hyperpage{20}
-  \item Categorical preference function, \hyperpage{42}
+  \item Categorical preference function, \hyperpage{43}
   \item Category state, \hyperpage{35}
   \item Category state by age, \hyperpage{35}
   \item Category state by age process, \hyperpage{35}
   \item Category transition, \hyperpage{23}, \hyperpage{36, 37}
   \item Category transition by age process, \hyperpage{37}
   \item Category transition process, \hyperpage{36}
-  \item Category transition rate process, \hyperpage{36}
+  \item Category transition rate process, \hyperpage{37}
   \item Cell area, \hyperpage{14}
   \item Citation, \hyperpage{1}
   \item Citing \SPM, \hyperpage{1}
@@ -56,7 +57,7 @@
     \subitem  age\_size, \hyperpage{119}, \hyperpage{194}
     \subitem  ageing\_error, \hyperpage{151}, \hyperpage{202}
     \subitem  catchability, \hyperpage{138}, \hyperpage{198}
-    \subitem  derived\_quantity, \hyperpage{117}, \hyperpage{194}
+    \subitem  derived\_quantity, \hyperpage{118}, \hyperpage{194}
     \subitem  derived\_quantity\_by\_cell, \hyperpage{116}, 
 		\hyperpage{193}
     \subitem  estimate, \hyperpage{135}, \hyperpage{198}
@@ -64,7 +65,7 @@
     \subitem  include, \hyperpage{165}, \hyperpage{205}
     \subitem  Include files, \hyperpage{11}
     \subitem  initialisation\_phase, \hyperpage{86}, \hyperpage{185}
-    \subitem  layer, \hyperpage{111}, \hyperpage{192}
+    \subitem  layer, \hyperpage{112}, \hyperpage{192}
     \subitem  mcmc, \hyperpage{133}, \hyperpage{197}
     \subitem  minimiser, \hyperpage{131}, \hyperpage{197}
     \subitem  model, \hyperpage{85}, \hyperpage{185}
@@ -75,8 +76,8 @@
     \subitem  process, \hyperpage{88}, \hyperpage{185}
     \subitem  profile, \hyperpage{135}, \hyperpage{198}
     \subitem  report, \hyperpage{153}, \hyperpage{202}
-    \subitem  selectivity, \hyperpage{124}, \hyperpage{195}
-    \subitem  size\_weight, \hyperpage{123}, \hyperpage{195}
+    \subitem  selectivity, \hyperpage{125}, \hyperpage{195}
+    \subitem  size\_weight, \hyperpage{124}, \hyperpage{195}
     \subitem  time\_step, \hyperpage{87}, \hyperpage{185}
   \item Command block format, \hyperpage{11}
   \item Command line arguments, \hyperpage{7}, \hyperpage{9}
@@ -91,7 +92,7 @@
   \item Constant preference function, \hyperpage{42}
   \item Constant Recruitment, \hyperpage{25}
   \item Convergence failure, \hyperpage{56}
-  \item Copulas, \hyperpage{43}
+  \item Copulas, \hyperpage{44}
   \item Correlation matrix, \hyperpage{57}
   \item Covariance matrix, \hyperpage{55}, \hyperpage{57}
   \item Covariate layers, \hyperpage{16}
@@ -102,8 +103,8 @@
   \item Defining catchability constants, \hyperpage{138}
   \item Defining penalties, \hyperpage{138}
   \item Density-dependent prey-suitability, \hyperpage{33}
-  \item Derived quantities, \hyperpage{3}, \hyperpage{45}, 
-		\hyperpage{117}
+  \item Derived quantities, \hyperpage{3}, \hyperpage{46}, 
+		\hyperpage{118}
   \item Derived quantities by cell, \hyperpage{3}, \hyperpage{46}, 
 		\hyperpage{116}
   \item Derived quantity by cell layers, \hyperpage{19}
@@ -140,12 +141,12 @@
     \subitem  Example 2, \hyperpage{171}
   \item Exit status value, \hyperpage{12}
   \item Exponential density function, \hyperpage{44}
-  \item Exponential preference function, \hyperpage{42}
+  \item Exponential preference function, \hyperpage{43}
 
   \indexspace
 
   \item Finite differences minimiser, \hyperpage{2}, \hyperpage{56}
-  \item Frank copula, \hyperpage{44}
+  \item Frank copula, \hyperpage{45}
 
   \indexspace
 
@@ -164,7 +165,7 @@
 
   \item Include an external file, \hyperpage{165}, \hyperpage{205}
   \item Including external files, \hyperpage{8}
-  \item Independence copula, \hyperpage{44}
+  \item Independence copula, \hyperpage{45}
   \item Initialisation, \hyperpage{13}, \hyperpage{20}, \hyperpage{86}
     \subitem phases, \hyperpage{20}
   \item Input configuration file, \hyperpage{4}, \hyperpage{7}
@@ -174,7 +175,7 @@
 
   \indexspace
 
-  \item Layer varying exploitation rate, \hyperpage{30}
+  \item Layer varying exploitation rate, \hyperpage{31}
   \item Layers, \hyperpage{15}, \hyperpage{111}
   \item Layers 
     \subitem  the base layer, \hyperpage{15}
@@ -196,11 +197,11 @@
 
   \item Markov Chain Monte Carlo (MCMC), \hyperpage{55}, \hyperpage{58}, 
 		\hyperpage{133}
-  \item Maximum exploitation rate, \hyperpage{31, 32}, \hyperpage{34}
+  \item Maximum exploitation rate, \hyperpage{32--34}
   \item Maximum posterior density estimate (MPD), \hyperpage{55}
   \item Maximum size of the spatial grid, \hyperpage{13}
   \item MCMC, \hyperpage{55}, \hyperpage{58}
-  \item mean size-at-age growth curve, \hyperpage{47}
+  \item mean size-at-age growth curve, \hyperpage{48}
   \item Meta-layers, \hyperpage{19}
   \item Microsoft Windows, \hyperpage{1, 2}, \hyperpage{4}, 
 		\hyperpage{7}
@@ -222,12 +223,12 @@
   \item Model years, \hyperpage{22}
   \item Monotonic categorical preference function, \hyperpage{43}
   \item Mortality, \hyperpage{23}, \hyperpage{29}
-  \item Movement, \hyperpage{23}, \hyperpage{38}
+  \item Movement, \hyperpage{23}, \hyperpage{39}
   \item Movement 
     \subitem  Adjacent cell movement, \hyperpage{23}
     \subitem  Migration, \hyperpage{23}
     \subitem  Preference movement, \hyperpage{23}
-  \item Movement processes, \hyperpage{23}, \hyperpage{38}
+  \item Movement processes, \hyperpage{23}, \hyperpage{39}
   \item MPD (Maximum posterior density estimate), \hyperpage{55}
   \item Multi-phase iteration, \hyperpage{21}
   \item Multi-threaded CPU process, \hyperpage{41}
@@ -239,7 +240,7 @@
 
   \item Necessary files, \hyperpage{2}
   \item None, \hyperpage{24}
-  \item Normal density function, \hyperpage{43}
+  \item Normal density function, \hyperpage{44}
   \item Normal likelihood 
     \subitem  abundance, \hyperpage{75}
     \subitem  biomass, \hyperpage{75}
@@ -268,19 +269,19 @@
   \item Population section, \hyperpage{4}, \hyperpage{13}
   \item Population structure, \hyperpage{14}
   \item Posterior profiles, \hyperpage{57}
-  \item Preference function, \hyperpage{40}, \hyperpage{42}
+  \item Preference function, \hyperpage{41, 42}
   \item Preference function 
-    \subitem  Categorical, \hyperpage{42}
+    \subitem  Categorical, \hyperpage{43}
     \subitem  Constant, \hyperpage{42}
     \subitem  Double-Normal, \hyperpage{42}
-    \subitem  Exponential, \hyperpage{42}
+    \subitem  Exponential, \hyperpage{43}
     \subitem  Inverse-Logistic, \hyperpage{42}
     \subitem  Logistic, \hyperpage{42}
     \subitem  Monotonic categorical, \hyperpage{43}
     \subitem  Normal, \hyperpage{42}
-    \subitem  Threshold, \hyperpage{42}
-  \item Preference functions, \hyperpage{103}
-  \item Preference movement, \hyperpage{23}, \hyperpage{40}
+    \subitem  Threshold, \hyperpage{43}
+  \item Preference functions, \hyperpage{104}
+  \item Preference movement, \hyperpage{23}, \hyperpage{41}
   \item Print a derived view via a categorical layer, \hyperpage{83}
   \item Print a preference function summary, \hyperpage{82}
   \item Print a process summary, \hyperpage{82}
@@ -316,8 +317,8 @@
     \subitem  Normal, \hyperpage{60}
     \subitem  Uniform, \hyperpage{60}
     \subitem  Uniform-log, \hyperpage{60}
-  \item Probability Density Functions, \hyperpage{109}
-  \item Probability Distribution Functions (PDF), \hyperpage{43}
+  \item Probability Density Functions, \hyperpage{110}
+  \item Probability Distribution Functions (PDF), \hyperpage{44}
   \item Process error, \hyperpage{77}
   \item Processes, \hyperpage{3, 4}, \hyperpage{23}, \hyperpage{87}
   \item Profiles, \hyperpage{55}, \hyperpage{135}
@@ -388,13 +389,13 @@
   \indexspace
 
   \item Schnute growth curve, \hyperpage{47}
-  \item Selectivities, \hyperpage{48}, \hyperpage{124}
+  \item Selectivities, \hyperpage{49}, \hyperpage{124}
     \subitem All-values, \hyperpage{50}
     \subitem All-values-bounded, \hyperpage{50}
-    \subitem Constant, \hyperpage{49}
-    \subitem Double-exponential, \hyperpage{52}
+    \subitem Constant, \hyperpage{50}
+    \subitem Double-exponential, \hyperpage{53}
     \subitem Double-normal, \hyperpage{52}
-    \subitem Increasing, \hyperpage{50}
+    \subitem Increasing, \hyperpage{51}
     \subitem Inverse-logistic, \hyperpage{51}
     \subitem Knife-edge, \hyperpage{50}
     \subitem Logistic, \hyperpage{51}
@@ -403,8 +404,8 @@
   \item Setting the number of threads, \hyperpage{9}
   \item Simulating observations, \hyperpage{78}
   \item Single-threaded CPU process, \hyperpage{41}
-  \item Size-age relationship, \hyperpage{46}
-  \item Size-weight, \hyperpage{123}
+  \item Size-age relationship, \hyperpage{47}
+  \item Size-weight, \hyperpage{124}
   \item Size-weight relationship, \hyperpage{48}
   \item Software license, \hyperpage{1}
   \item Spatial structure, \hyperpage{13}
@@ -430,7 +431,7 @@
   \item Threads
     \subitem preference functions, \hyperpage{41}
     \subitem setting, \hyperpage{9}
-  \item Threshold preference function, \hyperpage{42}
+  \item Threshold preference function, \hyperpage{43}
   \item Time sequences, \hyperpage{20}
   \item Time-steps, \hyperpage{3}, \hyperpage{22}, \hyperpage{87}
   \item Total preference function, \hyperpage{41}
@@ -447,6 +448,6 @@
 
   \item Version number, \hyperpage{1}
   \item von Bertalanffy growth curve, \hyperpage{47}
-  \item von Bertalanffy k-at-age growth curve, \hyperpage{47}
+  \item von Bertalanffy k-at-age growth curve, \hyperpage{48}
 
 \end{theindex}
