@@ -13,7 +13,6 @@
 #include "../../Helpers/CError.h"
 #include "../Children/CMHMCMC.h"
 #include "../Children/CHMC.h"
-#include "../Children/CKthohr.h"
 
 //**********************************************************************
 // 
@@ -24,10 +23,8 @@ CMCMC* CMCMCFactory::buildMCMC(const string& type, bool registerWithManager) {
 
   if (type == "" || type == PARAM_METROPOLIS_HASTINGS)
     mcmc = new CMHMCMC();
-  else if (type == PARAM_HAMILTONIAN_MONTE_CARLO)
-    mcmc = new CHMC();
-  else if (type == PARAM_KTHOHR)
-    mcmc = new CKthohr();
+//  else if (type == PARAM_HAMILTONIAN_MONTE_CARLO)
+//    mcmc = new CHMC();
   else
     CError::errorUnknown(PARAM_MCMC, type);
 

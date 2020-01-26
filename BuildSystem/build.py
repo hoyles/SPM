@@ -38,8 +38,6 @@ def start():
 	Globals.boost_source_directory_ = os.path.realpath(Globals.root_directory_ + "/Boost")
 	Globals.build_directory_ = os.path.realpath(Globals.root_directory_ + "/Build/" + Globals.operating_system_ )
 	Globals.boost_directory_ = os.path.realpath(Globals.build_directory_ + "/Boost")
-	Globals.kthohr_directory_ = os.path.realpath(Globals.build_directory_ + "/kthohr")
-	Globals.kthohr_source_directory_ = os.path.realpath(Globals.root_directory_ + "/kthohr")
 	
 	print('--> Directory: ' + Globals.root_directory_)
 
@@ -58,9 +56,6 @@ def start():
 		return archive_builder.start()
 	elif build_target == "boost":
 		code_builder = Boost()
-		return code_builder.start()
-	elif build_target == "kthohr":
-		code_builder = Kthohr()
 		return code_builder.start()
 	elif build_target == "documentation":
 		documentation_builder = Documentation()
