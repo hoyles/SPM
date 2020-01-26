@@ -18,7 +18,6 @@ SET(OPTI_NAME spm)
 IF (WIN32)
   INCLUDE_DIRECTORIES("${CMAKE_BINARY_DIR}/Boost/include/")
   LINK_DIRECTORIES("${CMAKE_BINARY_DIR}/Boost/lib")
-  LINK_DIRECTORIES("${CMAKE_BINARY_DIR}/kthohr/lib")
   
   # Generic Build Settings
   SET(LINK_OPTIONS "-static icon.o")
@@ -44,7 +43,7 @@ IF (WIN32)
   SET(TEST_LIBRARIES boost_unit_test_framework-mgw81-mt-s-x64-1_71)
   
 ELSE (WIN32)
-  SET(BOOST_LIBS "${CMAKE_BINARY_DIR}/Boost/lib ${CMAKE_BINARY_DIR}/kthohr/lib")
+  SET(BOOST_LIBS "${CMAKE_BINARY_DIR}/Boost/lib")
   SET(BOOST_HEADERS "${CMAKE_BINARY_DIR}/Boost/include/")
   SET(LINK_OPTIONS "-L ${BOOST_LIBS} -lstdc++ -Wl,--no-as-needed -ldl")
   SET(COMPILE_OPTIONS_LIBR "-DBOOST_THREAD_USE_LIB=1 -O0 -g3 -ggdb -Wall -Werror -fmessage-length=0 -fopenmp -Wno-unused-local-typedefs -I ${BOOST_HEADERS} -std=c++17 ")
