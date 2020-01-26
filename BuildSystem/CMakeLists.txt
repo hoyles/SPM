@@ -35,10 +35,6 @@ IF (WIN32)
     boost_thread-mgw81-mt-s-x64-1_71
     boost_program_options-mgw81-mt-s-x64-1_71
     boost_chrono-mgw81-mt-s-x64-1_71
-    lapack
-    blas    
-    gfortran
-    quadmath
   )
   SET(TEST_LIBRARIES boost_unit_test_framework-mgw81-mt-s-x64-1_71)
   
@@ -57,10 +53,6 @@ ELSE (WIN32)
     boost_program_options    
     gomp
     pthread
-    lapack
-    blas
-    quadmath
-    gfortran
     )
   SET(TEST_LIBRARIES boost_unit_test_framework)
 ENDIF (WIN32)
