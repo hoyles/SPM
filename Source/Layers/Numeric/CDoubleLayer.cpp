@@ -116,7 +116,7 @@ void CDoubleLayer::validate() {
       if (vData[i] == PARAM_DATA)
         continue;
 
-      // Read data and if enough on theis row, then start filling out the next row
+      // Read data and if enough on this row, then start filling out the next row
       if (iCol >= iWidth) {
         iCol = 0;
         iRow++;

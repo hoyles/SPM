@@ -135,7 +135,7 @@ void CInitializationPhase::build() {
 
 //**********************************************************************
 // void CInitializationPhase::rebuild()
-// Rebuild this Initilization phase
+// Rebuild this Initialisation phase
 //**********************************************************************
 void CInitializationPhase::rebuild() {
   try {

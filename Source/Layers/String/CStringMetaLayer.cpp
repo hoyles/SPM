@@ -148,7 +148,7 @@ string CStringMetaLayer::getValue(int RowIndex, int ColIndex) {
     string sValue = "";
     //If initialisation phase, return appropriate layer
     if ( pRuntimeController->getCurrentState() == STATE_INITIALIZATION ) {
-      int iThisPhase = pInitializationPhaseManager->getLastExecutedInitializationPhase() + 1;
+      int iThisPhase = pInitializationPhaseManager->getLastExecutedInitializationPhase();
       sValue = vPhaseLayers[iThisPhase]->getValue(RowIndex, ColIndex);
     } else {
       int iThisYear = pTimeStepManager->getCurrentYear();

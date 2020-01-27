@@ -244,7 +244,7 @@ void CPreferenceMovementProcess::execute() {
                   dCurrent /= dRunningTotal;
                 }
 
-                // Get Current Number of Fish, multipled by proportion to move
+                // Get Current Number of Fish, multiplied by proportion to move
                 dCurrent *= dProportion * pBaseSquare->getValue(Category, m);
 
                 // Move

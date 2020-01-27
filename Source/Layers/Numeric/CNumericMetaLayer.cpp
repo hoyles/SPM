@@ -70,7 +70,7 @@ void CNumericMetaLayer::validate() {
     if (vYears.size() != vLayerNames.size())
       CError::errorListSameSize(PARAM_YEARS, PARAM_LAYERS);
 
-    // determine if initalisation defined, and check
+    // determine if initialisation defined, and check
     if (pParameterList->hasParameter(PARAM_INITIALIZATION_PHASES)) {
       if (pParameterList->hasParameter(PARAM_LAYERS)) {
         pParameterList->fillVector(vInitialisationPhases, PARAM_INITIALIZATION_PHASES);
@@ -145,11 +145,10 @@ void CNumericMetaLayer::build() {
 //**********************************************************************
 double CNumericMetaLayer::getValue(int RowIndex, int ColIndex, int TargetRow, int TargetCol) {
   try {
-
     double dValue = -1;
     //If initialisation phase, return appropriate layer
     if ( pRuntimeController->getCurrentState() == STATE_INITIALIZATION ) {
-      int iThisPhase = pInitializationPhaseManager->getLastExecutedInitializationPhase() + 1;
+      int iThisPhase = pInitializationPhaseManager->getLastExecutedInitializationPhase();
       dValue = vPhaseLayers[iThisPhase]->getValue(RowIndex, ColIndex, TargetRow, TargetCol);
     } else {
       int iThisYear = pTimeStepManager->getCurrentYear();
