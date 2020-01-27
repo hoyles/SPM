@@ -29,6 +29,7 @@ CAnnualMortalityRateProcess::CAnnualMortalityRateProcess() {
   // Variables
   pLayer = 0;
   sType = PARAM_ANNUAL_MORTALITY_RATE;
+  bRequiresMerge = false;
 
   // Register user allowed variables
   pParameterList->registerAllowed(PARAM_YEARS);
@@ -142,8 +143,6 @@ void CAnnualMortalityRateProcess::execute() {
         if (!pBaseSquare->getEnabled())
           continue;
 
-        pDiff       = pWorld->getDifferenceSquare(i, j);
-
         double dLayerValue = 1.0;
         if (pLayer != 0)
           dLayerValue = pLayer->getValue(i, j);
@@ -153,7 +152,7 @@ void CAnnualMortalityRateProcess::execute() {
             double dCurrent = pBaseSquare->getValue(vCategoryIndex[k], m);
             dCurrent *= ( 1.0 - exp(-dM * dLayerValue) ) * vSelectivityIndex[k]->getResult(m);
 
-            pDiff->subValue(vCategoryIndex[k], m, dCurrent);
+            pBaseSquare->subValue(vCategoryIndex[k], m, dCurrent);
           } // for m
         } // for k
       } // for j

@@ -224,7 +224,7 @@
 \contentsline {subsection}{\numberline {10.1}Observation types}{139}{subsection.10.1}% 
 \contentsline {subsubsection}{\numberline {10.1.1}Proportions at age}{139}{subsubsection.10.1.1}% 
 \contentsline {subsubsection}{\numberline {10.1.2}Proportions by category}{141}{subsubsection.10.1.2}% 
-\contentsline {subsubsection}{\numberline {10.1.3}Proportions at age}{144}{subsubsection.10.1.3}% 
+\contentsline {subsubsection}{\numberline {10.1.3}Proportions at length}{144}{subsubsection.10.1.3}% 
 \contentsline {subsubsection}{\numberline {10.1.4}Abundance}{146}{subsubsection.10.1.4}% 
 \contentsline {subsubsection}{\numberline {10.1.5}Biomass}{147}{subsubsection.10.1.5}% 
 \contentsline {subsubsection}{\numberline {10.1.6}Presence}{149}{subsubsection.10.1.6}% 

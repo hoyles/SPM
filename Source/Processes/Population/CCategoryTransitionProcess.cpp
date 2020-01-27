@@ -177,7 +177,7 @@ void CCategoryTransitionProcess::execute() {
         if (!pBaseSquare->getEnabled())
           continue;
 
-        pDiff       = pWorld->getDifferenceSquare(i, j);
+        pDiff = pWorld->getDifferenceSquare(i, j);
 
         // Get Layer Value
         dN = pLayer->getValue(i, j);

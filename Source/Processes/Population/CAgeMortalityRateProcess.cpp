@@ -162,9 +162,6 @@ void CAgeMortalityRateProcess::execute() {
         if (!pBaseSquare->getEnabled())
           continue;
 
-        // pDiff       = pWorld->getDifferenceSquare(i, j);
-        pDiff       = pWorld->getBaseSquare(i, j);
-
         // Loop Through Categories and Ages
         for (int k = 0; k < (int)vCategoryIndex.size(); ++k) {
           for (int l = 0; l < iBaseColCount; ++l) {
@@ -182,7 +179,7 @@ void CAgeMortalityRateProcess::execute() {
               dCurrent *= pLayer->getValue(i, j);
 
             // Do Add/Subs
-            pDiff->subValue( vCategoryIndex[k], l, dCurrent);
+            pBaseSquare->subValue( vCategoryIndex[k], l, dCurrent);
           }
         }
       }

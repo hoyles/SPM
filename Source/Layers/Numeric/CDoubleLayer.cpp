@@ -202,14 +202,15 @@ double CDoubleLayer::getLayerMax() {
 void CDoubleLayer::build() {
   try {
 
+    double dTotal = 0.0;
+    for (int i = 0; i < iHeight; ++i)
+      for (int j = 0; j < iWidth; ++j)
+        dTotal += pGrid[i][j];
+    if(CComparer::isZero(dTotal))
+      bIsZero = true;
+
     if (pParameterList->hasParameter(PARAM_RESCALE)) {
       // Rescale the layer to 0-1 range
-      double dTotal = 0.0;
-
-      for (int i = 0; i < iHeight; ++i)
-        for (int j = 0; j < iWidth; ++j)
-          dTotal += pGrid[i][j];
-
       if (!CComparer::isZero(dTotal)) {
         if (!CComparer::isEqual(dTotal, dRescale)) { // Only normalize if not already done.
           for (int i = 0; i < iHeight; ++i) {

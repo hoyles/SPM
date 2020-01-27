@@ -37,6 +37,7 @@ CEventMortalityProcess::CEventMortalityProcess() {
   // Variables
   pTimeStepManager = CTimeStepManager::Instance();
   sType = PARAM_EVENT_MORTALITY;
+  bRequiresMerge = false;
 
   // Register user allowed parameters
   pParameterList->registerAllowed(PARAM_CATEGORIES);
@@ -151,6 +152,10 @@ void CEventMortalityProcess::execute() {
     // No Match. Don't Execute
     if (!bYearMatch)
       return;
+    
+    // pLayer contains no positive values
+    if(pLayer->getIsZero())
+      return;
 
     // Base execute
     CProcess::execute();
@@ -163,7 +168,7 @@ void CEventMortalityProcess::execute() {
         if (!pBaseSquare->getEnabled())
           continue;
 
-        pDiff       = pWorld->getDifferenceSquare(i, j);
+        pDiff = pWorld->getBaseSquare(i, j);
 
         // Get Layer Value
         dCatch = pLayer->getValue(i, j);
@@ -192,7 +197,7 @@ void CEventMortalityProcess::execute() {
           dExploitation = 0.0;
         }
 
-        // Loop Through Categories & remove number based on calcuated exploitation rate
+        // Loop Through Categories & remove number based on calculated exploitation rate
         for (int k = 0; k < (int)vCategoryIndex.size(); ++k) {
           for (int l = 0; l < iBaseColCount; ++l) {
             // Get Amount to remove

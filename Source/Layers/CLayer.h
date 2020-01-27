@@ -26,12 +26,14 @@ public:
   virtual void              validate();
   string                    getLayerType() { return sType; };
   bool                      getIsStatic() { return bIsStatic; }
+  bool                      getIsZero() {return bIsZero; }
 
 protected:
   int                       iWidth;
   int                       iHeight;
   string                    sType;
   bool                      bIsStatic;
+  bool                      bIsZero;
 };
 
 #endif /*CLAYER_H_*/

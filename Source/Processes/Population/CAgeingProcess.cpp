@@ -83,7 +83,7 @@ void CAgeingProcess::execute() {
         if (!pBaseSquare->getEnabled())
           continue;
 
-        pDiff       = pWorld->getDifferenceSquare(i, j);
+        pDiff = pWorld->getDifferenceSquare(i, j);
 
         // Loop Through Categories and Ages (vPtr, k)
         vector<int>::iterator vPtr = vCategoryIndex.begin();

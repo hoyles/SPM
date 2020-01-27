@@ -130,8 +130,6 @@ void CCategoryTransitionRateProcess::execute() {
         if (!pBaseSquare->getEnabled())
           continue;
 
-//        pDiff = pWorld->getDifferenceSquare(i, j);
-
         for (int l = 0; l < iBaseColCount; ++l) {
           // Loop through vectors and make adjustment
           for (int k = 0; k < (int)vFromIndex.size(); ++k) {

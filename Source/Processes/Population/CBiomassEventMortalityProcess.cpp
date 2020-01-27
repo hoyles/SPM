@@ -154,6 +154,10 @@ void CBiomassEventMortalityProcess::execute() {
     if (!bYearMatch)
       return;
 
+    // pLayer contains no positive values
+    if(pLayer->getIsZero())
+      return;
+
     // Base execute
     CProcess::execute();
 
@@ -169,7 +173,6 @@ void CBiomassEventMortalityProcess::execute() {
 
         // Get Layer Value
         dCatch = pLayer->getValue(i, j);
-
         // Clear our Vulnerable Amount
         dVulnerable = 0.0;
 
@@ -195,12 +198,11 @@ void CBiomassEventMortalityProcess::execute() {
           dExploitation = 0.0;
         }
 
-        // Loop Through Categories & remove number based on calcuated exploitation rate
+        // Loop Through Categories & remove number based on calculated exploitation rate
         for (int k = 0; k < (int)vCategoryIndex.size(); ++k) {
           for (int l = 0; l < iBaseColCount; ++l) {
             // Get Amount to remove
-           dCurrent = pBaseSquare->getValue(vCategoryIndex[k],l) * vSelectivityIndex[k]->getResult(l) * dExploitation;
-
+            dCurrent = pBaseSquare->getValue(vCategoryIndex[k],l) * vSelectivityIndex[k]->getResult(l) * dExploitation;
             // If is Zero, Cont
             if (dCurrent <= 0.0)
               continue;

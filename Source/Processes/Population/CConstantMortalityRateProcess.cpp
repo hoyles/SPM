@@ -169,8 +169,7 @@ void CConstantMortalityRateProcess::execute() {
         if (!pBaseSquare->getEnabled())
           continue;
 
-        // pDiff       = pWorld->getDifferenceSquare(i, j);
-        pDiff       = pWorld->getBaseSquare(i, j);
+        pDiff = pWorld->getBaseSquare(i, j);
 
         // Loop Through Categories and Ages
         for (int k = 0; k < (int)vCategoryIndex.size(); ++k) {
