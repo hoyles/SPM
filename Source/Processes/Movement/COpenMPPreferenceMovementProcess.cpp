@@ -136,16 +136,16 @@ void COpenMPPreferenceMovementProcess::build() {
 
 
 //**********************************************************************
-// void CPreferenceMovementProcess::execute()
-// Execute the process
+// void CPreferenceMovementProcess::rebuild()
+// rebuild the process
 //**********************************************************************
 void COpenMPPreferenceMovementProcess::rebuild() {
+
   if (bIsStatic) {
     for (int i = (iWorldHeight-1); i >= 0; --i) {
       for (int j = (iWorldWidth-1); j >= 0; --j) {
         if (!pWorld->getBaseSquare(i, j)->getEnabled())
           continue;
-
         dRunningTotal = 0.0;
         for (int k = (iWorldHeight-1); k >= 0; --k) {
           for (int l = (iWorldWidth-1); l >= 0; --l) {
@@ -158,12 +158,10 @@ void COpenMPPreferenceMovementProcess::rebuild() {
                 dCurrent *= preferenceFunction->getResult(i, j, k, l);
               }
             }
-
             vPreferenceCache[i][j][k][l] = dCurrent;
             dRunningTotal += dCurrent;
           }
         }
-
         vRunningTotalCache[i][j] = dRunningTotal;
       }
     }
@@ -196,7 +194,7 @@ void COpenMPPreferenceMovementProcess::execute() {
         cache[i][a].assign(iWorldWidth, 0.0);
     }
 
-    #pragma omp parallel for collapse(2)
+    #pragma omp parallel for
     for (int i = (iWorldHeight-1); i >= 0; --i) {
       for (int j = (iWorldWidth-1); j >= 0; --j) {
 
@@ -205,7 +203,8 @@ void COpenMPPreferenceMovementProcess::execute() {
         if (!pBaseSquare->getEnabled())
           continue;
 
-        CWorldSquare* pDiff       = pWorld->getDifferenceSquare(i, j);
+        CWorldSquare* pDiff = pWorld->getDifferenceSquare(i, j);
+
         // Only rebuild the cache if we have too
         // Reset our Running Total (For Proportions)
         double dRunningTotal = 0.0;
@@ -226,7 +225,6 @@ void COpenMPPreferenceMovementProcess::execute() {
               } else {
                 dCurrent = 0.0;
               }
-
               cache[i][k][l] = dCurrent;
               dRunningTotal += dCurrent;
             }
