@@ -26,7 +26,7 @@ using std::cerr;
 using std::endl;
 
 //**********************************************************************
-// CPreferenceMovementProcess::CPreferenceMovementProcess()
+// COpenMPPreferenceMovementProcess::COpenMPPreferenceMovementProcess()
 // Default constructor
 //**********************************************************************
 COpenMPPreferenceMovementProcess::COpenMPPreferenceMovementProcess() {
@@ -43,7 +43,7 @@ COpenMPPreferenceMovementProcess::COpenMPPreferenceMovementProcess() {
 }
 
 //**********************************************************************
-// void CPreferenceMovementProcess::validate()
+// void COpenMPPreferenceMovementProcess::validate()
 // Validate the process
 //**********************************************************************
 void COpenMPPreferenceMovementProcess::validate() {
@@ -66,13 +66,13 @@ void COpenMPPreferenceMovementProcess::validate() {
       CError::errorGreaterThan(PARAM_PROPORTION, PARAM_ONE);
 
   } catch (string &Ex) {
-    Ex = "CPreferenceMovementProcess.validate(" + getLabel() + ")->" + Ex;
+    Ex = "COpenMPPreferenceMovementProcess.validate(" + getLabel() + ")->" + Ex;
     throw Ex;
   }
 }
 
 //**********************************************************************
-// void CPreferenceMovementProcess::build()
+// void COpenMPPreferenceMovementProcess::build()
 // Build the process
 //**********************************************************************
 void COpenMPPreferenceMovementProcess::build() {
@@ -128,15 +128,14 @@ void COpenMPPreferenceMovementProcess::build() {
     }
 
   } catch (string &Ex) {
-    cout << "EX: " << Ex;
-    Ex = "CPreferenceMovementProcess.build(" + getLabel() + ")->" + Ex;
+    Ex = "COpenMPPreferenceMovementProcess.build(" + getLabel() + ")->" + Ex;
     throw Ex;
   }
 }
 
 
 //**********************************************************************
-// void CPreferenceMovementProcess::rebuild()
+// void COpenMPPreferenceMovementProcess::rebuild()
 // rebuild the process
 //**********************************************************************
 void COpenMPPreferenceMovementProcess::rebuild() {
@@ -165,11 +164,13 @@ void COpenMPPreferenceMovementProcess::rebuild() {
         vRunningTotalCache[i][j] = dRunningTotal;
       }
     }
+  } else {
+    
   }
 }
 
 //**********************************************************************
-// void CPreferenceMovementProcess::execute()
+// void COpenMPPreferenceMovementProcess::execute()
 // Execute the process
 //**********************************************************************
 void COpenMPPreferenceMovementProcess::execute() {
@@ -180,21 +181,18 @@ void COpenMPPreferenceMovementProcess::execute() {
     // Loop World
     int procs = (omp_get_num_procs() * 2) - 1; // Default to number of cores less one
     int iMaxProcs = pConfig->getNumberOfThreads();
-    if ( iMaxProcs > 0 && iMaxProcs < procs ) procs = iMaxProcs;
-    if ( procs < 1) procs = 1;
+    if ( iMaxProcs > 0 && iMaxProcs < procs ) {
+      procs = iMaxProcs;
+      if ( procs > ( iWorldHeight * iWorldWidth ))
+        procs = ( iWorldHeight * iWorldWidth );
+    }
+    if ( procs < 1) 
+      procs = 1;
 
     omp_set_dynamic(0);
     omp_set_num_threads(procs);
 
-    vector<vector<vector<double>>> cache;
-    cache.assign(procs, vector<vector<double>>());
-    for (int i = 0; i < procs; ++i) {
-      cache[i].assign(iWorldHeight, vector<double>());
-      for (int a = 0; a < iWorldHeight; ++a)
-        cache[i][a].assign(iWorldWidth, 0.0);
-    }
-
-    #pragma omp parallel for
+    #pragma omp parallel for collapse (2)
     for (int i = (iWorldHeight-1); i >= 0; --i) {
       for (int j = (iWorldWidth-1); j >= 0; --j) {
 
@@ -209,7 +207,13 @@ void COpenMPPreferenceMovementProcess::execute() {
         // Reset our Running Total (For Proportions)
         double dRunningTotal = 0.0;
 
+        vector<vector<double>> cache;
+
         if (!bIsStatic) {
+         cache.assign(iWorldHeight, vector<double>());
+         for (int threads = 0; threads < iWorldHeight; ++threads) {
+           cache[threads].assign(iWorldWidth, 0.0);
+         }
           // Re-Loop Through World Generating Our Logit Layer
           for (int k = (iWorldHeight-1); k >= 0; --k) {
             for (int l = (iWorldWidth-1); l >= 0; --l) {
@@ -225,7 +229,7 @@ void COpenMPPreferenceMovementProcess::execute() {
               } else {
                 dCurrent = 0.0;
               }
-              cache[i][k][l] = dCurrent;
+              cache[k][l] = dCurrent;
               dRunningTotal += dCurrent;
             }
           }
@@ -249,7 +253,7 @@ void COpenMPPreferenceMovementProcess::execute() {
                 if (bIsStatic)
                   dCurrent = vPreferenceCache[i][j][k][l];
                 else
-                  dCurrent = cache[i][k][l];
+                  dCurrent = cache[k][l];
 
                 // if the amount is low, then don't bother moving
                 if (dCurrent <= TRUE_ZERO)
@@ -275,13 +279,13 @@ void COpenMPPreferenceMovementProcess::execute() {
     }
   } catch (string &Ex) {
     cout << "EX: " << Ex << endl;
-    Ex = "CPreferenceMovementProcess.execute(" + getLabel() + ")->" + Ex;
+    Ex = "COpenMPPreferenceMovementProcess.execute(" + getLabel() + ")->" + Ex;
     throw Ex;
   }
 }
 
 //**********************************************************************
-// CPreferenceMovementProcess::~CPreferenceMovementProcess()
+// COpenMPPreferenceMovementProcess::~COpenMPPreferenceMovementProcess()
 // Destructor
 //**********************************************************************
 COpenMPPreferenceMovementProcess::~COpenMPPreferenceMovementProcess() {

@@ -10,8 +10,8 @@ categories immature
 min_age 1
 max_age 5
 age_plus_group True
-initial_year 1994
-current_year 1996
+initial_year 1
+current_year 10
 cell_length 1
 time_steps One
 age_size none
@@ -41,20 +41,51 @@ age 1
 type numeric
 data 1
 
-@report 1994_TimeStep_One
+@report 1_TimeStep_One
 type partition
 time_step One
-years 1994
+years 1
 
-@report 1995_TimeStep_One
+@report 2_TimeStep_One
 type partition
 time_step One
-years 1995
+years 2
 
-@report 1996_TimeStep_One
+@report 3_TimeStep_One
 type partition
 time_step One
-years 1996
+years 3
+
+@report 4_TimeStep_One
+type partition
+time_step One
+years 4
+
+@report 5_TimeStep_One
+type partition
+time_step One
+years 5
+
+@report 6_TimeStep_One
+type partition
+time_step One
+years 6
+
+@report 7_TimeStep_One
+type partition
+time_step One
+years 7
+
+@report 8_TimeStep_One
+type partition
+time_step One
+years 8
+
+@report 9_TimeStep_One
+type partition
+time_step One
+years 9
+
 
 @report Objective_Score
 type objective_function

@@ -55,10 +55,6 @@ void CAgeingProcess::build() {
     // Call Our Base Build
     CProcess::build();
 
-    // We Remove 1 Because We Don't Touch Last Square
-    // This Is because of the age_plus concept
-    iBaseColCount--;
-
   } catch(string &Ex) {
     Ex = "CAgeingProcess.build(" + getLabel() + ")->" + Ex;
     throw Ex;
@@ -75,7 +71,6 @@ void CAgeingProcess::execute() {
 #endif
     // Base Execute
     CProcess::execute();
-
     // Loop through World Grid (i, j)
     for (int i = 0; i < iWorldHeight; ++i) {
       for (int j = 0; j < iWorldWidth; ++j) {
@@ -83,22 +78,23 @@ void CAgeingProcess::execute() {
         if (!pBaseSquare->getEnabled())
           continue;
 
-        pDiff = pWorld->getDifferenceSquare(i, j);
-
         // Loop Through Categories and Ages (vPtr, k)
         vector<int>::iterator vPtr = vCategoryIndex.begin();
         while (vPtr != vCategoryIndex.end()) {
-
-          for (int k = 0; k < iBaseColCount; ++k) {
-            dCurrent = pBaseSquare->getValue( (*vPtr), k);
-            if(CComparer::isZero(dCurrent))
-               continue;
-            pDiff->subValue( (*vPtr), k, dCurrent);
-            pDiff->addValue( (*vPtr), (k+1), dCurrent);
+          if( (iBaseColCount - 1) > 1 ) {
+            if(pBaseSquare->getAgePlus()) {
+              pBaseSquare->addValue((*vPtr), iBaseColCount-1, pBaseSquare->getValue((*vPtr), iBaseColCount-2));
+            } else {
+              pBaseSquare->setValue((*vPtr), iBaseColCount-1, pBaseSquare->getValue((*vPtr), iBaseColCount-2));
+            }
+            for (int k = (iBaseColCount - 2); k > 0; --k) {
+              pBaseSquare->setValue((*vPtr), k, pBaseSquare->getValue((*vPtr), k-1));
+            }
+            pBaseSquare->setValue((*vPtr), 0, 0.0);
+          } else {
+            if(!pBaseSquare->getAgePlus())
+              pBaseSquare->setValue((*vPtr), 0, 0.0);
           }
-
-          if (!pBaseSquare->getAgePlus())
-            pDiff->subValue( (*vPtr), iBaseColCount, pBaseSquare->getValue((*vPtr), iBaseColCount));
 
           vPtr++;
         }

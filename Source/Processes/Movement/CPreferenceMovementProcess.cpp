@@ -133,16 +133,16 @@ void CPreferenceMovementProcess::build() {
 
 
 //**********************************************************************
-// void CPreferenceMovementProcess::execute()
-// Execute the process
+// void CPreferenceMovementProcess::rebuild()
+// rebuild the process
 //**********************************************************************
 void CPreferenceMovementProcess::rebuild() {
+  
   if (bIsStatic) {
     for (int i = (iWorldHeight-1); i >= 0; --i) {
       for (int j = (iWorldWidth-1); j >= 0; --j) {
         if (!pWorld->getBaseSquare(i, j)->getEnabled())
           continue;
-
         dRunningTotal = 0.0;
         for (int k = (iWorldHeight-1); k >= 0; --k) {
           for (int l = (iWorldWidth-1); l >= 0; --l) {
@@ -155,12 +155,10 @@ void CPreferenceMovementProcess::rebuild() {
                 dCurrent *= preferenceFunction->getResult(i, j, k, l);
               }
             }
-
             vPreferenceCache[i][j][k][l] = dCurrent;
             dRunningTotal += dCurrent;
           }
         }
-
         vRunningTotalCache[i][j] = dRunningTotal;
       }
     }
