@@ -43,6 +43,7 @@ protected:
   Vector4D                      vPreferenceCache;
   vector<vector<double> >       vRunningTotalCache;
   bool                          bIsStatic;
+  int                           iProcs;
 };
 
 #endif /* COPENMPPREFERENCEMOVEMENTPROCESS_H_ */

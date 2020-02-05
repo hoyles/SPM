@@ -101,6 +101,16 @@ void COpenMPPreferenceMovementProcess::build() {
       pLayer->build();
     }
 
+    iProcs = (omp_get_num_procs() * 2) - 1; // Default to number of cores less one
+    int iMaxProcs = pConfig->getNumberOfThreads();
+    if ( (iMaxProcs > 1) && (iMaxProcs < iProcs) ) {
+      iProcs = iMaxProcs;
+    }
+    if ( iProcs > ( iWorldHeight * iWorldWidth ))
+      iProcs = ( iWorldHeight * iWorldWidth );
+    if ( iProcs < 1) 
+      iProcs = 1;
+
     bIsStatic = true;
     if (pLayer != 0)
       bIsStatic = bIsStatic && pLayer->getIsStatic();
@@ -174,23 +184,15 @@ void COpenMPPreferenceMovementProcess::rebuild() {
 // Execute the process
 //**********************************************************************
 void COpenMPPreferenceMovementProcess::execute() {
+#ifndef OPTIMIZE
   try {
+#endif
+
     // Base Execution
     CMovementProcess::execute();
 
-    // Loop World
-    int procs = (omp_get_num_procs() * 2) - 1; // Default to number of cores less one
-    int iMaxProcs = pConfig->getNumberOfThreads();
-    if ( iMaxProcs > 0 && iMaxProcs < procs ) {
-      procs = iMaxProcs;
-      if ( procs > ( iWorldHeight * iWorldWidth ))
-        procs = ( iWorldHeight * iWorldWidth );
-    }
-    if ( procs < 1) 
-      procs = 1;
-
     omp_set_dynamic(0);
-    omp_set_num_threads(procs);
+    omp_set_num_threads(iProcs);
 
     #pragma omp parallel for collapse (2)
     for (int i = (iWorldHeight-1); i >= 0; --i) {
@@ -277,11 +279,13 @@ void COpenMPPreferenceMovementProcess::execute() {
         }
       }
     }
+#ifndef OPTIMIZE
   } catch (string &Ex) {
     cout << "EX: " << Ex << endl;
     Ex = "COpenMPPreferenceMovementProcess.execute(" + getLabel() + ")->" + Ex;
     throw Ex;
   }
+#endif
 }
 
 //**********************************************************************

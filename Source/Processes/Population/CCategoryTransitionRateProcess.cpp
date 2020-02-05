@@ -118,7 +118,9 @@ void CCategoryTransitionRateProcess::build() {
 // Execute the process
 //**********************************************************************
 void CCategoryTransitionRateProcess::execute() {
+#ifndef OPTIMIZE
   try {
+#endif
     // Base execute
     CProcess::execute();
 
@@ -155,10 +157,12 @@ void CCategoryTransitionRateProcess::execute() {
         }
       }
     }
+#ifndef OPTIMIZE
   } catch (string &Ex) {
     Ex = "CCategoryTransitionRateProcess.execute(" + getLabel() + ")->" + Ex;
     throw Ex;
   }
+#endif
 }
 
 //**********************************************************************
