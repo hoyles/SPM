@@ -138,16 +138,20 @@ void CInitializationPhase::build() {
 // Rebuild this Initialisation phase
 //**********************************************************************
 void CInitializationPhase::rebuild() {
+#ifndef OPTIMIZE
   try {
+#endif
 
     // reset holding container for lambda
     vLambdaHat.resize(0);
     vLambdaHatYears.resize(0);
 
+#ifndef OPTIMIZE
   } catch (string &Ex) {
     Ex = "CInitializationPhase.rebuild(" + getLabel() + ")->" + Ex;
     throw Ex;
   }
+#endif
 }
 
 //**********************************************************************

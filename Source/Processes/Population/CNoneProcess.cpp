@@ -19,6 +19,8 @@ CNoneProcess::CNoneProcess() {
 
   // Variables
   sType = PARAM_NONE;
+  bRequiresMerge = false;
+
 }
 
 //**********************************************************************

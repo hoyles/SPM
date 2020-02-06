@@ -34,6 +34,7 @@ CCategoryStateByAgeProcess::CCategoryStateByAgeProcess() {
   iMaxAge             = -1;
   pTimeStepManager = CTimeStepManager::Instance();
   sType = PARAM_CATEGORY_STATE_BY_AGE;
+  bRequiresMerge = false;
 
   // Register user allowed parameters
   pParameterList->registerAllowed(PARAM_CATEGORY); //category

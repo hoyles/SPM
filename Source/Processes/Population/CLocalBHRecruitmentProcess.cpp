@@ -37,6 +37,7 @@ CLocalBHRecruitmentProcess::CLocalBHRecruitmentProcess() {
     // Default Vars
   pR0Layer          = 0;
   sType = PARAM_LOCAL_BH_RECRUITMENT;
+  bRequiresMerge = false;
 
   // Register allowed estimables
   registerEstimable(PARAM_R0, &dR0);
@@ -367,10 +368,9 @@ void CLocalBHRecruitmentProcess::execute() {
         // Check if this square is enabled or not.
         if (!pBaseSquare->getEnabled())
           continue;
-        pDiff = pWorld->getDifferenceSquare(i, j);
         // Loop Through the Categories and Ages we have and Recruit
         for (int k = 0; k < getCategoryCount(); ++k) {
-          pDiff->addValue(vCategoryIndex[k], iAgeIndex, (dAmountPer[i][j] * vProportions[k]) );
+          pBaseSquare->addValue(vCategoryIndex[k], iAgeIndex, (dAmountPer[i][j] * vProportions[k]) );
         }
       }
     }

@@ -169,8 +169,6 @@ void CBiomassEventMortalityProcess::execute() {
         if (!pBaseSquare->getEnabled())
           continue;
 
-        pDiff = pWorld->getBaseSquare(i, j);
-
         // Get Layer Value
         dCatch = pLayer->getValue(i, j);
         // Clear our Vulnerable Amount
@@ -208,7 +206,7 @@ void CBiomassEventMortalityProcess::execute() {
               continue;
 
             // Subtract These
-            pDiff->subValue(vCategoryIndex[k], l, dCurrent);
+            pBaseSquare->subValue(vCategoryIndex[k], l, dCurrent);
           }
         }
       }

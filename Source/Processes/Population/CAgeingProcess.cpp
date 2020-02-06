@@ -20,6 +20,7 @@ CAgeingProcess::CAgeingProcess() {
 
   // Variables
   sType = PARAM_AGEING;
+  bRequiresMerge = false;
 
   // Register Allowed Parameters
   pParameterList->registerAllowed(PARAM_CATEGORIES);

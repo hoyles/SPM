@@ -34,6 +34,7 @@ CCategoryTransitionByAgeProcess::CCategoryTransitionByAgeProcess() {
   iMaxAge             = -1;
   pTimeStepManager = CTimeStepManager::Instance();
   sType = PARAM_CATEGORY_TRANSITION_BY_AGE;
+  bRequiresMerge = false;
 
   // Register user allowed parameters
   pParameterList->registerAllowed(PARAM_FROM);     //categories

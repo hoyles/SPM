@@ -156,15 +156,19 @@ void CInitializationPhaseManager::build() {
 // Rebuild our initialisation phases
 //**********************************************************************
 void CInitializationPhaseManager::rebuild() {
+#ifndef OPTIMIZE
   try {
+#endif
     foreach( CInitializationPhase *InitializationPhase, vInitializationPhases) {
       InitializationPhase->rebuild();
     }
 
+#ifndef OPTIMIZE
   } catch (string &Ex) {
     Ex = "CInitializationPhaseManager.rebuild()->" + Ex;
     throw Ex;
   }
+#endif
 }
 
 //**********************************************************************

@@ -30,14 +30,18 @@ CLayerDerivedWorldView::CLayerDerivedWorldView(CCategoricalLayer *sourceLayer) {
 // Get A Square From our Map of Areas.
 //**********************************************************************
 CWorldSquare* CLayerDerivedWorldView::getSquare(string area) {
+#ifndef OPTIMIZE
   try {
+#endif
     if (mView[area] == 0)
       CError::errorUnknown(PARAM_AREA, area);
 
+#ifndef OPTIMIZE
   } catch (string &Ex) {
     Ex = "CLayerDerivedWorldView.getSquare(" + area + ")->" + Ex;
     throw Ex;
   }
+#endif
 
   return mView[area];
 }

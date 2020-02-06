@@ -107,17 +107,21 @@ void CTimeStepManager::setTimeStepOrder(vector<string> &order) {
 // Get the Index of a TimeStep in our Order
 //**********************************************************************
 int CTimeStepManager::getTimeStepOrderIndex(string label) {
+#ifndef OPTIMIZE
   try {
+#endif
     for (int i = 0; i < (int)vTimeSteps.size(); ++i)
       if (vTimeSteps[i]->getLabel() == label)
         return i;
 
     CError::errorUnknown(PARAM_TIME_STEP, label);
 
+#ifndef OPTIMIZE
   } catch (string &Ex) {
     Ex = "CTimeStepManager.getTimeStepOrderIndex()->" + Ex;
     throw Ex;
   }
+#endif
 
   return 0;
 }

@@ -75,7 +75,9 @@ void CObservationManager::fillVector(vector<CObservation*> &list) {
 // Get Observation by label
 //**********************************************************************
 CObservation* CObservationManager::getObservation(string label) {
+#ifndef OPTIMIZE
   try {
+#endif
     foreach(CObservation *Observation, vObservationList) {
       if (Observation->getLabel() == label)
         return Observation;
@@ -83,10 +85,12 @@ CObservation* CObservationManager::getObservation(string label) {
 
     CError::errorUnknown(PARAM_OBSERVATION, label);
 
+#ifndef OPTIMIZE
   } catch (string &Ex) {
     Ex = "CObservationManager.getObservation()->" + Ex;
     throw Ex;
   }
+#endif
 
   return 0;
 }
@@ -169,17 +173,21 @@ void CObservationManager::prepare() {
 // Execute
 //**********************************************************************
 void CObservationManager::execute(int year, int step) {
+#ifndef OPTIMIZE
   try {
+#endif
     // Loop and Test
     foreach(CObservation *Observation, vObservationList) {
       if ( (Observation->getYear() == year) && (Observation->getTimeStep() == step) ) {
         Observation->execute();
       }
     }
+#ifndef OPTIMIZE
   } catch (string &Ex) {
     Ex = "CObservationManager.execute()->" + Ex;
     throw Ex;
   }
+#endif
 }
 
 //**********************************************************************

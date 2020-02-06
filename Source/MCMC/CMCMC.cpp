@@ -354,8 +354,9 @@ void CMCMC::updateStepSize(int iIteration) {
 // Generate our new candidate estimates
 //**********************************************************************
 void CMCMC::generateNewCandidate() {
-
+#ifndef OPTIMIZE
   try {
+#endif
 
     vector<double> vOldCandidates = vCandidates;
 
@@ -387,10 +388,12 @@ void CMCMC::generateNewCandidate() {
 
     } while (!bCandidatesOk);
 
+#ifndef OPTIMIZE
   } catch (string &Ex) {
     Ex = "CMCMC.generateNewCandidate()->" + Ex;
     throw Ex;
   }
+#endif
 }
 
 //**********************************************************************
@@ -444,7 +447,9 @@ void CMCMC::generateRandomStart() {
 // Execute our MCMC
 //**********************************************************************
 void CMCMC::execute() {
+#ifndef OPTIMIZE
   try {
+#endif
 
     // Setup initial candidate vector
     vCandidates.resize(iEstimateCount);
@@ -475,10 +480,12 @@ void CMCMC::execute() {
       CEstimateManager::Instance()->getEnabledEstimate(i)->setValue(vCandidates[i]);
     }
 
+#ifndef OPTIMIZE
   } catch (string &Ex) {
     Ex = "CMHMCMC.execute()->" + Ex;
     throw Ex;
   }
+#endif
 }
 
 //**********************************************************************

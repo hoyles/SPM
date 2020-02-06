@@ -238,11 +238,9 @@ void CProportionalRecruitmentProcess::execute() {
         if (pLayer != 0)
           value *= pLayer->getValue(i, j);
 
-        pDiff = pWorld->getBaseSquare(i, j);
-
         // Loop Through the Categories and Ages we have and Recruit
         for (int k = 0; k < getCategoryCount(); ++k)
-          pDiff->addValue(vCategoryIndex[k], iAgeIndex, (value * vProportions[k]) );
+          pBaseSquare->addValue(vCategoryIndex[k], iAgeIndex, (value * vProportions[k]) );
       }
     }
 
