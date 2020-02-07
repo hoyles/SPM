@@ -17,6 +17,7 @@
 #include "../Children/CProportionsAtLengthObservation.h"
 #include "../Children/CPresenceObservation.h"
 #include "../Children/CProportionsByCategoryObservation.h"
+#include "../Children/CProportionsAtLengthByCategoryObservation.h"
 #include "../../Helpers/CError.h"
 
 //**********************************************************************
@@ -39,6 +40,8 @@ CObservation* CObservationFactory::buildObservation(string type, bool registerWi
     pObservation = new CProportionsAtLengthObservation();
   else if (type == PARAM_PROPORTIONS_BY_CATEGORY)
     pObservation = new CProportionsByCategoryObservation();
+  else if (type == PARAM_PROPORTIONS_AT_LENGTH_BY_CATEGORY)
+    pObservation = new CProportionsAtLengthByCategoryObservation();
   else
     CError::errorUnknown(PARAM_OBSERVATION, type);
 

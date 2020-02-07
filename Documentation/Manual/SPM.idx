@@ -293,159 +293,162 @@
 \indexentry{Proportions-at-age observations|hyperpage}{63}
 \indexentry{Proportions-at-age for a single category|hyperpage}{64}
 \indexentry{Proportions-at-age for multiple categories|hyperpage}{65}
-\indexentry{Proportions-at-age across aggregated categories|hyperpage}{65}
-\indexentry{Dirichlet likelihood ! proportions-at-age|hyperpage}{66}
+\indexentry{Proportions-at-age across aggregated categories|hyperpage}{66}
+\indexentry{Dirichlet likelihood ! proportions-at-age|hyperpage}{67}
 \indexentry{Multinomial likelihood ! proportions-at-age|hyperpage}{67}
 \indexentry{Lognormal likelihood ! proportions-at-age|hyperpage}{67}
 \indexentry{Proportions-by-category observations|hyperpage}{68}
 \indexentry{Binomial likelihood ! proportions-by-category|hyperpage}{69}
-\indexentry{Binomial likelihood (normal approximation) ! proportions-by-category|hyperpage}{69}
+\indexentry{Binomial likelihood (normal approximation) ! proportions-by-category|hyperpage}{70}
 \indexentry{Proportions-at-length observations|hyperpage}{70}
 \indexentry{Proportions-at-length for a single category|hyperpage}{70}
 \indexentry{Proportions-at-length for multiple categories|hyperpage}{71}
 \indexentry{Proportions-at-length across aggregated categories|hyperpage}{72}
 \indexentry{Dirichlet likelihood ! proportions-at-length|hyperpage}{73}
 \indexentry{Multinomial likelihood ! proportions-at-length|hyperpage}{73}
-\indexentry{Lognormal likelihood ! proportions-at-length|hyperpage}{73}
-\indexentry{Abundance or biomass observations|hyperpage}{74}
-\indexentry{Lognormal likelihood ! abundance|hyperpage}{75}
-\indexentry{Lognormal likelihood ! biomass|hyperpage}{75}
-\indexentry{Normal likelihood ! abundance|hyperpage}{75}
-\indexentry{Normal likelihood ! biomass|hyperpage}{75}
-\indexentry{Relative proportions present observations|hyperpage}{76}
-\indexentry{Binomial likelihood ! presence|hyperpage}{77}
-\indexentry{Binomial likelihood ! presence|hyperpage}{77}
-\indexentry{Process error|hyperpage}{77}
-\indexentry{Ageing error|hyperpage}{78}
-\indexentry{Simulating observations|hyperpage}{78}
-\indexentry{Pseudo-observations|hyperpage}{79}
-\indexentry{The report section|hyperpage}{81}
-\indexentry{Reports|hyperpage}{81}
-\indexentry{Reports section|hyperpage}{81}
-\indexentry{Reports ! standard style|hyperpage}{81}
-\indexentry{Print the model spatial map|hyperpage}{81}
-\indexentry{Reports ! Spatial map|hyperpage}{81}
-\indexentry{Print the partition|hyperpage}{81}
-\indexentry{Reports ! Partition|hyperpage}{81}
-\indexentry{Print the partition biomass|hyperpage}{82}
-\indexentry{Reports ! Partition biomass|hyperpage}{82}
-\indexentry{Print the partition at the end of an initialisation|hyperpage}{82}
-\indexentry{Reports ! Initialisation|hyperpage}{82}
-\indexentry{Print a process summary|hyperpage}{82}
-\indexentry{Reports ! Processes|hyperpage}{82}
-\indexentry{Print a preference function summary|hyperpage}{82}
-\indexentry{Reports ! Preference Functions|hyperpage}{82}
-\indexentry{Print derived quantities|hyperpage}{82}
-\indexentry{Reports ! Derived quantities|hyperpage}{82}
-\indexentry{Print derived quantities by cell|hyperpage}{82}
-\indexentry{Reports ! Derived quantities by cell|hyperpage}{82}
-\indexentry{Print the estimated parameters|hyperpage}{82}
-\indexentry{Reports ! Estimated parameters|hyperpage}{82}
-\indexentry{Print the estimated parameters in a vector format|hyperpage}{82}
-\indexentry{Reports ! Estimated parameters|hyperpage}{82}
-\indexentry{Print the objective function|hyperpage}{83}
-\indexentry{Reports ! Objective function|hyperpage}{83}
-\indexentry{Print the covariance matrix|hyperpage}{83}
-\indexentry{Reports ! Covariance Matrix|hyperpage}{83}
-\indexentry{Reports ! Hessian|hyperpage}{83}
-\indexentry{Print observations, fits, and residuals|hyperpage}{83}
-\indexentry{Reports ! Observations|hyperpage}{83}
-\indexentry{Print simulated observations|hyperpage}{83}
-\indexentry{Reports ! Simulated observations|hyperpage}{83}
-\indexentry{Print the ageing error misclassification matrix|hyperpage}{83}
-\indexentry{Reports ! Ageing error misclassification matrix|hyperpage}{83}
-\indexentry{Print layers and meta-layers|hyperpage}{83}
-\indexentry{Reports ! Layers and meta-layers|hyperpage}{83}
-\indexentry{Print a derived view via a categorical layer|hyperpage}{83}
-\indexentry{Reports ! Derived view|hyperpage}{83}
-\indexentry{Print selectivities|hyperpage}{84}
-\indexentry{Reports ! Selectivities|hyperpage}{84}
-\indexentry{Print the random number seed|hyperpage}{84}
-\indexentry{Reports ! Random number seed|hyperpage}{84}
-\indexentry{Print the size-weight relationship|hyperpage}{84}
-\indexentry{Reports ! Size-weight|hyperpage}{84}
-\indexentry{Print the size-at-age relationship|hyperpage}{84}
-\indexentry{Reports ! Size-at-age|hyperpage}{84}
-\indexentry{Print the weight-at-age relationship|hyperpage}{84}
-\indexentry{Reports ! Weight-at-age|hyperpage}{84}
-\indexentry{Print the results of an MCMC|hyperpage}{84}
-\indexentry{Reports ! MCMC|hyperpage}{84}
-\indexentry{Print the MCMC samples as they are calculated|hyperpage}{84}
-\indexentry{Reports ! MCMC samples|hyperpage}{84}
-\indexentry{Print the MCMC objective function values as they are calculated|hyperpage}{84}
-\indexentry{Reports ! MCMC objective functions|hyperpage}{84}
-\indexentry{Model structure|hyperpage}{85}
-\indexentry{Command ! model|hyperpage}{85}
-\indexentry{Initialisation|hyperpage}{86}
-\indexentry{Command ! initialisation\_phase|hyperpage}{86}
-\indexentry{Time-steps|hyperpage}{87}
-\indexentry{Command ! time\_step|hyperpage}{87}
-\indexentry{Processes|hyperpage}{87}
-\indexentry{Command ! process|hyperpage}{88}
-\indexentry{Preference functions|hyperpage}{104}
-\indexentry{Command ! preference\_function|hyperpage}{104}
-\indexentry{Probability Density Functions|hyperpage}{110}
-\indexentry{Command ! pdf|hyperpage}{110}
-\indexentry{Layers|hyperpage}{111}
-\indexentry{Command ! layer|hyperpage}{112}
-\indexentry{Derived quantities by cell|hyperpage}{116}
-\indexentry{Command ! derived\_quantity\_by\_cell|hyperpage}{116}
-\indexentry{Derived quantities|hyperpage}{118}
-\indexentry{Command ! derived\_quantity|hyperpage}{118}
-\indexentry{Age-size relationship|hyperpage}{119}
-\indexentry{Command ! age\_size|hyperpage}{119}
-\indexentry{Size-weight|hyperpage}{124}
-\indexentry{Command ! size\_weight|hyperpage}{124}
-\indexentry{Selectivities|hyperpage}{124}
-\indexentry{Command ! selectivity|hyperpage}{125}
-\indexentry{Estimation methods|hyperpage}{131}
-\indexentry{Command ! estimation|hyperpage}{131}
-\indexentry{Point estimation|hyperpage}{131}
-\indexentry{Command ! minimiser|hyperpage}{131}
-\indexentry{Markov Chain Monte Carlo (MCMC)|hyperpage}{133}
-\indexentry{Command ! mcmc|hyperpage}{133}
-\indexentry{Profiles|hyperpage}{135}
-\indexentry{Command ! profile|hyperpage}{135}
-\indexentry{Command ! estimate|hyperpage}{135}
-\indexentry{Defining catchability constants|hyperpage}{138}
-\indexentry{Command ! catchability|hyperpage}{138}
-\indexentry{Defining penalties|hyperpage}{138}
-\indexentry{Command ! penalty|hyperpage}{138}
-\indexentry{Observation types|hyperpage}{139}
-\indexentry{Command ! observation|hyperpage}{139}
-\indexentry{Defining ageing error|hyperpage}{151}
-\indexentry{Command ! ageing\_error|hyperpage}{151}
-\indexentry{Available reports|hyperpage}{153}
-\indexentry{Report commands and subcommands|hyperpage}{153}
-\indexentry{Command ! report|hyperpage}{153}
-\indexentry{Command ! include|hyperpage}{165}
-\indexentry{Include an external file|hyperpage}{165}
-\indexentry{Examples|hyperpage}{167}
-\indexentry{Examples ! Example 1|hyperpage}{167}
-\indexentry{Examples ! A simple non-spatial model|hyperpage}{167}
-\indexentry{Examples ! Example 2|hyperpage}{171}
-\indexentry{Examples ! A $10 \times 6$ spatial model|hyperpage}{171}
-\indexentry{Command ! model|hyperpage}{185}
-\indexentry{Command ! initialisation\_phase|hyperpage}{185}
-\indexentry{Command ! time\_step|hyperpage}{185}
-\indexentry{Command ! process|hyperpage}{185}
-\indexentry{Command ! preference\_function|hyperpage}{189}
-\indexentry{Command ! pdf|hyperpage}{191}
-\indexentry{Command ! layer|hyperpage}{192}
-\indexentry{Command ! derived\_quantity\_by\_cell|hyperpage}{193}
-\indexentry{Command ! derived\_quantity|hyperpage}{194}
-\indexentry{Command ! age\_size|hyperpage}{194}
-\indexentry{Command ! size\_weight|hyperpage}{195}
-\indexentry{Command ! selectivity|hyperpage}{195}
-\indexentry{Command ! estimation|hyperpage}{197}
-\indexentry{Command ! minimiser|hyperpage}{197}
-\indexentry{Command ! mcmc|hyperpage}{197}
-\indexentry{Command ! profile|hyperpage}{198}
-\indexentry{Command ! estimate|hyperpage}{198}
-\indexentry{Command ! catchability|hyperpage}{198}
-\indexentry{Command ! penalty|hyperpage}{198}
-\indexentry{Command ! observation|hyperpage}{199}
-\indexentry{Command ! ageing\_error|hyperpage}{202}
-\indexentry{Command ! report|hyperpage}{202}
-\indexentry{Command ! include|hyperpage}{205}
-\indexentry{Include an external file|hyperpage}{205}
+\indexentry{Lognormal likelihood ! proportions-at-length|hyperpage}{74}
+\indexentry{Proportions-by-category-at-length observations|hyperpage}{74}
+\indexentry{Binomial likelihood ! proportions-by-category-at-length|hyperpage}{75}
+\indexentry{Binomial likelihood (normal approximation) ! proportions-by-category-at-length|hyperpage}{76}
+\indexentry{Abundance or biomass observations|hyperpage}{76}
+\indexentry{Lognormal likelihood ! abundance|hyperpage}{77}
+\indexentry{Lognormal likelihood ! biomass|hyperpage}{77}
+\indexentry{Normal likelihood ! abundance|hyperpage}{78}
+\indexentry{Normal likelihood ! biomass|hyperpage}{78}
+\indexentry{Relative proportions present observations|hyperpage}{78}
+\indexentry{Binomial likelihood ! presence|hyperpage}{79}
+\indexentry{Binomial likelihood ! presence|hyperpage}{79}
+\indexentry{Process error|hyperpage}{80}
+\indexentry{Ageing error|hyperpage}{80}
+\indexentry{Simulating observations|hyperpage}{81}
+\indexentry{Pseudo-observations|hyperpage}{82}
+\indexentry{The report section|hyperpage}{83}
+\indexentry{Reports|hyperpage}{83}
+\indexentry{Reports section|hyperpage}{83}
+\indexentry{Reports ! standard style|hyperpage}{83}
+\indexentry{Print the model spatial map|hyperpage}{83}
+\indexentry{Reports ! Spatial map|hyperpage}{83}
+\indexentry{Print the partition|hyperpage}{83}
+\indexentry{Reports ! Partition|hyperpage}{83}
+\indexentry{Print the partition biomass|hyperpage}{84}
+\indexentry{Reports ! Partition biomass|hyperpage}{84}
+\indexentry{Print the partition at the end of an initialisation|hyperpage}{84}
+\indexentry{Reports ! Initialisation|hyperpage}{84}
+\indexentry{Print a process summary|hyperpage}{84}
+\indexentry{Reports ! Processes|hyperpage}{84}
+\indexentry{Print a preference function summary|hyperpage}{84}
+\indexentry{Reports ! Preference Functions|hyperpage}{84}
+\indexentry{Print derived quantities|hyperpage}{84}
+\indexentry{Reports ! Derived quantities|hyperpage}{84}
+\indexentry{Print derived quantities by cell|hyperpage}{84}
+\indexentry{Reports ! Derived quantities by cell|hyperpage}{84}
+\indexentry{Print the estimated parameters|hyperpage}{84}
+\indexentry{Reports ! Estimated parameters|hyperpage}{84}
+\indexentry{Print the estimated parameters in a vector format|hyperpage}{84}
+\indexentry{Reports ! Estimated parameters|hyperpage}{84}
+\indexentry{Print the objective function|hyperpage}{85}
+\indexentry{Reports ! Objective function|hyperpage}{85}
+\indexentry{Print the covariance matrix|hyperpage}{85}
+\indexentry{Reports ! Covariance Matrix|hyperpage}{85}
+\indexentry{Reports ! Hessian|hyperpage}{85}
+\indexentry{Print observations, fits, and residuals|hyperpage}{85}
+\indexentry{Reports ! Observations|hyperpage}{85}
+\indexentry{Print simulated observations|hyperpage}{85}
+\indexentry{Reports ! Simulated observations|hyperpage}{85}
+\indexentry{Print the ageing error misclassification matrix|hyperpage}{85}
+\indexentry{Reports ! Ageing error misclassification matrix|hyperpage}{85}
+\indexentry{Print layers and meta-layers|hyperpage}{85}
+\indexentry{Reports ! Layers and meta-layers|hyperpage}{85}
+\indexentry{Print a derived view via a categorical layer|hyperpage}{85}
+\indexentry{Reports ! Derived view|hyperpage}{85}
+\indexentry{Print selectivities|hyperpage}{86}
+\indexentry{Reports ! Selectivities|hyperpage}{86}
+\indexentry{Print the random number seed|hyperpage}{86}
+\indexentry{Reports ! Random number seed|hyperpage}{86}
+\indexentry{Print the size-weight relationship|hyperpage}{86}
+\indexentry{Reports ! Size-weight|hyperpage}{86}
+\indexentry{Print the size-at-age relationship|hyperpage}{86}
+\indexentry{Reports ! Size-at-age|hyperpage}{86}
+\indexentry{Print the weight-at-age relationship|hyperpage}{86}
+\indexentry{Reports ! Weight-at-age|hyperpage}{86}
+\indexentry{Print the results of an MCMC|hyperpage}{86}
+\indexentry{Reports ! MCMC|hyperpage}{86}
+\indexentry{Print the MCMC samples as they are calculated|hyperpage}{86}
+\indexentry{Reports ! MCMC samples|hyperpage}{86}
+\indexentry{Print the MCMC objective function values as they are calculated|hyperpage}{86}
+\indexentry{Reports ! MCMC objective functions|hyperpage}{86}
+\indexentry{Model structure|hyperpage}{87}
+\indexentry{Command ! model|hyperpage}{87}
+\indexentry{Initialisation|hyperpage}{88}
+\indexentry{Command ! initialisation\_phase|hyperpage}{88}
+\indexentry{Time-steps|hyperpage}{89}
+\indexentry{Command ! time\_step|hyperpage}{89}
+\indexentry{Processes|hyperpage}{89}
+\indexentry{Command ! process|hyperpage}{90}
+\indexentry{Preference functions|hyperpage}{106}
+\indexentry{Command ! preference\_function|hyperpage}{106}
+\indexentry{Probability Density Functions|hyperpage}{112}
+\indexentry{Command ! pdf|hyperpage}{112}
+\indexentry{Layers|hyperpage}{113}
+\indexentry{Command ! layer|hyperpage}{114}
+\indexentry{Derived quantities by cell|hyperpage}{118}
+\indexentry{Command ! derived\_quantity\_by\_cell|hyperpage}{118}
+\indexentry{Derived quantities|hyperpage}{120}
+\indexentry{Command ! derived\_quantity|hyperpage}{120}
+\indexentry{Age-size relationship|hyperpage}{121}
+\indexentry{Command ! age\_size|hyperpage}{121}
+\indexentry{Size-weight|hyperpage}{126}
+\indexentry{Command ! size\_weight|hyperpage}{126}
+\indexentry{Selectivities|hyperpage}{126}
+\indexentry{Command ! selectivity|hyperpage}{127}
+\indexentry{Estimation methods|hyperpage}{133}
+\indexentry{Command ! estimation|hyperpage}{133}
+\indexentry{Point estimation|hyperpage}{133}
+\indexentry{Command ! minimiser|hyperpage}{133}
+\indexentry{Markov Chain Monte Carlo (MCMC)|hyperpage}{135}
+\indexentry{Command ! mcmc|hyperpage}{135}
+\indexentry{Profiles|hyperpage}{137}
+\indexentry{Command ! profile|hyperpage}{137}
+\indexentry{Command ! estimate|hyperpage}{137}
+\indexentry{Defining catchability constants|hyperpage}{140}
+\indexentry{Command ! catchability|hyperpage}{140}
+\indexentry{Defining penalties|hyperpage}{140}
+\indexentry{Command ! penalty|hyperpage}{140}
+\indexentry{Observation types|hyperpage}{141}
+\indexentry{Command ! observation|hyperpage}{141}
+\indexentry{Defining ageing error|hyperpage}{155}
+\indexentry{Command ! ageing\_error|hyperpage}{155}
+\indexentry{Available reports|hyperpage}{157}
+\indexentry{Report commands and subcommands|hyperpage}{157}
+\indexentry{Command ! report|hyperpage}{157}
+\indexentry{Command ! include|hyperpage}{169}
+\indexentry{Include an external file|hyperpage}{169}
+\indexentry{Examples|hyperpage}{171}
+\indexentry{Examples ! Example 1|hyperpage}{171}
+\indexentry{Examples ! A simple non-spatial model|hyperpage}{171}
+\indexentry{Examples ! Example 2|hyperpage}{175}
+\indexentry{Examples ! A $10 \times 6$ spatial model|hyperpage}{175}
+\indexentry{Command ! model|hyperpage}{189}
+\indexentry{Command ! initialisation\_phase|hyperpage}{189}
+\indexentry{Command ! time\_step|hyperpage}{189}
+\indexentry{Command ! process|hyperpage}{189}
+\indexentry{Command ! preference\_function|hyperpage}{193}
+\indexentry{Command ! pdf|hyperpage}{195}
+\indexentry{Command ! layer|hyperpage}{196}
+\indexentry{Command ! derived\_quantity\_by\_cell|hyperpage}{197}
+\indexentry{Command ! derived\_quantity|hyperpage}{198}
+\indexentry{Command ! age\_size|hyperpage}{198}
+\indexentry{Command ! size\_weight|hyperpage}{199}
+\indexentry{Command ! selectivity|hyperpage}{199}
+\indexentry{Command ! estimation|hyperpage}{201}
+\indexentry{Command ! minimiser|hyperpage}{201}
+\indexentry{Command ! mcmc|hyperpage}{201}
+\indexentry{Command ! profile|hyperpage}{202}
+\indexentry{Command ! estimate|hyperpage}{202}
+\indexentry{Command ! catchability|hyperpage}{202}
+\indexentry{Command ! penalty|hyperpage}{202}
+\indexentry{Command ! observation|hyperpage}{203}
+\indexentry{Command ! ageing\_error|hyperpage}{206}
+\indexentry{Command ! report|hyperpage}{206}
+\indexentry{Command ! include|hyperpage}{210}
+\indexentry{Include an external file|hyperpage}{210}

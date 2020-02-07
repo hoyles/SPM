@@ -27,7 +27,7 @@ prior->selectivity[FishingSel].ato95: 0
 prior->process[BHrecruitment].ycs_values(1): 0.639114
 prior->process[BHrecruitment].ycs_values(2): 0.780707
 prior->process[BHrecruitment].ycs_values(3): 0.15652
-prior->process[BHrecruitment].ycs_values(4): 0.0128185
+prior->process[BHrecruitment].ycs_values(4): 0.0128186
 prior->process[BHrecruitment].ycs_values(5): 0.804126
 prior->process[BHrecruitment].ycs_values(6): -0.287013
 prior->process[BHrecruitment].ycs_values(7): -0.295595

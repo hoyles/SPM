@@ -38,7 +38,6 @@ CProportionsByCategoryObservation::CProportionsByCategoryObservation() {
   iMinAge                 = -1;
   iMaxAge                 = -1;
   bAgePlus                = false;
-  pCategories         = 0;
 
   // Register estimables
   registerEstimable(PARAM_PROCESS_ERROR, &dProcessError);
@@ -64,25 +63,39 @@ void CProportionsByCategoryObservation::validate() {
     // Base Validation
     CObservation::validate();
 
-    //Check length of categories and selectivites are equal
-    unsigned iCategoryNamesSize = vCategoryNames.size();
-    unsigned iSelectivityNamesSize = vSelectivityNames.size();
-
-    if (iCategoryNamesSize != iSelectivityNamesSize)
-      CError::errorListSameSize(PARAM_CATEGORIES, PARAM_SELECTIVITIES);
-
     // Get our Variables from ParameterList
     dDelta              = pParameterList->getDouble(PARAM_DELTA,true,DELTA);
     iMinAge             = pParameterList->getInt(PARAM_MIN_AGE);
     iMaxAge             = pParameterList->getInt(PARAM_MAX_AGE);
-    bAgePlus            = pParameterList->getBool(PARAM_AGE_PLUS_GROUP);
+    bAgePlus            = pParameterList->getBool(PARAM_AGE_PLUS_GROUP,true,true);
     dProcessError       = pParameterList->getDouble(PARAM_PROCESS_ERROR,true,0);
-
     pParameterList->fillVector(vTargetCategoryNames, PARAM_TARGET_CATEGORIES);
     pParameterList->fillVector(vTargetSelectivityNames, PARAM_TARGET_SELECTIVITIES);
 
+    //Check length of categories and selectivities are equal
+    unsigned iCategoryNamesSize = vCategoryNames.size();
+    unsigned iSelectivityNamesSize = vSelectivityNames.size();
+    if (iCategoryNamesSize != iSelectivityNamesSize)
+      CError::errorListSameSize(PARAM_CATEGORIES, PARAM_SELECTIVITIES);
+
+    unsigned iTargetCategoryNamesSize = vTargetCategoryNames.size();
+    unsigned iTargetSelectivityNamesSize = vTargetSelectivityNames.size();
+    if (iTargetCategoryNamesSize != iTargetSelectivityNamesSize)
+      CError::errorListSameSize(PARAM_TARGET_CATEGORIES, PARAM_TARGET_SELECTIVITIES);
+     
+    // Check no duplicates
+    for (int i=0; i < (int)iCategoryNamesSize; ++i) {
+      for (int j=0; j < (int)iTargetCategoryNamesSize; ++j) {
+        if(vTargetCategoryNames[j] == vCategoryNames[i])
+          CError::errorDuplicate(PARAM_TARGET_CATEGORIES, PARAM_CATEGORIES);
+      }
+    }
+    
     if (dDelta < 0)
       CError::errorLessThan(PARAM_DELTA, PARAM_ZERO);
+
+    if (dProcessError < 0)
+      CError::errorLessThan(PARAM_PROCESS_ERROR, PARAM_ZERO);
 
     // Find out the Spread in Ages
     int iAgeSpread = (iMaxAge+1) - iMinAge;
@@ -111,9 +124,6 @@ void CProportionsByCategoryObservation::validate() {
         }
       }
     }
-
-    if (dProcessError < 0)
-      CError::errorLessThan(PARAM_PROCESS_ERROR, PARAM_ZERO);
 
     // Get our Error Value
     vector<string> vErrorValues;
@@ -153,19 +163,10 @@ void CProportionsByCategoryObservation::build() {
     // Base Build
     CObservation::build();
 
-    // Get Categories
     pWorld->fillCategoryVector(vCategories, vCategoryNames);
-
     pWorld->fillCategoryVector(vTargetCategories, vTargetCategoryNames);
-    foreach(int Category, vCategories) {
-      vTargetCategories.push_back(Category);
-    }
-
     CSelectivityManager *pSelectivityManager = CSelectivityManager::Instance();
     pSelectivityManager->fillVector(vTargetSelectivities, vTargetSelectivityNames);
-    foreach(CSelectivity* Selectivity, vSelectivities) {
-      vTargetSelectivities.push_back(Selectivity);
-    }
 
     // Create Array of Age Results
     iAgeSpread = (iMaxAge+1) - iMinAge;
@@ -216,9 +217,6 @@ void CProportionsByCategoryObservation::build() {
 //**********************************************************************
 void CProportionsByCategoryObservation::execute() {
 
-  // Base
-  CObservation::execute();
-
   // Variables
   int                 iSquareAgeOffset   = iMinAge - pWorld->getMinAge();
   vector<string>      vKeys;
@@ -230,6 +228,8 @@ void CProportionsByCategoryObservation::execute() {
   vector<double>      vScores;
                       dScore = 0.0;
 
+  // Base
+  CObservation::execute();
   // Execute the World View to get a Snapshot
   pWorldView->execute();
 
@@ -305,8 +305,8 @@ void CProportionsByCategoryObservation::execute() {
     // Do our Comparison
     for (int i = 0; i < iAgeSpread; ++i) {
       double dExpected = 0.0;
-      if (!CComparer::isZero(pCombinedAgeResults[i]))
-        dExpected = pAgeResults[i]/pCombinedAgeResults[i];
+      if (!CComparer::isZero(pAgeResults[i] + pCombinedAgeResults[i]))
+        dExpected = pAgeResults[i]/(pAgeResults[i] + pCombinedAgeResults[i]);
 
       // Store the items we want to calculate scores for
       vKeys.push_back((*mvPropPtr).first);

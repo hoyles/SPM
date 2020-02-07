@@ -529,7 +529,7 @@ obs->cpue-2000: -1.49236
 obs->cpue-2001: 0.85437
 obs->cpue-2002: 5.4806
 obs->cpue-2003: 0.0700063
-obs->cpue-2004: -0.778893
+obs->cpue-2004: -0.778892
 obs->cpue-2005: 1.0557
 obs->cpue-2006: 7.67711
 obs->cpue-2007: 3.58608
@@ -580,16 +580,16 @@ obs->caa-year-2004: 139.303
 obs->caa-year-2005: 130.994
 obs->caa-year-2006: 235.55
 obs->caa-year-2007: 201.464
-obs->cpue-1998: 15.0992
+obs->cpue-1998: 15.0991
 obs->cpue-1999: -1.1085
-obs->cpue-2000: -1.26879
-obs->cpue-2001: 4.51569
-obs->cpue-2002: 1.81025
+obs->cpue-2000: -1.2688
+obs->cpue-2001: 4.51567
+obs->cpue-2002: 1.81026
 obs->cpue-2003: -1.25941
-obs->cpue-2004: 0.479896
-obs->cpue-2005: 0.215982
-obs->cpue-2006: 7.45241
-obs->cpue-2007: 4.63261
+obs->cpue-2004: 0.479884
+obs->cpue-2005: 0.215994
+obs->cpue-2006: 7.45244
+obs->cpue-2007: 4.63263
 prior->catchability[cpueq].q: 0
 prior->process[recruitment].r0: 13.1252
 prior->selectivity[fishingsel].a50: 0
@@ -609,7 +609,7 @@ parameter: process[recruitment].r0
 lower_bound: 100000
 upper_bound: 1e+10
 prior: uniform_log
-value: 501400
+value: 501399
 
 parameter: selectivity[fishingsel].a50
 lower_bound: 1

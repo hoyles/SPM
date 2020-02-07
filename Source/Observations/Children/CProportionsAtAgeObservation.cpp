@@ -81,7 +81,7 @@ void CProportionsAtAgeObservation::validate() {
     pCategories->setCategories(vCategoryNames,getLabel());
 
     // Validate
-    //Check length of categories and selectivites are equal
+    //Check length of categories and selectivities are equal
     unsigned iCategoryNamesSize = pCategories->getNCategories();
     unsigned iSelectivityNamesSize = vSelectivityNames.size();
     if (iCategoryNamesSize != iSelectivityNamesSize)

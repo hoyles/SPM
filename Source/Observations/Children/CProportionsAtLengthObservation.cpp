@@ -70,7 +70,7 @@ void CProportionsAtLengthObservation::validate() {
     pCategories->setCategories(vCategoryNames,getLabel());
 
     // Validate
-    //Check length of categories and selectivites are equal
+    //Check length of categories and selectivities are equal
     unsigned iCategoryNamesSize = pCategories->getNCategories();
     unsigned iSelectivityNamesSize = vSelectivityNames.size();
     if (iCategoryNamesSize != iSelectivityNamesSize)
@@ -89,24 +89,24 @@ void CProportionsAtLengthObservation::validate() {
     // Get our length bins
     pParameterList->fillVector(vLengthBins, PARAM_LENGTH_BINS);
 
-	// Check LENGTH_BINS are monotonically increacing
+    // Check LENGTH_BINS are monotonically increasing
     for (int i = 0; i < ((int)vLengthBins.size()-1); ++i) {
-	  if(vLengthBins[i] >= vLengthBins[i+1]) {
+      if(vLengthBins[i] >= vLengthBins[i+1]) {
         CError::errorNotIncreasing(PARAM_LENGTH_BINS);
-	  }
-	}
+      }
+    }
 
     // Get our OBS
     vector<string> vOBS;
     pParameterList->fillVector(vOBS, PARAM_OBS);
 
-	// Check nBins is the same as the number of observations per row
+    // Check nBins is the same as the number of observations per row
     iNBins =  vLengthBins.size() -1;
     if ((vOBS.size() % (iNGroups * iNBins + 1)) !=0)
       CError::errorListNotSize(PARAM_OBS, iNBins * iNGroups);
 
-    // Check at least 2 length bins
-	if (iNBins < 2)
+      // Check at least 2 length bins
+    if (iNBins < 2)
       CError::errorNotEnough(PARAM_LENGTH_BINS);
 
     // Fill in the matrix of observations
@@ -131,6 +131,9 @@ void CProportionsAtLengthObservation::validate() {
         }
       }
     }
+
+    if (dProcessError < 0)
+      CError::errorLessThan(PARAM_PROCESS_ERROR, PARAM_ZERO);
 
     // Get our Error Value
     vector<string> vErrorValues;
@@ -227,10 +230,10 @@ void CProportionsAtLengthObservation::validate() {
         }
         vObsPtr++;
       }
-
+      
       if (!bMatch)
         throw string(ERROR_MISSING_N_OBS + (*vErrPtr).first);
-
+  
       vErrPtr++;
     }
   } catch (string &Ex) {
@@ -247,13 +250,13 @@ void CProportionsAtLengthObservation::build() {
   try {
     // Base Build
     CObservation::build();
-	
+  
     // Create Array of Length Results
     if (pLengthResults == 0)
       pLengthResults = new double[iNBins * pCategories->getNRows()];
     for (int i = 0; i < (iNBins * pCategories->getNRows()); ++i)
       pLengthResults[i] = 0.0;
-
+  
   } catch (string &Ex) {
     Ex = "CProportionsAtLengthObservation.build(" + getLabel() + ")->" + Ex;
     throw Ex;
@@ -268,125 +271,125 @@ void CProportionsAtLengthObservation::execute() {
 #ifndef OPTIMIZE
   try {
 #endif
-    // Variables
-	                    dScore             = 0.0;
-    double              dRunningTotal      = 0.0;
-    double              dCurrentProp       = 0.0;
-    vector<string>      vKeys;
-    vector<int>         vBin;
-    vector<double>      vLengths;
-    vector<string>      vGroup;
-    vector<double>      vObserved;
-    vector<double>      vExpected;
-    vector<double>      vProcessError;
-    vector<double>      vErrorValue;
-    vector<double>      vScores;
+  // Variables
+                      dScore             = 0.0;
+  double              dRunningTotal      = 0.0;
+  double              dCurrentProp       = 0.0;
+  vector<string>      vKeys;
+  vector<int>         vBin;
+  vector<double>      vLengths;
+  vector<string>      vGroup;
+  vector<double>      vObserved;
+  vector<double>      vExpected;
+  vector<double>      vProcessError;
+  vector<double>      vErrorValue;
+  vector<double>      vScores;
 
-    // Base
-    CObservation::execute();
-    pWorldView->execute();
+  // Base
+  CObservation::execute();
+  pWorldView->execute();
 
-    // Loop Through Observations
-    map<string, vector<double> >::iterator mvObsPtr = mvObservationMatrix.begin();
-    map<string, vector<double> >::iterator mvErrPtr = mvErrorMatrix.begin();
+  // Loop Through Observations
+  map<string, vector<double> >::iterator mvObsPtr = mvObservationMatrix.begin();
+  map<string, vector<double> >::iterator mvErrPtr = mvErrorMatrix.begin();
 
-    while (mvObsPtr != mvObservationMatrix.end()) {
-      // Get Square for this Area
-      CWorldSquare *pStartSquare = pStartWorldView->getSquare((*mvObsPtr).first);
-      CWorldSquare *pSquare      = pWorldView->getSquare((*mvObsPtr).first);
+  while (mvObsPtr != mvObservationMatrix.end()) {
+    // Get Square for this Area
+    CWorldSquare *pStartSquare = pStartWorldView->getSquare((*mvObsPtr).first);
+    CWorldSquare *pSquare      = pWorldView->getSquare((*mvObsPtr).first);
 
-      //calculate proportion time_step
-      vector<double> vTemp(pSquare->getWidth(),0);
-      for (int i = 0; i < (int)pSquare->getHeight(); ++i) {
-        for (int j = 0; j < (int)pSquare->getWidth(); ++j) {
-          double dStartValue  = pStartSquare->getValue(i, j);
-          double dEndValue    = pSquare->getValue(i, j);
-          if(sProportionMethod == PARAM_MEAN) {
-            vTemp[j] = dStartValue + ((dEndValue - dStartValue) * dProportionTimeStep);
-          } else {
-            vTemp[j] = std::abs(dStartValue - dEndValue) * dProportionTimeStep;
-          }
-        }
-        for (int j = 0; j < (int)pSquare->getWidth(); ++j) {
-          pSquare->setValue(i,j,vTemp[j]);
+    //calculate proportion time_step
+    vector<double> vTemp(pSquare->getWidth(),0);
+    for (int i = 0; i < (int)pSquare->getHeight(); ++i) {
+      for (int j = 0; j < (int)pSquare->getWidth(); ++j) {
+        double dStartValue  = pStartSquare->getValue(i, j);
+        double dEndValue    = pSquare->getValue(i, j);
+        if(sProportionMethod == PARAM_MEAN) {
+          vTemp[j] = dStartValue + ((dEndValue - dStartValue) * dProportionTimeStep);
+        } else {
+          vTemp[j] = std::abs(dStartValue - dEndValue) * dProportionTimeStep;
         }
       }
-      
-	  // Loop Through Category Groups
-      for (int j = 0; j < pCategories->getNRows(); ++j) {
-        vector<double> vLengthFrequency(iNBins);
- 		// loop Through category elements
-        for (int k = 0; k < pCategories->getNElements(j); ++k) {
-          // Loop Through Ages in that square and do the length conversion
-          for (int i = 0; i < (int)pSquare->getWidth(); ++i) {			  
-            double dSelectResult = vSelectivities[pCategories->getIndex(j,k)]->getResult(i);
-			double dNumberAtAge = dSelectResult * pSquare->getAbundanceInCategoryForAge(i, pCategories->getCategoryIndex(j,k));
-			vector<double> vLenghtProportions = pWorld->getLengthFrequency(i ,pCategories->getCategoryIndex(j,k), vLengthBins);
-			for(int l = 0; l < (int)vLenghtProportions.size(); ++l) {
-			  vLengthFrequency[l] += dNumberAtAge * vLenghtProportions[l];
-			}
-          }
-        }
-        for(int m = 0; m < (int)vLengthFrequency.size(); ++m) {
-          pLengthResults[m + (j * iNBins)] = vLengthFrequency[m];
-        }
-      }
-      // Populate our Running Total
-      dRunningTotal = 0.0;
-
-      for (int i = 0; i < (iNBins * pCategories->getNRows()); ++i)
-        dRunningTotal += pLengthResults[i];
-
-      for (int i = 0; i < (pCategories->getNRows()); ++i) {
-        for (int j = 0; j < iNBins; ++j) {
-          // Get our Proportion
-          if(!CComparer::isZero(dRunningTotal))
-            dCurrentProp = pLengthResults[(iNBins * i) + j] / dRunningTotal;
-          else
-            dCurrentProp = 0.0;
-
-          // Store the items we want to calculate scores for
-          vKeys.push_back((*mvObsPtr).first);
-          vGroup.push_back(pCategories->getGroup(i));
-          vBin.push_back(j+1);
-          vExpected.push_back(dCurrentProp);
-          vObserved.push_back(((*mvObsPtr).second)[(iNBins * i) + j]);
-          vProcessError.push_back(dProcessError);
-          //indentify the correct row of error values and extract the correct error value
-          while (mvErrPtr != mvErrorMatrix.end()) {
-            if ((*mvErrPtr).first == (*mvObsPtr).first) {
-              vErrorValue.push_back(((*mvErrPtr).second)[(iNBins * i) + j]);
-              break;
-            }
-            mvErrPtr++;
-          }
-        }
-      }
-
-      // Clear Our Length Results
-      for (int i = 0; i < (iNBins * pCategories->getNRows()); ++i)
-        pLengthResults[i] = 0.0;
-
-      mvObsPtr++;
-    }
-
-    // Simulate or Generate Result?
-    if (pRuntimeController->getRunMode() == RUN_MODE_SIMULATION) {
-      // Simulate our values, then save them
-      pLikelihood->simulateObserved(vKeys, vObserved, vExpected, vErrorValue, vProcessError, dDelta);
-      for (int i = 0; i < (int)vObserved.size(); ++i)
-        saveComparison(vKeys[i], vBin[i], vGroup[i], vExpected[i], vObserved[i], vErrorValue[i], vProcessError[i], pLikelihood->adjustErrorValue(vProcessError[i], vErrorValue[i]), 0.0);
-
-    } else { // Generate Score
-      dScore = pLikelihood->getInitialScore(vKeys, vExpected, vObserved, vProcessError, vErrorValue, dDelta);
-
-      // Generate Results and save them
-      pLikelihood->getResult(vScores, vExpected, vObserved, vErrorValue, vProcessError, dDelta);
-      for (int i = 0; i < (int)vScores.size(); ++i) {
-        dScore += vScores[i];
-        saveComparison(vKeys[i], vBin[i], vGroup[i], vExpected[i], vObserved[i], vErrorValue[i], vProcessError[i], pLikelihood->adjustErrorValue(vProcessError[i], vErrorValue[i]), vScores[i]);
+      for (int j = 0; j < (int)pSquare->getWidth(); ++j) {
+        pSquare->setValue(i,j,vTemp[j]);
       }
     }
+    
+    // Loop Through Category Groups
+    for (int j = 0; j < pCategories->getNRows(); ++j) {
+      vector<double> vLengthFrequency(iNBins);
+      // loop Through category elements
+      for (int k = 0; k < pCategories->getNElements(j); ++k) {
+        // Loop Through Ages in that square and do the length conversion
+        for (int i = 0; i < (int)pSquare->getWidth(); ++i) {			  
+          double dSelectResult = vSelectivities[pCategories->getIndex(j,k)]->getResult(i);
+          double dNumberAtAge = dSelectResult * pSquare->getAbundanceInCategoryForAge(i, pCategories->getCategoryIndex(j,k));
+          vector<double> vLengthProportions = pWorld->getLengthFrequency(i ,pCategories->getCategoryIndex(j,k), vLengthBins);
+          for(int l = 0; l < (int)vLengthProportions.size(); ++l) {
+            vLengthFrequency[l] += dNumberAtAge * vLengthProportions[l];
+          }
+        }
+      }
+      for(int m = 0; m < (int)vLengthFrequency.size(); ++m) {
+        pLengthResults[m + (j * iNBins)] = vLengthFrequency[m];
+      }
+    }
+    // Populate our Running Total
+    dRunningTotal = 0.0;
+
+    for (int i = 0; i < (iNBins * pCategories->getNRows()); ++i)
+      dRunningTotal += pLengthResults[i];
+
+    for (int i = 0; i < (pCategories->getNRows()); ++i) {
+      for (int j = 0; j < iNBins; ++j) {
+        // Get our Proportion
+        if(!CComparer::isZero(dRunningTotal))
+          dCurrentProp = pLengthResults[(iNBins * i) + j] / dRunningTotal;
+        else
+          dCurrentProp = 0.0;
+
+        // Store the items we want to calculate scores for
+        vKeys.push_back((*mvObsPtr).first);
+        vGroup.push_back(pCategories->getGroup(i));
+        vBin.push_back(j+1);
+        vExpected.push_back(dCurrentProp);
+        vObserved.push_back(((*mvObsPtr).second)[(iNBins * i) + j]);
+        vProcessError.push_back(dProcessError);
+        //identify the correct row of error values and extract the correct error value
+        while (mvErrPtr != mvErrorMatrix.end()) {
+          if ((*mvErrPtr).first == (*mvObsPtr).first) {
+            vErrorValue.push_back(((*mvErrPtr).second)[(iNBins * i) + j]);
+            break;
+          }
+          mvErrPtr++;
+        }
+      }
+    }
+
+    // Clear Our Length Results
+    for (int i = 0; i < (iNBins * pCategories->getNRows()); ++i)
+      pLengthResults[i] = 0.0;
+
+    mvObsPtr++;
+  }
+
+  // Simulate or Generate Result?
+  if (pRuntimeController->getRunMode() == RUN_MODE_SIMULATION) {
+    // Simulate our values, then save them
+    pLikelihood->simulateObserved(vKeys, vObserved, vExpected, vErrorValue, vProcessError, dDelta);
+    for (int i = 0; i < (int)vObserved.size(); ++i)
+      saveComparison(vKeys[i], vBin[i], vGroup[i], vExpected[i], vObserved[i], vErrorValue[i], vProcessError[i], pLikelihood->adjustErrorValue(vProcessError[i], vErrorValue[i]), 0.0);
+
+  } else { // Generate Score
+    dScore = pLikelihood->getInitialScore(vKeys, vExpected, vObserved, vProcessError, vErrorValue, dDelta);
+
+    // Generate Results and save them
+    pLikelihood->getResult(vScores, vExpected, vObserved, vErrorValue, vProcessError, dDelta);
+    for (int i = 0; i < (int)vScores.size(); ++i) {
+      dScore += vScores[i];
+      saveComparison(vKeys[i], vBin[i], vGroup[i], vExpected[i], vObserved[i], vErrorValue[i], vProcessError[i], pLikelihood->adjustErrorValue(vProcessError[i], vErrorValue[i]), vScores[i]);
+    }
+  }
 
 #ifndef OPTIMIZE
   } catch (string &Ex) {

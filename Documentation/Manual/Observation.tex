@@ -9,6 +9,7 @@ Observations are typically supplied as observations at an instance in time, over
   \item Observations of proportions at age within categories
   \item Observations of proportions by categories within age classes
   \item Observations of proportions at length bin within categories
+  \item Observations of proportions by categories within length bins
   \item Relative and absolute abundance/biomass observations
   \item Relative proportions present observations
 	
@@ -340,7 +341,7 @@ The default value of $\delta$ is $1 \times 10^{-11}$.
 
 \subsection{\I{Proportions-at-length observations}}
 
-Proportions-at-length observations are observations of either the relative number of individuals within a length bin, via some selectivity. 
+Proportions-at-length observations are observations of the relative number of individuals within a length bin, via some selectivity. 
 
 The observation is supplied for a given year and time-step, for some defined length bins of the population, for categories aggregated over a set of spatial cells. Note that the categories defined in the observations must have an associated selectivity, defined by \subcommand{selectivities}.
 
@@ -367,7 +368,7 @@ categories male
 
 \SPM\ then expects that there will be a single vector of proportions supplied, with one proportion for each length bin, and that these proportions sum to one. 
 
-For example, if the length bins were 0 30 60 90 120, then 4 proportions should be supplied (one proportion for each of the bins 0-30, 30-60, 60-90, 90-120). The expected values will be the expected proportions of males within each of these length bins (after ignoring any males with length less than zero or greater than 120), after applying a selectivity at the year and time-step specified. The supplied vector of proportions (i.e., in this example, the 8 proportions) must sum to one, which is evaluated with a default tolerance of 0.001. 
+For example, if the length bins were 0 30 60 90 120, then 4 proportions should be supplied (one proportion for each of the bins 0-30, 30-60, 60-90, 90-120). The expected values will be the expected proportions of males within each of these length bins (after ignoring any males with length less than zero or greater than 120), after applying a selectivity at the year and time-step specified. The supplied vector of proportions (i.e., in this example, the 4 proportions) must sum to one, which is evaluated with a default tolerance of 0.001. 
 
 The observations must be also supplied using all or some of the values of defined by some \emph{categorical} layer. \SPM\ calculates the expected values by summing over the defined ages (via the length bin range and selectivity) and categories for those spatial cells where the categorical layer has the same value as defined for each vector of observations.
 
@@ -541,7 +542,110 @@ Z \left(\theta,\delta \right) = \begin{cases}
 
 The default value of $\delta$ is $1 \times 10^{-11}$.
 
+\subsection{\I{Proportions-by-category-at-length observations}\label{sec:proportions-by-category-at-length}}
 
+Proportions-by-category-at-length observations are observations of the relative number of individuals between categories within length bins, via some selectivity. 
+
+The observation is supplied for a given year and time-step, for selected numbers within length bins of the population (i.e., for a range of lengths derived from all ages multiplied by a selectivity), for categories aggregated over a set of spatial cells. 
+
+Proportions-by-category-at-length observations can be supplied for any set of categories as a proportion of themselves and any set of additional categories. For example, for a model with the two categories \emph{male} and \emph{female}, we might supply observations of the proportions of males in the population at each length bin. The subcommand \subcommand{categories} defines the categories for the numerator in the calculation of the proportion, and the subcommand \subcommand{categories2} supplies the additional categories to be used in the denominator of the calculation. In addition, each category must have an associated selectivity, defined by \subcommand{selectivities} for the numerator categories and \subcommand{selectivities2} for the additional categories used in the denominator, e.g., 
+
+{\small{\begin{verbatim}
+categories male
+categories2 female
+selectivities male-selectivity
+selectivities2 female-selectivity
+\end{verbatim}}}
+
+defines that the proportion of males in each length bin as a proportion of males $+$ females. \SPM\ then expects that there will be a vector of proportions supplied, with one proportion for each length bin within the defined age range. For example, if the length bins were 0 30 60 90 120, then 4 proportions should be supplied (one proportion for each of the bins 0-30, 30-60, 60-90, 90-120). The expected values will be the expected proportions of males within each of these length bins (after ignoring any males with length less than zero or greater than 120), after applying a selectivity at the year and time-step specified. The supplied vector of proportions (i.e., in this example, the 4 proportions) must sum to one, which is evaluated with a default tolerance of 0.001. 
+
+The observations must be supplied using all or some of the values defined by a categorical layer. \SPM\ calculates the expected values by summing over the length bins (via the selectivity) and categories for those spatial cells where the categorical layer has the same value as defined for each vector of observations.
+
+For example, in a $2 \times 2$ spatial model a categorical layer (e.g., with label Area) may define that cells $(1,1)$ and $(1,2)$ have value $A$ and cells $(2,1)$ and $(2,2)$ have value $B$, i.e.,
+
+{\small{\begin{verbatim}
+@layer Area
+type categorical
+data A A 
+data B B
+\end{verbatim}}}
+
+Here we supply observations for those spatial cells where the categorical layer has value $A$ as, 
+
+{\small{\begin{verbatim}
+@observation MyProportions
+type proportions_by_category_at_length
+layer Area
+...
+categories male 
+categories2 female
+length_bins 0 30 60 90 120 150
+obs A 0.01 0.05 0.10 0.20 0.20
+...
+\end{verbatim}}}
+
+Or, for both $A$ and $B$ as,
+
+{\small{\begin{verbatim}
+@observation MyProportions
+type proportions_by_category
+layer Area
+...
+categories male
+categories2 female
+length_bins 0 30 60 90 120 150
+obs A 0.01 0.05 0.10 0.20 0.20
+obs B 0.02 0.06 0.10 0.21 0.18
+...
+\end{verbatim}}}
+
+To supply an observation for individual spatial cells, then you will need to define a categorical layer with a single, unique value for each spatial cell. 
+
+\subsubsection{Likelihoods for proportions-by-category observations}
+
+\SPM\ implements two likelihoods for proportions-by-category-at-length observations, the binomial likelihood, and the normal approximation to the binomial (binomial-approx). 
+
+\subsubsection*{The binomial likelihood\index{Binomial likelihood ! proportions-by-category-at-length}}
+
+For observed proportions $O_i$ for length bin $i$, where $E_i$ are the expected proportions for length bin $i$, and $N_i$ is the effective sample size for length bin $i$, then the negative log-likelihood is defined as;  
+
+\begin{equation}
+  \begin{split}
+    -\log \left(L \right)= -\sum\limits_i & \left[ \right. \log \left(N_i! \right) - \log \left(\left(N_i \left(1 - O_i \right) \right)! \right) - \log \left(\left(N_i O_i \right)! \right) + N_i O_i \log \left(Z\left(E_i,\delta \right) \right) \\
+    &+ N_i \left(1 - O_i \right)\log \left(Z\left(1 - E_i,\delta\right) \right) \left. \right]
+  \end{split}
+\end{equation}
+
+
+where $Z \left(\theta,\delta \right)$ is a robustifying function to prevent division by zero errors, with parameter $\delta>0$. $Z \left(\theta,\delta \right)$ is defined as,
+
+\begin{equation}
+   Z \left(\theta,\delta \right) = \begin{cases}
+	  \theta, & \text{where $\theta \ge r$} \\
+	  \delta/\left( 2-\theta/\delta \right), & \text{otherwise} \\  
+  \end{cases}
+\end{equation}
+
+The default value of $\delta$ is $1 \times 10^{-11}$.
+
+\subsubsection*{The normal approximation to the binomial likelihood\index{Binomial likelihood (normal approximation) ! proportions-by-category-at-length}}
+
+For observed proportions $O_i$ for length bin $i$, where $E_i$ are the expected proportions for length bin $i$, and $N_i$ is the effective sample size for length bin $i$, then the negative log-likelihood is defined as;  
+
+\begin{equation}
+  -\log \left(L \right)= \sum\limits_i \log \left( \sqrt{Z\left(E_i,\delta \right)Z\left(1-E_i,\delta\right)/N_i} \right)     + \frac{1}{2} \left( \frac{O_i-E_i}{\sqrt{Z\left(E_i,\delta\right)Z\left(1-E_i,\delta \right)/N_i}} \right)^2
+\end{equation}
+
+where $Z \left(\theta,\delta \right)$ is a robustifying function to prevent division by zero errors, with parameter $\delta>0$. $Z \left(\theta,\delta \right)$ is defined as,
+
+\begin{equation}
+   Z \left(\theta,\delta \right) = \begin{cases}
+	  \theta, & \text{where $\theta \ge r$} \\
+	  \delta/\left( 2-\theta/\delta \right), & \text{otherwise} \\  
+  \end{cases}
+\end{equation}
+
+The default value of $\delta$ is $1 \times 10^{-11}$.
 
 \subsection{\I{Abundance or biomass observations}}
 

@@ -502,7 +502,7 @@
 \defSub{proportion\_method} {Define the method for interpolating the time-step for calculating the expected value of the observation}
 \defSub{proportion\_time\_step} {Define the interpolated proportion through the time-step for calculating the expected value of the observation}
 \defSub{categories} {Define the categories that make up the numerator of the observation}
-\defSub{categories2} {Define the categories that, in combination with the numberator categories, make up the denominator}
+\defSub{categories2} {Define the categories that, in combination with the numerator categories, make up the denominator}
 \defSub{selectivities} {Define the selectivities applied to each category}
 \defSub{selectivities2} {Define the selectivities applied to each category}
 \defSub{min\_age} {Define the minimum age for the observation}
@@ -527,6 +527,23 @@
 \defSub{layer} {Name of the categorical layer used to group the spatial cells for the observation}
 \defSub{obs [label]}{Define the following data as observations for the categorical layer with value \texttt{[label]}}
 \defSub{tolerance}{Define the tolerance on the sum-to-one error check in \SPM}
+\defSub{error\_value [label]}{Define the following data as error values (e.g., $N$ for multinomial likelihoods, c.v. for lognormal likelihoods, etc.) for the categorical layer with value \texttt{[label]}}
+\defSub{likelihood}{Define the likelihood for the observation}
+\defSub{delta}{Define the delta robustifying constant for the likelihood}
+\defSub{process\_error}{Define the process error term}
+\defSub{simulation\_likelihood}{Define the likelihood when doing simulations, if the observations is a pseudo-observation}
+\par\textbf{\commandlabsubarg{observation}{type}{proportions\_by\_category\_at\_length}}\par
+\defSub{year} {Define the year that the observation applies to}
+\defSub{time\_step} {Define the time-step that the observation applies to}
+\defSub{proportion\_method} {Define the method for interpolating the time-step for calculating the expected value of the observation}
+\defSub{proportion\_time\_step} {Define the interpolated proportion through the time-step for calculating the expected value of the observation}
+\defSub{categories} {Define the categories that make up the numerator of the observation}
+\defSub{categories2} {Define the categories that, in combination with the numerator categories, make up the denominator}
+\defSub{selectivities} {Define the selectivities applied to each category}
+\defSub{selectivities2} {Define the selectivities applied to each category}
+\defSub{length\_bins} {Define the length bins for the observation}
+\defSub{layer} {Name of the categorical layer used to group the spacial cells for the observation}
+\defSub{obs [label]}{Define the following data as observations for the categorical layer with value \argument{[label]}}
 \defSub{error\_value [label]}{Define the following data as error values (e.g., $N$ for multinomial likelihoods, c.v. for lognormal likelihoods, etc.) for the categorical layer with value \texttt{[label]}}
 \defSub{likelihood}{Define the likelihood for the observation}
 \defSub{delta}{Define the delta robustifying constant for the likelihood}

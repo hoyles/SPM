@@ -12,9 +12,6 @@
 // Local Headers
 #include "../CObservation.h"
 
-// Forward Declaration
-class CCompoundCategories;
-
 //**********************************************************************
 //
 //
@@ -50,7 +47,6 @@ protected:
   vector<CSelectivity*>       vTargetSelectivities;
   double                      dDelta;
   double                      dProcessError;
-  CCompoundCategories         *pCategories;
 };
 
 #endif /*CPROPORTIONSBYCATEGORYOBSERVATION_H_*/

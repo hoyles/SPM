@@ -376,6 +376,7 @@
 #define PARAM_PROPORTIONS                         "proportions"
 #define PARAM_PROPORTIONS_AT_AGE                  "proportions_at_age"
 #define PARAM_PROPORTIONS_AT_LENGTH               "proportions_at_length"
+#define PARAM_PROPORTIONS_AT_LENGTH_BY_CATEGORY   "proportions_by_category_at_length"
 #define PARAM_PROPORTIONS_BY_CATEGORY             "proportions_by_category"
 #define PARAM_PROPOSAL_DISTRIBUTION               "proposal_distribution"
 #define PARAM_PSEUDO                              "none"
