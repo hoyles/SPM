@@ -14,6 +14,7 @@
 #include "../../Observations/Children/CProportionsAtAgeObservation.h"
 #include "../../Observations/Children/CProportionsByCategoryObservation.h"
 #include "../../Observations/Children/CProportionsAtLengthObservation.h"
+#include "../../Observations/Children/CProportionsAtLengthByCategoryObservation.h"
 #include "../../Observations/Children/CAbundanceObservation.h"
 #include "../../Observations/Children/CBiomassObservation.h"
 #include "../../Observations/Children/CPresenceObservation.h"
@@ -88,6 +89,7 @@ void CObservationReport::execute() {
     CProportionsAtAgeObservation *pProportionsAtAge = dynamic_cast<CProportionsAtAgeObservation*>(pObservation);
     CProportionsByCategoryObservation *pProportionsByCategory = dynamic_cast<CProportionsByCategoryObservation*>(pObservation);
     CProportionsAtLengthObservation *pProportionsAtLength = dynamic_cast<CProportionsAtLengthObservation*>(pObservation);
+    CProportionsAtLengthByCategoryObservation *pProportionsAtLengthByCategory = dynamic_cast<CProportionsAtLengthByCategoryObservation*>(pObservation);
     CAbundanceObservation *pAbundance = dynamic_cast<CAbundanceObservation*>(pObservation);
     CBiomassObservation *pBiomass = dynamic_cast<CBiomassObservation*>(pObservation);
     CPresenceObservation *pPresence = dynamic_cast<CPresenceObservation*>(pObservation);
@@ -132,11 +134,28 @@ void CObservationReport::execute() {
       cout << PARAM_YEAR << CONFIG_RATIO_SEPARATOR << " " << pProportionsAtLength->getYear()  << "\n";
       cout << PARAM_TIME_STEP << CONFIG_RATIO_SEPARATOR << " " << pProportionsAtLength->getTimeStepString()  << "\n";
       int iNBins = pProportionsAtLength->getNBins();
-	  cout << PARAM_NBINS << CONFIG_RATIO_SEPARATOR << " " << iNBins << "\n";
+	    cout << PARAM_NBINS << CONFIG_RATIO_SEPARATOR << " " << iNBins << "\n";
       cout << PARAM_LENGTH_BINS << CONFIG_RATIO_SEPARATOR << " " ;
-	  for(int i=0; i < (iNBins + 1); ++i)
+	    for(int i=0; i < (iNBins + 1); ++i)
         cout << pProportionsAtLength->getLengthBinValue(i)  << " ";
-	  cout << "\n";
+	    cout << "\n";
+      cout << "area" << CONFIG_SPACE_SEPARATOR << "category" << CONFIG_SPACE_SEPARATOR
+           << PARAM_LENGTH_BINS << CONFIG_SPACE_SEPARATOR
+           << "observed" << CONFIG_SPACE_SEPARATOR << "expected" << CONFIG_SPACE_SEPARATOR
+           << "residual" << CONFIG_SPACE_SEPARATOR << "errorvalue" << CONFIG_SPACE_SEPARATOR
+           << "processerror" << CONFIG_SPACE_SEPARATOR << "totalerror" << CONFIG_SPACE_SEPARATOR
+           << "score\n";
+    } else if (pProportionsAtLengthByCategory != 0) {
+      cout << PARAM_LABEL << CONFIG_RATIO_SEPARATOR << " " << pProportionsAtLengthByCategory->getLabel()  << "\n";
+      cout << PARAM_TYPE << CONFIG_RATIO_SEPARATOR << " " << pProportionsAtLengthByCategory->getType()  << "\n";
+      cout << PARAM_YEAR << CONFIG_RATIO_SEPARATOR << " " << pProportionsAtLengthByCategory->getYear()  << "\n";
+      cout << PARAM_TIME_STEP << CONFIG_RATIO_SEPARATOR << " " << pProportionsAtLengthByCategory->getTimeStepString()  << "\n";
+      int iNBins = pProportionsAtLengthByCategory->getNBins();
+	    cout << PARAM_NBINS << CONFIG_RATIO_SEPARATOR << " " << iNBins << "\n";
+      cout << PARAM_LENGTH_BINS << CONFIG_RATIO_SEPARATOR << " " ;
+	    for(int i=0; i < (iNBins + 1); ++i)
+        cout << pProportionsAtLengthByCategory->getLengthBinValue(i)  << " ";
+	    cout << "\n";
       cout << "area" << CONFIG_SPACE_SEPARATOR << "category" << CONFIG_SPACE_SEPARATOR
            << PARAM_LENGTH_BINS << CONFIG_SPACE_SEPARATOR
            << "observed" << CONFIG_SPACE_SEPARATOR << "expected" << CONFIG_SPACE_SEPARATOR
@@ -149,7 +168,7 @@ void CObservationReport::execute() {
       cout << PARAM_YEAR << CONFIG_RATIO_SEPARATOR << " " << pAbundance->getYear()  << "\n";
       cout << PARAM_TIME_STEP << CONFIG_RATIO_SEPARATOR << " " << pAbundance->getTimeStepString()  << "\n";
       cout << PARAM_CATCHABILITY << CONFIG_RATIO_SEPARATOR << " " << pAbundance->getCatchability()  << "\n";
-    cout << "area" << CONFIG_SPACE_SEPARATOR << "observed" << CONFIG_SPACE_SEPARATOR
+      cout << "area" << CONFIG_SPACE_SEPARATOR << "observed" << CONFIG_SPACE_SEPARATOR
            << "expected" << CONFIG_SPACE_SEPARATOR << "residual" << CONFIG_SPACE_SEPARATOR
            << "errorvalue" << CONFIG_SPACE_SEPARATOR << "processerror" << CONFIG_SPACE_SEPARATOR
            << "totalerror" << CONFIG_SPACE_SEPARATOR << "score\n";
@@ -188,7 +207,11 @@ void CObservationReport::execute() {
       } else if (pProportionsAtLength != 0) {
         cout << Comparison->sGroup << CONFIG_SPACE_SEPARATOR;
         cout << pProportionsAtLength->getLengthBinValue(Comparison->iBin - 1) << "-" 
-		     << pProportionsAtLength->getLengthBinValue(Comparison->iBin) << CONFIG_SPACE_SEPARATOR;
+		         << pProportionsAtLength->getLengthBinValue(Comparison->iBin) << CONFIG_SPACE_SEPARATOR;
+      } else if (pProportionsAtLengthByCategory != 0) {
+        cout << Comparison->iBin << CONFIG_SPACE_SEPARATOR;
+        cout << pProportionsAtLengthByCategory->getLengthBinValue(Comparison->iBin - 1) << "-" 
+		         << pProportionsAtLengthByCategory->getLengthBinValue(Comparison->iBin) << CONFIG_SPACE_SEPARATOR;
       }
       cout << Comparison->dObservedValue << CONFIG_SPACE_SEPARATOR
            << Comparison->dExpectedValue << CONFIG_SPACE_SEPARATOR

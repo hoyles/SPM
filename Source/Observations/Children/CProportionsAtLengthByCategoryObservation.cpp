@@ -32,6 +32,8 @@ using std::numeric_limits;
 //**********************************************************************
 CProportionsAtLengthByCategoryObservation::CProportionsAtLengthByCategoryObservation() {
   // Variables
+  pLengthResults             = 0;
+  pCombinedLengthResults     = 0;
   
   // Register estimables
   registerEstimable(PARAM_PROCESS_ERROR, &dProcessError);
@@ -127,7 +129,7 @@ void CProportionsAtLengthByCategoryObservation::validate() {
     if (vErrorValues.size() != vOBS.size()) {
       CError::errorListSameSize(PARAM_OBS, PARAM_ERROR_VALUE);
     }
-
+    
     for (int i = 0; i < (int)vErrorValues.size(); i+=(iNBins+1)) {
       for (int j = 0; j < iNBins; ++j) {
         try {
@@ -155,6 +157,7 @@ void CProportionsAtLengthByCategoryObservation::validate() {
 //**********************************************************************
 void CProportionsAtLengthByCategoryObservation::build() {
   try {
+
     // Base Build
     CObservation::build();
 
@@ -168,6 +171,7 @@ void CProportionsAtLengthByCategoryObservation::build() {
       pLengthResults = new double[iNBins];
     if (pCombinedLengthResults == 0)
       pCombinedLengthResults = new double[iNBins];
+
     for (int i = 0; i < iNBins; ++i) {
       pLengthResults[i] = 0.0;
       pCombinedLengthResults[i] = 0.0;
@@ -290,7 +294,8 @@ void CProportionsAtLengthByCategoryObservation::execute() {
 
       // Store the items we want to calculate scores for
       vKeys.push_back((*mvObsPtr).first);
-      vLengthBins.push_back(i+iNBins);
+      vBin
+      .push_back(i+1);
       vExpected.push_back(dExpected);
       vObserved.push_back((*mvObsPtr).second[i]);
       vProcessError.push_back(dProcessError);
@@ -317,11 +322,13 @@ void CProportionsAtLengthByCategoryObservation::execute() {
 
     // Generate Results and save them
     pLikelihood->getResult(vScores, vExpected, vObserved, vErrorValue, vProcessError, dDelta);
+
     for (int i = 0; i < (int)vScores.size(); ++i) {
       dScore += vScores[i];
       saveComparison(vKeys[i], vBin[i], std::string(""), vExpected[i], vObserved[i], vErrorValue[i], vProcessError[i], pLikelihood->adjustErrorValue(vProcessError[i], vErrorValue[i]), vScores[i]);
     }
   }
+
 #ifndef OPTIMIZE
   } catch (string &Ex) {
     Ex = "CProportionsAtLengthObservation.execute(" + getLabel() + ")->" + Ex;

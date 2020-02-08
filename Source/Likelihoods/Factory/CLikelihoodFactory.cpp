@@ -91,6 +91,16 @@ CLikelihood* CLikelihoodFactory::buildLikelihood(string observationType, string 
     else
       CError::errorUnknown(PARAM_LIKELIHOOD, type);
 
+  } else if (observationType == PARAM_PROPORTIONS_AT_LENGTH_BY_CATEGORY) {
+    if (type == PARAM_BINOMIAL_APPROX)
+      pLikelihood = new CBinomialApproxLikelihood();
+    else if (type == PARAM_BINOMIAL)
+      pLikelihood = new CBinomialLikelihood();
+    else if (type == PARAM_PSEUDO)
+      pLikelihood = new CPseudoLikelihood();
+    else
+      CError::errorUnknown(PARAM_LIKELIHOOD, type);
+
   } else
     CError::errorUnknown(PARAM_OBSERVATION, observationType);
 

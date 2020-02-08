@@ -6,13 +6,16 @@
 #' @param object the name of the object containing model configuration
 #' @param file The file to write to
 #' @param path Optionally, the path to the file
+#' @param header Optionally, a text header to append as a comment at the top of the file
+#' @param date Optionally, a comment giving the current date
 #' @export
 #'
-"write.spm.config" <- function(object, file, path = "") {
+"write.spm.config" <- function(object, file, path = "", header="SPM config file", date=FALSE) {
   # create filename and write file
   if (missing(path)) path <- ""
   filename <- spm.make.filename(path = path, file = file)
-  cat("# SPM configuration file\n", file=filename, sep="", fill=F, labels=NULL, append=F)
+  cat(paste("#",header,"\n"), file=filename, sep="", fill=F, labels=NULL, append=F)
+  if(date) cat(paste("#",date(),"\n\n"), file=filename, sep="", fill=F, labels=NULL, append=T)
   for(i in 1:length(object)) {
     index<-regexpr("\\[",names(object)[i])
     if(index > 0) {

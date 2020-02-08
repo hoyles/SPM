@@ -4,7 +4,8 @@
 \alias{write.spm.config}
 \title{Model configuration read function}
 \usage{
-write.spm.config(object, file, path = "")
+write.spm.config(object, file, path = "", header = "SPM config file",
+  date = FALSE)
 }
 \arguments{
 \item{object}{the name of the object containing model configuration}
@@ -12,6 +13,10 @@ write.spm.config(object, file, path = "")
 \item{file}{The file to write to}
 
 \item{path}{Optionally, the path to the file}
+
+\item{header}{Optionally, a text header to append as a comment at the top of the file}
+
+\item{date}{Optionally, a comment giving the current date}
 }
 \description{
 This function writes an SPM configuration file. Where each element is a command and subcommand from the configuration file
