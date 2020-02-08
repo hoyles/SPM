@@ -1013,6 +1013,21 @@ Each type of preference function requires a set of subcommands and arguments spe
 \defType{Estimable}
 \defDefault{No default}
 
+\subsubsection[Knife-edge]{\commandlabsubarg{preference\_function}{type}{knife\_edge}}
+
+\defSub{layer} {Defines the layer which supplies the preference function independent variable}
+\defType{String}
+\defDefault{No default}
+\defValue{A valid layer defined by \command{layer}}
+
+\defSub{alpha} {Defines the multiplicative constant $\alpha$}
+\defType{Estimable}
+\defDefault{1.0}
+
+\defSub{c} {Defines the $c$ parameter of the knife-edge preference function}
+\defType{Estimable}
+\defDefault{No default}
+
 \subsubsection[Categorical]{\commandlabsubarg{preference\_function}{type}{categorical}}
 
 \defSub{layer} {Defines the layer which supplies the preference function independent variable}

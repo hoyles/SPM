@@ -54,12 +54,12 @@
 \contentsline {subsubsection}{\numberline {4.13.1}Constant}{50}{subsubsection.4.13.1}% 
 \contentsline {subsubsection}{\numberline {4.13.2}Knife-edge}{50}{subsubsection.4.13.2}% 
 \contentsline {subsubsection}{\numberline {4.13.3}All-values}{50}{subsubsection.4.13.3}% 
-\contentsline {subsubsection}{\numberline {4.13.4}All-values-bounded}{50}{subsubsection.4.13.4}% 
+\contentsline {subsubsection}{\numberline {4.13.4}All-values-bounded}{51}{subsubsection.4.13.4}% 
 \contentsline {subsubsection}{\numberline {4.13.5}Increasing}{51}{subsubsection.4.13.5}% 
 \contentsline {subsubsection}{\numberline {4.13.6}Logistic}{51}{subsubsection.4.13.6}% 
-\contentsline {subsubsection}{\numberline {4.13.7}Inverse logistic}{51}{subsubsection.4.13.7}% 
+\contentsline {subsubsection}{\numberline {4.13.7}Inverse logistic}{52}{subsubsection.4.13.7}% 
 \contentsline {subsubsection}{\numberline {4.13.8}Logistic producing}{52}{subsubsection.4.13.8}% 
-\contentsline {subsubsection}{\numberline {4.13.9}Double-normal}{52}{subsubsection.4.13.9}% 
+\contentsline {subsubsection}{\numberline {4.13.9}Double-normal}{53}{subsubsection.4.13.9}% 
 \contentsline {subsubsection}{\numberline {4.13.10}Double-exponential}{53}{subsubsection.4.13.10}% 
 \contentsline {subsubsection}{\numberline {4.13.11}Spline}{53}{subsubsection.4.13.11}% 
 \contentsline {section}{\numberline {5}The estimation section}{55}{section.5}% 
@@ -152,34 +152,35 @@
 \contentsline {subsubsection}{\numberline {8.5.5}Inverse-logistic}{108}{subsubsection.8.5.5}% 
 \contentsline {subsubsection}{\numberline {8.5.6}Exponential}{109}{subsubsection.8.5.6}% 
 \contentsline {subsubsection}{\numberline {8.5.7}Threshold}{109}{subsubsection.8.5.7}% 
-\contentsline {subsubsection}{\numberline {8.5.8}Categorical}{109}{subsubsection.8.5.8}% 
-\contentsline {subsubsection}{\numberline {8.5.9}Monotonic categorical}{110}{subsubsection.8.5.9}% 
-\contentsline {subsubsection}{\numberline {8.5.10}Gaussian copula}{110}{subsubsection.8.5.10}% 
-\contentsline {subsubsection}{\numberline {8.5.11}Gumbel copula}{111}{subsubsection.8.5.11}% 
-\contentsline {subsubsection}{\numberline {8.5.12}Frank copula}{111}{subsubsection.8.5.12}% 
-\contentsline {subsubsection}{\numberline {8.5.13}Independence copula}{112}{subsubsection.8.5.13}% 
+\contentsline {subsubsection}{\numberline {8.5.8}Knife-edge}{109}{subsubsection.8.5.8}% 
+\contentsline {subsubsection}{\numberline {8.5.9}Categorical}{110}{subsubsection.8.5.9}% 
+\contentsline {subsubsection}{\numberline {8.5.10}Monotonic categorical}{110}{subsubsection.8.5.10}% 
+\contentsline {subsubsection}{\numberline {8.5.11}Gaussian copula}{111}{subsubsection.8.5.11}% 
+\contentsline {subsubsection}{\numberline {8.5.12}Gumbel copula}{111}{subsubsection.8.5.12}% 
+\contentsline {subsubsection}{\numberline {8.5.13}Frank copula}{112}{subsubsection.8.5.13}% 
+\contentsline {subsubsection}{\numberline {8.5.14}Independence copula}{112}{subsubsection.8.5.14}% 
 \contentsline {subsection}{\numberline {8.6}Probability Density Functions}{112}{subsection.8.6}% 
-\contentsline {subsubsection}{\numberline {8.6.1}Normal}{112}{subsubsection.8.6.1}% 
-\contentsline {subsubsection}{\numberline {8.6.2}Lognormal}{112}{subsubsection.8.6.2}% 
+\contentsline {subsubsection}{\numberline {8.6.1}Normal}{113}{subsubsection.8.6.1}% 
+\contentsline {subsubsection}{\numberline {8.6.2}Lognormal}{113}{subsubsection.8.6.2}% 
 \contentsline {subsubsection}{\numberline {8.6.3}Exponential}{113}{subsubsection.8.6.3}% 
 \contentsline {subsubsection}{\numberline {8.6.4}Uniform}{113}{subsubsection.8.6.4}% 
-\contentsline {subsection}{\numberline {8.7}Layers}{113}{subsection.8.7}% 
+\contentsline {subsection}{\numberline {8.7}Layers}{114}{subsection.8.7}% 
 \contentsline {subsubsection}{\numberline {8.7.1}Numeric}{114}{subsubsection.8.7.1}% 
 \contentsline {subsubsection}{\numberline {8.7.2}Categorical}{114}{subsubsection.8.7.2}% 
-\contentsline {subsubsection}{\numberline {8.7.3}Distance}{114}{subsubsection.8.7.3}% 
-\contentsline {subsubsection}{\numberline {8.7.4}Haversine}{114}{subsubsection.8.7.4}% 
+\contentsline {subsubsection}{\numberline {8.7.3}Distance}{115}{subsubsection.8.7.3}% 
+\contentsline {subsubsection}{\numberline {8.7.4}Haversine}{115}{subsubsection.8.7.4}% 
 \contentsline {subsubsection}{\numberline {8.7.5}Dijkstra}{115}{subsubsection.8.7.5}% 
 \contentsline {subsubsection}{\numberline {8.7.6}Haversine Dijkstra}{115}{subsubsection.8.7.6}% 
 \contentsline {subsubsection}{\numberline {8.7.7}Abundance}{115}{subsubsection.8.7.7}% 
-\contentsline {subsubsection}{\numberline {8.7.8}Biomass}{115}{subsubsection.8.7.8}% 
+\contentsline {subsubsection}{\numberline {8.7.8}Biomass}{116}{subsubsection.8.7.8}% 
 \contentsline {subsubsection}{\numberline {8.7.9}Abundance-density}{116}{subsubsection.8.7.9}% 
 \contentsline {subsubsection}{\numberline {8.7.10}Biomass-density}{116}{subsubsection.8.7.10}% 
 \contentsline {subsubsection}{\numberline {8.7.11}Numeric meta-layer}{116}{subsubsection.8.7.11}% 
 \contentsline {subsubsection}{\numberline {8.7.12}Categorical meta-layer}{117}{subsubsection.8.7.12}% 
-\contentsline {subsubsection}{\numberline {8.7.13}Derived quantity layer}{117}{subsubsection.8.7.13}% 
+\contentsline {subsubsection}{\numberline {8.7.13}Derived quantity layer}{118}{subsubsection.8.7.13}% 
 \contentsline {subsubsection}{\numberline {8.7.14}Derived quantity by cell layer}{118}{subsubsection.8.7.14}% 
 \contentsline {subsection}{\numberline {8.8}Derived quantities by cell}{118}{subsection.8.8}% 
-\contentsline {subsubsection}{\numberline {8.8.1}Abundance}{118}{subsubsection.8.8.1}% 
+\contentsline {subsubsection}{\numberline {8.8.1}Abundance}{119}{subsubsection.8.8.1}% 
 \contentsline {subsubsection}{\numberline {8.8.2}Biomass}{119}{subsubsection.8.8.2}% 
 \contentsline {subsection}{\numberline {8.9}Derived quantities}{120}{subsection.8.9}% 
 \contentsline {subsubsection}{\numberline {8.9.1}Abundance}{120}{subsubsection.8.9.1}% 
@@ -197,7 +198,7 @@
 \contentsline {subsubsection}{\numberline {8.12.1}Constant}{127}{subsubsection.8.12.1}% 
 \contentsline {subsubsection}{\numberline {8.12.2}Knife-edge}{127}{subsubsection.8.12.2}% 
 \contentsline {subsubsection}{\numberline {8.12.3}All-values}{127}{subsubsection.8.12.3}% 
-\contentsline {subsubsection}{\numberline {8.12.4}All-values-bounded}{127}{subsubsection.8.12.4}% 
+\contentsline {subsubsection}{\numberline {8.12.4}All-values-bounded}{128}{subsubsection.8.12.4}% 
 \contentsline {subsubsection}{\numberline {8.12.5}Increasing}{128}{subsubsection.8.12.5}% 
 \contentsline {subsubsection}{\numberline {8.12.6}Logistic}{128}{subsubsection.8.12.6}% 
 \contentsline {subsubsection}{\numberline {8.12.7}InverseLogistic}{129}{subsubsection.8.12.7}% 

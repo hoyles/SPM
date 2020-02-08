@@ -22,7 +22,7 @@
   \indexspace
 
   \item Base layer, \hyperpage{13}, \hyperpage{15}
-  \item Basic size-weight relationship, \hyperpage{48}
+  \item Basic size-weight relationship, \hyperpage{49}
   \item Bayesian estimation, \hyperpage{58}
   \item Beta prior, \hyperpage{61}
   \item Beverton-Holt recruitment, \hyperpage{24, 25}
@@ -56,7 +56,7 @@
   \item Citing \SPM, \hyperpage{1}
   \item Classification layers, \hyperpage{16}
   \item Command 
-    \subitem  age\_size, \hyperpage{121}, \hyperpage{198}
+    \subitem  age\_size, \hyperpage{122}, \hyperpage{198}
     \subitem  ageing\_error, \hyperpage{155}, \hyperpage{206}
     \subitem  catchability, \hyperpage{140}, \hyperpage{202}
     \subitem  derived\_quantity, \hyperpage{120}, \hyperpage{198}
@@ -154,7 +154,7 @@
 
   \item Gaussian copula, \hyperpage{44}
   \item Getting help, \hyperpage{2}
-  \item Gumbel copula, \hyperpage{44}
+  \item Gumbel copula, \hyperpage{45}
 
   \indexspace
 
@@ -177,8 +177,12 @@
 
   \indexspace
 
+  \item Knife-edge preference function, \hyperpage{43}
+
+  \indexspace
+
   \item Layer varying exploitation rate, \hyperpage{31}
-  \item Layers, \hyperpage{15}, \hyperpage{113}
+  \item Layers, \hyperpage{15}, \hyperpage{114}
   \item Layers 
     \subitem  the base layer, \hyperpage{15}
   \item Likelihoods, \hyperpage{63}
@@ -278,6 +282,7 @@
     \subitem  Double-Normal, \hyperpage{42}
     \subitem  Exponential, \hyperpage{43}
     \subitem  Inverse-Logistic, \hyperpage{42}
+    \subitem  Knife-edge, \hyperpage{43}
     \subitem  Logistic, \hyperpage{42}
     \subitem  Monotonic categorical, \hyperpage{43}
     \subitem  Normal, \hyperpage{42}
@@ -391,15 +396,15 @@
 
   \indexspace
 
-  \item Schnute growth curve, \hyperpage{47}
+  \item Schnute growth curve, \hyperpage{48}
   \item Selectivities, \hyperpage{49}, \hyperpage{126}
     \subitem All-values, \hyperpage{50}
-    \subitem All-values-bounded, \hyperpage{50}
+    \subitem All-values-bounded, \hyperpage{51}
     \subitem Constant, \hyperpage{50}
     \subitem Double-exponential, \hyperpage{53}
-    \subitem Double-normal, \hyperpage{52}
+    \subitem Double-normal, \hyperpage{53}
     \subitem Increasing, \hyperpage{51}
-    \subitem Inverse-logistic, \hyperpage{51}
+    \subitem Inverse-logistic, \hyperpage{52}
     \subitem Knife-edge, \hyperpage{50}
     \subitem Logistic, \hyperpage{51}
     \subitem Logistic-producing, \hyperpage{52}

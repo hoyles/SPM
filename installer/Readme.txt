@@ -24,7 +24,7 @@ Installation
 
 Your can either
 
-Use the Microsoft Windows installer for SPM. This copies the progam files
+Use the Microsoft Windows installer for SPM. This copies the program files
 to the SPM install directory, creates icons in your start menu, and
 modifies the system registry to,
 (i)   Add to the the SPM install directory to the systems PATH

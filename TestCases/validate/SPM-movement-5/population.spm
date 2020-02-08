@@ -5,7 +5,7 @@ ncols 100
 layer base
 categories all
 min_age 1
-max_age 500
+max_age 50
 age_plus_group true
 initialisation_phases phase1
 initial_year 1994
@@ -26,10 +26,10 @@ years 200
 time_steps Phase1
 
 @time_step Phase1
-processes recruitment m ageing
+processes recruitment ageing
 
 @time_step step_one
-processes recruitment m move2 ageing
+processes recruitment move2 ageing
 
 # population processes
 @process ageing
@@ -56,10 +56,10 @@ categories all
 preference_functions distance-move
 
 @preference_function distance-move
-type exponential
+type knife_edge
 alpha 1
 layer distance
-lambda 0.2
+c 3
 
 # definition of layers
 @layer base

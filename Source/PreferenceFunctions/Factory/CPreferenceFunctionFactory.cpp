@@ -18,6 +18,7 @@
 #include "../Children/CDoubleNormalPreferenceFunction.h"
 #include "../Children/CExponentialPreferenceFunction.h"
 #include "../Children/CInverseLogisticPreferenceFunction.h"
+#include "../Children/CKnifeedgePreferenceFunction.h"
 #include "../Children/CLogisticPreferenceFunction.h"
 #include "../Children/CNormalPreferenceFunction.h"
 #include "../Children/CThresholdPreferenceFunction.h"
@@ -49,6 +50,8 @@ CPreferenceFunction* CPreferenceFunctionFactory::buildPreferenceFunction(string 
     pFunction = new CNormalPreferenceFunction();
   else if (type == PARAM_THRESHOLD)
     pFunction = new CThresholdPreferenceFunction();
+  else if (type == PARAM_KNIFE_EDGE)
+    pFunction = new CKnifeedgePreferenceFunction();
   else if (type == PARAM_CATEGORICAL)
     pFunction = new CCategoricalPreferenceFunction();
   else if (type == PARAM_CATEGORICAL_MONOTONIC)

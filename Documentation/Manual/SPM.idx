@@ -211,6 +211,8 @@
 \indexentry{Preference function ! Exponential|hyperpage}{43}
 \indexentry{Threshold preference function|hyperpage}{43}
 \indexentry{Preference function ! Threshold|hyperpage}{43}
+\indexentry{Knife-edge preference function|hyperpage}{43}
+\indexentry{Preference function ! Knife-edge|hyperpage}{43}
 \indexentry{Categorical preference function|hyperpage}{43}
 \indexentry{Preference function ! Categorical|hyperpage}{43}
 \indexentry{Monotonic categorical preference function|hyperpage}{43}
@@ -222,28 +224,28 @@
 \indexentry{Exponential density function|hyperpage}{44}
 \indexentry{Uniform density function|hyperpage}{44}
 \indexentry{Gaussian copula|hyperpage}{44}
-\indexentry{Gumbel copula|hyperpage}{44}
+\indexentry{Gumbel copula|hyperpage}{45}
 \indexentry{Frank copula|hyperpage}{45}
 \indexentry{Independence copula|hyperpage}{45}
 \indexentry{Derived quantities|hyperpage}{46}
 \indexentry{Derived quantities by cell|hyperpage}{46}
 \indexentry{Size-age relationship|hyperpage}{47}
 \indexentry{von Bertalanffy growth curve|hyperpage}{47}
-\indexentry{Schnute growth curve|hyperpage}{47}
+\indexentry{Schnute growth curve|hyperpage}{48}
 \indexentry{von Bertalanffy k-at-age growth curve|hyperpage}{48}
 \indexentry{mean size-at-age growth curve|hyperpage}{48}
 \indexentry{Size-weight relationship|hyperpage}{48}
-\indexentry{Basic size-weight relationship|hyperpage}{48}
+\indexentry{Basic size-weight relationship|hyperpage}{49}
 \indexentry{Selectivities|hyperpage}{49}
 \indexentry{Selectivities!Constant|hyperpage}{50}
 \indexentry{Selectivities!Knife-edge|hyperpage}{50}
 \indexentry{Selectivities!All-values|hyperpage}{50}
-\indexentry{Selectivities!All-values-bounded|hyperpage}{50}
+\indexentry{Selectivities!All-values-bounded|hyperpage}{51}
 \indexentry{Selectivities!Increasing|hyperpage}{51}
 \indexentry{Selectivities!Logistic|hyperpage}{51}
-\indexentry{Selectivities!Inverse-logistic|hyperpage}{51}
+\indexentry{Selectivities!Inverse-logistic|hyperpage}{52}
 \indexentry{Selectivities!Logistic-producing|hyperpage}{52}
-\indexentry{Selectivities!Double-normal|hyperpage}{52}
+\indexentry{Selectivities!Double-normal|hyperpage}{53}
 \indexentry{Selectivities!Double-exponential|hyperpage}{53}
 \indexentry{Selectivities!Spline|hyperpage}{53}
 \indexentry{The estimation section|hyperpage}{55}
@@ -389,14 +391,14 @@
 \indexentry{Command ! preference\_function|hyperpage}{106}
 \indexentry{Probability Density Functions|hyperpage}{112}
 \indexentry{Command ! pdf|hyperpage}{112}
-\indexentry{Layers|hyperpage}{113}
+\indexentry{Layers|hyperpage}{114}
 \indexentry{Command ! layer|hyperpage}{114}
 \indexentry{Derived quantities by cell|hyperpage}{118}
 \indexentry{Command ! derived\_quantity\_by\_cell|hyperpage}{118}
 \indexentry{Derived quantities|hyperpage}{120}
 \indexentry{Command ! derived\_quantity|hyperpage}{120}
 \indexentry{Age-size relationship|hyperpage}{121}
-\indexentry{Command ! age\_size|hyperpage}{121}
+\indexentry{Command ! age\_size|hyperpage}{122}
 \indexentry{Size-weight|hyperpage}{126}
 \indexentry{Command ! size\_weight|hyperpage}{126}
 \indexentry{Selectivities|hyperpage}{126}

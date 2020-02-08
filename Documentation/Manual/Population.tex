@@ -246,7 +246,7 @@ selectivities One
 For example, to specify a biomass density layer of all individuals who are categorised as \texttt{mature}, use,
 {\small{\begin{verbatim}
 @layer BiomassDensity
-type bioomass_density
+type biomass_density
 categories mature
 selectivities One
 \end{verbatim}}}
@@ -1230,6 +1230,14 @@ f(x | \mu, \sigma) = 2^{-[(x- \mu)/\sigma ]^2}
   f(x | N, \lambda) = \begin{cases}
     1, & \text{if $0 \le x \leq N$} \\
     1/\left({\frac{x}{N}}^\lambda\right), & \text{if $x \ge N$}\\
+    0, & \text{otherwise}
+  \end{cases}
+\end{equation}
+
+\item The knife-edge preference function\index{Knife-edge preference function}\index{Preference function ! Knife-edge} has dependent variable $x$ and parameter $c$, and is defined as,
+\begin{equation}
+  f(x, c) = \begin{cases}
+    1, & \text{if $c \le x$} \\
     0, & \text{otherwise}
   \end{cases}
 \end{equation}
