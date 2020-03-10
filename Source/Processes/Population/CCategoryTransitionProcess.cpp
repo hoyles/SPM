@@ -32,7 +32,8 @@ CCategoryTransitionProcess::CCategoryTransitionProcess() {
   // Variables
   pTimeStepManager = CTimeStepManager::Instance();
   sType = PARAM_CATEGORY_TRANSITION;
-
+  pPenalty = 0;
+  
   // Register user allowed parameters
   pParameterList->registerAllowed(PARAM_FROM);     //categories
   pParameterList->registerAllowed(PARAM_SELECTIVITIES); //selectivities for FROM to calculate vulnerable

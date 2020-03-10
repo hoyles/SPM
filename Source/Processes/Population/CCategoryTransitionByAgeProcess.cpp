@@ -35,6 +35,7 @@ CCategoryTransitionByAgeProcess::CCategoryTransitionByAgeProcess() {
   pTimeStepManager = CTimeStepManager::Instance();
   sType = PARAM_CATEGORY_TRANSITION_BY_AGE;
   bRequiresMerge = false;
+  pPenalty = 0;
 
   // Register user allowed parameters
   pParameterList->registerAllowed(PARAM_FROM);     //categories
@@ -43,7 +44,7 @@ CCategoryTransitionByAgeProcess::CCategoryTransitionByAgeProcess() {
   pParameterList->registerAllowed(PARAM_LAYER);    //layer
   pParameterList->registerAllowed(PARAM_MIN_AGE);  // min age
   pParameterList->registerAllowed(PARAM_MAX_AGE);  // max age
-  pParameterList->registerAllowed(PARAM_DATA);     // N top move (vector, by age)
+  pParameterList->registerAllowed(PARAM_DATA);     // N to move (vector, by age)
   pParameterList->registerAllowed(PARAM_PENALTY);
   pParameterList->registerAllowed(PARAM_U_MAX);
 
@@ -198,6 +199,7 @@ void CCategoryTransitionByAgeProcess::execute() {
         for (int i = 0; i < (int)vCategoryIndex.size(); ++i) {
           dTotal += pLayerDerivedSquare->getValue(vCategoryIndex[i],(iSquareAgeOffset + j));
         }
+
         // Work out exploitation rate to move
         dExploitation = ((*mvNPtr).second)[j] / CMath::zeroFun(dTotal,ZERO);
         if (dExploitation > dUMax) {

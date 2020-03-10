@@ -26,7 +26,8 @@
 CHollingMortalityRateProcess::CHollingMortalityRateProcess() {
   // Variables
   sType = PARAM_HOLLING_MORTALITY_RATE;
-
+  pPenalty = 0;
+  
   // Register user allowed parameters
   pParameterList->registerAllowed(PARAM_IS_ABUNDANCE);
   pParameterList->registerAllowed(PARAM_A);

@@ -38,6 +38,7 @@ CEventMortalityProcess::CEventMortalityProcess() {
   pTimeStepManager = CTimeStepManager::Instance();
   sType = PARAM_EVENT_MORTALITY;
   bRequiresMerge = false;
+  pPenalty = 0;
 
   // Register user allowed parameters
   pParameterList->registerAllowed(PARAM_CATEGORIES);

@@ -31,6 +31,7 @@ CPreySuitabilityPredationProcess::CPreySuitabilityPredationProcess() {
   sType = PARAM_PREY_SUITABILITY_PREDATION;
   pPreyCategories  = 0;
   pCRLayer         = 0;
+  pPenalty = 0;
 
   // Register user allowed parameters
   pParameterList->registerAllowed(PARAM_IS_ABUNDANCE);
