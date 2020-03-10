@@ -2,9 +2,9 @@
 
 export(PF)
 export(PFconstant)
-export(PFdoublenormal)
+export(PFdouble_normal)
 export(PFexponential)
-export(PFinverselogistic)
+export(PFinverse_logistic)
 export(PFlogistic)
 export(PFnormal)
 export(PFthreshold)

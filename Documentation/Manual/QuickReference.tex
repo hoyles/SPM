@@ -126,7 +126,7 @@
 \defSub{layer} {Name of the categorical layer used to group the spatial cells for the process}
 \defSub{min\_age} {Define the minimum age for the process }
 \defSub{max\_age} {Define the maximum age for the process}
-\defSub{N [label]}{Define the following data as the number of individuals to move in each age class}
+\defSub{data [label]}{Define the following data as the number of individuals to move in each age class}
 \par\textbf{\commandlabsubarg{process}{type}{category\_transition}}\par
 \defSub{from} {Define the categories that are the source of the transition process}
 \defSub{selectivities} {Define the selectivities applied to the source categories}
@@ -148,7 +148,7 @@
 \defSub{layer} {Name of the categorical layer used to group the spatial cells for the process}
 \defSub{min\_age} {Define the minimum age for the process }
 \defSub{max\_age} {Define the maximum age for the process}
-\defSub{N [label]}{Define the following data as the number of individuals to move in each age class}
+\defSub{data [label]}{Define the following data as the number of individuals to move in each age class}
 \defSub{u\_max} {Define the maximum proportion of individuals that can be moved}
 \defSub{penalty} {Define the penalty to encourage models parameter values away from those which result in not enough individuals to move}
 \par\textbf{\commandlabsubarg{process}{type}{migration}}\par
@@ -205,6 +205,10 @@
 \defSub{alpha} {Defines the multiplicative constant $\alpha$}
 \defSub{n} {Defines the $N$ parameter of the threshold preference function}
 \defSub{lambda} {Defines the $\lambda$ parameter of the threshold preference function}
+\par\textbf{\commandlabsubarg{preference\_function}{type}{knife\_edge}}\par
+\defSub{layer} {Defines the layer which supplies the preference function independent variable}
+\defSub{alpha} {Defines the multiplicative constant $\alpha$}
+\defSub{c} {Defines the $c$ parameter of the knife-edge preference function}
 \par\textbf{\commandlabsubarg{preference\_function}{type}{categorical}}\par
 \defSub{layer} {Defines the layer which supplies the preference function independent variable}
 \defSub{alpha} {Defines the multiplicative constant $\alpha$}

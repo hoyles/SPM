@@ -363,7 +363,7 @@ void CProportionsAtAgeObservation::execute() {
           vExpected.push_back(dCurrentProp);
           vObserved.push_back(((*mvObsPtr).second)[(iAgeSpread * i) + j]);
           vProcessError.push_back(dProcessError);
-          //indentify the correct row of error values and extract the correct error value
+          //identify the correct row of error values and extract the correct error value
           while (mvErrPtr != mvErrorMatrix.end()) {
             if ((*mvErrPtr).first == (*mvObsPtr).first) {
               vErrorValue.push_back(((*mvErrPtr).second)[(iAgeSpread * i) + j]);

@@ -8,7 +8,7 @@
 #' @param rescale Rescale the function to have value 1?. Default = TRUE
 #' @export
 #'
-"PFinverselogistic" <-
+"PFinverse_logistic" <-
 function(x,alpha,a50,ato95,rescale=T) {
   pow<-function(x,y) return(x^y)
   temp<-(a50-x)/ato95

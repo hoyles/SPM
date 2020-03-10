@@ -1,0 +1,9 @@
+@include "population.spm"
+
+@report state-1
+type partition
+time_step step_one
+years 1994 1998 2004 2008
+
+@report Objective_Score
+type objective_function

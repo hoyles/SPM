@@ -280,7 +280,7 @@
 \contentsline {subsection}{\numberline {18.1}Population command and subcommand syntax}{189}{subsection.18.1}% 
 \contentsline {subsection}{\numberline {18.2}Estimation command and subcommand syntax}{201}{subsection.18.2}% 
 \contentsline {subsection}{\numberline {18.3}Observation command and subcommand syntax}{203}{subsection.18.3}% 
-\contentsline {subsection}{\numberline {18.4}Report command and subcommand syntax}{206}{subsection.18.4}% 
+\contentsline {subsection}{\numberline {18.4}Report command and subcommand syntax}{207}{subsection.18.4}% 
 \contentsline {subsection}{\numberline {18.5}Other commands and subcommands}{210}{subsection.18.5}% 
 \contentsline {section}{\numberline {19}References}{211}{section.19}% 
 \contentsline {section}{\numberline {20}Spatial Population Model\ software license}{213}{section.20}% 

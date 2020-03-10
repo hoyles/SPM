@@ -1,0 +1,93 @@
+# spatial structure
+@model
+nrows 1
+ncols 100
+layer base
+categories all
+min_age 1
+max_age 10
+age_plus_group false
+initialisation_phases phase1
+initial_year 1994
+current_year 2008
+cell_length 1
+time_steps step_one
+age_size none
+
+@age_size none
+type none
+size_weight none
+
+@size_weight none
+type none
+
+@initialisation_phase phase1
+years 200
+time_steps Phase1
+
+@time_step Phase1
+processes recruitment ageing
+
+@time_step step_one
+processes recruitment move2 ageing
+
+# population processes
+@process ageing
+type ageing
+categories all
+
+@process recruitment
+type constant_recruitment
+categories all
+proportions 1.0
+r0 100
+age 1
+layer depth
+
+@process m
+type constant_mortality_rate
+categories all
+m 0.13
+selectivities one
+
+@process move2
+type preference
+categories all
+preference_functions gradient-move distance-move
+
+@preference_function distance-move
+type knife_edge
+alpha 1
+layer distance
+c 3
+
+@preference_function gradient-move
+type constant
+alpha 1
+layer gradient
+c 3
+
+# definition of layers
+@layer base
+type numeric
+@include "base.map"
+
+@layer depth
+type numeric
+@include "depth.map"
+
+@layer constant
+type numeric
+@include "constant.map"
+
+@layer distance
+type distance
+
+@layer gradient
+type numeric
+data 1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53  54  55  56  57  58  59  60  61  62  63  64  65  66  67  68  69  70  71  72  73  74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89  90  91  92  93  94  95  96  97  98  99 100
+
+# definition of selecivities
+@selectivity one
+type constant
+c 1

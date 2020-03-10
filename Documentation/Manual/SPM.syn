@@ -58,7 +58,6 @@ CharEsc = \
 
 [Keywords 2]
 Lmin
-N
 a
 a50
 acceptance_ratio
@@ -88,6 +87,7 @@ covariance_adjustment_method
 crossover_probability
 current_year
 cv
+data
 data
 default_layer
 delta

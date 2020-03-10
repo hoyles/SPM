@@ -41,7 +41,7 @@ CCategoryStateByAgeProcess::CCategoryStateByAgeProcess() {
   pParameterList->registerAllowed(PARAM_LAYER);    //layer
   pParameterList->registerAllowed(PARAM_MIN_AGE);  // min age
   pParameterList->registerAllowed(PARAM_MAX_AGE);  // max age
-  pParameterList->registerAllowed(PARAM_N);        // N to state (vector, by age)
+  pParameterList->registerAllowed(PARAM_DATA);        // N to state (vector, by age)
 }
 
 //**********************************************************************
@@ -71,7 +71,7 @@ void CCategoryStateByAgeProcess::validate() {
 
     // Get our Ns
     vector<string> vNs;
-    pParameterList->fillVector(vNs, PARAM_N);
+    pParameterList->fillVector(vNs, PARAM_DATA);
 
     if ((vNs.size() % (iAgeSpread + 1)) !=0)
       CError::errorListNotSize(PARAM_DATA, iAgeSpread);
@@ -83,7 +83,7 @@ void CCategoryStateByAgeProcess::validate() {
           if(dNumber < 0) CError::errorLessThanEqualTo(PARAM_DATA, PARAM_ZERO);
           mvNMatrix[vNs[i]].push_back(dNumber);
         } catch (boost::bad_lexical_cast&) {
-          string Ex = string("Non-numeric value in ") + PARAM_N + string(" for ") + PARAM_PROCESS + string(" ") + getLabel();
+          string Ex = string("Non-numeric value in ") + PARAM_DATA + string(" for ") + PARAM_PROCESS + string(" ") + getLabel();
           throw Ex;
         }
       }
@@ -92,7 +92,7 @@ void CCategoryStateByAgeProcess::validate() {
     int iCounter = 0;
     for (int i = 0; i < (int)vNs.size(); i+=(iAgeSpread + 1)) {
       for (int j = 0; j < iAgeSpread; ++j) {
-        registerEstimable(PARAM_N, iCounter, &mvNMatrix[vNs[i]][j]);
+        registerEstimable(PARAM_DATA, iCounter, &mvNMatrix[vNs[i]][j]);
         iCounter++;
       }
     }

@@ -58,7 +58,7 @@
   \item Command 
     \subitem  age\_size, \hyperpage{122}, \hyperpage{198}
     \subitem  ageing\_error, \hyperpage{155}, \hyperpage{206}
-    \subitem  catchability, \hyperpage{140}, \hyperpage{202}
+    \subitem  catchability, \hyperpage{140}, \hyperpage{203}
     \subitem  derived\_quantity, \hyperpage{120}, \hyperpage{198}
     \subitem  derived\_quantity\_by\_cell, \hyperpage{118}, 
 		\hyperpage{197}
@@ -73,11 +73,11 @@
     \subitem  model, \hyperpage{87}, \hyperpage{189}
     \subitem  observation, \hyperpage{141}, \hyperpage{203}
     \subitem  pdf, \hyperpage{112}, \hyperpage{195}
-    \subitem  penalty, \hyperpage{140}, \hyperpage{202}
+    \subitem  penalty, \hyperpage{140}, \hyperpage{203}
     \subitem  preference\_function, \hyperpage{106}, \hyperpage{193}
     \subitem  process, \hyperpage{90}, \hyperpage{189}
     \subitem  profile, \hyperpage{137}, \hyperpage{202}
-    \subitem  report, \hyperpage{157}, \hyperpage{206}
+    \subitem  report, \hyperpage{157}, \hyperpage{207}
     \subitem  selectivity, \hyperpage{127}, \hyperpage{199}
     \subitem  size\_weight, \hyperpage{126}, \hyperpage{199}
     \subitem  time\_step, \hyperpage{89}, \hyperpage{189}

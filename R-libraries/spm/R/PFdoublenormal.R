@@ -9,7 +9,7 @@
 #' @param rescale Rescale the function to have value 1?. Default = TRUE
 #' @export
 #'
-"PFdoublenormal" <-
+"PFdouble_normal" <-
 function(x,alpha,mu,sigmaL,sigmaR,rescale=T) {
   pow<-function(x,y) return(x^y)
   res1<-pow(2.0,-((x-mu)/sigmaL * (x-mu)/sigmaL))^alpha
