@@ -4,9 +4,18 @@
 \alias{spm.get.lines}
 \title{utility function}
 \usage{
-spm.get.lines(lines, from = -1, to = -1, contains = "",
-  starts.with = "", clip.to = "", clip.from = "",
-  clip.to.match = "", clip.from.match = "", ...)
+spm.get.lines(
+  lines,
+  from = -1,
+  to = -1,
+  contains = "",
+  starts.with = "",
+  clip.to = "",
+  clip.from = "",
+  clip.to.match = "",
+  clip.from.match = "",
+  ...
+)
 }
 \description{
 utility function

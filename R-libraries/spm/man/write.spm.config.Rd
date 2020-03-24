@@ -4,8 +4,13 @@
 \alias{write.spm.config}
 \title{Model configuration read function}
 \usage{
-write.spm.config(object, file, path = "", header = "SPM config file",
-  date = FALSE)
+write.spm.config(
+  object,
+  file,
+  path = "",
+  header = "SPM config file",
+  date = FALSE
+)
 }
 \arguments{
 \item{object}{the name of the object containing model configuration}

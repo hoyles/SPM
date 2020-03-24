@@ -4,8 +4,13 @@
 \alias{lognormalLikelihood}
 \title{Calcuate the lognormal likelihood from a set of observed, expected, and error values}
 \usage{
-lognormalLikelihood(observed, expected, errorValue, processError = 0,
-  delta = 1e-11)
+lognormalLikelihood(
+  observed,
+  expected,
+  errorValue,
+  processError = 0,
+  delta = 1e-11
+)
 }
 \arguments{
 \item{observed}{The observed values for the likelihood}

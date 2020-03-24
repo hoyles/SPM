@@ -4,8 +4,13 @@
 \alias{normalLikelihood}
 \title{Calcuate the normal likelihood from a set of observed, expected, and error values}
 \usage{
-normalLikelihood(observed, expected, errorValue, processError = 0,
-  delta = 1e-11)
+normalLikelihood(
+  observed,
+  expected,
+  errorValue,
+  processError = 0,
+  delta = 1e-11
+)
 }
 \arguments{
 \item{observed}{The observed values for the likelihood}

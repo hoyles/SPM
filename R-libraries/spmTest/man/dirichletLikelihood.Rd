@@ -4,8 +4,13 @@
 \alias{dirichletLikelihood}
 \title{Calcuate the Dirichlet likelihood from a set of observed, expected, and error values}
 \usage{
-dirichletLikelihood(observed, expected, errorValue, processError = 0,
-  delta = 1e-11)
+dirichletLikelihood(
+  observed,
+  expected,
+  errorValue,
+  processError = 0,
+  delta = 1e-11
+)
 }
 \arguments{
 \item{observed}{The observed proportions}

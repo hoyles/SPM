@@ -4,8 +4,13 @@
 \alias{binomialapproxLikelihood}
 \title{Calcuate the binomial approx likelihood from a set of observed, expected, and error values}
 \usage{
-binomialapproxLikelihood(observed, expected, errorValue,
-  processError = 0, delta = 1e-11)
+binomialapproxLikelihood(
+  observed,
+  expected,
+  errorValue,
+  processError = 0,
+  delta = 1e-11
+)
 }
 \arguments{
 \item{observed}{The observed values for the likelihood}
