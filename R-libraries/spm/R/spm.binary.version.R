@@ -1,4 +1,4 @@
 "spm.binary.version"<-
 function() {
-return("1.1 (2020-03-10)")
+return("2.0.1 (2020-03-24)")
 }
