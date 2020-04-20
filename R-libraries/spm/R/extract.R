@@ -19,7 +19,7 @@
     header$user.name <- line[5]
     header$machine.name <- line[6]
     res$header <- header
-    temp<-substr(res$header$version[1],2,15)
+    temp<-substr(res$header$version[1],2,17)
     if (temp != spm.binary.version()) {
       cat("Warning: spm and the spm R library versions are different\n")
       cat("SPM v",temp,"\n",sep="")

@@ -1,6 +1,6 @@
 # Get SPM Version
 source("version.R")
-VERSION<-paste(version.number," (",version.date,")",sep="")
+VERSION<-paste(version.number,"-",version.date,sep="")
 
 # Build DESCRIPTION file
 filename<-"spm/DESCRIPTION"

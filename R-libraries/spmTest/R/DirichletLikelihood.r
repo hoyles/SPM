@@ -1,4 +1,4 @@
-#' Calcuate the Dirichlet likelihood from a set of observed, expected, and error values
+#' Calculate the Dirichlet likelihood from a set of observed, expected, and error values
 #'
 #' @author Alistair Dunn
 #' @param observed The observed proportions
@@ -55,10 +55,3 @@ dirichletLikelihood2<-function(observed,expected,errorValue,processError=0,delta
 
   return(res)
 }
-dirichletLikelihood(c(0.25,0.25,0.25,0.25),c(0.1,0.2,0.3,0.4),50,processError=1.0,delta=1e-05)
-dirichletLikelihood2(c(0.25,0.25,0.25,0.25),c(0.1,0.2,0.3,0.4),50,processError=1.0,delta=1e-05)
-
-dirichletLikelihood2(c(0.4,0.6),c(0.5,0.5),50,processError=0.1,delta=1e-05)
-dirichletLikelihood2(c(0.1),c(1.0),50,processError=0.5,delta=1e-05)
-
-

@@ -87,13 +87,14 @@ void CDerivedQuantityByCellReport::execute() {
     cout << CONFIG_ARRAY_START << sLabel << CONFIG_ARRAY_END << "\n";
     cout << PARAM_REPORT << "." << PARAM_TYPE << CONFIG_RATIO_SEPARATOR << " " << pParameterList->getString(PARAM_TYPE) << "\n";
     cout << PARAM_LABEL << CONFIG_RATIO_SEPARATOR << " " << sDerivedQuantityByCell << "\n";
+    cout << PARAM_ROW << "." << PARAM_COLUMN << CONFIG_RATIO_SEPARATOR << " " << pDerivedQuantityByCell->getHeight() << " " << pDerivedQuantityByCell->getWidth() << "\n";
     if(bPrintInitialisation) {
       // Output initialisation values
       for (int i=0; i < pDerivedQuantityByCell->getInitialisationSize(); ++i) {
         for (int j=0; j < pDerivedQuantityByCell->getInitialisationValuesSize(i); ++j) {
           vector<vector<double> > vvDerivedQuantityByCell = pDerivedQuantityByCell->getInitialisationValue(i, j);
-          cout << PARAM_INITIALIZATION_PHASE << CONFIG_ARRAY_START << boost::lexical_cast<string>(i+1) << CONFIG_ARRAY_END << CONFIG_RATIO_SEPARATOR << " " ;
-          cout << PARAM_YEAR << "=" << j+1 << "\n";
+          cout << PARAM_INITIALIZATION_PHASE << CONFIG_ARRAY_START << boost::lexical_cast<string>(i+1) << CONFIG_ARRAY_END  
+               << "." << PARAM_YEAR << CONFIG_RATIO_SEPARATOR << " " << j+1 << "\n";
           for (int k = 0; k < pDerivedQuantityByCell->getHeight(); ++k) {
             for (int l = 0; l < pDerivedQuantityByCell->getWidth(); ++l) {
               cout << vvDerivedQuantityByCell[k][l] << (l<((int)pDerivedQuantityByCell->getWidth()-1) ? CONFIG_SPACE_SEPARATOR : "\n");
@@ -106,7 +107,7 @@ void CDerivedQuantityByCellReport::execute() {
     for (int i = pWorld->getInitialYear(); i <= pWorld->getCurrentYear(); ++i) {
       int iIndex = i - pWorld->getInitialYear();
       vector<vector<double> > vvDerivedQuantityByCell = pDerivedQuantityByCell->getValueFromIndex(iIndex);
-      cout << PARAM_YEARS << CONFIG_RATIO_SEPARATOR << " " << PARAM_YEAR << "=" << i << "\n";
+      cout << PARAM_YEAR << CONFIG_RATIO_SEPARATOR << " " << i << "\n";
       for (int k = 0; k < pDerivedQuantityByCell->getHeight(); ++k) {
         for (int l = 0; l < pDerivedQuantityByCell->getWidth(); ++l) {
           cout << vvDerivedQuantityByCell[k][l] << (l<((int)pDerivedQuantityByCell->getWidth()-1) ? CONFIG_SPACE_SEPARATOR : "\n");

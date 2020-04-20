@@ -2,7 +2,7 @@
 % Please edit documentation in R/BinomialLikelihood.r
 \name{binomialLikelihood}
 \alias{binomialLikelihood}
-\title{Calcuate the binomial likelihood from a set of observed, expected, and error values}
+\title{Calculate the binomial likelihood from a set of observed, expected, and error values}
 \usage{
 binomialLikelihood(
   observed,
@@ -24,7 +24,7 @@ binomialLikelihood(
 \item{delta}{The robustifying constant to prevent divide by zero errors}
 }
 \description{
-Calcuate the binomial likelihood from a set of observed, expected, and error values
+Calculate the binomial likelihood from a set of observed, expected, and error values
 }
 \author{
 Alistair Dunn
