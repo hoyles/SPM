@@ -1,4 +1,6 @@
-This is BibTeX, Version 0.99dThe top-level auxiliary file: SPM.aux
+This is BibTeX, Version 0.99d (MiKTeX 2.9.7400 64-bit)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: SPM.aux
 A level-1 auxiliary file: Introduction.aux
 A level-1 auxiliary file: Overview.aux
 A level-1 auxiliary file: RunningSPM.aux
@@ -16,3 +18,44 @@ The style file: plainnat.bst
 A level-1 auxiliary file: References.aux
 A level-1 auxiliary file: License.aux
 Database file #1: SPM.bib
+You've used 18 entries,
+            2773 wiz_defined-function locations,
+            726 strings with 8134 characters,
+and the built_in function-call counts, 7458 in all, are:
+= -- 662
+> -- 451
+< -- 15
++ -- 154
+- -- 135
+* -- 595
+:= -- 1218
+add.period$ -- 57
+call.type$ -- 18
+change.case$ -- 98
+chr.to.int$ -- 17
+cite$ -- 36
+duplicate$ -- 334
+empty$ -- 573
+format.name$ -- 169
+if$ -- 1528
+int.to.chr$ -- 2
+int.to.str$ -- 1
+missing$ -- 15
+newline$ -- 99
+num.names$ -- 72
+pop$ -- 169
+preamble$ -- 1
+purify$ -- 81
+quote$ -- 0
+skip$ -- 255
+stack$ -- 0
+substring$ -- 194
+swap$ -- 19
+text.length$ -- 3
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 178
+warning$ -- 0
+while$ -- 63
+width$ -- 0
+write$ -- 246

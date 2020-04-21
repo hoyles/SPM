@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.3.18)  26 MAR 2020 20:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7400 64-bit) (preloaded format=pdflatex 2020.4.21)  21 APR 2020 23:22
 entering extended mode
 **./SPM.tex
 (SPM.tex
-LaTeX2e <2020-02-02> patch level 3
-L3 programming layer <2020-03-06>
+LaTeX2e <2020-02-02> patch level 5
+L3 programming layer <2020-04-06>
 ("C:\Users\alist\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\article.cls"
 Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
 ("C:\Users\alist\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\size11.clo"
@@ -33,7 +33,7 @@ Package caption3 Info: TeX engine: e-TeX on input line 61.
 ("C:\Users\alist\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\keyval.st
 y"
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
-\KV@toks@=\toks14
+\KV@toks@=\toks15
 )
 \captionmargin=\dimen135
 \captionmargin@=\dimen136
@@ -53,9 +53,9 @@ Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 ("C:\Users\alist\AppData\Local\Programs\MiKTeX 2.9\tex/latex/float\float.sty"
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count177
-\float@exts=\toks15
+\float@exts=\toks16
 \float@box=\box45
-\@float@everytoks=\toks16
+\@float@everytoks=\toks17
 \@floatcapt=\box46
 )
 ("C:\Users\alist\AppData\Local\Programs\MiKTeX 2.9\tex/latex/setspace\setspace.
@@ -73,7 +73,7 @@ Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
 \col@sep=\dimen142
 \ar@mcellbox=\box47
 \extrarowheight=\dimen143
-\NC@list=\toks17
+\NC@list=\toks18
 \extratabsurround=\skip49
 \backup@length=\skip50
 \ar@cellbox=\box48
@@ -97,7 +97,7 @@ sty"
 Package: ltxcmds 2019/12/15 v1.24 LaTeX kernel commands for general use (HO)
 )
 ("C:\Users\alist\AppData\Local\Programs\MiKTeX 2.9\tex/generic/iftex\iftex.sty"
-Package: iftex 2019/11/07 v1.0c TeX engine tests
+Package: iftex 2020/03/06 v1.0d TeX engine tests
 )
 ("C:\Users\alist\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pdftexcmds\pdftexc
 mds.sty"
@@ -252,7 +252,7 @@ Package: amstext 2000/06/29 v2.01 AMS text
 ("C:\Users\alist\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsgen.sty
 "
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks18
+\@emptytoks=\toks19
 \ex@=\dimen152
 ))
 ("C:\Users\alist\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsbsy.sty
@@ -284,21 +284,21 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
 \dotsspace@=\muskip17
 \c@parentequation=\count196
 \dspbrk@lvl=\count197
-\tag@help=\toks19
+\tag@help=\toks20
 \row@=\count198
 \column@=\count199
 \maxfields@=\count266
-\andhelp@=\toks20
+\andhelp@=\toks21
 \eqnshift@=\dimen155
 \alignsep@=\dimen156
 \tagshift@=\dimen157
 \tagwidth@=\dimen158
 \totwidth@=\dimen159
 \lineht@=\dimen160
-\@envbody=\toks21
+\@envbody=\toks22
 \multlinegap=\skip53
 \multlinetaggap=\skip54
-\mathdisplay@stack=\toks22
+\mathdisplay@stack=\toks23
 LaTeX Info: Redefining \[ on input line 2859.
 LaTeX Info: Redefining \] on input line 2860.
 )
@@ -306,7 +306,7 @@ LaTeX Info: Redefining \] on input line 2860.
 sty"
 \lst@mode=\count267
 \lst@gtempboxa=\box51
-\lst@token=\toks23
+\lst@token=\toks24
 \lst@length=\count268
 \lst@currlwidth=\dimen161
 \lst@column=\count269
@@ -319,16 +319,16 @@ sty"
 
 ("C:\Users\alist\AppData\Local\Programs\MiKTeX 2.9\tex/latex/listings\lstmisc.s
 ty"
-File: lstmisc.sty 2019/09/10 1.8c (Carsten Heinz)
+File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
 \c@lstnumber=\count273
 \lst@skipnumbers=\count274
 \lst@framebox=\box52
 )
 ("C:\Users\alist\AppData\Local\Programs\MiKTeX 2.9\tex/latex/listings\listings.
 cfg"
-File: listings.cfg 2019/09/10 1.8c listings configuration
+File: listings.cfg 2020/03/24 1.8d listings configuration
 ))
-Package: listings 2019/09/10 1.8c (Carsten Heinz)
+Package: listings 2020/03/24 1.8d (Carsten Heinz)
 
 ("C:\Users\alist\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\color.sty
 "
@@ -363,7 +363,7 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 \Gm@layoutheight=\dimen170
 \Gm@layouthoffset=\dimen171
 \Gm@layoutvoffset=\dimen172
-\Gm@dimlist=\toks24
+\Gm@dimlist=\toks25
 
 ("C:\Users\alist\AppData\Local\Programs\MiKTeX 2.9\tex/latex/geometry\geometry.
 cfg"))
@@ -438,6 +438,47 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
 (Font)                  OT1/cmr/m/it --> OT1/ptm/m/it on input line 75.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 (Font)                  OT1/cmr/bx/it --> OT1/ptm/m/it on input line 75.
+
+
+LaTeX Warning: Font shape declaration has incorrect series value `mc'.
+               It should not contain an `m'! Please correct it.
+               Found on input line 226.
+
+
+LaTeX Warning: Font shape declaration has incorrect series value `mc'.
+               It should not contain an `m'! Please correct it.
+               Found on input line 230.
+
+
+LaTeX Warning: Font shape declaration has incorrect series value `mc'.
+               It should not contain an `m'! Please correct it.
+               Found on input line 234.
+
+
+LaTeX Warning: Font shape declaration has incorrect series value `mc'.
+               It should not contain an `m'! Please correct it.
+               Found on input line 243.
+
+
+LaTeX Warning: Font shape declaration has incorrect series value `mc'.
+               It should not contain an `m'! Please correct it.
+               Found on input line 384.
+
+
+LaTeX Warning: Font shape declaration has incorrect series value `mc'.
+               It should not contain an `m'! Please correct it.
+               Found on input line 388.
+
+
+LaTeX Warning: Font shape declaration has incorrect series value `mc'.
+               It should not contain an `m'! Please correct it.
+               Found on input line 392.
+
+
+LaTeX Warning: Font shape declaration has incorrect series value `mc'.
+               It should not contain an `m'! Please correct it.
+               Found on input line 401.
+
 <<ot1.cmap>>)
 ("C:\Users\alist\AppData\Local\Programs\MiKTeX 2.9\tex/latex/sectsty\sectsty.st
 y"
@@ -547,12 +588,12 @@ df.mkii"
 \scratchbox=\box55
 \nofMPsegments=\count283
 \nofMParguments=\count284
-\everyMPshowfont=\toks25
+\everyMPshowfont=\toks26
 \MPscratchCnt=\count285
 \MPscratchDim=\dimen176
 \MPnumerator=\count286
 \makeMPintoPDFobject=\count287
-\everyMPtoPDFconversion=\toks26
+\everyMPtoPDFconversion=\toks27
 )
 ("C:\Users\alist\AppData\Local\Programs\MiKTeX 2.9\tex/latex/epstopdf-pkg\epsto
 pdf-base.sty"
@@ -776,50 +817,52 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
 [141.153
 
 
-] [142.154] [143.155] [144.156] [145.157] [146.158]
-Overfull \hbox (14.86246pt too wide) in paragraph at lines 292--292
+] [142.154] [143.155] [144.156] [145.157] [146.158] [147.159]
+Overfull \hbox (14.86246pt too wide) in paragraph at lines 307--307
 []\OT1/pcr/b/n/12 @observation[label].type=proportions[]by[]category[]at[]lengt
 h 
  []
 
-[147.159] [148.160] [149.161] [150.162] [151.163] [152.164] [153.165] [154.166]
-[155.167]) [156.168] (syntax/ReportSyntax.tex [157.169
+[148.160] [149.161] [150.162] [151.163] [152.164] [153.165] [154.166] [155.167]
+[156.168]) [157.169] [158.170
 
 
-] [158.170] [159.171]
-[160.172] [161.173] [162.174] [163.175] [164.176] [165.177] [166.178] [167.179]
-) [168.180] (syntax/GeneralSyntax.tex) [169.181
+] (syntax/ReportSyntax.tex [159.171] [160.172]
+[161.173] [162.174] [163.175] [164.176] [165.177] [166.178] [167.179] [168.180]
+[169.181]) [170.182] (syntax/GeneralSyntax.tex) [171.183
 
 
-] [170.182
+] [172.184
 
 
 ]
 \openout2 = `Examples.aux'.
 
- (Examples.tex
+
+(Examples.tex
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 12.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 12.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 12.
-
-(Examples/Example1.tex
+ (Examples/Example1.tex
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
 nput line 20.
- (../../examples/1x1/config.spm [171.183
+ (../../examples/1x1/config.spm [173.185
 
 ])
-(../../examples/1x1/objective_values.dat [172.184]) (../../examples/1x1/MPD.dat
-) (../../examples/1x1/simulations/observations.01) [173.185]
-(../../examples/1x1/MCMC.log) (../../examples/1x1/MCMC.log)
-(../../examples/1x1/MCMC.log [174.186])) (Examples/Example2.tex
-(../../examples/simple_spatial/config.spm [175.187]) [176.188]
-(../../examples/simple_spatial/objective.dat [177.189])
+(../../examples/1x1/objective_values.dat [174.186]) (../../examples/1x1/MPD.dat
+) (../../examples/1x1/simulations/observations.01) [175.187]
+(../../examples/1x1/MCMC.log) (../../examples/1x1/MCMC.log
+consecutive:
+) (../../examples/1x1/MCMC.log
+consecutive:
+[176.188])) (Examples/Example2.tex (../../examples/simple_spatial/config.spm
+[177.189]) [178.190] (../../examples/simple_spatial/objective.dat [179.191])
 (../../examples/simple_spatial/MPD.dat)
-(../../examples/simple_spatial/simulations/observations.01) [178.190]
-(../../examples/simple_spatial/MCMC.log))) [179.191] [180.192
+(../../examples/simple_spatial/simulations/observations.01) [180.192]
+(../../examples/simple_spatial/MCMC.log))) [181.193] [182.194
 
 
 
@@ -827,9 +870,9 @@ nput line 20.
 \openout2 = `PostProcessing.aux'.
 
 
-(PostProcessing.tex) [181.193
+(PostProcessing.tex) [183.195
 
-] [182.194
+] [184.196
 
 
 
@@ -837,9 +880,9 @@ nput line 20.
 \openout2 = `ChangesEnhancements.aux'.
 
  (ChangesEnhancements.tex
-(SPMversion.tex)) [183.195
+(SPMversion.tex)) [185.197
 
-] [184.196
+] [186.198
 
 
 
@@ -847,17 +890,17 @@ nput line 20.
 \openout2 = `Troubleshooting.aux'.
 
  (Troubleshooting.tex (SPMversion.tex)
-[185.197
+[187.199
 
-]) [186.198]
+]) [188.200]
 \openout2 = `Acknowledgments.aux'.
 
- (Acknowledgments.tex) [187.199
+ (Acknowledgments.tex) [189.201
 
 
 
 
-] [188.200
+] [190.202
 
 
 
@@ -865,33 +908,33 @@ nput line 20.
 \openout2 = `QuickReference.aux'.
 
 
-(QuickReference.tex [189.201
+(QuickReference.tex [191.203
 
-] [190.202] [191.203] [192.204] [193.205] [194.206] [195.207] [196.208] [197.20
-9] [198.210] [199.211] [200.212] [201.213] [202.214] [203.215] [204.216] [205.2
-17] [206.218] [207.219] [208.220] [209.221])
-[210.222]
+] [192.204] [193.205] [194.206] [195.207] [196.208] [197.209] [198.210] [199.21
+1] [200.212] [201.213] [202.214] [203.215] [204.216] [205.217] [206.218] [207.2
+19] [208.220] [209.221] [210.222] [211.223])
+[212.224]
 \openout2 = `References.aux'.
 
- (References.tex (SPM.bbl [211.223
+ (References.tex (SPM.bbl [213.225
 
 
 
 
-])) [212.224]
+])) [214.226]
 \openout2 = `License.aux'.
 
- (License.tex [213.225
+ (License.tex [215.227
 
 
 
 
-]) [214.226] (SPM.ind [215.227
+]) [216.228] (SPM.ind [217.229
 
 
 
 
-] [216.228] [217.229] [218.230] [219.231
+] [218.230] [219.231] [220.232] [221.233
 
 ])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 360.
@@ -904,7 +947,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 360.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 360.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 360.
 Package rerunfilecheck Info: File `SPM.out' has not changed.
-(rerunfilecheck)             Checksum: FC7A1EEC92D9A3188235473054CED3AA;24168.
+(rerunfilecheck)             Checksum: 2F5504EEEFF2D1FA1F4D3F4B6D7EDCBF;24198.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 360.
  )
 (\end occurred inside a group at level 12)
@@ -923,10 +966,10 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 360.
 ### simple group (level 1) entered at line 84 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 12283 strings out of 480903
- 189122 string characters out of 2898373
- 585683 words of memory out of 3000000
- 26460 multiletter control sequences out of 15000+200000
+ 12287 strings out of 480896
+ 189206 string characters out of 2898165
+ 585876 words of memory out of 3000000
+ 26467 multiletter control sequences out of 15000+200000
  610209 words of font info for 180 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,15n,45p,1464b,2281s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -948,9 +991,9 @@ nts/type1/urw/times/utmbi8a.pfb><C:/Users/alist/AppData/Local/Programs/MiKTeX 2
 .9/fonts/type1/urw/times/utmr8a.pfb><C:/Users/alist/AppData/Local/Programs/MiKT
 eX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Users/alist/AppData/Local/Programs/
 MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on SPM.pdf (231 pages, 1194207 bytes).
+Output written on SPM.pdf (233 pages, 1197944 bytes).
 PDF statistics:
- 3981 PDF objects out of 4296 (max. 8388607)
- 1152 named destinations out of 1200 (max. 500000)
+ 3992 PDF objects out of 4296 (max. 8388607)
+ 1155 named destinations out of 1200 (max. 500000)
  2348 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -17,7 +17,7 @@
   \item Annual cycle, \hyperpage{3}, \hyperpage{13}, \hyperpage{20}, 
 		\hyperpage{23}
   \item Annual mortality, \hyperpage{31}
-  \item Available reports, \hyperpage{157}
+  \item Available reports, \hyperpage{159}
 
   \indexspace
 
@@ -56,31 +56,31 @@
   \item Citing \SPM, \hyperpage{1}
   \item Classification layers, \hyperpage{16}
   \item Command 
-    \subitem  age\_size, \hyperpage{122}, \hyperpage{198}
-    \subitem  ageing\_error, \hyperpage{155}, \hyperpage{206}
-    \subitem  catchability, \hyperpage{140}, \hyperpage{203}
-    \subitem  derived\_quantity, \hyperpage{120}, \hyperpage{198}
+    \subitem  age\_size, \hyperpage{122}, \hyperpage{200}
+    \subitem  ageing\_error, \hyperpage{156}, \hyperpage{208}
+    \subitem  catchability, \hyperpage{140}, \hyperpage{205}
+    \subitem  derived\_quantity, \hyperpage{120}, \hyperpage{200}
     \subitem  derived\_quantity\_by\_cell, \hyperpage{118}, 
-		\hyperpage{197}
-    \subitem  estimate, \hyperpage{137}, \hyperpage{202}
-    \subitem  estimation, \hyperpage{133}, \hyperpage{201}
-    \subitem  include, \hyperpage{169}, \hyperpage{210}
+		\hyperpage{199}
+    \subitem  estimate, \hyperpage{137}, \hyperpage{204}
+    \subitem  estimation, \hyperpage{133}, \hyperpage{203}
+    \subitem  include, \hyperpage{171}, \hyperpage{212}
     \subitem  Include files, \hyperpage{11}
-    \subitem  initialisation\_phase, \hyperpage{88}, \hyperpage{189}
-    \subitem  layer, \hyperpage{114}, \hyperpage{196}
-    \subitem  mcmc, \hyperpage{135}, \hyperpage{201}
-    \subitem  minimiser, \hyperpage{133}, \hyperpage{201}
-    \subitem  model, \hyperpage{87}, \hyperpage{189}
-    \subitem  observation, \hyperpage{141}, \hyperpage{203}
-    \subitem  pdf, \hyperpage{112}, \hyperpage{195}
-    \subitem  penalty, \hyperpage{140}, \hyperpage{203}
-    \subitem  preference\_function, \hyperpage{106}, \hyperpage{193}
-    \subitem  process, \hyperpage{90}, \hyperpage{189}
-    \subitem  profile, \hyperpage{137}, \hyperpage{202}
-    \subitem  report, \hyperpage{157}, \hyperpage{207}
-    \subitem  selectivity, \hyperpage{127}, \hyperpage{199}
-    \subitem  size\_weight, \hyperpage{126}, \hyperpage{199}
-    \subitem  time\_step, \hyperpage{89}, \hyperpage{189}
+    \subitem  initialisation\_phase, \hyperpage{88}, \hyperpage{191}
+    \subitem  layer, \hyperpage{114}, \hyperpage{198}
+    \subitem  mcmc, \hyperpage{135}, \hyperpage{203}
+    \subitem  minimiser, \hyperpage{133}, \hyperpage{203}
+    \subitem  model, \hyperpage{87}, \hyperpage{191}
+    \subitem  observation, \hyperpage{141}, \hyperpage{205}
+    \subitem  pdf, \hyperpage{112}, \hyperpage{197}
+    \subitem  penalty, \hyperpage{140}, \hyperpage{205}
+    \subitem  preference\_function, \hyperpage{106}, \hyperpage{195}
+    \subitem  process, \hyperpage{90}, \hyperpage{191}
+    \subitem  profile, \hyperpage{137}, \hyperpage{204}
+    \subitem  report, \hyperpage{159}, \hyperpage{209}
+    \subitem  selectivity, \hyperpage{127}, \hyperpage{201}
+    \subitem  size\_weight, \hyperpage{126}, \hyperpage{201}
+    \subitem  time\_step, \hyperpage{89}, \hyperpage{191}
   \item Command block format, \hyperpage{11}
   \item Command line arguments, \hyperpage{7}, \hyperpage{9}
   \item Commands, \hyperpage{10}
@@ -101,7 +101,7 @@
 
   \indexspace
 
-  \item Defining ageing error, \hyperpage{155}
+  \item Defining ageing error, \hyperpage{156}
   \item Defining catchability constants, \hyperpage{140}
   \item Defining penalties, \hyperpage{140}
   \item Density-dependent prey-suitability, \hyperpage{33}
@@ -135,12 +135,12 @@
   \item Estimation section, \hyperpage{4}
   \item Euclidean distance, \hyperpage{16}
   \item Event mortality, \hyperpage{31}
-  \item Examples, \hyperpage{171}
+  \item Examples, \hyperpage{173}
   \item Examples 
-    \subitem  A $10 \times 6$ spatial model, \hyperpage{175}
-    \subitem  A simple non-spatial model, \hyperpage{171}
-    \subitem  Example 1, \hyperpage{171}
-    \subitem  Example 2, \hyperpage{175}
+    \subitem  A $10 \times 6$ spatial model, \hyperpage{177}
+    \subitem  A simple non-spatial model, \hyperpage{173}
+    \subitem  Example 1, \hyperpage{173}
+    \subitem  Example 2, \hyperpage{177}
   \item Exit status value, \hyperpage{12}
   \item Exponential density function, \hyperpage{44}
   \item Exponential preference function, \hyperpage{43}
@@ -165,7 +165,7 @@
 
   \indexspace
 
-  \item Include an external file, \hyperpage{169}, \hyperpage{210}
+  \item Include an external file, \hyperpage{171}, \hyperpage{212}
   \item Including external files, \hyperpage{8}
   \item Independence copula, \hyperpage{45}
   \item Initialisation, \hyperpage{13}, \hyperpage{20}, \hyperpage{88}
@@ -326,7 +326,7 @@
     \subitem  Uniform-log, \hyperpage{60}
   \item Probability Density Functions, \hyperpage{112}
   \item Probability Distribution Functions (PDF), \hyperpage{44}
-  \item Process error, \hyperpage{80}
+  \item Process error and the likelihood multiplier, \hyperpage{80}
   \item Processes, \hyperpage{3, 4}, \hyperpage{23}, \hyperpage{89}
   \item Profiles, \hyperpage{55}, \hyperpage{137}
   \item Proportional recruitment, \hyperpage{24}, \hyperpage{27}
@@ -360,7 +360,7 @@
   \item Redirecting standard out, \hyperpage{8}
   \item Redirecting standard output, \hyperpage{8}
   \item Relative proportions present observations, \hyperpage{78}
-  \item Report commands and subcommands, \hyperpage{157}
+  \item Report commands and subcommands, \hyperpage{159}
   \item Report section, \hyperpage{4, 5}
   \item Reports, \hyperpage{83}
   \item Reports 

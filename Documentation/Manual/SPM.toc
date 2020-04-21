@@ -87,7 +87,7 @@
 \contentsline {subsubsection}{\numberline {6.6.1}Likelihoods for abundance observations}{77}{subsubsection.6.6.1}%
 \contentsline {subsection}{\numberline {6.7}Relative proportions present observations}{78}{subsection.6.7}%
 \contentsline {subsubsection}{\numberline {6.7.1}Likelihoods for presence observations}{79}{subsubsection.6.7.1}%
-\contentsline {subsection}{\numberline {6.8}Process error}{80}{subsection.6.8}%
+\contentsline {subsection}{\numberline {6.8}Process error and the likelihood multiplier}{80}{subsection.6.8}%
 \contentsline {subsection}{\numberline {6.9}Ageing error}{80}{subsection.6.9}%
 \contentsline {subsection}{\numberline {6.10}Simulating observations}{81}{subsection.6.10}%
 \contentsline {subsection}{\numberline {6.11}Pseudo-observations}{82}{subsection.6.11}%
@@ -230,58 +230,58 @@
 \contentsline {subsubsection}{\numberline {10.1.3}Proportions at length}{146}{subsubsection.10.1.3}%
 \contentsline {subsubsection}{\numberline {10.1.4}Proportions by category at length}{148}{subsubsection.10.1.4}%
 \contentsline {subsubsection}{\numberline {10.1.5}Abundance}{150}{subsubsection.10.1.5}%
-\contentsline {subsubsection}{\numberline {10.1.6}Biomass}{151}{subsubsection.10.1.6}%
-\contentsline {subsubsection}{\numberline {10.1.7}Presence}{153}{subsubsection.10.1.7}%
-\contentsline {subsection}{\numberline {10.2}Defining ageing error}{155}{subsection.10.2}%
-\contentsline {subsubsection}{\numberline {10.2.1}No ageing error}{155}{subsubsection.10.2.1}%
-\contentsline {subsubsection}{\numberline {10.2.2}Normal ageing error}{155}{subsubsection.10.2.2}%
-\contentsline {subsubsection}{\numberline {10.2.3}Off-by-one ageing error}{156}{subsubsection.10.2.3}%
-\contentsline {section}{\numberline {11}Report command and subcommand syntax}{157}{section.11}%
-\contentsline {subsection}{\numberline {11.1}Available reports}{157}{subsection.11.1}%
-\contentsline {subsection}{\numberline {11.2}Report commands and subcommands}{157}{subsection.11.2}%
-\contentsline {subsubsection}{\numberline {11.2.1}Print the co-ordinates of the spatial map}{158}{subsubsection.11.2.1}%
-\contentsline {subsubsection}{\numberline {11.2.2}Print the partition}{158}{subsubsection.11.2.2}%
-\contentsline {subsubsection}{\numberline {11.2.3}Print the partition biomass}{158}{subsubsection.11.2.3}%
-\contentsline {subsubsection}{\numberline {11.2.4}Print the partition at initialisation}{159}{subsubsection.11.2.4}%
-\contentsline {subsubsection}{\numberline {11.2.5}Print a summary of a process}{159}{subsubsection.11.2.5}%
-\contentsline {subsubsection}{\numberline {11.2.6}Print a summary of a preference function}{160}{subsubsection.11.2.6}%
-\contentsline {subsubsection}{\numberline {11.2.7}Print a derived quantity}{160}{subsubsection.11.2.7}%
-\contentsline {subsubsection}{\numberline {11.2.8}Print a derived quantity by cell}{160}{subsubsection.11.2.8}%
-\contentsline {subsubsection}{\numberline {11.2.9}Print a summary of the estimated parameters}{161}{subsubsection.11.2.9}%
-\contentsline {subsubsection}{\numberline {11.2.10}Print the estimated parameter values out as a vector}{161}{subsubsection.11.2.10}%
-\contentsline {subsubsection}{\numberline {11.2.11}Print the objective function values}{162}{subsubsection.11.2.11}%
-\contentsline {subsubsection}{\numberline {11.2.12}Print the covariance matrix}{162}{subsubsection.11.2.12}%
-\contentsline {subsubsection}{\numberline {11.2.13}Print a summary of the an observation, including fits, and residuals}{162}{subsubsection.11.2.13}%
-\contentsline {subsubsection}{\numberline {11.2.14}Print an observation using simulated values}{163}{subsubsection.11.2.14}%
-\contentsline {subsubsection}{\numberline {11.2.15}Print an ageing error misclassification matrix}{163}{subsubsection.11.2.15}%
-\contentsline {subsubsection}{\numberline {11.2.16}Print a layer}{164}{subsubsection.11.2.16}%
-\contentsline {subsubsection}{\numberline {11.2.17}Print a derived view via a categorical layer}{164}{subsubsection.11.2.17}%
-\contentsline {subsubsection}{\numberline {11.2.18}Print a selectivity}{165}{subsubsection.11.2.18}%
-\contentsline {subsubsection}{\numberline {11.2.19}Print the random number seed used}{165}{subsubsection.11.2.19}%
-\contentsline {subsubsection}{\numberline {11.2.20}Print mean size at age}{166}{subsubsection.11.2.20}%
-\contentsline {subsubsection}{\numberline {11.2.21}Print mean weight at size}{166}{subsubsection.11.2.21}%
-\contentsline {subsubsection}{\numberline {11.2.22}Print mean weight at age}{167}{subsubsection.11.2.22}%
-\contentsline {subsubsection}{\numberline {11.2.23}Print the results of an MCMC}{167}{subsubsection.11.2.23}%
-\contentsline {subsubsection}{\numberline {11.2.24}Print the MCMC samples as they are calculated}{167}{subsubsection.11.2.24}%
-\contentsline {subsubsection}{\numberline {11.2.25}Print the MCMC objective function values as they are calculated}{168}{subsubsection.11.2.25}%
-\contentsline {section}{\numberline {12}Other commands and subcommands}{169}{section.12}%
-\contentsline {section}{\numberline {13}Examples}{171}{section.13}%
-\contentsline {subsection}{\numberline {13.1}An example of a simple $ 1 \times 1 $\ non-spatial model}{171}{subsection.13.1}%
-\contentsline {subsection}{\numberline {13.2}An example of a simple $ 10 \times 6 $\ spatial model with movement}{175}{subsection.13.2}%
-\contentsline {section}{\numberline {14}Post processing output using \textbf {R}}{181}{section.14}%
-\contentsline {subsection}{\numberline {14.1}Read and extract reports from a SPM output file.}{181}{subsection.14.1}%
-\contentsline {section}{\numberline {15}Changes from previous versions}{183}{section.15}%
-\contentsline {section}{\numberline {16}Troubleshooting}{185}{section.16}%
-\contentsline {subsection}{\numberline {16.1}Introduction}{185}{subsection.16.1}%
-\contentsline {subsection}{\numberline {16.2}Reporting errors}{185}{subsection.16.2}%
-\contentsline {subsection}{\numberline {16.3}Guidelines for reporting a bug in \texttt {SPM}}{185}{subsection.16.3}%
-\contentsline {section}{\numberline {17}Acknowledgements}{187}{section.17}%
-\contentsline {section}{\numberline {18}Quick reference}{189}{section.18}%
-\contentsline {subsection}{\numberline {18.1}Population command and subcommand syntax}{189}{subsection.18.1}%
-\contentsline {subsection}{\numberline {18.2}Estimation command and subcommand syntax}{201}{subsection.18.2}%
-\contentsline {subsection}{\numberline {18.3}Observation command and subcommand syntax}{203}{subsection.18.3}%
-\contentsline {subsection}{\numberline {18.4}Report command and subcommand syntax}{207}{subsection.18.4}%
-\contentsline {subsection}{\numberline {18.5}Other commands and subcommands}{210}{subsection.18.5}%
-\contentsline {section}{\numberline {19}References}{211}{section.19}%
-\contentsline {section}{\numberline {20}Spatial Population Model\ software license}{213}{section.20}%
-\contentsline {section}{\numberline {21}Index}{215}{section.21}%
+\contentsline {subsubsection}{\numberline {10.1.6}Biomass}{152}{subsubsection.10.1.6}%
+\contentsline {subsubsection}{\numberline {10.1.7}Presence}{154}{subsubsection.10.1.7}%
+\contentsline {subsection}{\numberline {10.2}Defining ageing error}{156}{subsection.10.2}%
+\contentsline {subsubsection}{\numberline {10.2.1}No ageing error}{156}{subsubsection.10.2.1}%
+\contentsline {subsubsection}{\numberline {10.2.2}Normal ageing error}{156}{subsubsection.10.2.2}%
+\contentsline {subsubsection}{\numberline {10.2.3}Off-by-one ageing error}{157}{subsubsection.10.2.3}%
+\contentsline {section}{\numberline {11}Report command and subcommand syntax}{159}{section.11}%
+\contentsline {subsection}{\numberline {11.1}Available reports}{159}{subsection.11.1}%
+\contentsline {subsection}{\numberline {11.2}Report commands and subcommands}{159}{subsection.11.2}%
+\contentsline {subsubsection}{\numberline {11.2.1}Print the co-ordinates of the spatial map}{160}{subsubsection.11.2.1}%
+\contentsline {subsubsection}{\numberline {11.2.2}Print the partition}{160}{subsubsection.11.2.2}%
+\contentsline {subsubsection}{\numberline {11.2.3}Print the partition biomass}{160}{subsubsection.11.2.3}%
+\contentsline {subsubsection}{\numberline {11.2.4}Print the partition at initialisation}{161}{subsubsection.11.2.4}%
+\contentsline {subsubsection}{\numberline {11.2.5}Print a summary of a process}{161}{subsubsection.11.2.5}%
+\contentsline {subsubsection}{\numberline {11.2.6}Print a summary of a preference function}{162}{subsubsection.11.2.6}%
+\contentsline {subsubsection}{\numberline {11.2.7}Print a derived quantity}{162}{subsubsection.11.2.7}%
+\contentsline {subsubsection}{\numberline {11.2.8}Print a derived quantity by cell}{162}{subsubsection.11.2.8}%
+\contentsline {subsubsection}{\numberline {11.2.9}Print a summary of the estimated parameters}{163}{subsubsection.11.2.9}%
+\contentsline {subsubsection}{\numberline {11.2.10}Print the estimated parameter values out as a vector}{163}{subsubsection.11.2.10}%
+\contentsline {subsubsection}{\numberline {11.2.11}Print the objective function values}{164}{subsubsection.11.2.11}%
+\contentsline {subsubsection}{\numberline {11.2.12}Print the covariance matrix}{164}{subsubsection.11.2.12}%
+\contentsline {subsubsection}{\numberline {11.2.13}Print a summary of the an observation, including fits, and residuals}{164}{subsubsection.11.2.13}%
+\contentsline {subsubsection}{\numberline {11.2.14}Print an observation using simulated values}{165}{subsubsection.11.2.14}%
+\contentsline {subsubsection}{\numberline {11.2.15}Print an ageing error misclassification matrix}{165}{subsubsection.11.2.15}%
+\contentsline {subsubsection}{\numberline {11.2.16}Print a layer}{166}{subsubsection.11.2.16}%
+\contentsline {subsubsection}{\numberline {11.2.17}Print a derived view via a categorical layer}{166}{subsubsection.11.2.17}%
+\contentsline {subsubsection}{\numberline {11.2.18}Print a selectivity}{167}{subsubsection.11.2.18}%
+\contentsline {subsubsection}{\numberline {11.2.19}Print the random number seed used}{167}{subsubsection.11.2.19}%
+\contentsline {subsubsection}{\numberline {11.2.20}Print mean size at age}{168}{subsubsection.11.2.20}%
+\contentsline {subsubsection}{\numberline {11.2.21}Print mean weight at size}{168}{subsubsection.11.2.21}%
+\contentsline {subsubsection}{\numberline {11.2.22}Print mean weight at age}{169}{subsubsection.11.2.22}%
+\contentsline {subsubsection}{\numberline {11.2.23}Print the results of an MCMC}{169}{subsubsection.11.2.23}%
+\contentsline {subsubsection}{\numberline {11.2.24}Print the MCMC samples as they are calculated}{169}{subsubsection.11.2.24}%
+\contentsline {subsubsection}{\numberline {11.2.25}Print the MCMC objective function values as they are calculated}{170}{subsubsection.11.2.25}%
+\contentsline {section}{\numberline {12}Other commands and subcommands}{171}{section.12}%
+\contentsline {section}{\numberline {13}Examples}{173}{section.13}%
+\contentsline {subsection}{\numberline {13.1}An example of a simple $ 1 \times 1 $\ non-spatial model}{173}{subsection.13.1}%
+\contentsline {subsection}{\numberline {13.2}An example of a simple $ 10 \times 6 $\ spatial model with movement}{177}{subsection.13.2}%
+\contentsline {section}{\numberline {14}Post processing output using \textbf {R}}{183}{section.14}%
+\contentsline {subsection}{\numberline {14.1}Read and extract reports from a SPM output file.}{183}{subsection.14.1}%
+\contentsline {section}{\numberline {15}Changes from previous versions}{185}{section.15}%
+\contentsline {section}{\numberline {16}Troubleshooting}{187}{section.16}%
+\contentsline {subsection}{\numberline {16.1}Introduction}{187}{subsection.16.1}%
+\contentsline {subsection}{\numberline {16.2}Reporting errors}{187}{subsection.16.2}%
+\contentsline {subsection}{\numberline {16.3}Guidelines for reporting a bug in \texttt {SPM}}{187}{subsection.16.3}%
+\contentsline {section}{\numberline {17}Acknowledgements}{189}{section.17}%
+\contentsline {section}{\numberline {18}Quick reference}{191}{section.18}%
+\contentsline {subsection}{\numberline {18.1}Population command and subcommand syntax}{191}{subsection.18.1}%
+\contentsline {subsection}{\numberline {18.2}Estimation command and subcommand syntax}{203}{subsection.18.2}%
+\contentsline {subsection}{\numberline {18.3}Observation command and subcommand syntax}{205}{subsection.18.3}%
+\contentsline {subsection}{\numberline {18.4}Report command and subcommand syntax}{209}{subsection.18.4}%
+\contentsline {subsection}{\numberline {18.5}Other commands and subcommands}{212}{subsection.18.5}%
+\contentsline {section}{\numberline {19}References}{213}{section.19}%
+\contentsline {section}{\numberline {20}Spatial Population Model\ software license}{215}{section.20}%
+\contentsline {section}{\numberline {21}Index}{217}{section.21}%

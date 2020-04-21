@@ -290,6 +290,7 @@
 #define PARAM_LENGTH                              "length"
 #define PARAM_LENGTH_BINS                         "length_bins"
 #define PARAM_LIKELIHOOD                          "likelihood"
+#define PARAM_LIKELIHOOD_MULTIPLIER               "likelihood_multiplier"
 #define PARAM_LINF                                "linf"
 #define PARAM_LMIN                                "lmin"
 #define PARAM_LOG_SCALE                           "log_scale"

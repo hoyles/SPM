@@ -841,11 +841,11 @@ where $Z \left(\theta,\delta \right)$ is a robustifying function to prevent divi
 
 The default value of $\delta$ is $1 \times 10^{-11}$.
 
-\subsection{\I{Process error}}
+\subsection{\I{Process error and the likelihood multiplier}}
 
-Additional `process error' can be defined for each set of observations. Additional process error has the effect of increasing the observation error in the data, and hence of decreasing the relative weight given to the data in the fitting process. 
+Additional `process error' and/or a likelihood multiplier can be defined for each set of observations. Additional process error has the effect of increasing the observation error in the data, and hence of decreasing the relative weight given to the data in the fitting process. The likelihood multiplier applies a scaler to the calculated likelihood value to also effectively up-weight or down-right an observation. Note that both or either process error or the likelihood multiplier can be used to up-weight or down-weight observations. We recommend the use of process error as this modifies the effective sample size or c.v. appropriately between individual observations within an observation block. Note that in simulations, the likelihood multiplier is always fixed at 1.0.
 
-For observations where where the likelihood is parameterised by the c.v., you can specify the process error for a given set of observations as a c.v., in which case all the c.v.s $c_i$ are changed to
+For observations where the likelihood is parameterised by the c.v., you can specify the process error for a given set of observations as a c.v., in which case all the c.v.s $c_i$ are changed to
 
 \begin{equation}
   c'_i  = \sqrt {c_i^2  + c_{process\_error}^2 } 
@@ -870,6 +870,8 @@ For the Dirichlet likelihood (parameterised by the effective sample size $N$) th
 Note that this requires that $0 < N_{process\_ error} \ge 1$. As above, we allow the special case of $N_{process\_ error}=0$ and define this as no process error (i.e., defined to be equivalent to $N_{process\_ error}=1.0$) for consistency with other likelihoods.
 
 For both the c.v. and $N$ process errors, the process error has more effect on small errors than on large ones. Note that a large \emph{value} for the $N$ process error in the case of the multinomial and binomial means a \emph{small} process error.
+
+For all observations the likelihood multiplier simply multiplies the likelihood calculated for the observation by the multiplier.
 
 \subsection{\I{Ageing error}}
 
