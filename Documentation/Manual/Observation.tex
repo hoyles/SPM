@@ -232,13 +232,14 @@ and the $c_i$'s are the c.v.s for each age class $i$, and $Z \left(\theta,\delta
 The default value of $\delta$ is $1 \times 10^{-11}$.
 
 \subsection{\I{Proportions-by-category observations}\label{sec:proportions-by-category}}
+
 Proportions-by-category observations are observations of either the relative number of individuals between categories within age classes, via some selectivity. 
 
 The observation is supplied for a given year and time-step, for some selected age classes of the population (i.e., for a range of ages multiplied by a selectivity), for categories aggregated over a set of spatial cells. 
 
 The age range must be ages defined in the partition (i.e., between \commandsub{model}{min\_age} and \commandsub{model}{max\_age} inclusive), but the upper end of the age range can optionally be a plus group --- which may or may not be the same as the plus group defined for the partition. 
 
-Proportions-by-category observations can be supplied for any set of categories as a proportion of themselves and any set of additional categories. For example, for a model with the two categories \emph{male} and \emph{female}, we might supply observations of the proportions of males in the population at each age class. The subcommand \subcommand{categories} defines the categories for the numerator in the calculation of the proportion, and the subcommand \subcommand{categories2} supplies the additional categories to be used in the denominator of the calculation. In addition, each category must have an associated selectivity, defined by \subcommand{selectivities} for the numerator categories and \subcommand{selectivities2} for the additional categories used in the denominator, e.g., 
+Proportions-by-category observations must be supplied for any set of categories as a proportion of themselves and any set of additional categories. For example, for a model with the two categories \emph{male} and \emph{female}, we might supply observations of the proportions of males in the population at each age class. The subcommand \subcommand{categories} defines the categories for the numerator in the calculation of the proportion, and the subcommand \subcommand{categories2} supplies the additional categories to be used in the denominator of the calculation. In addition, each category must have an associated selectivity, defined by \subcommand{selectivities} for the numerator categories and \subcommand{selectivities2} for the additional categories used in the denominator, e.g., 
 
 {\small{\begin{verbatim}
 categories male
@@ -293,13 +294,15 @@ obs B 0.02 0.06 0.10 0.21 0.18
 
 To supply an observation for individual spatial cells, then you will need to define a categorical layer with a single, unique value for each spatial cell. 
 
+Proportions-by-category may also include a detection probability (for example, for use with tag data where not every tag was detected). Here, the number of individuals in the denominator is modified by the detection probability, i.e., the observed proportion $n/(m+n)$ is modified by the detection probability $d$ to be $n/(dm + n)$. The default value of $d=1$. Note that if a process error is also specified, then the detection probability is applied \emph{before} applying process error.
+
 \subsubsection{Likelihoods for proportions-by-category observations}
 
 \SPM\ implements two likelihoods for proportions-by-category observations, the binomial likelihood, and the normal approximation to the binomial (binomial-approx). 
 
 \subsubsection*{The binomial likelihood\index{Binomial likelihood ! proportions-by-category}}
 
-For observed proportions $O_i$ for age class $i$, where $E_i$ are the expected proportions for age class $i$, and $N_i$ is the effective sample size for age class $i$, then the negative log-likelihood is defined as;  
+For observed proportions $O_i$ for age class $i$, where $E_i$ are the expected proportions for age class $i$, and $N_i$ is the effective sample size for age class $i$ (modified, as required, by the detection probability), then the negative log-likelihood is defined as;  
 
 \begin{equation}
   \begin{split}
@@ -322,7 +325,7 @@ The default value of $\delta$ is $1 \times 10^{-11}$.
 
 \subsubsection*{The normal approximation to the binomial likelihood\index{Binomial likelihood (normal approximation) ! proportions-by-category}}
 
-For observed proportions $O_i$ for age class $i$, where $E_i$ are the expected proportions for age class $i$, and $N_i$ is the effective sample size for age class $i$, then the negative log-likelihood is defined as;  
+For observed proportions $O_i$ for age class $i$, where $E_i$ are the expected proportions for age class $i$, and $N_i$ is the effective sample size for age class $i$ (modified, as required, by the detection probability), then the negative log-likelihood is defined as;  
 
 \begin{equation}
   -\log \left(L \right)= \sum\limits_i \log \left( \sqrt{Z\left(E_i,\delta \right)Z\left(1-E_i,\delta\right)/N_i} \right)     + \frac{1}{2} \left( \frac{O_i-E_i}{\sqrt{Z\left(E_i,\delta\right)Z\left(1-E_i,\delta \right)/N_i}} \right)^2
@@ -548,7 +551,7 @@ Proportions-by-category-at-length observations are observations of the relative 
 
 The observation is supplied for a given year and time-step, for selected numbers within length bins of the population (i.e., for a range of lengths derived from all ages multiplied by a selectivity), for categories aggregated over a set of spatial cells. 
 
-Proportions-by-category-at-length observations can be supplied for any set of categories as a proportion of themselves and any set of additional categories. For example, for a model with the two categories \emph{male} and \emph{female}, we might supply observations of the proportions of males in the population at each length bin. The subcommand \subcommand{categories} defines the categories for the numerator in the calculation of the proportion, and the subcommand \subcommand{categories2} supplies the additional categories to be used in the denominator of the calculation. In addition, each category must have an associated selectivity, defined by \subcommand{selectivities} for the numerator categories and \subcommand{selectivities2} for the additional categories used in the denominator, e.g., 
+Proportions-by-category-at-length observations must be supplied for any set of categories as a proportion of themselves and any set of additional categories. For example, for a model with the two categories \emph{male} and \emph{female}, we might supply observations of the proportions of males in the population at each length bin. The subcommand \subcommand{categories} defines the categories for the numerator in the calculation of the proportion, and the subcommand \subcommand{categories2} supplies the additional categories to be used in the denominator of the calculation. In addition, each category must have an associated selectivity, defined by \subcommand{selectivities} for the numerator categories and \subcommand{selectivities2} for the additional categories used in the denominator, e.g., 
 
 {\small{\begin{verbatim}
 categories male
@@ -601,13 +604,15 @@ obs B 0.02 0.06 0.10 0.21 0.18
 
 To supply an observation for individual spatial cells, then you will need to define a categorical layer with a single, unique value for each spatial cell. 
 
+Proportions-by-category-at-length may also include a detection probability (for example, for use with tag data where not every tag was detected). Here, the number of individuals in the denominator is modified by the detection probability, i.e., the observed proportion $n/(m+n)$ is modified by the detection probability $d$ to be $n/(dm + n)$. The default value of $d=1$. Note that if a process error is also specified, then the detection probability is applied \emph{before} applying process error.
+
 \subsubsection{Likelihoods for proportions-by-category observations}
 
 \SPM\ implements two likelihoods for proportions-by-category-at-length observations, the binomial likelihood, and the normal approximation to the binomial (binomial-approx). 
 
 \subsubsection*{The binomial likelihood\index{Binomial likelihood ! proportions-by-category-at-length}}
 
-For observed proportions $O_i$ for length bin $i$, where $E_i$ are the expected proportions for length bin $i$, and $N_i$ is the effective sample size for length bin $i$, then the negative log-likelihood is defined as;  
+For observed proportions $O_i$ for length bin $i$, where $E_i$ are the expected proportions for length bin $i$, and $N_i$ is the effective sample size for length bin $i$ (modified, as required, by the detection probability), then the negative log-likelihood is defined as;  
 
 \begin{equation}
   \begin{split}
@@ -630,7 +635,7 @@ The default value of $\delta$ is $1 \times 10^{-11}$.
 
 \subsubsection*{The normal approximation to the binomial likelihood\index{Binomial likelihood (normal approximation) ! proportions-by-category-at-length}}
 
-For observed proportions $O_i$ for length bin $i$, where $E_i$ are the expected proportions for length bin $i$, and $N_i$ is the effective sample size for length bin $i$, then the negative log-likelihood is defined as;  
+For observed proportions $O_i$ for length bin $i$, where $E_i$ are the expected proportions for length bin $i$, and $N_i$ is the effective sample size for length bin $i$ (modified, as required, by the detection probability), then the negative log-likelihood is defined as;  
 
 \begin{equation}
   -\log \left(L \right)= \sum\limits_i \log \left( \sqrt{Z\left(E_i,\delta \right)Z\left(1-E_i,\delta\right)/N_i} \right)     + \frac{1}{2} \left( \frac{O_i-E_i}{\sqrt{Z\left(E_i,\delta\right)Z\left(1-E_i,\delta \right)/N_i}} \right)^2
@@ -841,9 +846,9 @@ where $Z \left(\theta,\delta \right)$ is a robustifying function to prevent divi
 
 The default value of $\delta$ is $1 \times 10^{-11}$.
 
-\subsection{\I{Process error and the likelihood multiplier}}
+\subsection{\I{Process error and likelihood multipliers}\label{sec:process-error}}
 
-Additional `process error' and/or a likelihood multiplier can be defined for each set of observations. Additional process error has the effect of increasing the observation error in the data, and hence of decreasing the relative weight given to the data in the fitting process. The likelihood multiplier applies a scaler to the calculated likelihood value to also effectively up-weight or down-right an observation. Note that both or either process error or the likelihood multiplier can be used to up-weight or down-weight observations. We recommend the use of process error as this modifies the effective sample size or c.v. appropriately between individual observations within an observation block. Note that in simulations, the likelihood multiplier is always fixed at 1.0.
+Additional `\I{process error}' and/or a \I{likelihood multiplier} can be defined for each set of observations. Additional process error has the effect of increasing the observation error in the data, and hence of decreasing the relative weight given to the data in the fitting process. The likelihood multiplier applies a scaler to the calculated likelihood value to also effectively up-weight or down-right an observation. Note that both or either process error or the likelihood multiplier can be used to up-weight or down-weight observations. We recommend the use of process error as this modifies the effective sample size or c.v. appropriately between individual observations within an observation block. Note that in simulations (see Section \ref{sec:simulation-observations}), the likelihood multiplier is always fixed at 1.0.
 
 For observations where the likelihood is parameterised by the c.v., you can specify the process error for a given set of observations as a c.v., in which case all the c.v.s $c_i$ are changed to
 
@@ -871,7 +876,7 @@ Note that this requires that $0 < N_{process\_ error} \ge 1$. As above, we allow
 
 For both the c.v. and $N$ process errors, the process error has more effect on small errors than on large ones. Note that a large \emph{value} for the $N$ process error in the case of the multinomial and binomial means a \emph{small} process error.
 
-For all observations the likelihood multiplier simply multiplies the likelihood calculated for the observation by the multiplier.
+For all observations the likelihood multiplier simply multiplies the likelihood calculated for the observation by the multiplier. In the case of the binomial likelihood, the likelihood scaler ($m$) can also be used to implement an \I{over-dispersion} ($\phi$) parameter with $m=1/\phi$, i.e., if the likelihood multiplier was $m=0.5$, then this is equivalent to an over-dispersion of $\phi=2.0$.
 
 \subsection{\I{Ageing error}}
 
@@ -892,7 +897,7 @@ Note that the expected values (fits) reported by \SPM\ for observations with age
 
 \SPM\ can generate simulated observations for a given model with given parameter values (using \texttt{spm -s}). Simulated observations are randomly distributed values, generated according to the error assumptions defined for each observation, around fits calculated from one or more sets of the 'true' parameter values. Simulating from a set of parameters can be used to generate observations from an operating model or as a form of parametric bootstrap. 
 
-The procedure \SPM\ uses for simulating observations is to first run using the `true' parameter values and generate the expected values. Then, if a set of observations uses ageing error, ageing error is applied. Finally a random value for each observed value is generated based on (i) the expected values, (ii) the type of likelihood specified, and (iii) the variability parameters (e.g., \subcommand{error\_value} and \subcommand{process\_error}). 
+The procedure \SPM\ uses for simulating observations is to first run using the `true' parameter values and generate the expected values. Then, if a set of observations uses ageing error, ageing error is applied. Finally a random value for each observed value is generated based on (i) the expected values, (ii) the type of likelihood specified, and (iii) the variability parameters (e.g., \subcommand{error\_value} and \subcommand{process\_error}). Note that likelihood multipliers (see Section \ref{sec:process-error}) are ignored when simulating observations, i.e., are assumed and fixed at $1.0$. In addition, for observations with a detection probability, the number of observations in the denominator is modified by the detection probability at the time that the data are simulated.
 
 Methods for generating the random error, and hence simulated values, depend on the specific likelihood type of each observation. 
 

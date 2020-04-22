@@ -93,6 +93,7 @@ default_layer
 delta
 derived_quantity
 derived_quantity_by_cell
+detection_probability
 df
 difference_scale
 distribution

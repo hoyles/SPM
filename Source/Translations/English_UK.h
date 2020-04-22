@@ -210,6 +210,7 @@
 #define PARAM_DE_SOLVER                           "de_solver"
 #define PARAM_DEFAULT_LAYER                       "default_layer"
 #define PARAM_DELTA                               "delta"
+#define PARAM_DETECTION_PROBABILITY               "detection_probability"
 #define PARAM_DERIVED_QUANTITY                    "derived_quantity"
 #define PARAM_DERIVED_QUANTITY_BY_CELL            "derived_quantity_by_cell"
 #define PARAM_DF                                  "df"

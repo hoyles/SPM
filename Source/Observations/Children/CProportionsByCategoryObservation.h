@@ -29,7 +29,6 @@ public:
   bool                        getAgePlusGroup() { return bAgePlus; }
   string                      getType() {return (PARAM_PROPORTIONS_BY_CATEGORY); }
 
-
 protected:
   // Variables
   map<string, vector<double> > mvProportionMatrix;
@@ -47,6 +46,7 @@ protected:
   vector<CSelectivity*>       vTargetSelectivities;
   double                      dDelta;
   double                      dProcessError;
+  double                      dDetectionProbability;
 };
 
 #endif /*CPROPORTIONSBYCATEGORYOBSERVATION_H_*/

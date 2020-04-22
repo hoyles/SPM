@@ -29,6 +29,9 @@ CObservation::CObservation() {
   dMultiplier           = 1.0;
   bSimulationRunMode    = false;
 
+  // Register estimables
+  registerEstimable(PARAM_LIKELIHOOD_MULTIPLIER, &dMultiplier);
+
   // Register some user allowed variables
   pParameterList->registerAllowed(PARAM_YEAR);
   pParameterList->registerAllowed(PARAM_TIME_STEP);

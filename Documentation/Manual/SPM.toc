@@ -84,11 +84,11 @@
 \contentsline {subsection}{\numberline {6.5}Proportions-by-category-at-length observations}{74}{subsection.6.5}%
 \contentsline {subsubsection}{\numberline {6.5.1}Likelihoods for proportions-by-category observations}{75}{subsubsection.6.5.1}%
 \contentsline {subsection}{\numberline {6.6}Abundance or biomass observations}{76}{subsection.6.6}%
-\contentsline {subsubsection}{\numberline {6.6.1}Likelihoods for abundance observations}{77}{subsubsection.6.6.1}%
+\contentsline {subsubsection}{\numberline {6.6.1}Likelihoods for abundance observations}{78}{subsubsection.6.6.1}%
 \contentsline {subsection}{\numberline {6.7}Relative proportions present observations}{78}{subsection.6.7}%
-\contentsline {subsubsection}{\numberline {6.7.1}Likelihoods for presence observations}{79}{subsubsection.6.7.1}%
-\contentsline {subsection}{\numberline {6.8}Process error and the likelihood multiplier}{80}{subsection.6.8}%
-\contentsline {subsection}{\numberline {6.9}Ageing error}{80}{subsection.6.9}%
+\contentsline {subsubsection}{\numberline {6.7.1}Likelihoods for presence observations}{80}{subsubsection.6.7.1}%
+\contentsline {subsection}{\numberline {6.8}Process error and likelihood multipliers}{80}{subsection.6.8}%
+\contentsline {subsection}{\numberline {6.9}Ageing error}{81}{subsection.6.9}%
 \contentsline {subsection}{\numberline {6.10}Simulating observations}{81}{subsection.6.10}%
 \contentsline {subsection}{\numberline {6.11}Pseudo-observations}{82}{subsection.6.11}%
 \contentsline {section}{\numberline {7}The report section}{83}{section.7}%
@@ -234,7 +234,7 @@
 \contentsline {subsubsection}{\numberline {10.1.7}Presence}{154}{subsubsection.10.1.7}%
 \contentsline {subsection}{\numberline {10.2}Defining ageing error}{156}{subsection.10.2}%
 \contentsline {subsubsection}{\numberline {10.2.1}No ageing error}{156}{subsubsection.10.2.1}%
-\contentsline {subsubsection}{\numberline {10.2.2}Normal ageing error}{156}{subsubsection.10.2.2}%
+\contentsline {subsubsection}{\numberline {10.2.2}Normal ageing error}{157}{subsubsection.10.2.2}%
 \contentsline {subsubsection}{\numberline {10.2.3}Off-by-one ageing error}{157}{subsubsection.10.2.3}%
 \contentsline {section}{\numberline {11}Report command and subcommand syntax}{159}{section.11}%
 \contentsline {subsection}{\numberline {11.1}Available reports}{159}{subsection.11.1}%
@@ -281,7 +281,7 @@
 \contentsline {subsection}{\numberline {18.2}Estimation command and subcommand syntax}{203}{subsection.18.2}%
 \contentsline {subsection}{\numberline {18.3}Observation command and subcommand syntax}{205}{subsection.18.3}%
 \contentsline {subsection}{\numberline {18.4}Report command and subcommand syntax}{209}{subsection.18.4}%
-\contentsline {subsection}{\numberline {18.5}Other commands and subcommands}{212}{subsection.18.5}%
-\contentsline {section}{\numberline {19}References}{213}{section.19}%
-\contentsline {section}{\numberline {20}Spatial Population Model\ software license}{215}{section.20}%
-\contentsline {section}{\numberline {21}Index}{217}{section.21}%
+\contentsline {subsection}{\numberline {18.5}Other commands and subcommands}{213}{subsection.18.5}%
+\contentsline {section}{\numberline {19}References}{215}{section.19}%
+\contentsline {section}{\numberline {20}Spatial Population Model\ software license}{217}{section.20}%
+\contentsline {section}{\numberline {21}Index}{219}{section.21}%

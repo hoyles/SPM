@@ -32,12 +32,14 @@ using std::numeric_limits;
 //**********************************************************************
 CProportionsAtLengthByCategoryObservation::CProportionsAtLengthByCategoryObservation() {
   // Variables
-  pLengthResults             = 0;
-  pCombinedLengthResults     = 0;
-  
+  pLengthResults          = 0;
+  pCombinedLengthResults  = 0;
+  dDetectionProbability   = 1.0;
+
   // Register estimables
   registerEstimable(PARAM_PROCESS_ERROR, &dProcessError);
-
+  registerEstimable(PARAM_DETECTION_PROBABILITY, &dDetectionProbability);
+  
   // Register user allowed parameters
   pParameterList->registerAllowed(PARAM_OBS);
   pParameterList->registerAllowed(PARAM_LENGTH_BINS);
@@ -46,6 +48,7 @@ CProportionsAtLengthByCategoryObservation::CProportionsAtLengthByCategoryObserva
   pParameterList->registerAllowed(PARAM_TARGET_SELECTIVITIES);
   pParameterList->registerAllowed(PARAM_DELTA);
   pParameterList->registerAllowed(PARAM_PROCESS_ERROR);
+  pParameterList->registerAllowed(PARAM_DETECTION_PROBABILITY);
 }
 
 //**********************************************************************
@@ -60,6 +63,7 @@ void CProportionsAtLengthByCategoryObservation::validate() {
     // Populate our Parameters
     dProcessError       = pParameterList->getDouble(PARAM_PROCESS_ERROR,true,0);
     dDelta              = pParameterList->getDouble(PARAM_DELTA,true,DELTA);
+	dDetectionProbability = pParameterList->getDouble(PARAM_DETECTION_PROBABILITY,true,1.0);
     pParameterList->fillVector(vTargetCategoryNames, PARAM_TARGET_CATEGORIES);
     pParameterList->fillVector(vTargetSelectivityNames, PARAM_TARGET_SELECTIVITIES);
 
@@ -87,6 +91,9 @@ void CProportionsAtLengthByCategoryObservation::validate() {
 
     if (dProcessError < 0)
       CError::errorLessThan(PARAM_PROCESS_ERROR, PARAM_ZERO);
+
+    if (dDetectionProbability <= 0)
+      CError::errorLessThanEqualTo(PARAM_DETECTION_PROBABILITY, PARAM_ZERO);
 
     // Get our length bins
     pParameterList->fillVector(vLengthBins, PARAM_LENGTH_BINS);
@@ -280,7 +287,7 @@ void CProportionsAtLengthByCategoryObservation::execute() {
           double dNumberAtAge = dSelectResult * pSquare->getAbundanceInCategoryForAge(i, j);
           vector<double> vLengthProportions = pWorld->getLengthFrequency(i ,j, vLengthBins);
           for(int l = 0; l < (int)vLengthProportions.size(); ++l) {
-            pCombinedLengthResults[l] += dNumberAtAge * vLengthProportions[l];
+            pCombinedLengthResults[l] += (dNumberAtAge * vLengthProportions[l] * dDetectionProbability);
           }
         }
       }
@@ -313,7 +320,10 @@ void CProportionsAtLengthByCategoryObservation::execute() {
   // Simulate or Generate Result?
   if (pRuntimeController->getRunMode() == RUN_MODE_SIMULATION) {
     // Simulate our values, then save them
-    pLikelihood->simulateObserved(vKeys, vObserved, vExpected, vErrorValue, vProcessError, dDelta);
+    vector<double> vAdjustedObserved;
+	for (int i = 0; i < (int)vObserved.size(); ++i)
+	  vAdjustedObserved.push_back(vObserved[i] * dDetectionProbability);
+    pLikelihood->simulateObserved(vKeys, vAdjustedObserved, vExpected, vErrorValue, vProcessError, dDelta);
     for (int i = 0; i < (int)vObserved.size(); ++i)
       saveComparison(vKeys[i], vBin[i], std::string(""), vExpected[i], vObserved[i], vErrorValue[i], vProcessError[i], pLikelihood->adjustErrorValue(vProcessError[i], vErrorValue[i]), 1.0, 0.0);
 
@@ -324,7 +334,7 @@ void CProportionsAtLengthByCategoryObservation::execute() {
     pLikelihood->getResult(vScores, vExpected, vObserved, vErrorValue, vProcessError, dDelta);
 
     for (int i = 0; i < (int)vScores.size(); ++i) {
-      dScore += vScores[i] * dMultiplier;
+      dScore += (vScores[i] * dMultiplier);
       saveComparison(vKeys[i], vBin[i], std::string(""), vExpected[i], vObserved[i], vErrorValue[i], vProcessError[i], pLikelihood->adjustErrorValue(vProcessError[i], vErrorValue[i]), dMultiplier, vScores[i]);
     }
   }

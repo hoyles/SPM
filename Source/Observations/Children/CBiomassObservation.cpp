@@ -236,7 +236,7 @@ void CBiomassObservation::execute() {
       // Generate Results and save them
       pLikelihood->getResult(vScores, vExpected, vObserved, vErrorValue, vProcessError, dDelta);
       for (int i = 0; i < (int)vScores.size(); ++i) {
-        dScore += vScores[i] * dMultiplier;
+        dScore += (vScores[i] * dMultiplier);
         saveComparison(vKeys[i], vExpected[i], vObserved[i], vErrorValue[i], vProcessError[i], pLikelihood->adjustErrorValue(vProcessError[i], vErrorValue[i]), dMultiplier, vScores[i]);
       }
     }

@@ -13,7 +13,7 @@
   \item Age mortality, \hyperpage{30}
   \item Age-size relationship, \hyperpage{121}
   \item Ageing, \hyperpage{23}, \hyperpage{28}
-  \item Ageing error, \hyperpage{80}
+  \item Ageing error, \hyperpage{81}
   \item Annual cycle, \hyperpage{3}, \hyperpage{13}, \hyperpage{20}, 
 		\hyperpage{23}
   \item Annual mortality, \hyperpage{31}
@@ -27,7 +27,7 @@
   \item Beta prior, \hyperpage{61}
   \item Beverton-Holt recruitment, \hyperpage{24, 25}
   \item Binomial likelihood 
-    \subitem  presence, \hyperpage{79}
+    \subitem  presence, \hyperpage{80}
     \subitem  proportions-by-category, \hyperpage{69}
     \subitem  proportions-by-category-at-length, \hyperpage{75}
   \item Binomial likelihood (normal approximation) 
@@ -57,14 +57,14 @@
   \item Classification layers, \hyperpage{16}
   \item Command 
     \subitem  age\_size, \hyperpage{122}, \hyperpage{200}
-    \subitem  ageing\_error, \hyperpage{156}, \hyperpage{208}
+    \subitem  ageing\_error, \hyperpage{156}, \hyperpage{209}
     \subitem  catchability, \hyperpage{140}, \hyperpage{205}
     \subitem  derived\_quantity, \hyperpage{120}, \hyperpage{200}
     \subitem  derived\_quantity\_by\_cell, \hyperpage{118}, 
 		\hyperpage{199}
     \subitem  estimate, \hyperpage{137}, \hyperpage{204}
     \subitem  estimation, \hyperpage{133}, \hyperpage{203}
-    \subitem  include, \hyperpage{171}, \hyperpage{212}
+    \subitem  include, \hyperpage{171}, \hyperpage{213}
     \subitem  Include files, \hyperpage{11}
     \subitem  initialisation\_phase, \hyperpage{88}, \hyperpage{191}
     \subitem  layer, \hyperpage{114}, \hyperpage{198}
@@ -165,7 +165,7 @@
 
   \indexspace
 
-  \item Include an external file, \hyperpage{171}, \hyperpage{212}
+  \item Include an external file, \hyperpage{171}, \hyperpage{213}
   \item Including external files, \hyperpage{8}
   \item Independence copula, \hyperpage{45}
   \item Initialisation, \hyperpage{13}, \hyperpage{20}, \hyperpage{88}
@@ -185,6 +185,7 @@
   \item Layers, \hyperpage{15}, \hyperpage{114}
   \item Layers 
     \subitem  the base layer, \hyperpage{15}
+  \item likelihood multiplier, \hyperpage{80}
   \item Likelihoods, \hyperpage{63}
   \item Linux, \hyperpage{1, 2}, \hyperpage{4}, \hyperpage{7}
   \item Local Beverton-Holt recruitment, \hyperpage{26}
@@ -193,8 +194,8 @@
   \item Logistic preference function, \hyperpage{42}
   \item Lognormal density function, \hyperpage{44}
   \item Lognormal likelihood 
-    \subitem  abundance, \hyperpage{77}
-    \subitem  biomass, \hyperpage{77}
+    \subitem  abundance, \hyperpage{78}
+    \subitem  biomass, \hyperpage{78}
     \subitem  proportions-at-age, \hyperpage{67}
     \subitem  proportions-at-length, \hyperpage{74}
   \item Lognormal prior, \hyperpage{61}
@@ -265,6 +266,7 @@
   \item Observations, \hyperpage{63}
   \item Optional command line arguments, \hyperpage{9}
   \item Output header information, \hyperpage{8}
+  \item over-dispersion, \hyperpage{81}
 
   \indexspace
 
@@ -326,7 +328,8 @@
     \subitem  Uniform-log, \hyperpage{60}
   \item Probability Density Functions, \hyperpage{112}
   \item Probability Distribution Functions (PDF), \hyperpage{44}
-  \item Process error and the likelihood multiplier, \hyperpage{80}
+  \item process error, \hyperpage{80}
+  \item Process error and likelihood multipliers, \hyperpage{80}
   \item Processes, \hyperpage{3, 4}, \hyperpage{23}, \hyperpage{89}
   \item Profiles, \hyperpage{55}, \hyperpage{137}
   \item Proportional recruitment, \hyperpage{24}, \hyperpage{27}

@@ -313,15 +313,18 @@
 \indexentry{Binomial likelihood ! proportions-by-category-at-length|hyperpage}{75}
 \indexentry{Binomial likelihood (normal approximation) ! proportions-by-category-at-length|hyperpage}{76}
 \indexentry{Abundance or biomass observations|hyperpage}{76}
-\indexentry{Lognormal likelihood ! abundance|hyperpage}{77}
-\indexentry{Lognormal likelihood ! biomass|hyperpage}{77}
+\indexentry{Lognormal likelihood ! abundance|hyperpage}{78}
+\indexentry{Lognormal likelihood ! biomass|hyperpage}{78}
 \indexentry{Normal likelihood ! abundance|hyperpage}{78}
 \indexentry{Normal likelihood ! biomass|hyperpage}{78}
 \indexentry{Relative proportions present observations|hyperpage}{78}
-\indexentry{Binomial likelihood ! presence|hyperpage}{79}
-\indexentry{Binomial likelihood ! presence|hyperpage}{79}
-\indexentry{Process error and the likelihood multiplier|hyperpage}{80}
-\indexentry{Ageing error|hyperpage}{80}
+\indexentry{Binomial likelihood ! presence|hyperpage}{80}
+\indexentry{Binomial likelihood ! presence|hyperpage}{80}
+\indexentry{Process error and likelihood multipliers|hyperpage}{80}
+\indexentry{process error|hyperpage}{80}
+\indexentry{likelihood multiplier|hyperpage}{80}
+\indexentry{over-dispersion|hyperpage}{81}
+\indexentry{Ageing error|hyperpage}{81}
 \indexentry{Simulating observations|hyperpage}{81}
 \indexentry{Pseudo-observations|hyperpage}{82}
 \indexentry{The report section|hyperpage}{83}
@@ -450,7 +453,7 @@
 \indexentry{Command ! catchability|hyperpage}{205}
 \indexentry{Command ! penalty|hyperpage}{205}
 \indexentry{Command ! observation|hyperpage}{205}
-\indexentry{Command ! ageing\_error|hyperpage}{208}
+\indexentry{Command ! ageing\_error|hyperpage}{209}
 \indexentry{Command ! report|hyperpage}{209}
-\indexentry{Command ! include|hyperpage}{212}
-\indexentry{Include an external file|hyperpage}{212}
+\indexentry{Command ! include|hyperpage}{213}
+\indexentry{Include an external file|hyperpage}{213}

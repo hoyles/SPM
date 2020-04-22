@@ -196,6 +196,11 @@ Each type of observation requires a set of subcommands and arguments specific to
 \defDefault{No default}
 \defValue{A valid value from the associated observation layer. This subcommand is repeated for each unique value of label}
 
+\defSub{detection\_probability} {Define the detection probability for modifying the denominator when calculating the expected value of the observation}
+\defType{Estimable}
+\defDefault{1.0}
+\defValue{A positive real number}
+
 \defSub{likelihood}{Define the likelihood for the observation}
 \defType{String}
 \defDefault{No default}
@@ -365,6 +370,11 @@ Each type of observation requires a set of subcommands and arguments specific to
 \defType{Constant}
 \defDefault{No default}
 \defValue{A valid value from the associated observation layer. This subcommand is repeated for each unique value of label}
+
+\defSub{detection\_probability} {Define the detection probability for modifying the denominator when calculating the expected value of the observation}
+\defType{Estimable}
+\defDefault{1.0}
+\defValue{A positive real number}
 
 \defSub{likelihood}{Define the likelihood for the observation}
 \defType{String}
