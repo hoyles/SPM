@@ -24,6 +24,20 @@ df 4
 #stepsize 0.01
 
 # OBSERVATIONS: CATCH AT AGE
+@observation LAA-year-1998
+type proportions_at_length
+year 1998
+time_step step_one
+categories immature-male + mature-male + immature-female + mature-female
+selectivities FishingSel FishingSel FishingSel FishingSel
+length_bins 10 20 30 40 50 60 70 80 90 100 110
+layer SSRU
+obs All 0.00000 0.00000 0.01382 0.03178 0.08416 0.03859 0.06588 0.08455 0.05462 0.07629 
+error_value All 343
+likelihood multinomial
+delta 1e-11
+#process_error 500
+
 @observation CAA-year-1998
 type proportions_at_age
 year 1998

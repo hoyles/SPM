@@ -18,3 +18,33 @@ Arguments:
 \end{description}
 
 Output: A list object with elements for each report type.
+
+\subsection{Read and write \SPM\  config files.}
+
+Command: \texttt{spm.read.config()} 
+
+Usage: \texttt{extract(file, path = "")}
+
+Arguments:
+\begin{description}
+\item[\texttt{file}] the name of the SPM config file to read
+\item[\texttt{path}] Optionally, the operating system path to the directory of the output file.
+\end{description}
+
+Output: A list object with elements for each command block in the config file.
+
+Command: \texttt{spm.write.config()} 
+
+Usage: \texttt{write.spm.config(object, file, path = "", header = "SPM config file", date = FALSE)}
+
+Arguments:
+\begin{description}
+\item[\texttt{object}] the name of the list object to write as an SPM config file
+\item[\texttt{file}] the name of the SPM config file to write to
+\item[\texttt{path}] Optionally, the operating system path to the directory of the output file.
+\item[\texttt{header}] Comment at the head of the output file with a user defined description.
+\item[\texttt{date}] Optionally, write a comment giving the system date time that the file was created.
+
+\end{description}
+
+Output: A SPM config file.

@@ -1,9 +1,9 @@
 SPM (Spatial Population Model)
 Call: ..\..\Build\windows\spm -p -q -g 0 -o profile.dat 
-Date: Fri Feb 07 15:19:50 2020
-v1.1-2020-02-06 (rev. 2020-02-06 01:38:21 UTC). Copyright (c) 2008-2020, NIWA
+Date: Wed Apr 22 15:15:28 2020
+v2.0.2-2020-04-21 (rev. 2020-04-21 11:34:49 UTC). Copyright (c) 2008-2020, NIWA
 User name: alist
-Machine name: DELL-9020 (Windows_NT, PID=5904)
+Machine name: HP1040 (Windows_NT, PID=9340)
 
 [CAA-1998]
 report.type: observation
@@ -728,6 +728,18 @@ to: mature
 type: category_transition_rate
 *end
 
+[Fishing]
+report.type: process
+categories: immature mature
+label: Fishing
+layers: Fishing_1998 Fishing_1999 Fishing_2000 Fishing_2001 Fishing_2002 Fishing_2003 Fishing_2004 Fishing_2005 Fishing_2006 Fishing_2007
+penalty: event_mortality_penalty
+selectivities: FishingSel FishingSel
+type: event_mortality
+u_max: 0.99
+years: 1998 1999 2000 2001 2002 2003 2004 2005 2006 2007
+*end
+
 [CAA-1998]
 report.type: observation
 label: CAA-year-1998
@@ -1448,6 +1460,18 @@ proportions: 1.0
 selectivities: Maturation
 to: mature
 type: category_transition_rate
+*end
+
+[Fishing]
+report.type: process
+categories: immature mature
+label: Fishing
+layers: Fishing_1998 Fishing_1999 Fishing_2000 Fishing_2001 Fishing_2002 Fishing_2003 Fishing_2004 Fishing_2005 Fishing_2006 Fishing_2007
+penalty: event_mortality_penalty
+selectivities: FishingSel FishingSel
+type: event_mortality
+u_max: 0.99
+years: 1998 1999 2000 2001 2002 2003 2004 2005 2006 2007
 *end
 
 [CAA-1998]
@@ -2172,6 +2196,18 @@ to: mature
 type: category_transition_rate
 *end
 
+[Fishing]
+report.type: process
+categories: immature mature
+label: Fishing
+layers: Fishing_1998 Fishing_1999 Fishing_2000 Fishing_2001 Fishing_2002 Fishing_2003 Fishing_2004 Fishing_2005 Fishing_2006 Fishing_2007
+penalty: event_mortality_penalty
+selectivities: FishingSel FishingSel
+type: event_mortality
+u_max: 0.99
+years: 1998 1999 2000 2001 2002 2003 2004 2005 2006 2007
+*end
+
 [CAA-1998]
 report.type: observation
 label: CAA-year-1998
@@ -2892,6 +2928,18 @@ proportions: 1.0
 selectivities: Maturation
 to: mature
 type: category_transition_rate
+*end
+
+[Fishing]
+report.type: process
+categories: immature mature
+label: Fishing
+layers: Fishing_1998 Fishing_1999 Fishing_2000 Fishing_2001 Fishing_2002 Fishing_2003 Fishing_2004 Fishing_2005 Fishing_2006 Fishing_2007
+penalty: event_mortality_penalty
+selectivities: FishingSel FishingSel
+type: event_mortality
+u_max: 0.99
+years: 1998 1999 2000 2001 2002 2003 2004 2005 2006 2007
 *end
 
 [CAA-1998]
@@ -3616,6 +3664,18 @@ to: mature
 type: category_transition_rate
 *end
 
+[Fishing]
+report.type: process
+categories: immature mature
+label: Fishing
+layers: Fishing_1998 Fishing_1999 Fishing_2000 Fishing_2001 Fishing_2002 Fishing_2003 Fishing_2004 Fishing_2005 Fishing_2006 Fishing_2007
+penalty: event_mortality_penalty
+selectivities: FishingSel FishingSel
+type: event_mortality
+u_max: 0.99
+years: 1998 1999 2000 2001 2002 2003 2004 2005 2006 2007
+*end
+
 [CAA-1998]
 report.type: observation
 label: CAA-year-1998
@@ -4336,6 +4396,18 @@ proportions: 1.0
 selectivities: Maturation
 to: mature
 type: category_transition_rate
+*end
+
+[Fishing]
+report.type: process
+categories: immature mature
+label: Fishing
+layers: Fishing_1998 Fishing_1999 Fishing_2000 Fishing_2001 Fishing_2002 Fishing_2003 Fishing_2004 Fishing_2005 Fishing_2006 Fishing_2007
+penalty: event_mortality_penalty
+selectivities: FishingSel FishingSel
+type: event_mortality
+u_max: 0.99
+years: 1998 1999 2000 2001 2002 2003 2004 2005 2006 2007
 *end
 
 [CAA-1998]
@@ -5060,6 +5132,18 @@ to: mature
 type: category_transition_rate
 *end
 
+[Fishing]
+report.type: process
+categories: immature mature
+label: Fishing
+layers: Fishing_1998 Fishing_1999 Fishing_2000 Fishing_2001 Fishing_2002 Fishing_2003 Fishing_2004 Fishing_2005 Fishing_2006 Fishing_2007
+penalty: event_mortality_penalty
+selectivities: FishingSel FishingSel
+type: event_mortality
+u_max: 0.99
+years: 1998 1999 2000 2001 2002 2003 2004 2005 2006 2007
+*end
+
 [CAA-1998]
 report.type: observation
 label: CAA-year-1998
@@ -5780,6 +5864,18 @@ proportions: 1.0
 selectivities: Maturation
 to: mature
 type: category_transition_rate
+*end
+
+[Fishing]
+report.type: process
+categories: immature mature
+label: Fishing
+layers: Fishing_1998 Fishing_1999 Fishing_2000 Fishing_2001 Fishing_2002 Fishing_2003 Fishing_2004 Fishing_2005 Fishing_2006 Fishing_2007
+penalty: event_mortality_penalty
+selectivities: FishingSel FishingSel
+type: event_mortality
+u_max: 0.99
+years: 1998 1999 2000 2001 2002 2003 2004 2005 2006 2007
 *end
 
 [CAA-1998]
@@ -6504,6 +6600,18 @@ to: mature
 type: category_transition_rate
 *end
 
+[Fishing]
+report.type: process
+categories: immature mature
+label: Fishing
+layers: Fishing_1998 Fishing_1999 Fishing_2000 Fishing_2001 Fishing_2002 Fishing_2003 Fishing_2004 Fishing_2005 Fishing_2006 Fishing_2007
+penalty: event_mortality_penalty
+selectivities: FishingSel FishingSel
+type: event_mortality
+u_max: 0.99
+years: 1998 1999 2000 2001 2002 2003 2004 2005 2006 2007
+*end
+
 [CAA-1998]
 report.type: observation
 label: CAA-year-1998
@@ -7224,6 +7332,18 @@ proportions: 1.0
 selectivities: Maturation
 to: mature
 type: category_transition_rate
+*end
+
+[Fishing]
+report.type: process
+categories: immature mature
+label: Fishing
+layers: Fishing_1998 Fishing_1999 Fishing_2000 Fishing_2001 Fishing_2002 Fishing_2003 Fishing_2004 Fishing_2005 Fishing_2006 Fishing_2007
+penalty: event_mortality_penalty
+selectivities: FishingSel FishingSel
+type: event_mortality
+u_max: 0.99
+years: 1998 1999 2000 2001 2002 2003 2004 2005 2006 2007
 *end
 
 [CAA-1998]
@@ -7948,6 +8068,18 @@ to: mature
 type: category_transition_rate
 *end
 
+[Fishing]
+report.type: process
+categories: immature mature
+label: Fishing
+layers: Fishing_1998 Fishing_1999 Fishing_2000 Fishing_2001 Fishing_2002 Fishing_2003 Fishing_2004 Fishing_2005 Fishing_2006 Fishing_2007
+penalty: event_mortality_penalty
+selectivities: FishingSel FishingSel
+type: event_mortality
+u_max: 0.99
+years: 1998 1999 2000 2001 2002 2003 2004 2005 2006 2007
+*end
+
 [CAA-1998]
 report.type: observation
 label: CAA-year-1998
@@ -8668,6 +8800,18 @@ proportions: 1.0
 selectivities: Maturation
 to: mature
 type: category_transition_rate
+*end
+
+[Fishing]
+report.type: process
+categories: immature mature
+label: Fishing
+layers: Fishing_1998 Fishing_1999 Fishing_2000 Fishing_2001 Fishing_2002 Fishing_2003 Fishing_2004 Fishing_2005 Fishing_2006 Fishing_2007
+penalty: event_mortality_penalty
+selectivities: FishingSel FishingSel
+type: event_mortality
+u_max: 0.99
+years: 1998 1999 2000 2001 2002 2003 2004 2005 2006 2007
 *end
 
 [CAA-1998]
@@ -9392,6 +9536,18 @@ to: mature
 type: category_transition_rate
 *end
 
+[Fishing]
+report.type: process
+categories: immature mature
+label: Fishing
+layers: Fishing_1998 Fishing_1999 Fishing_2000 Fishing_2001 Fishing_2002 Fishing_2003 Fishing_2004 Fishing_2005 Fishing_2006 Fishing_2007
+penalty: event_mortality_penalty
+selectivities: FishingSel FishingSel
+type: event_mortality
+u_max: 0.99
+years: 1998 1999 2000 2001 2002 2003 2004 2005 2006 2007
+*end
+
 [CAA-1998]
 report.type: observation
 label: CAA-year-1998
@@ -10112,6 +10268,18 @@ proportions: 1.0
 selectivities: Maturation
 to: mature
 type: category_transition_rate
+*end
+
+[Fishing]
+report.type: process
+categories: immature mature
+label: Fishing
+layers: Fishing_1998 Fishing_1999 Fishing_2000 Fishing_2001 Fishing_2002 Fishing_2003 Fishing_2004 Fishing_2005 Fishing_2006 Fishing_2007
+penalty: event_mortality_penalty
+selectivities: FishingSel FishingSel
+type: event_mortality
+u_max: 0.99
+years: 1998 1999 2000 2001 2002 2003 2004 2005 2006 2007
 *end
 
 [CAA-1998]
@@ -10836,6 +11004,18 @@ to: mature
 type: category_transition_rate
 *end
 
+[Fishing]
+report.type: process
+categories: immature mature
+label: Fishing
+layers: Fishing_1998 Fishing_1999 Fishing_2000 Fishing_2001 Fishing_2002 Fishing_2003 Fishing_2004 Fishing_2005 Fishing_2006 Fishing_2007
+penalty: event_mortality_penalty
+selectivities: FishingSel FishingSel
+type: event_mortality
+u_max: 0.99
+years: 1998 1999 2000 2001 2002 2003 2004 2005 2006 2007
+*end
+
 [CAA-1998]
 report.type: observation
 label: CAA-year-1998
@@ -11556,6 +11736,18 @@ proportions: 1.0
 selectivities: Maturation
 to: mature
 type: category_transition_rate
+*end
+
+[Fishing]
+report.type: process
+categories: immature mature
+label: Fishing
+layers: Fishing_1998 Fishing_1999 Fishing_2000 Fishing_2001 Fishing_2002 Fishing_2003 Fishing_2004 Fishing_2005 Fishing_2006 Fishing_2007
+penalty: event_mortality_penalty
+selectivities: FishingSel FishingSel
+type: event_mortality
+u_max: 0.99
+years: 1998 1999 2000 2001 2002 2003 2004 2005 2006 2007
 *end
 
 [CAA-1998]
@@ -12280,6 +12472,18 @@ to: mature
 type: category_transition_rate
 *end
 
+[Fishing]
+report.type: process
+categories: immature mature
+label: Fishing
+layers: Fishing_1998 Fishing_1999 Fishing_2000 Fishing_2001 Fishing_2002 Fishing_2003 Fishing_2004 Fishing_2005 Fishing_2006 Fishing_2007
+penalty: event_mortality_penalty
+selectivities: FishingSel FishingSel
+type: event_mortality
+u_max: 0.99
+years: 1998 1999 2000 2001 2002 2003 2004 2005 2006 2007
+*end
+
 [CAA-1998]
 report.type: observation
 label: CAA-year-1998
@@ -13000,6 +13204,18 @@ proportions: 1.0
 selectivities: Maturation
 to: mature
 type: category_transition_rate
+*end
+
+[Fishing]
+report.type: process
+categories: immature mature
+label: Fishing
+layers: Fishing_1998 Fishing_1999 Fishing_2000 Fishing_2001 Fishing_2002 Fishing_2003 Fishing_2004 Fishing_2005 Fishing_2006 Fishing_2007
+penalty: event_mortality_penalty
+selectivities: FishingSel FishingSel
+type: event_mortality
+u_max: 0.99
+years: 1998 1999 2000 2001 2002 2003 2004 2005 2006 2007
 *end
 
 [CAA-1998]
@@ -13724,6 +13940,18 @@ to: mature
 type: category_transition_rate
 *end
 
+[Fishing]
+report.type: process
+categories: immature mature
+label: Fishing
+layers: Fishing_1998 Fishing_1999 Fishing_2000 Fishing_2001 Fishing_2002 Fishing_2003 Fishing_2004 Fishing_2005 Fishing_2006 Fishing_2007
+penalty: event_mortality_penalty
+selectivities: FishingSel FishingSel
+type: event_mortality
+u_max: 0.99
+years: 1998 1999 2000 2001 2002 2003 2004 2005 2006 2007
+*end
+
 [CAA-1998]
 report.type: observation
 label: CAA-year-1998
@@ -14444,6 +14672,18 @@ proportions: 1.0
 selectivities: Maturation
 to: mature
 type: category_transition_rate
+*end
+
+[Fishing]
+report.type: process
+categories: immature mature
+label: Fishing
+layers: Fishing_1998 Fishing_1999 Fishing_2000 Fishing_2001 Fishing_2002 Fishing_2003 Fishing_2004 Fishing_2005 Fishing_2006 Fishing_2007
+penalty: event_mortality_penalty
+selectivities: FishingSel FishingSel
+type: event_mortality
+u_max: 0.99
+years: 1998 1999 2000 2001 2002 2003 2004 2005 2006 2007
 *end
 
 Completed

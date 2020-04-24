@@ -18,44 +18,44 @@ The style file: plainnat.bst
 A level-1 auxiliary file: References.aux
 A level-1 auxiliary file: License.aux
 Database file #1: SPM.bib
-You've used 18 entries,
+You've used 22 entries,
             2773 wiz_defined-function locations,
-            726 strings with 8134 characters,
-and the built_in function-call counts, 7458 in all, are:
-= -- 662
-> -- 451
-< -- 15
-+ -- 154
-- -- 135
-* -- 595
-:= -- 1218
-add.period$ -- 57
-call.type$ -- 18
-change.case$ -- 98
-chr.to.int$ -- 17
-cite$ -- 36
-duplicate$ -- 334
-empty$ -- 573
-format.name$ -- 169
-if$ -- 1528
+            761 strings with 9263 characters,
+and the built_in function-call counts, 9480 in all, are:
+= -- 843
+> -- 589
+< -- 16
++ -- 200
+- -- 177
+* -- 783
+:= -- 1546
+add.period$ -- 74
+call.type$ -- 22
+change.case$ -- 124
+chr.to.int$ -- 21
+cite$ -- 44
+duplicate$ -- 414
+empty$ -- 716
+format.name$ -- 215
+if$ -- 1940
 int.to.chr$ -- 2
 int.to.str$ -- 1
-missing$ -- 15
-newline$ -- 99
-num.names$ -- 72
-pop$ -- 169
+missing$ -- 18
+newline$ -- 124
+num.names$ -- 88
+pop$ -- 207
 preamble$ -- 1
-purify$ -- 81
+purify$ -- 103
 quote$ -- 0
-skip$ -- 255
+skip$ -- 314
 stack$ -- 0
-substring$ -- 194
-swap$ -- 19
-text.length$ -- 3
+substring$ -- 262
+swap$ -- 24
+text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 178
+type$ -- 222
 warning$ -- 0
-while$ -- 63
+while$ -- 78
 width$ -- 0
-write$ -- 246
+write$ -- 308

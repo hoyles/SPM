@@ -272,18 +272,19 @@
 \BOOKMARK [2][-]{subsection.13.2}{13.2 An example of a simple 10 x 6 \040spatial model with movement}{section.13}% 272
 \BOOKMARK [1][-]{section.14}{14 Post processing output using R}{}% 273
 \BOOKMARK [2][-]{subsection.14.1}{14.1 Read and extract reports from a SPM output file.}{section.14}% 274
-\BOOKMARK [1][-]{section.15}{15 Changes from previous versions}{}% 275
-\BOOKMARK [1][-]{section.16}{16 Troubleshooting}{}% 276
-\BOOKMARK [2][-]{subsection.16.1}{16.1 Introduction}{section.16}% 277
-\BOOKMARK [2][-]{subsection.16.2}{16.2 Reporting errors}{section.16}% 278
-\BOOKMARK [2][-]{subsection.16.3}{16.3 Guidelines for reporting a bug in SPM}{section.16}% 279
-\BOOKMARK [1][-]{section.17}{17 Acknowledgements}{}% 280
-\BOOKMARK [1][-]{section.18}{18 Quick reference}{}% 281
-\BOOKMARK [2][-]{subsection.18.1}{18.1 Population command and subcommand syntax}{section.18}% 282
-\BOOKMARK [2][-]{subsection.18.2}{18.2 Estimation command and subcommand syntax}{section.18}% 283
-\BOOKMARK [2][-]{subsection.18.3}{18.3 Observation command and subcommand syntax}{section.18}% 284
-\BOOKMARK [2][-]{subsection.18.4}{18.4 Report command and subcommand syntax}{section.18}% 285
-\BOOKMARK [2][-]{subsection.18.5}{18.5 Other commands and subcommands}{section.18}% 286
-\BOOKMARK [1][-]{section.19}{19 References}{}% 287
-\BOOKMARK [1][-]{section.20}{20 Spatial Population Model software license}{}% 288
-\BOOKMARK [1][-]{section.21}{21 Index}{}% 289
+\BOOKMARK [2][-]{subsection.14.2}{14.2 Read and write SPM config files.}{section.14}% 275
+\BOOKMARK [1][-]{section.15}{15 Changes from previous versions}{}% 276
+\BOOKMARK [1][-]{section.16}{16 Troubleshooting}{}% 277
+\BOOKMARK [2][-]{subsection.16.1}{16.1 Introduction}{section.16}% 278
+\BOOKMARK [2][-]{subsection.16.2}{16.2 Reporting errors}{section.16}% 279
+\BOOKMARK [2][-]{subsection.16.3}{16.3 Guidelines for reporting a bug in SPM}{section.16}% 280
+\BOOKMARK [1][-]{section.17}{17 Acknowledgements}{}% 281
+\BOOKMARK [1][-]{section.18}{18 Quick reference}{}% 282
+\BOOKMARK [2][-]{subsection.18.1}{18.1 Population command and subcommand syntax}{section.18}% 283
+\BOOKMARK [2][-]{subsection.18.2}{18.2 Estimation command and subcommand syntax}{section.18}% 284
+\BOOKMARK [2][-]{subsection.18.3}{18.3 Observation command and subcommand syntax}{section.18}% 285
+\BOOKMARK [2][-]{subsection.18.4}{18.4 Report command and subcommand syntax}{section.18}% 286
+\BOOKMARK [2][-]{subsection.18.5}{18.5 Other commands and subcommands}{section.18}% 287
+\BOOKMARK [1][-]{section.19}{19 References}{}% 288
+\BOOKMARK [1][-]{section.20}{20 Spatial Population Model software license}{}% 289
+\BOOKMARK [1][-]{section.21}{21 Index}{}% 290

@@ -361,7 +361,7 @@ lambda_years 80 90 100
 
 Following initialisation, the model then runs over a number of user-defined years. For this part of the model, the annual cycle can be broken into separate time-steps (see below). The model runs from the start of year \argument{initial} and runs to the end of year \argument{current}. %The projection part then extends the run time up to the end of year \argument{final}. 
 
-For example, to specify a model for the years 1990--2010 , then the \texttt{@model} example from above becomes,
+For example, to specify a model for the years 1990--2010, then the \texttt{@model} example from above becomes,
 {\small{\begin{verbatim}
 @model
 nrows 3
@@ -386,7 +386,7 @@ current_year 2010
 
 The annual cycle is run during initialisation and over the model years. It is broken into time-steps. Within each time-step, processes are carried out in the order specified, and can be the same or different to processes in other time-steps or in the initialisation phases of the model. Further, observations (see later) can be associated with the state of the model at the end of a time-step --- i.e., time-steps are used to break the annual cycle into discrete 'chunks', and to allow the model to appropriately generate expected values for observations. 
 
-In addition, any growth within that time step year is specified using \argument{growth\_proportion}. This is a value that is added to the age of an individual , specifying the proportion of a year to add to the age of an individual in order to calculate its size and weight in that time step. 
+In addition, any growth within that time step year is specified using \argument{growth\_proportion}. This is a value that is added to the age of an individual, specifying the proportion of a year to add to the age of an individual in order to calculate its size and weight in that time step. 
 
 For example, to specify a model with the time-steps \texttt{one} and \texttt{two}, and the processes \texttt{myRecruitment} and \texttt{myMaturation} in \texttt{one} and processes \texttt{myAgeing} and \texttt{myMortality} on \texttt{two}, then the \texttt{@model} example from above becomes,
 {\small{\begin{verbatim}
@@ -749,7 +749,7 @@ Note that the exploitation rate with annually varying layers process maintains t
 
 The event mortality process\index{Event mortality} and biomass mortality processes act in a similar manner, except that they remove a specified abundance (number of individuals) or biomass respectively, rather than applying mortality as a rate. However, the maximum abundance or biomass to remove is constrained by a maximum exploitation rate.
 
-The event mortality types must be defined using a layer. Here, the abundance or biomass to remove from a the population for each cell $a$ is the value of the layer at $a$ (denoted $F_a$) --- except where there are too few individuals for the event mortality to be taken (as defined by the maximum exploitation rate). In this scenario, \SPM\ removes as many individuals or as much biomass as it can while not exceeding the maximum exploitation rate. Event mortality processes require a penalty function to discourage parameter values that do not allow a the defined number of individuals to be removed. Here, the model penalises those parameter estimates that result in an insufficient number of individuals in defined categories (after applying selectivities). See Section \ref{sec:penalties} for more information on specifying penalties.
+The event mortality types must be defined using a layer. Here, the abundance or biomass to remove from the population for each cell $a$ is the value of the layer at $a$ (denoted $F_a$) --- except where there are too few individuals for the event mortality to be taken (as defined by the maximum exploitation rate). In this scenario, \SPM\ removes as many individuals or as much biomass as it can while not exceeding the maximum exploitation rate. Event mortality processes require a penalty function to discourage parameter values that do not allow the defined number of individuals to be removed. Here, the model penalises those parameter estimates that result in an insufficient number of individuals in defined categories (after applying selectivities). See Section \ref{sec:penalties} for more information on specifying penalties.
 
 For example, the event mortality applied to user-defined categories $k$, with the numbers removed at age $l$ determined by a selectivity-at-age $S_l$ is applied as follows:
 
@@ -1156,7 +1156,7 @@ selectivities one
 
 Preference movements allows movement from any $cell(a) \rightarrow cell(b)$, for $\forall a,b \in L_B$ and is implemented as a function of the product of up to $n$ independent \emph{preference functions}. We define the probability of moving from any cell $a$ to any cell $b$, for all $a,b \in L_B$, as a function of the relative preference for that cell. Here, we use the term \emph{preference function}\index{Preference function} \citep{1366,1367} to describe the movement probability distributions. 
 
-We assume that the population and spatial extent are defined, and that there is a preference function that is a function of some (typically estimable) parameters and a spatially explicit set of known attributes.The preference function movement process allows the number of parameters describing movement to to reduced, and results in a movement process that is some function of some underlying property of each location. For example, if we assume that movement between areas was a function of the Euclidean distance between areas, we could model movement between any two areas as a linear decay or exponential decay function \citep{1366}. Alternately, if distribution and density were correlated with bathymetric depth for a marine organism, we might model the movement and distribution as a function of depth. 
+We assume that the population and spatial extent are defined, and that there is a preference function that is a function of some (typically estimable) parameters and a spatially explicit set of known attributes. The preference function movement process allows the number of parameters describing movement to be reduced, and results in a movement process that is some function of some underlying property of each location. For example, if we assume that movement between areas was a function of the Euclidean distance between areas, we could model movement between any two areas as a linear decay or exponential decay function \citep{1366}. Alternately, if distribution and density were correlated with bathymetric depth for a marine organism, we might model the movement and distribution as a function of depth. 
 
 Note that two forms of the preference movement algorithm are implemented in \SPM. They implement the same algorithm, except that the \commandsubarg{process}{type}{preference\_threaded}\index{Threads!preference functions}\ implements movement as a multi-threaded CPU process\index{Multi-threaded CPU process} (allowing multiple between cell movements to be evaluated by the computer simultaneously) and \commandsubarg{process}{type}{preference} implements movement as a single-threaded CPU process\index{Single-threaded CPU process}. The simultaneous evaluation of movements between cells in the multi-threaded movement process can result in a significantly faster processing time for an individual model (though, due to the thread management overhead, only for large models). Note that a consequence of this is that the order of calculations for the multi-thread and single-thread processes \emph{may} differ in some cases, and that this may result in a slightly different outcome.
 
@@ -1502,7 +1502,7 @@ size_weight SizeWeight
 
 \subsection{\I{Size-weight relationship}\label{sec:mean-weight}}
 
-There are two size-weight relationship,s available in \SPM. The first is the naive no relationship. Here, the weight of an individual, regardless of size, is always 1. The second is the basic relationship. 
+There are two size-weight relationships available in \SPM. The first is the naive no relationship. Here, the weight of an individual, regardless of size, is always 1. The second is the basic relationship. 
 
 The two size-weight relationships are,
 
@@ -1537,7 +1537,7 @@ b 3
 
 A selectivity is a function with a different value for each age class (i.e., for each column of the partition). Selectivities are used throughout \SPM\ to interpret observations (Section \ref{sec:estimation-section}) or to modify the effects of processes on each age class (Section \ref{sec:population-section}). \SPM\ implements a number of different parametric forms, including logistic, knife edge, and double normal selectivities.
 
-A selectivity is always defined to apply just to one category of the population (i.e, row of the partition). To apply the same selectivity to more than one category, then just repeat the selectivity for each category that it is applied to.
+A selectivity is always defined to apply just to one category of the population (i.e., row of the partition). To apply the same selectivity to more than one category, then just repeat the selectivity for each category that it is applied to.
 
 Note that selectivities are indexed by age, with indices from \argument{min\_age} to \argument{max\_age}. For example, you might have an age-based selectivity that was logistic with $50\%$ selected at age $5$ and $95\%$ selected at age $7$. This would be defined by the \subcommand{type}=\argument{logistic} with parameters $a_{50}=5$ and $a_{to95}=(7-5)=2$. Then the value of the selectivity at age $x=7$ is $0.95$ and the selectivity at $x=3$ is $0.05$.
 
@@ -1585,7 +1585,7 @@ f(x)= \begin{cases}
   \end{cases} 
 \end{equation}
 
-The knife-edge selectivity has the estimable parameter $E$and a scaling parameter $\alpha$, where the default value of $\alpha = 1$
+The knife-edge selectivity has the estimable parameter $E$ and a scaling parameter $\alpha$, where the default value of $\alpha = 1$
 
 For example, to define a knife-edge selectivity with $=12$, use,
 

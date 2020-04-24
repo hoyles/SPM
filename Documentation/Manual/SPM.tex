@@ -17,7 +17,7 @@
             pdfpagelayout=TwoPageRight,
             pdftitle={Spatial Population Model (SPM) Users Manual}, 
             pdfauthor={Alistair Dunn; Scott Rasmussen; Sophie Mormede}, 
-            pdfsubject={Spatial Population Model, NIWA Technical Report 138},
+            pdfsubject={Spatial Population Model, Ocean Environmental Technical Report},
             pdftex]{hyperref}
 \hypersetup{
   breaklinks=true,      % allow line breaks in URLs
@@ -167,15 +167,18 @@ escapeinside={\%*}{*)}          % if you want to add a comment within your code
 \newcommand{\DocMonth}{\SourceControlMonthDoc}
 \newcommand{\DocDate}{\SourceControlMonthDoc\ \SourceControlYearDoc}
 \newcommand{\DocVer}{\SourceControlDateDoc}
+\newcommand{\VER}{\VERSION-\SourceControlDateDoc} % SPM program version
 
 %New commands to automate document dates, manual titles, document reference, etc.
-\newcommand{\VER}{v\input{SPMversion.tex}} % SPM program version
+%\newcommand{\VER}{v\input{SPMversion.tex}} % SPM program version
 \newcommand{\SPM}{\texttt{SPM}} % SPM short  name
 \newcommand{\SPMName}{Spatial Population Model} %SPM long name
 \newcommand{\authors}{\href{mailto:"Alistair Dunn"<Alistair.Dunn@OceanEnvironmental.co.nz>?subject=SPM:}{authors}} %hyper ref for email
-\newcommand{\Organisation}{National Institute of Water \& Atmospheric Research Ltd.} %NIWA
-\newcommand{\ReportNumber}{NIWA Technical Report 138}
-\newcommand{\ManualRef}{Dunn, A.; Rasmussen, S.; Mormede, S. (\DocYear). \SPMName\ User Manual, \SPM\ \VER. \Organisation\ \emph{\ReportNumber}. \ref{TotPages} p.} % full document reference
+\newcommand{\OceanEnv}{\href{www.OceanEnvironmental.co.nz}{Ocean Environmental Ltd.}}
+\newcommand{\NIWA}{\href{www.niwa.co.nz}{National Institute of Water \& Atmospheric Research Ltd. (NIWA)}} %NIWA
+\newcommand{\ReportNumber}{Ocean Environmental Technical Report}
+\newcommand{\OriginalRef}{Dunn, A.; Rasmussen, S.; Mormede, S. (2018). Spatial Population Model User Manual, SPM v1.1-2018-05-31 (rev. 1291) \emph{NIWA Technical Report 138}. NIWA, Wellington, New Zealand, 210 p.} % full document reference
+\newcommand{\ManualRef}{Dunn, A.; Rasmussen, S.; Mormede, S. (\DocYear). \SPMName\ User Manual, \SPM\ \VER. \emph{\ReportNumber}. \OceanEnv\ Wellington, New Zealand. \ref{TotPages} p.} % full document reference
 
 % Define \clearemptydoublepage so-as to have truly blank pages between sections
 \let\origdoublepage\cleardoublepage
@@ -216,12 +219,11 @@ escapeinside={\%*}{*)}          % if you want to add a comment within your code
 		\end{figure}
 		\vspace{2cm}
 
-		\Large NIWA Technical Report 138 \\%Document Date
-		\Large ISSN 1174-2631 \\%Document Date
+		\Large Ocean Environmental Technical Report\\%Document Date
 		\Large \DocYear \\%Document Date
 
 		~\vfill
-		\SPMName\ User Manual (modified: \DocVer) \\ for use with \SPM\ \VER
+		\SPMName\ User Manual \\ for use with \SPM\ \VER
 
 	\end{center}
 \end{titlepage}
@@ -233,20 +235,16 @@ escapeinside={\%*}{*)}          % if you want to add a comment within your code
 	  \begin{center}
 
     \vspace*{2cm}
-		Published by NIWA \\
-		Wellington \\
+		Published by Ocean Environmental \\
+		Wellington, New Zealand \\
 		\DocYear \\
 
     \vspace{3cm}
     Enquiries to: \\
-    Science Communication, NIWA \\
-    Private Bag 14901, Wellington, New Zealand \\
+    Enquiries@OceanEnvironmental.co.nz\\
 
     \vspace{4cm}
-    ISSN 1174-2631
-
-    \vspace{4cm}
-    \copyright NIWA \DocYear
+    %\copyright NIWA \DocYear
 		
 	\end{center}
 
@@ -254,7 +252,7 @@ escapeinside={\%*}{*)}          % if you want to add a comment within your code
 ~\vfill
 
 \begin{tabulary}{\textwidth}{L C}        
-$\vcenter{Citation: \ManualRef}$ & $\vcenter{\hbox{\includegraphics[height=1.8cm,width=1.8cm]{Figures/QR_code}}}$\\
+$\vcenter{Citation: \ManualRef}$ %& $\vcenter{\hbox{\includegraphics[height=1.8cm,width=1.8cm]{Figures/QR_code}}}$\\
 \end{tabulary}
 
 

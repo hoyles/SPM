@@ -11,3 +11,13 @@ type objective_function
 
 @report Covariance
 type covariance
+
+@report MPD
+type estimate_summary
+
+@report Estimates
+type estimate_value
+
+@report LAA
+type observation
+observation LAA-year-1998
