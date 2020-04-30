@@ -3,29 +3,20 @@
 \alias{spm}
 \docType{package}
 \title{
-SPM extract package
+\packageTitle{spm}
 }
 \description{
-A set of R functions for extracting and processing SPM output.
+\packageDescription{spm}
 }
 \details{
-\tabular{ll}{
-Package: \tab spm\cr
-Date: \tab 2013-02-12\cr
-License: \tab See the SPM manual, or use 'spm -l' at the command line to view the SPM license.\cr
-URL: \tab http://www.niwa.co.nz\cr
-Copyright: \tab National Institute of Water & Atmospheric Research (NIWA).\cr
-}
 
-Index:
-\preformatted{
-extract                 Extract elements from an SPM output file
-spm-package             SPM package
-}
+The DESCRIPTION file:
+\packageDESCRIPTION{spm}
+\packageIndices{spm}
 }
 \author{
-A. Dunn
+\packageAuthor{spm}
 
-Maintainer: A Dunn <a.dunn@niwa.co.nz>
+Maintainer: \packageMaintainer{spm}
 }
 \keyword{ package }

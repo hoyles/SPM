@@ -4,6 +4,7 @@
 #' @param x x-values over which to evaluate. Default = 1
 #' @param alpha The value of the alpha parameter. Default = 1
 #' @param rescale Rescale the function to have value 1?. Default = TRUE
+#' 
 #' @export
 #'
 "PFconstant" <-

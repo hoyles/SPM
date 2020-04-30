@@ -27,10 +27,10 @@ class RLibrary:
       return False
     ## CHG Dir to R library
     os.chdir(Globals.root_directory_ + "/R-libraries/")
-    ## Run the oxygen
-    os.system("R --vanilla < run-roxygen.R")   
     ## Build Namespace
     os.system("R --vanilla < SPM_make_version.R")
+    ## Run the oxygen
+    os.system("R --vanilla < run-roxygen.R")   
     ## build package
     os.system("R CMD build --force spm")
     os.system("R CMD INSTALL --build spm")

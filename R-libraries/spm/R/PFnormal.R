@@ -6,6 +6,7 @@
 #' @param mu the mean of the normal
 #' @param sigma the standard deviation of the normal
 #' @param rescale Rescale the function to have value 1?. Default = TRUE
+#' 
 #' @export
 #'
 "PFnormal" <-

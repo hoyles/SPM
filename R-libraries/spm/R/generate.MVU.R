@@ -5,6 +5,7 @@
 #' @param path Optionally, the path to the file
 #' @param output.file The name of the output file to write randomly generated values
 #' @param sample.size The number f samples to generate
+#' 
 #' @export
 #'
 "generate.MVU"<-

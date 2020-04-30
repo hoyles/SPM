@@ -2,7 +2,6 @@
 #'
 #' @author Alistair Dunn
 #' @param lines list of lines to process
-#' @export
 #'
 "extract.estimatevalue" <- function(lines){
   if(missing(lines)) stop("ERROR: Missing argument lines")

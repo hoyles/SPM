@@ -2,7 +2,6 @@
 #'
 #' @author Alistair Dunn
 #' @param lines list of lines to process
-#' @export
 #'
 "extract.covariance" <- function (lines) {
   make.matrix<-function(lines,columns) {

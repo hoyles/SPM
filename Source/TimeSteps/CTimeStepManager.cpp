@@ -234,7 +234,7 @@ void CTimeStepManager::execute() {
       iCurrentTimeStep = j;
 
       // Prepare our Observations
-      pObservationManager->prepare();
+      pObservationManager->prepare(iCurrentYear, j);
 
       // Execute Time Step
       vTimeSteps[j]->execute();

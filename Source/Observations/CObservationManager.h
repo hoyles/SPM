@@ -41,7 +41,7 @@ public:
   CObservation*              getObservation(string label);
   void                       validate();
   void                       build();
-  void                       prepare();
+  void                       prepare(int year, int step);
   void                       execute(int year, int step);
   virtual                    ~CObservationManager();
 

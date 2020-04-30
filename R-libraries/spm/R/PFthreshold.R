@@ -4,7 +4,9 @@
 #' @param x x-values over which to evaluate. Default = 1
 #' @param alpha The value of the alpha parameter. Default = 1
 #' @param N the threshhold value
+#' @param lambda the lambda value
 #' @param rescale Rescale the function to have value 1?. Default = TRUE
+#' 
 #' @export
 #'
 "PFthreshold" <-

@@ -4,6 +4,7 @@
 #' @param file the name of the input file containing model output to extract
 #' @param path Optionally, the path to the file
 #' @param ignore.unknown Ignore unknown objects in the output file
+#' 
 #' @export
 #'
 "extract" <- function (file, path = "", ignore.unknown=FALSE) {

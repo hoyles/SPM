@@ -2,7 +2,7 @@
 % Please edit documentation in R/write.SPM.config.R
 \name{write.spm.config}
 \alias{write.spm.config}
-\title{Model configuration read function}
+\title{Model configuration write function}
 \usage{
 write.spm.config(
   object,
