@@ -13,6 +13,8 @@ PFthreshold(x, alpha, N, lambda, rescale = T)
 
 \item{N}{the threshhold value}
 
+\item{lambda}{the lambda value}
+
 \item{rescale}{Rescale the function to have value 1?. Default = TRUE}
 }
 \description{

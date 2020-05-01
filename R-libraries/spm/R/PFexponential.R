@@ -5,6 +5,7 @@
 #' @param alpha The value of the alpha parameter. Default = 1
 #' @param lambda the rate of the exponential
 #' @param rescale Rescale the function to have value 1?. Default = TRUE
+#' 
 #' @export
 #'
 "PFexponential" <-

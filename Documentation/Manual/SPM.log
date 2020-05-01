@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.3.18)  26 MAR 2020 20:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7400 64-bit) (preloaded format=pdflatex 2020.4.23)  30 APR 2020 18:36
 entering extended mode
 **./SPM.tex
 (SPM.tex
-LaTeX2e <2020-02-02> patch level 3
-L3 programming layer <2020-03-06>
+LaTeX2e <2020-02-02> patch level 5
+L3 programming layer <2020-04-06>
 ("C:\Users\alist\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\article.cls"
 Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
 ("C:\Users\alist\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\size11.clo"
@@ -33,7 +33,7 @@ Package caption3 Info: TeX engine: e-TeX on input line 61.
 ("C:\Users\alist\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\keyval.st
 y"
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
-\KV@toks@=\toks14
+\KV@toks@=\toks15
 )
 \captionmargin=\dimen135
 \captionmargin@=\dimen136
@@ -53,9 +53,9 @@ Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 ("C:\Users\alist\AppData\Local\Programs\MiKTeX 2.9\tex/latex/float\float.sty"
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count177
-\float@exts=\toks15
+\float@exts=\toks16
 \float@box=\box45
-\@float@everytoks=\toks16
+\@float@everytoks=\toks17
 \@floatcapt=\box46
 )
 ("C:\Users\alist\AppData\Local\Programs\MiKTeX 2.9\tex/latex/setspace\setspace.
@@ -73,7 +73,7 @@ Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
 \col@sep=\dimen142
 \ar@mcellbox=\box47
 \extrarowheight=\dimen143
-\NC@list=\toks17
+\NC@list=\toks18
 \extratabsurround=\skip49
 \backup@length=\skip50
 \ar@cellbox=\box48
@@ -97,7 +97,7 @@ sty"
 Package: ltxcmds 2019/12/15 v1.24 LaTeX kernel commands for general use (HO)
 )
 ("C:\Users\alist\AppData\Local\Programs\MiKTeX 2.9\tex/generic/iftex\iftex.sty"
-Package: iftex 2019/11/07 v1.0c TeX engine tests
+Package: iftex 2020/03/06 v1.0d TeX engine tests
 )
 ("C:\Users\alist\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pdftexcmds\pdftexc
 mds.sty"
@@ -252,7 +252,7 @@ Package: amstext 2000/06/29 v2.01 AMS text
 ("C:\Users\alist\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsgen.sty
 "
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks18
+\@emptytoks=\toks19
 \ex@=\dimen152
 ))
 ("C:\Users\alist\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsbsy.sty
@@ -284,21 +284,21 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
 \dotsspace@=\muskip17
 \c@parentequation=\count196
 \dspbrk@lvl=\count197
-\tag@help=\toks19
+\tag@help=\toks20
 \row@=\count198
 \column@=\count199
 \maxfields@=\count266
-\andhelp@=\toks20
+\andhelp@=\toks21
 \eqnshift@=\dimen155
 \alignsep@=\dimen156
 \tagshift@=\dimen157
 \tagwidth@=\dimen158
 \totwidth@=\dimen159
 \lineht@=\dimen160
-\@envbody=\toks21
+\@envbody=\toks22
 \multlinegap=\skip53
 \multlinetaggap=\skip54
-\mathdisplay@stack=\toks22
+\mathdisplay@stack=\toks23
 LaTeX Info: Redefining \[ on input line 2859.
 LaTeX Info: Redefining \] on input line 2860.
 )
@@ -306,7 +306,7 @@ LaTeX Info: Redefining \] on input line 2860.
 sty"
 \lst@mode=\count267
 \lst@gtempboxa=\box51
-\lst@token=\toks23
+\lst@token=\toks24
 \lst@length=\count268
 \lst@currlwidth=\dimen161
 \lst@column=\count269
@@ -319,16 +319,16 @@ sty"
 
 ("C:\Users\alist\AppData\Local\Programs\MiKTeX 2.9\tex/latex/listings\lstmisc.s
 ty"
-File: lstmisc.sty 2019/09/10 1.8c (Carsten Heinz)
+File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
 \c@lstnumber=\count273
 \lst@skipnumbers=\count274
 \lst@framebox=\box52
 )
 ("C:\Users\alist\AppData\Local\Programs\MiKTeX 2.9\tex/latex/listings\listings.
 cfg"
-File: listings.cfg 2019/09/10 1.8c listings configuration
+File: listings.cfg 2020/03/24 1.8d listings configuration
 ))
-Package: listings 2019/09/10 1.8c (Carsten Heinz)
+Package: listings 2020/03/24 1.8d (Carsten Heinz)
 
 ("C:\Users\alist\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\color.sty
 "
@@ -363,7 +363,7 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 \Gm@layoutheight=\dimen170
 \Gm@layouthoffset=\dimen171
 \Gm@layoutvoffset=\dimen172
-\Gm@dimlist=\toks24
+\Gm@dimlist=\toks25
 
 ("C:\Users\alist\AppData\Local\Programs\MiKTeX 2.9\tex/latex/geometry\geometry.
 cfg"))
@@ -438,6 +438,47 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
 (Font)                  OT1/cmr/m/it --> OT1/ptm/m/it on input line 75.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 (Font)                  OT1/cmr/bx/it --> OT1/ptm/m/it on input line 75.
+
+
+LaTeX Warning: Font shape declaration has incorrect series value `mc'.
+               It should not contain an `m'! Please correct it.
+               Found on input line 226.
+
+
+LaTeX Warning: Font shape declaration has incorrect series value `mc'.
+               It should not contain an `m'! Please correct it.
+               Found on input line 230.
+
+
+LaTeX Warning: Font shape declaration has incorrect series value `mc'.
+               It should not contain an `m'! Please correct it.
+               Found on input line 234.
+
+
+LaTeX Warning: Font shape declaration has incorrect series value `mc'.
+               It should not contain an `m'! Please correct it.
+               Found on input line 243.
+
+
+LaTeX Warning: Font shape declaration has incorrect series value `mc'.
+               It should not contain an `m'! Please correct it.
+               Found on input line 384.
+
+
+LaTeX Warning: Font shape declaration has incorrect series value `mc'.
+               It should not contain an `m'! Please correct it.
+               Found on input line 388.
+
+
+LaTeX Warning: Font shape declaration has incorrect series value `mc'.
+               It should not contain an `m'! Please correct it.
+               Found on input line 392.
+
+
+LaTeX Warning: Font shape declaration has incorrect series value `mc'.
+               It should not contain an `m'! Please correct it.
+               Found on input line 401.
+
 <<ot1.cmap>>)
 ("C:\Users\alist\AppData\Local\Programs\MiKTeX 2.9\tex/latex/sectsty\sectsty.st
 y"
@@ -485,36 +526,36 @@ File: l3backend-pdfmode.def 2020-03-12 L3 backend support: PDF mode
 (Acknowledgments.aux) (QuickReference.aux) (References.aux) (License.aux))
 \openout1 = `SPM.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 193.
-LaTeX Font Info:    ... okay on input line 193.
-LaTeX Font Info:    Checking defaults for OMS/pzccm/m/n on input line 193.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 196.
+LaTeX Font Info:    ... okay on input line 196.
+LaTeX Font Info:    Checking defaults for OMS/pzccm/m/n on input line 196.
 LaTeX Font Info:    Trying to load font information for OMS+pzccm on input line
- 193.
+ 196.
 
 ("C:\Users\alist\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\omspzccm.fd
 "
 File: omspzccm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/pzccm.
 )
-LaTeX Font Info:    ... okay on input line 193.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 193.
-LaTeX Font Info:    ... okay on input line 193.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 193.
-LaTeX Font Info:    ... okay on input line 193.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 193.
-LaTeX Font Info:    ... okay on input line 193.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 193.
-LaTeX Font Info:    ... okay on input line 193.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 193.
-LaTeX Font Info:    ... okay on input line 193.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 193.
-LaTeX Font Info:    ... okay on input line 193.
+LaTeX Font Info:    ... okay on input line 196.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 196.
+LaTeX Font Info:    ... okay on input line 196.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 196.
+LaTeX Font Info:    ... okay on input line 196.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 196.
+LaTeX Font Info:    ... okay on input line 196.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 196.
+LaTeX Font Info:    ... okay on input line 196.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 196.
+LaTeX Font Info:    ... okay on input line 196.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 196.
+LaTeX Font Info:    ... okay on input line 196.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \AtBeginShipoutBox=\box54
-Package hyperref Info: Link coloring ON on input line 193.
+Package hyperref Info: Link coloring ON on input line 196.
 
 ("C:\Users\alist\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\nameref.s
 ty"
@@ -530,9 +571,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count280
 )
-LaTeX Info: Redefining \ref on input line 193.
-LaTeX Info: Redefining \pageref on input line 193.
-LaTeX Info: Redefining \nameref on input line 193.
+LaTeX Info: Redefining \ref on input line 196.
+LaTeX Info: Redefining \pageref on input line 196.
+LaTeX Info: Redefining \nameref on input line 196.
  (SPM.out) (SPM.out)
 \@outlinefile=\write5
 \openout5 = `SPM.out'.
@@ -547,12 +588,12 @@ df.mkii"
 \scratchbox=\box55
 \nofMPsegments=\count283
 \nofMParguments=\count284
-\everyMPshowfont=\toks25
+\everyMPshowfont=\toks26
 \MPscratchCnt=\count285
 \MPscratchDim=\dimen176
 \MPnumerator=\count286
 \makeMPintoPDFobject=\count287
-\everyMPtoPDFconversion=\toks26
+\everyMPtoPDFconversion=\toks27
 )
 ("C:\Users\alist\AppData\Local\Programs\MiKTeX 2.9\tex/latex/epstopdf-pkg\epsto
 pdf-base.sty"
@@ -594,232 +635,219 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 ABD: EveryShipout initializing macros
-<Figures/SPM.png, id=1160, 203.5605pt x 203.5605pt>
+<Figures/SPM.png, id=1164, 203.5605pt x 203.5605pt>
 File: Figures/SPM.png Graphic file (type png)
 <use Figures/SPM.png>
-Package pdftex.def Info: Figures/SPM.png  used on input line 214.
+Package pdftex.def Info: Figures/SPM.png  used on input line 217.
 (pdftex.def)             Requested size: 199.18042pt x 199.18042pt.
-<<ot1tt.cmap>> (SPMversion.tex) [1.1
+<<ot1tt.cmap>> [1.1
 
 {C:/Users/alist/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./Figures/S
-PM.png (PNG copy)>] [2.2
+PM.png (PNG copy)>]
+[2.2
 
 ]
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 2
-49.
-
-("C:\Users\alist\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\ts1ptm.fd"
-File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-)
 LaTeX Font Info:    Trying to load font information for OT1+ptmcm on input line
- 258.
+ 256.
+
 ("C:\Users\alist\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\ot1ptmcm.fd
 "
 File: ot1ptmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ptmcm.
 )
 LaTeX Font Info:    Trying to load font information for OML+ptmcm on input line
- 258.
+ 256.
 
 ("C:\Users\alist\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\omlptmcm.fd
 "
 File: omlptmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ptmcm.
 )<<oml.cmap>><<oms.cmap>>
 LaTeX Font Info:    Trying to load font information for OMX+psycm on input line
- 258.
+ 256.
 
 ("C:\Users\alist\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\omxpsycm.fd
 "
 File: omxpsycm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/psycm.
 )<<omx.cmap>>
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 258.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 256.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 258.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 256.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 258.
- (SPMversion.tex)
-<Figures/QR_code.png, id=1178, 166.6225pt x 166.6225pt>
-File: Figures/QR_code.png Graphic file (type png)
-<use Figures/QR_code.png>
-Package pdftex.def Info: Figures/QR_code.png  used on input line 258.
-(pdftex.def)             Requested size: 51.21513pt x 51.21513pt.
- (SPMversion.tex)
-File: Figures/QR_code.png Graphic file (type png)
-<use Figures/QR_code.png>
-Package pdftex.def Info: Figures/QR_code.png  used on input line 258.
-(pdftex.def)             Requested size: 51.21513pt x 51.21513pt.
-
-Overfull \hbox (7.92188pt too wide) in paragraph at lines 258--258
- []$[]$| 
- []
-
-[1.3 <./Figures/QR_code.png>] [2.4
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 256.
+ [1.3] [2.4
 
 
 ]
 LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
-(Font)              scaled to size 12.9599pt on input line 265.
+(Font)              scaled to size 12.9599pt on input line 263.
 LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
-(Font)              scaled to size 10.79993pt on input line 265.
- (SPM.toc [3.5] [4.6] [5.7] [6.8] [7.9]
-[8.10] [9.11])
+(Font)              scaled to size 10.79993pt on input line 263.
+ (SPM.toc [3.5] [4.6] [5.7] [6.8] [7.9] [8.10]
+[9.11])
 \tf@toc=\write6
 \openout6 = `SPM.toc'.
 
  [10.12]
 \openout2 = `Introduction.aux'.
 
- (Introduction.tex (SPMversion.tex) (SPMversion.tex)
-[1.13
+ (Introduction.tex
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 3
+1.
+
+("C:\Users\alist\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\ts1ptm.fd"
+File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
+) [1.13
 
 
 
-]) [2.14]
+] [2.14]) [3.15] [4.16
+
+
+
+]
 \openout2 = `Overview.aux'.
 
- (Overview.tex [3.15
+ (Overview.tex [5.17
 
-
-
-
-] [4.16]) [5.17] [6.18
+] [6.18]) [7.19] [8.20
 
 
 
 ]
 \openout2 = `RunningSPM.aux'.
 
- (RunningSPM.tex
-[7.19
+
+(RunningSPM.tex [9.21
 
 ]
 LaTeX Font Info:    Font shape `OT1/pcr/m/it' in size <10.95> not available
 (Font)              Font shape `OT1/pcr/m/sl' tried instead on input line 32.
- [8.20]
+ [10.22]
 LaTeX Font Info:    Font shape `OT1/pcr/b/it' in size <10.95> not available
 (Font)              Font shape `OT1/pcr/b/sl' tried instead on input line 61.
 LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
 (Font)              scaled to size 9.85492pt on input line 102.
- [9.21] [10.22]
+ [11.23] [12.24]
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/pzccm/m/n' tried instead on input line 172.
 
- [11.23]) [12.24]
+ [13.25]) [14.26]
 \openout2 = `Population.aux'.
 
  (Population.tex
-<Figures/SquareStructure.png, id=1639, 493.845pt x 345.54094pt>
+<Figures/SquareStructure.png, id=1673, 493.845pt x 345.54094pt>
 File: Figures/SquareStructure.png Graphic file (type png)
 <use Figures/SquareStructure.png>
 Package pdftex.def Info: Figures/SquareStructure.png  used on input line 36.
 (pdftex.def)             Requested size: 287.1299pt x 200.89894pt.
- [13.25
+[15.27
 
 
 
 
-] [14.26 <./Figures/SquareStructure.png>] [15.27] [16.28] [17.29] [18.30] [19.3
-1] [20.32]
-[21.33] [22.34] [23.35] [24.36] [25.37] [26.38] [27.39] [28.40] [29.41]
-[30.42] [31.43] [32.44] [33.45] [34.46] [35.47] [36.48] [37.49] [38.50]
-[39.51] [40.52] [41.53] [42.54] [43.55] [44.56] [45.57] [46.58] [47.59]
-[48.60] [49.61] [50.62] [51.63] [52.64] [53.65]) [54.66]
+] [16.28 <./Figures/SquareStructure.png>] [17.29] [18.30] [19.31]
+[20.32] [21.33] [22.34] [23.35] [24.36] [25.37] [26.38] [27.39] [28.40]
+[29.41] [30.42] [31.43] [32.44] [33.45] [34.46] [35.47] [36.48] [37.49]
+[38.50] [39.51] [40.52] [41.53] [42.54] [43.55] [44.56] [45.57] [46.58]
+[47.59] [48.60] [49.61] [50.62] [51.63] [52.64] [53.65] [54.66] [55.67])
+[56.68]
 \openout2 = `Estimation.aux'.
 
- (Estimation.tex
-[55.67
+ (Estimation.tex [57.69
 
 
 
 
-] [56.68] [57.69] [58.70] [59.71] [60.72]) [61.73] [62.74
+] [58.70] [59.71] [60.72] [61.73] [62.74])
+[63.75] [64.76
 
 
 
 ]
 \openout2 = `Observation.aux'.
 
+ (Observation.tex [65.77
 
-(Observation.tex [63.75
-
-] [64.76]
+] [66.78]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 111.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 111.
- [65.77] [66.78] [67.79] [68.80] [69.81]
+ [67.79] [68.80] [69.81]
 [70.82] [71.83] [72.84] [73.85] [74.86] [75.87] [76.88] [77.89] [78.90]
-[79.91] [80.92] [81.93]) [82.94]
+[79.91] [80.92] [81.93] [82.94] [83.95]) [84.96]
 \openout2 = `Report.aux'.
 
- (Report.tex [83.95
+ (Report.tex [85.97
 
 
 
 
-] [84.96] [85.97]) [86.98]
-(syntax/PopulationSyntax.tex [87.99
+] [86.98]
+[87.99]) [88.100] (syntax/PopulationSyntax.tex [89.101
 
 
 
-] [88.100] [89.101] [90.102] [91.103]
+] [90.102] [91.103]
 [92.104] [93.105] [94.106] [95.107] [96.108] [97.109] [98.110] [99.111]
 [100.112] [101.113] [102.114] [103.115] [104.116] [105.117] [106.118] [107.119]
 [108.120] [109.121] [110.122] [111.123] [112.124] [113.125] [114.126] [115.127]
 [116.128] [117.129] [118.130] [119.131] [120.132] [121.133] [122.134] [123.135]
-[124.136] [125.137] [126.138] [127.139] [128.140] [129.141] [130.142]) [131.143
-] [132.144
+[124.136] [125.137] [126.138] [127.139] [128.140] [129.141] [130.142] [131.143]
+[132.144]) [133.145] [134.146
 
 
-] (syntax/EstimationSyntax.tex [133.145] [134.146] [135.147] [136.148] [137.149
-] [138.150] [139.151]) [140.152] (syntax/ObservationSyntax.tex
-[141.153
+] (syntax/EstimationSyntax.tex [135.147] [136.148] [137.149] [138.150] [139.151
+] [140.152] [141.153]) [142.154]
+(syntax/ObservationSyntax.tex [143.155
 
 
-] [142.154] [143.155] [144.156] [145.157] [146.158]
-Overfull \hbox (14.86246pt too wide) in paragraph at lines 292--292
+] [144.156] [145.157] [146.158] [147.159] [148.160] [149.161]
+Overfull \hbox (14.86246pt too wide) in paragraph at lines 312--312
 []\OT1/pcr/b/n/12 @observation[label].type=proportions[]by[]category[]at[]lengt
 h 
  []
 
-[147.159] [148.160] [149.161] [150.162] [151.163] [152.164] [153.165] [154.166]
-[155.167]) [156.168] (syntax/ReportSyntax.tex [157.169
+[150.162] [151.163] [152.164] [153.165] [154.166] [155.167] [156.168] [157.169]
+[158.170]) [159.171] [160.172
 
 
-] [158.170] [159.171]
-[160.172] [161.173] [162.174] [163.175] [164.176] [165.177] [166.178] [167.179]
-) [168.180] (syntax/GeneralSyntax.tex) [169.181
+] (syntax/ReportSyntax.tex [161.173] [162.174]
+[163.175] [164.176] [165.177] [166.178] [167.179] [168.180] [169.181] [170.182]
+[171.183]) [172.184] (syntax/GeneralSyntax.tex) [173.185
 
 
-] [170.182
+] [174.186
 
 
 ]
 \openout2 = `Examples.aux'.
 
- (Examples.tex
+
+(Examples.tex
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 12.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 12.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 12.
-
-(Examples/Example1.tex
+ (Examples/Example1.tex
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
 nput line 20.
- (../../examples/1x1/config.spm [171.183
+ (../../examples/1x1/config.spm [175.187
 
 ])
-(../../examples/1x1/objective_values.dat [172.184]) (../../examples/1x1/MPD.dat
-) (../../examples/1x1/simulations/observations.01) [173.185]
-(../../examples/1x1/MCMC.log) (../../examples/1x1/MCMC.log)
-(../../examples/1x1/MCMC.log [174.186])) (Examples/Example2.tex
-(../../examples/simple_spatial/config.spm [175.187]) [176.188]
-(../../examples/simple_spatial/objective.dat [177.189])
+(../../examples/1x1/objective_values.dat [176.188]) (../../examples/1x1/MPD.dat
+) (../../examples/1x1/simulations/observations.01) [177.189]
+(../../examples/1x1/MCMC.log) (../../examples/1x1/MCMC.log
+consecutive:
+) (../../examples/1x1/MCMC.log
+consecutive:
+[178.190])) (Examples/Example2.tex (../../examples/simple_spatial/config.spm
+[179.191]) [180.192] (../../examples/simple_spatial/objective.dat [181.193])
 (../../examples/simple_spatial/MPD.dat)
-(../../examples/simple_spatial/simulations/observations.01) [178.190]
-(../../examples/simple_spatial/MCMC.log))) [179.191] [180.192
+(../../examples/simple_spatial/simulations/observations.01) [182.194]
+(../../examples/simple_spatial/MCMC.log))) [183.195] [184.196
 
 
 
@@ -827,94 +855,96 @@ nput line 20.
 \openout2 = `PostProcessing.aux'.
 
 
-(PostProcessing.tex) [181.193
+(PostProcessing.tex) [185.197
 
-] [182.194
+] [186.198
 
 
 
 ]
 \openout2 = `ChangesEnhancements.aux'.
 
- (ChangesEnhancements.tex
-(SPMversion.tex)) [183.195
+ (ChangesEnhancements.tex) [187.199
 
-] [184.196
+]
+[188.200
 
 
 
 ]
 \openout2 = `Troubleshooting.aux'.
 
- (Troubleshooting.tex (SPMversion.tex)
-[185.197
+ (Troubleshooting.tex [189.201
 
-]) [186.198]
+]) [190.202]
 \openout2 = `Acknowledgments.aux'.
 
- (Acknowledgments.tex) [187.199
+ (Acknowledgments.tex)
+[191.203
 
 
 
 
-] [188.200
+] [192.204
 
 
 
 ]
 \openout2 = `QuickReference.aux'.
 
+ (QuickReference.tex [193.205
 
-(QuickReference.tex [189.201
+] [194.206] [195.207] [196.208] [197.209] [198.210] [199.211] [200.212] [201.21
+3] [202.214] [203.215] [204.216] [205.217] [206.218] [207.219] [208.220] [209.2
+21] [210.222] [211.223]
+[212.224] [213.225]) [214.226] [215.227] [216.228
 
-] [190.202] [191.203] [192.204] [193.205] [194.206] [195.207] [196.208] [197.20
-9] [198.210] [199.211] [200.212] [201.213] [202.214] [203.215] [204.216] [205.2
-17] [206.218] [207.219] [208.220] [209.221])
-[210.222]
+
+
+]
 \openout2 = `References.aux'.
 
- (References.tex (SPM.bbl [211.223
+ (References.tex (SPM.bbl
+[217.229
 
-
-
-
-])) [212.224]
+])) [218.230]
 \openout2 = `License.aux'.
 
- (License.tex [213.225
+ (License.tex [219.231
 
 
 
 
-]) [214.226] (SPM.ind [215.227
+]) [220.232] (SPM.ind [221.233
 
 
 
 
-] [216.228] [217.229] [218.230] [219.231
+]
+[222.234] [223.235] [224.236] [225.237
 
 ])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 360.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 360.
-
-(SPM.aux (Introduction.aux) (Overview.aux) (RunningSPM.aux) (Population.aux)
-(Estimation.aux) (Observation.aux) (Report.aux) (Examples.aux)
-(PostProcessing.aux) (ChangesEnhancements.aux) (Troubleshooting.aux)
-(Acknowledgments.aux) (QuickReference.aux) (References.aux) (License.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 360.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 360.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 358.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 358.
+ (SPM.aux (Introduction.aux)
+(Overview.aux) (RunningSPM.aux) (Population.aux) (Estimation.aux)
+(Observation.aux) (Report.aux) (Examples.aux) (PostProcessing.aux)
+(ChangesEnhancements.aux) (Troubleshooting.aux) (Acknowledgments.aux)
+(QuickReference.aux) (References.aux) (License.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 358.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 358.
 Package rerunfilecheck Info: File `SPM.out' has not changed.
-(rerunfilecheck)             Checksum: FC7A1EEC92D9A3188235473054CED3AA;24168.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 360.
+(rerunfilecheck)             Checksum: 9416F81C48F04699D8EA1B36821B040B;24285.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 358.
  )
 (\end occurred inside a group at level 12)
 
-### simple group (level 12) entered at line 453 ({)
-### simple group (level 11) entered at line 453 ({)
-### simple group (level 10) entered at line 427 ({)
-### simple group (level 9) entered at line 427 ({)
-### simple group (level 8) entered at line 399 ({)
-### simple group (level 7) entered at line 399 ({)
+### simple group (level 12) entered at line 456 ({)
+### simple group (level 11) entered at line 456 ({)
+### simple group (level 10) entered at line 430 ({)
+### simple group (level 9) entered at line 430 ({)
+### simple group (level 8) entered at line 402 ({)
+### simple group (level 7) entered at line 402 ({)
 ### simple group (level 6) entered at line 140 ({)
 ### simple group (level 5) entered at line 140 ({)
 ### simple group (level 4) entered at line 113 ({)
@@ -923,11 +953,11 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 360.
 ### simple group (level 1) entered at line 84 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 12283 strings out of 480903
- 189122 string characters out of 2898373
- 585683 words of memory out of 3000000
- 26460 multiletter control sequences out of 15000+200000
- 610209 words of font info for 180 fonts, out of 3000000 for 9000
+ 12286 strings out of 480896
+ 189147 string characters out of 2898165
+ 585519 words of memory out of 3000000
+ 26474 multiletter control sequences out of 15000+200000
+ 608580 words of font info for 178 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,15n,45p,1464b,2281s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/alist/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvi
@@ -944,13 +974,12 @@ a.pfb><C:/Users/alist/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/courier
 helvetic/uhvb8a.pfb><C:/Users/alist/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
 e1/urw/symbol/usyr.pfb><C:/Users/alist/AppData/Local/Programs/MiKTeX 2.9/fonts/
 type1/urw/times/utmb8a.pfb><C:/Users/alist/AppData/Local/Programs/MiKTeX 2.9/fo
-nts/type1/urw/times/utmbi8a.pfb><C:/Users/alist/AppData/Local/Programs/MiKTeX 2
-.9/fonts/type1/urw/times/utmr8a.pfb><C:/Users/alist/AppData/Local/Programs/MiKT
-eX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Users/alist/AppData/Local/Programs/
-MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on SPM.pdf (231 pages, 1194207 bytes).
+nts/type1/urw/times/utmr8a.pfb><C:/Users/alist/AppData/Local/Programs/MiKTeX 2.
+9/fonts/type1/urw/times/utmr8a.pfb><C:/Users/alist/AppData/Local/Programs/MiKTe
+X 2.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on SPM.pdf (237 pages, 1201583 bytes).
 PDF statistics:
- 3981 PDF objects out of 4296 (max. 8388607)
- 1152 named destinations out of 1200 (max. 500000)
- 2348 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 4038 PDF objects out of 4296 (max. 8388607)
+ 1166 named destinations out of 1200 (max. 500000)
+ 2351 words of extra memory for PDF output out of 10000 (max. 10000000)
 

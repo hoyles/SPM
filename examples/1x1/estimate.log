@@ -1,9 +1,9 @@
 SPM (Spatial Population Model)
 Call: ..\..\Build\windows\spm -e -q -g 0 -o MPD.dat 
-Date: Fri Feb 07 15:43:31 2020
-v1.1-2020-02-06 (rev. 2020-02-06 01:38:21 UTC). Copyright (c) 2008-2020, NIWA
+Date: Wed Apr 22 15:42:45 2020
+v2.0.2-2020-04-21 (rev. 2020-04-21 11:34:49 UTC). Copyright (c) 2008-2020, NIWA
 User name: alist
-Machine name: DELL-9020 (Windows_NT, PID=8984)
+Machine name: HP1040 (Windows_NT, PID=17348)
 
 [initialisation-phase1]
 report.type: initialisation
@@ -1071,6 +1071,18 @@ report.type: age_weight
 label: VB
 ages: 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35
 weights: 0.081073 0.402507 1.04691 2.03419 3.3471 4.94748 6.78709 8.8145 10.9795 13.2355 15.5413 17.8611 20.1651 22.4287 24.6325 26.7615 28.8045 30.7538 32.6044 34.3536 36.0006 37.5462 38.9922 40.3416 41.5977 42.7646 43.8466 44.8482 45.7739 46.6284 47.4161 48.1415 48.8089 49.4223 49.9856
+*end
+
+[Fishing]
+report.type: process
+categories: immature mature
+label: Fishing
+layers: Fishing_1998 Fishing_1999 Fishing_2000 Fishing_2001 Fishing_2002 Fishing_2003 Fishing_2004 Fishing_2005 Fishing_2006 Fishing_2007
+penalty: event_mortality_penalty
+selectivities: FishingSel FishingSel
+type: event_mortality
+u_max: 0.99
+years: 1998 1999 2000 2001 2002 2003 2004 2005 2006 2007
 *end
 
 Completed

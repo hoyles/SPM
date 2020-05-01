@@ -33,14 +33,16 @@ using std::numeric_limits;
 //**********************************************************************
 CProportionsByCategoryObservation::CProportionsByCategoryObservation() {
   // Variables
-  pAgeResults             = 0;
-  pCombinedAgeResults     = 0;
-  iMinAge                 = -1;
-  iMaxAge                 = -1;
-  bAgePlus                = false;
+  pAgeResults           = 0;
+  pCombinedAgeResults   = 0;
+  iMinAge               = -1;
+  iMaxAge               = -1;
+  bAgePlus              = false;
+  dDetectionProbability = 1.0;
 
   // Register estimables
   registerEstimable(PARAM_PROCESS_ERROR, &dProcessError);
+  registerEstimable(PARAM_DETECTION_PROBABILITY, &dDetectionProbability);
 
   // Register user allowed parameters
   pParameterList->registerAllowed(PARAM_MIN_AGE);
@@ -52,6 +54,7 @@ CProportionsByCategoryObservation::CProportionsByCategoryObservation() {
   pParameterList->registerAllowed(PARAM_TARGET_SELECTIVITIES);
   pParameterList->registerAllowed(PARAM_DELTA);
   pParameterList->registerAllowed(PARAM_PROCESS_ERROR);
+  pParameterList->registerAllowed(PARAM_DETECTION_PROBABILITY);
 }
 
 //**********************************************************************
@@ -64,11 +67,12 @@ void CProportionsByCategoryObservation::validate() {
     CObservation::validate();
 
     // Get our Variables from ParameterList
-    dDelta              = pParameterList->getDouble(PARAM_DELTA,true,DELTA);
-    iMinAge             = pParameterList->getInt(PARAM_MIN_AGE);
-    iMaxAge             = pParameterList->getInt(PARAM_MAX_AGE);
-    bAgePlus            = pParameterList->getBool(PARAM_AGE_PLUS_GROUP,true,true);
-    dProcessError       = pParameterList->getDouble(PARAM_PROCESS_ERROR,true,0);
+    dDelta                = pParameterList->getDouble(PARAM_DELTA,true,DELTA);
+    iMinAge               = pParameterList->getInt(PARAM_MIN_AGE);
+    iMaxAge               = pParameterList->getInt(PARAM_MAX_AGE);
+    bAgePlus              = pParameterList->getBool(PARAM_AGE_PLUS_GROUP,true,true);
+    dProcessError         = pParameterList->getDouble(PARAM_PROCESS_ERROR,true,0);
+	dDetectionProbability = pParameterList->getDouble(PARAM_DETECTION_PROBABILITY,true,1.0);
     pParameterList->fillVector(vTargetCategoryNames, PARAM_TARGET_CATEGORIES);
     pParameterList->fillVector(vTargetSelectivityNames, PARAM_TARGET_SELECTIVITIES);
 
@@ -96,6 +100,9 @@ void CProportionsByCategoryObservation::validate() {
 
     if (dProcessError < 0)
       CError::errorLessThan(PARAM_PROCESS_ERROR, PARAM_ZERO);
+
+    if (dDetectionProbability <= 0)
+      CError::errorLessThanEqualTo(PARAM_DETECTION_PROBABILITY, PARAM_ZERO);
 
     // Find out the Spread in Ages
     int iAgeSpread = (iMaxAge+1) - iMinAge;
@@ -246,8 +253,8 @@ void CProportionsByCategoryObservation::execute() {
       // Loop Through Categories
       for (int j = 0; j < (int)vCategories.size(); ++j) {
         double dSelectResult = vSelectivities[j]->getResult(i);
-        double dStartValue      = pStartSquare->getAbundanceInCategoryForAge((i+iSquareAgeOffset), vCategories[j]);
-        double dEndValue        = pSquare->getAbundanceInCategoryForAge((i+iSquareAgeOffset), vCategories[j]);
+        double dStartValue   = pStartSquare->getAbundanceInCategoryForAge((i+iSquareAgeOffset), vCategories[j]);
+        double dEndValue     = pSquare->getAbundanceInCategoryForAge((i+iSquareAgeOffset), vCategories[j]);
         double dProportionValue = 0.0;
         if(sProportionMethod == PARAM_MEAN) {
           dProportionValue = dStartValue + ((dEndValue - dStartValue) * dProportionTimeStep);
@@ -258,15 +265,15 @@ void CProportionsByCategoryObservation::execute() {
       }
       for (int j = 0; j < (int)vTargetCategories.size(); ++j) {
         double dSelectResult = vTargetSelectivities[j]->getResult(i);
-        double dStartValue      = pStartSquare->getAbundanceInCategoryForAge((i+iSquareAgeOffset), vTargetCategories[j]);
-        double dEndValue        = pSquare->getAbundanceInCategoryForAge((i+iSquareAgeOffset), vTargetCategories[j]);
+        double dStartValue   = pStartSquare->getAbundanceInCategoryForAge((i+iSquareAgeOffset), vTargetCategories[j]);
+        double dEndValue     = pSquare->getAbundanceInCategoryForAge((i+iSquareAgeOffset), vTargetCategories[j]);
         double dProportionValue = 0.0;
         if(sProportionMethod == PARAM_MEAN) {
           dProportionValue = dStartValue + ((dEndValue - dStartValue) * dProportionTimeStep);
         } else {
           dProportionValue = std::abs(dStartValue - dEndValue) * dProportionTimeStep;
         }
-        pCombinedAgeResults[i] += dSelectResult * dProportionValue;
+        pCombinedAgeResults[i] += (dSelectResult * dProportionValue * dDetectionProbability);
       }
     }
 
@@ -277,8 +284,8 @@ void CProportionsByCategoryObservation::execute() {
         // Loop Through Categories
         for (int j = 0; j < (int)vCategories.size(); ++j) {
           double dSelectResult = vSelectivities[j]->getResult(i);
-          double dStartValue      = pStartSquare->getAbundanceInCategoryForAge(i, vCategories[j]);
-          double dEndValue        = pSquare->getAbundanceInCategoryForAge(i, vCategories[j]);
+          double dStartValue   = pStartSquare->getAbundanceInCategoryForAge(i, vCategories[j]);
+          double dEndValue     = pSquare->getAbundanceInCategoryForAge(i, vCategories[j]);
           double dProportionValue = 0.0;
           if(sProportionMethod == PARAM_MEAN) {
             dProportionValue = dStartValue + ((dEndValue - dStartValue) * dProportionTimeStep);
@@ -289,15 +296,15 @@ void CProportionsByCategoryObservation::execute() {
         }
         for (int j = 0; j < (int)vTargetCategories.size(); ++j) {
           double dSelectResult = vTargetSelectivities[j]->getResult(i);
-          double dStartValue      = pStartSquare->getAbundanceInCategoryForAge(i, vTargetCategories[j]);
-          double dEndValue        = pSquare->getAbundanceInCategoryForAge(i, vTargetCategories[j]);
+          double dStartValue   = pStartSquare->getAbundanceInCategoryForAge(i, vTargetCategories[j]);
+          double dEndValue     = pSquare->getAbundanceInCategoryForAge(i, vTargetCategories[j]);
           double dProportionValue = 0.0;
           if(sProportionMethod == PARAM_MEAN) {
             dProportionValue = dStartValue + ((dEndValue - dStartValue) * dProportionTimeStep);
           } else {
             dProportionValue = std::abs(dStartValue - dEndValue) * dProportionTimeStep;
           }
-          pCombinedAgeResults[iAgeSpread-1] += dSelectResult * dProportionValue;
+          pCombinedAgeResults[iAgeSpread-1] += (dSelectResult * dProportionValue * dDetectionProbability);
         }
       }
     }
@@ -328,9 +335,12 @@ void CProportionsByCategoryObservation::execute() {
   // Simulate or Generate Result?
   if (pRuntimeController->getRunMode() == RUN_MODE_SIMULATION) {
     // Simulate our values, then save them
-    pLikelihood->simulateObserved(vKeys, vObserved, vExpected, vErrorValue, vProcessError, dDelta);
+    vector<double> vAdjustedObserved;
+	for (int i = 0; i < (int)vObserved.size(); ++i)
+	  vAdjustedObserved.push_back(vObserved[i] * dDetectionProbability);
+    pLikelihood->simulateObserved(vKeys, vAdjustedObserved, vExpected, vErrorValue, vProcessError, dDelta);
     for (int i = 0; i < (int)vObserved.size(); ++i)
-      saveComparison(vKeys[i], vAges[i], std::string(""), vExpected[i], vObserved[i], vErrorValue[i], vProcessError[i], pLikelihood->adjustErrorValue(vProcessError[i], vErrorValue[i]), 0.0);
+      saveComparison(vKeys[i], vAges[i], std::string(""), vExpected[i], vObserved[i], vErrorValue[i], vProcessError[i], pLikelihood->adjustErrorValue(vProcessError[i], vErrorValue[i]), 1.0, 0.0);
 
   } else { // Generate Score
     dScore = 0.0;
@@ -338,8 +348,8 @@ void CProportionsByCategoryObservation::execute() {
     // Generate Results and save them
     pLikelihood->getResult(vScores, vExpected, vObserved, vErrorValue, vProcessError, dDelta);
     for (int i = 0; i < (int)vScores.size(); ++i) {
-      dScore += vScores[i];
-      saveComparison(vKeys[i], vAges[i], std::string(""), vExpected[i], vObserved[i], vErrorValue[i], vProcessError[i], pLikelihood->adjustErrorValue(vProcessError[i], vErrorValue[i]), vScores[i]);
+      dScore += (vScores[i] * dMultiplier);
+      saveComparison(vKeys[i], vAges[i], std::string(""), vExpected[i], vObserved[i], vErrorValue[i], vProcessError[i], pLikelihood->adjustErrorValue(vProcessError[i], vErrorValue[i]), dMultiplier, vScores[i]);
     }
   }
 }

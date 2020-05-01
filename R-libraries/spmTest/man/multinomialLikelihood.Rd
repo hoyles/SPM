@@ -2,7 +2,7 @@
 % Please edit documentation in R/MultinomialLikelihood.r
 \name{multinomialLikelihood}
 \alias{multinomialLikelihood}
-\title{Calcuate the multinomial likelihood from a set of observed, expected, and error values}
+\title{Calculate the multinomial likelihood from a set of observed, expected, and error values}
 \usage{
 multinomialLikelihood(
   observed,
@@ -24,7 +24,7 @@ multinomialLikelihood(
 \item{delta}{The robustifying constant to prevent divide by zero errors}
 }
 \description{
-Calcuate the multinomial likelihood from a set of observed, expected, and error values
+Calculate the multinomial likelihood from a set of observed, expected, and error values
 }
 \author{
 Alistair Dunn

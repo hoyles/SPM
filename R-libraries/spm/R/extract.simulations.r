@@ -2,7 +2,6 @@
 #'
 #' @author Alistair Dunn
 #' @param lines list of lines to process
-#' @export
 #'
 "extract.simulations" <- function(file,path="")
 {

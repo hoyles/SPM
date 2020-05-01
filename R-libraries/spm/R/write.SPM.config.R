@@ -1,4 +1,4 @@
-#' Model configuration read function
+#' Model configuration write function
 #'
 #' This function writes an SPM configuration file. Where each element is a command and subcommand from the configuration file
 #'
@@ -8,6 +8,7 @@
 #' @param path Optionally, the path to the file
 #' @param header Optionally, a text header to append as a comment at the top of the file
 #' @param date Optionally, a comment giving the current date
+#' 
 #' @export
 #'
 "write.spm.config" <- function(object, file, path = "", header="SPM config file", date=FALSE) {

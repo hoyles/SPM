@@ -2,7 +2,7 @@
 % Please edit documentation in R/LognormalLikelihood.r
 \name{lognormalLikelihood}
 \alias{lognormalLikelihood}
-\title{Calcuate the lognormal likelihood from a set of observed, expected, and error values}
+\title{Calculate the lognormal likelihood from a set of observed, expected, and error values}
 \usage{
 lognormalLikelihood(
   observed,
@@ -24,7 +24,7 @@ lognormalLikelihood(
 \item{delta}{The robustifying constant to prevent divide by zero errors}
 }
 \description{
-Calcuate the lognormal likelihood from a set of observed, expected, and error values
+Calculate the lognormal likelihood from a set of observed, expected, and error values
 }
 \author{
 Alistair Dunn

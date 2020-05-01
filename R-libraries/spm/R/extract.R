@@ -4,6 +4,7 @@
 #' @param file the name of the input file containing model output to extract
 #' @param path Optionally, the path to the file
 #' @param ignore.unknown Ignore unknown objects in the output file
+#' 
 #' @export
 #'
 "extract" <- function (file, path = "", ignore.unknown=FALSE) {
@@ -19,7 +20,7 @@
     header$user.name <- line[5]
     header$machine.name <- line[6]
     res$header <- header
-    temp<-substr(res$header$version[1],2,15)
+    temp<-substr(res$header$version[1],2,17)
     if (temp != spm.binary.version()) {
       cat("Warning: spm and the spm R library versions are different\n")
       cat("SPM v",temp,"\n",sep="")

@@ -6,6 +6,7 @@
 #' @param alpha The value of the alpha parameter. Default = 1
 #' @param ... the parameters of the preference functions
 #' @param rescale Rescale the function to have value 1. Default = TRUE
+#' 
 #' @export
 #'
 "PF" <-

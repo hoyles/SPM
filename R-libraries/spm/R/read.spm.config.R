@@ -5,6 +5,7 @@
 #' @author Alistair Dunn
 #' @param file the name of the input file containing model configuration
 #' @param path Optionally, the path to the file
+#' 
 #' @export
 #'
 "read.spm.config" <- function (file, path = "") {

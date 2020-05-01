@@ -2,7 +2,7 @@
 % Please edit documentation in R/NormalLikelihood.r
 \name{normalLikelihood}
 \alias{normalLikelihood}
-\title{Calcuate the normal likelihood from a set of observed, expected, and error values}
+\title{Calculate the normal likelihood from a set of observed, expected, and error values}
 \usage{
 normalLikelihood(
   observed,
@@ -24,7 +24,7 @@ normalLikelihood(
 \item{delta}{The robustifying constant to prevent divide by zero errors}
 }
 \description{
-Calcuate the normal likelihood from a set of observed, expected, and error values
+Calculate the normal likelihood from a set of observed, expected, and error values
 }
 \author{
 Alistair Dunn

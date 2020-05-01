@@ -499,6 +499,7 @@
 \defSub{likelihood}{Define the likelihood for the observation}
 \defSub{delta}{Define the delta robustifying constant for the likelihood}
 \defSub{process\_error}{Define the process error term}
+\defSub{likelihood\_multiplier}{Define the scaler applied to the likelihood}
 \defSub{simulation\_likelihood}{Define the likelihood when doing simulations, if the observations is a pseudo-observation}
 \par\textbf{\commandlabsubarg{observation}{type}{proportions\_by\_category}}\par
 \defSub{year} {Define the year that the observation applies to}
@@ -516,9 +517,11 @@
 \defSub{layer} {Name of the categorical layer used to group the spacial cells for the observation}
 \defSub{obs [label]}{Define the following data as observations for the categorical layer with value \argument{[label]}}
 \defSub{error\_value [label]}{Define the following data as error values (e.g., $N$ for multinomial likelihoods, c.v. for lognormal likelihoods, etc.) for the categorical layer with value \texttt{[label]}}
+\defSub{detection\_probability} {Define the detection probability for modifying the denominator when calculating the expected value of the observation}
 \defSub{likelihood}{Define the likelihood for the observation}
 \defSub{delta}{Define the delta robustifying constant for the likelihood}
 \defSub{process\_error}{Define the process error term}
+\defSub{likelihood\_multiplier}{Define the scaler applied to the likelihood}
 \defSub{simulation\_likelihood}{Define the likelihood when doing simulations, if the observations is a pseudo-observation}
 \par\textbf{\commandlabsubarg{observation}{type}{proportions\_at\_length}}\par
 \defSub{year} {Define the year that the observation applies to}
@@ -535,6 +538,7 @@
 \defSub{likelihood}{Define the likelihood for the observation}
 \defSub{delta}{Define the delta robustifying constant for the likelihood}
 \defSub{process\_error}{Define the process error term}
+\defSub{likelihood\_multiplier}{Define the scaler applied to the likelihood}
 \defSub{simulation\_likelihood}{Define the likelihood when doing simulations, if the observations is a pseudo-observation}
 \par\textbf{\commandlabsubarg{observation}{type}{proportions\_by\_category\_at\_length}}\par
 \defSub{year} {Define the year that the observation applies to}
@@ -549,9 +553,11 @@
 \defSub{layer} {Name of the categorical layer used to group the spacial cells for the observation}
 \defSub{obs [label]}{Define the following data as observations for the categorical layer with value \argument{[label]}}
 \defSub{error\_value [label]}{Define the following data as error values (e.g., $N$ for multinomial likelihoods, c.v. for lognormal likelihoods, etc.) for the categorical layer with value \texttt{[label]}}
+\defSub{detection\_probability} {Define the detection probability for modifying the denominator when calculating the expected value of the observation}
 \defSub{likelihood}{Define the likelihood for the observation}
 \defSub{delta}{Define the delta robustifying constant for the likelihood}
 \defSub{process\_error}{Define the process error term}
+\defSub{likelihood\_multiplier}{Define the scaler applied to the likelihood}
 \defSub{simulation\_likelihood}{Define the likelihood when doing simulations, if the observations is a pseudo-observation}
 \par\textbf{\commandlabsubarg{observation}{type}{abundance}}\par
 \defSub{year} {Define the year that the observation applies to}
@@ -567,6 +573,7 @@
 \defSub{likelihood}{Define the likelihood for the observation}
 \defSub{delta}{Define the delta robustifying constant for the likelihood}
 \defSub{process\_error}{Define the process error term}
+\defSub{likelihood\_multiplier}{Define the scaler applied to the likelihood}
 \defSub{simulation\_likelihood}{Define the likelihood when doing simulations, if the observations is a pseudo-observation}
 \par\textbf{\commandlabsubarg{observation}{type}{biomass}}\par
 \defSub{year} {Define the year that the observation applies to}
@@ -582,6 +589,7 @@
 \defSub{likelihood}{Define the likelihood for the observation}
 \defSub{delta}{Define the delta robustifying constant for the likelihood}
 \defSub{process\_error}{Define the process error term}
+\defSub{likelihood\_multiplier}{Define the scaler applied to the likelihood}
 \defSub{simulation\_likelihood}{Define the likelihood when doing simulations, if the observations is a pseudo-observation}
 \par\textbf{\commandlabsubarg{observation}{type}{presence}}\par
 \defSub{year} {Define the year that the observation applies to}
@@ -597,6 +605,7 @@
 \defSub{likelihood}{Define the likelihood for the observation}
 \defSub{delta}{Define the delta robustifying constant for the likelihood}
 \defSub{process\_error}{Define the process error term}
+\defSub{likelihood\_multiplier}{Define the scaler applied to the likelihood}
 \defSub{simulation\_likelihood}{Define the likelihood when doing simulations, if the observations is a pseudo-observation}
 \par\defComLab{ageing\_error}{Define ageing error with \argument{label}}\par\par
 \defSub{type} {The type of ageing error}

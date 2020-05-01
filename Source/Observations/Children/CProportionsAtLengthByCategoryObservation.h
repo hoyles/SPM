@@ -27,7 +27,6 @@ public:
   int                         getNBins() {return iNBins; }
   string                      getType() {return (PARAM_PROPORTIONS_AT_LENGTH_BY_CATEGORY); }
 
-
 protected:
   // Variables
   map<string, vector<double> > mvObservationMatrix;
@@ -43,6 +42,7 @@ protected:
   vector<CSelectivity*>       vTargetSelectivities;
   double                      dDelta;
   double                      dProcessError;
+  double                      dDetectionProbability;
 };
 
 #endif /*CPROPORTIONSATLENGTHBYCATEGORYOBSERVATION_H_*/

@@ -7,6 +7,7 @@
 #' @param sigmaL the standard deviation of the left-hand side of the double normal
 #' @param sigmaR the standard deviation of the right-hand side of the double normal
 #' @param rescale Rescale the function to have value 1?. Default = TRUE
+#' 
 #' @export
 #'
 "PFdouble_normal" <-

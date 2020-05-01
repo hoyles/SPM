@@ -15,7 +15,11 @@ current_year 2008
 age_size none none none none
 
 @age_size none
-type none
+type von_bertalanffy
+k      0.093
+t0    -0.256
+Linf 169.07
+cv     0.102
 size_weight none
 
 @size_weight none

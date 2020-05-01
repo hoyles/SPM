@@ -6,6 +6,7 @@
 #' @param a50 the a50 value of the inverse logisitic
 #' @param ato95 the ato95 value of the inverse logisitic
 #' @param rescale Rescale the function to have value 1?. Default = TRUE
+#' 
 #' @export
 #'
 "PFinverse_logistic" <-

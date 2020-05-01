@@ -2,7 +2,7 @@
 % Please edit documentation in R/DirichletLikelihood.r
 \name{dirichletLikelihood}
 \alias{dirichletLikelihood}
-\title{Calcuate the Dirichlet likelihood from a set of observed, expected, and error values}
+\title{Calculate the Dirichlet likelihood from a set of observed, expected, and error values}
 \usage{
 dirichletLikelihood(
   observed,
@@ -24,7 +24,7 @@ dirichletLikelihood(
 \item{delta}{The robustifying constant to prevent divide by zero errors}
 }
 \description{
-Calcuate the Dirichlet likelihood from a set of observed, expected, and error values
+Calculate the Dirichlet likelihood from a set of observed, expected, and error values
 }
 \author{
 Alistair Dunn

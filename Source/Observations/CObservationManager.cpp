@@ -162,9 +162,11 @@ void CObservationManager::build() {
 // void CObservationManager::prepare()
 // Prepare our observations
 //**********************************************************************
-void CObservationManager::prepare() {
-  foreach(CObservation *observation, vObservationList) {
-    observation->prepare();
+void CObservationManager::prepare(int year, int step) {
+    foreach(CObservation *observation, vObservationList) {
+      if ( (observation->getYear() == year) && (observation->getTimeStep() == step) ) {
+        observation->prepare();
+      }
   }
 }
 

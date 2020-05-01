@@ -27,6 +27,10 @@ public:
                                 const vector<double> &errorValue, const vector<double> &processError, const double delta) = 0;
   virtual double              getInitialScore(const vector<string> &keys, const vector<double> &expected, const vector<double> &observed,
                                 const vector<double> &processError, const vector<double> &errorValue, const double delta) { return 0; }
+
+
+  double        adjustLikelihoodValue(const double LikelihoodMultiplier, const double Likelihood); 
+
 };
 
 #endif /* CLIKELIHOOD_H_ */

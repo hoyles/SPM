@@ -5,6 +5,7 @@
 #' @param categories Optional subset of categories
 #' @param ages Optional subset of ages
 #' @param total If true, then sum over selected categories and ages. Default = TRUE
+#' 
 #' @export
 #'
 "calc.abundance" <- function (data, categories = NULL, ages = NULL, total = T) {

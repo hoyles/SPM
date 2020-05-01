@@ -17,6 +17,16 @@
 CLikelihood::CLikelihood() {
 }
 
+
+double CLikelihood::adjustLikelihoodValue(const double LikelihoodMultiplier, const double Likelihood) {
+  // adjust likelihood
+  if( (LikelihoodMultiplier > 0.0) )
+    return (LikelihoodMultiplier * Likelihood);
+
+  return 0.0;
+}
+
+
 //**********************************************************************
 // CLikelihood::~CLikelihood()
 // Destructor

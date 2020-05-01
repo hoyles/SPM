@@ -2,7 +2,7 @@
 % Please edit documentation in R/binomialapproxLikelihood.r
 \name{binomialapproxLikelihood}
 \alias{binomialapproxLikelihood}
-\title{Calcuate the binomial approx likelihood from a set of observed, expected, and error values}
+\title{Calculate the binomial approx likelihood from a set of observed, expected, and error values}
 \usage{
 binomialapproxLikelihood(
   observed,
@@ -24,7 +24,7 @@ binomialapproxLikelihood(
 \item{delta}{The robustifying constant to prevent divide by zero errors}
 }
 \description{
-Calcuate the binomial approx likelihood from a set of observed, expected, and error values
+Calculate the binomial approx likelihood from a set of observed, expected, and error values
 }
 \author{
 Alistair Dunn

@@ -386,7 +386,7 @@ void CProportionsAtAgeObservation::execute() {
       // Simulate our values, then save them
       pLikelihood->simulateObserved(vKeys, vObserved, vExpected, vErrorValue, vProcessError, dDelta);
       for (int i = 0; i < (int)vObserved.size(); ++i)
-        saveComparison(vKeys[i], vAges[i], vGroup[i], vExpected[i], vObserved[i], vErrorValue[i], vProcessError[i], pLikelihood->adjustErrorValue(vProcessError[i], vErrorValue[i]), 0.0);
+        saveComparison(vKeys[i], vAges[i], vGroup[i], vExpected[i], vObserved[i], vErrorValue[i], vProcessError[i], pLikelihood->adjustErrorValue(vProcessError[i], vErrorValue[i]), 1.0, 0.0);
 
     } else { // Generate Score
       dScore = pLikelihood->getInitialScore(vKeys, vExpected, vObserved, vProcessError, vErrorValue, dDelta);
@@ -394,8 +394,8 @@ void CProportionsAtAgeObservation::execute() {
       // Generate Results and save them
       pLikelihood->getResult(vScores, vExpected, vObserved, vErrorValue, vProcessError, dDelta);
       for (int i = 0; i < (int)vScores.size(); ++i) {
-        dScore += vScores[i];
-        saveComparison(vKeys[i], vAges[i], vGroup[i], vExpected[i], vObserved[i], vErrorValue[i], vProcessError[i], pLikelihood->adjustErrorValue(vProcessError[i], vErrorValue[i]), vScores[i]);
+        dScore += (vScores[i] * dMultiplier);
+        saveComparison(vKeys[i], vAges[i], vGroup[i], vExpected[i], vObserved[i], vErrorValue[i], vProcessError[i], pLikelihood->adjustErrorValue(vProcessError[i], vErrorValue[i]), dMultiplier, vScores[i]);
       }
     }
 

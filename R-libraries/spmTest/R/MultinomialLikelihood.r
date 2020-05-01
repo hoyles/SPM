@@ -1,4 +1,4 @@
-#' Calcuate the multinomial likelihood from a set of observed, expected, and error values
+#' Calculate the multinomial likelihood from a set of observed, expected, and error values
 #'
 #' @author Alistair Dunn
 #' @param observed The observed values for the likelihood
